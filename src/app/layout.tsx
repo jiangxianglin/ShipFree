@@ -3,6 +3,8 @@ import { Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
 import type React from "react"; // Import React
 import { cn } from "@/lib/utils";
+import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
 
 const bricolageGrotesque = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -10,21 +12,56 @@ const bricolageGrotesque = Bricolage_Grotesque({
 });
 
 export const metadata: Metadata = {
-  title: "ShipFree",
+  metadataBase: new URL("https://icebreakergames.site"),
+  title: "Ice Breaker Games",
   description:
-    "Open Source Alternative to ShipFast - Launch your startup in days Not in weeks",
+    "Discover the best ice breaker games for team building, virtual meetings, classrooms, and more. Find the perfect activity for your group.",
   keywords: [
-    "saas",
-    "boilerplate",
-    "open source",
-    "free",
-    "open source shipfast",
-    "shipfree",
-    "idee8",
-    "made by idee8",
-    "free boilerplate",
-    "github",
+    "ice breaker games",
+    "team building activities",
+    "virtual icebreakers",
+    "classroom games",
+    "conference activities",
+    "training games",
   ],
+  alternates: {
+    canonical: "https://icebreakergames.site",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://icebreakergames.site",
+    siteName: "Ice Breaker Games",
+    title: "Ice Breaker Games - Find the Perfect Activity for Your Team",
+    description:
+      "Discover the best ice breaker games for team building, virtual meetings, classrooms, and more. Find the perfect activity for your group.",
+    images: [
+      {
+        url: "/img/Hero.png",
+        width: 1200,
+        height: 630,
+        alt: "Ice Breaker Games - Team Building Activities",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ice Breaker Games - Find the Perfect Activity for Your Team",
+    description:
+      "Discover the best ice breaker games for team building, virtual meetings, classrooms, and more. Find the perfect activity for your group.",
+    images: ["/img/Hero.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -34,8 +71,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(bricolageGrotesque.className, "antialiased")}>
-        {children}
+      <body
+        className={cn(
+          bricolageGrotesque.className,
+          "antialiased flex flex-col min-h-screen"
+        )}
+      >
+        <Navigation />
+        <main className="flex-1">{children}</main>
+        <Footer />
       </body>
     </html>
   );
