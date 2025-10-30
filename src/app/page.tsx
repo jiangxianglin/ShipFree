@@ -4,6 +4,9 @@ import Image from "next/image";
 import { getAllGames } from "@/db/queries/games";
 import { GameCard } from "@/components/games/GameCard";
 
+// Force dynamic rendering for this page
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
   title: "Ice Breaker Games - Find the Perfect Activity for Your Team",
   description:

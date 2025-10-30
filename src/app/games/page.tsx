@@ -3,6 +3,9 @@ import { GameGrid } from "@/components/games/GameGrid";
 import { EmptyState } from "@/components/games/EmptyState";
 import type { Metadata } from "next";
 
+// Force dynamic rendering for this page
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
   title: "Ice Breaker Games | Browse All Activities",
   description:
