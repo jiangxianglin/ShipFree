@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import type React from "react"; // Import React
 import { cn } from "@/lib/utils";
@@ -71,6 +72,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-D5XT9FCNRG"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-D5XT9FCNRG');
+          `}
+        </Script>
+      </head>
       <body
         className={cn(
           bricolageGrotesque.className,
