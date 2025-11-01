@@ -10,6 +10,7 @@ export const usersTable = pgTable("users", {
 
 export const gamesTable = pgTable("games", {
   id: text("id").primaryKey().$defaultFn(() => crypto.randomUUID()),
+  slug: varchar("slug", { length: 255 }).notNull().unique(),
   title: varchar("title", { length: 255 }).notNull(),
   description: text("description").notNull(),
   category: varchar("category", { length: 100 }).notNull(),

@@ -1,5 +1,6 @@
 export type Game = {
   id: string;
+  slug: string;
   title: string;
   description: string;
   category: GameCategory;

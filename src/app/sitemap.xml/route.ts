@@ -7,16 +7,16 @@ export const revalidate = 3600;
 
 export async function GET() {
   const baseUrl = 'https://icebreakergames.site';
-  
+
   try {
     // 获取所有游戏
     const games = await db
-      .select({ 
-        id: gamesTable.id, 
-        updatedAt: gamesTable.updatedAt 
+      .select({
+        slug: gamesTable.slug,
+        updatedAt: gamesTable.updatedAt
       })
       .from(gamesTable);
-    
+
     // 生成 XML
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -45,7 +45,7 @@ export async function GET() {
     <priority>0.5</priority>
   </url>
 ${games.map((game) => `  <url>
-    <loc>${baseUrl}/games/${game.id}</loc>
+    <loc>${baseUrl}/games/${game.slug}</loc>
     <lastmod>${(game.updatedAt || new Date()).toISOString()}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -60,7 +60,7 @@ ${games.map((game) => `  <url>
     });
   } catch (error) {
     console.error('Error generating sitemap:', error);
-    
+
     // 返回基本的 sitemap
     const fallbackSitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

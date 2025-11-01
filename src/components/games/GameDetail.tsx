@@ -25,6 +25,14 @@ export function GameDetail({ game }: GameDetailProps) {
               className="object-cover w-full h-full"
             />
           </div>
+        ) : game.title === "Human Bingo" ? (
+          <div className="aspect-video relative overflow-hidden rounded-lg mb-6">
+            <img
+              src="/img/Human-Bingo-Hero.png"
+              alt="Human Bingo | Ice Breaker Games"
+              className="object-cover w-full h-full"
+            />
+          </div>
         ) : game.image ? (
           <div className="aspect-video relative overflow-hidden rounded-lg mb-6">
             <img
@@ -67,11 +75,21 @@ export function GameDetail({ game }: GameDetailProps) {
 
         <div>
           <h3 className="text-xl font-semibold mb-3">Why Play {game.title}?</h3>
-          <p className="text-base leading-relaxed text-muted-foreground">
-            This ice breaker game is perfect for {game.category.toLowerCase()} settings. 
-            It helps participants feel comfortable, encourages interaction, and creates a positive atmosphere. 
-            Whether you're working with a small group or a large team, this activity is designed to break down barriers and foster meaningful connections.
-          </p>
+          {game.title === "Human Bingo" ? (
+            <p className="text-base leading-relaxed text-muted-foreground">
+              Human Bingo is one of the most popular ice breaker games for social events and networking. 
+              This engaging ice breaker game helps participants connect through fun interactions while learning interesting facts about each other. 
+              Human Bingo works perfectly as an ice breaker game for parties, conferences, team building sessions, and social gatherings. 
+              Whether you're hosting a small meetup or a large event, Human Bingo creates an energetic atmosphere that encourages mingling and conversation. 
+              As an ice breaker game, Human Bingo is easy to set up, requires minimal materials, and guarantees everyone will have a great time getting to know each other.
+            </p>
+          ) : (
+            <p className="text-base leading-relaxed text-muted-foreground">
+              This ice breaker game is perfect for {game.category.toLowerCase()} settings. 
+              It helps participants feel comfortable, encourages interaction, and creates a positive atmosphere. 
+              Whether you're working with a small group or a large team, this activity is designed to break down barriers and foster meaningful connections.
+            </p>
+          )}
         </div>
 
         {materialsList.length > 0 && (
@@ -84,6 +102,19 @@ export function GameDetail({ game }: GameDetailProps) {
                 </li>
               ))}
             </ul>
+          </div>
+        )}
+
+        {/* Materials image for Human Bingo */}
+        {game.title === "Human Bingo" && (
+          <div className="flex justify-center my-4">
+            <div className="relative overflow-hidden rounded-lg max-w-sm w-full shadow-sm">
+              <img
+                src="/img/Human-Bingo-Materis.png"
+                alt="Human Bingo | Ice Breaker Games - Materials Needed"
+                className="object-contain w-full h-auto"
+              />
+            </div>
           </div>
         )}
 
@@ -127,6 +158,19 @@ export function GameDetail({ game }: GameDetailProps) {
           </ul>
         </div>
 
+        {/* Scene image for Human Bingo */}
+        {game.title === "Human Bingo" && (
+          <div className="flex justify-center my-4">
+            <div className="relative overflow-hidden rounded-lg max-w-sm w-full shadow-sm">
+              <img
+                src="/img/Human-Bingo-Scene.png"
+                alt="Human Bingo | Ice Breaker Games - Playing Scene"
+                className="object-contain w-full h-auto"
+              />
+            </div>
+          </div>
+        )}
+
         {/* Second scene image for Two Truths and a Lie */}
         {game.title === "Two Truths and a Lie" && (
           <div className="flex justify-center my-6">
@@ -151,17 +195,35 @@ export function GameDetail({ game }: GameDetailProps) {
           </div>
         )}
 
+        {game.title === "Human Bingo" && (
+          <div className="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg">
+            <h3 className="text-xl font-semibold mb-3">Benefits of Human Bingo as an Ice Breaker Game</h3>
+            <ul className="list-disc list-inside space-y-2 text-base text-muted-foreground">
+              <li>Human Bingo encourages natural conversation and networking among participants</li>
+              <li>This ice breaker game works well for groups of any size, from 10 to 100+ people</li>
+              <li>Human Bingo helps shy participants feel more comfortable approaching others</li>
+              <li>As an ice breaker game, Human Bingo creates a fun, competitive atmosphere</li>
+              <li>Human Bingo can be customized to fit any theme or group demographic</li>
+            </ul>
+          </div>
+        )}
+
         <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-          <h3 className="text-xl font-semibold mb-3">Related Ice Breaker Games</h3>
+          <h3 className="text-xl font-semibold mb-3">
+            {game.title === "Human Bingo" 
+              ? "More Ice Breaker Games Like Human Bingo" 
+              : "Related Ice Breaker Games"}
+          </h3>
           <p className="text-base text-muted-foreground mb-4">
-            Looking for more activities? Explore our collection of {game.category.toLowerCase()} ice breaker games 
-            to find the perfect fit for your next event, meeting, or gathering.
+            {game.title === "Human Bingo" 
+              ? "If you enjoyed Human Bingo, explore our collection of other engaging ice breaker games perfect for social events, networking, and team building. Find more ice breaker games that create memorable experiences."
+              : `Looking for more activities? Explore our collection of ${game.category.toLowerCase()} ice breaker games to find the perfect fit for your next event, meeting, or gathering.`}
           </p>
           <a 
             href="/games" 
             className="inline-flex items-center text-blue-600 dark:text-blue-400 font-medium hover:underline"
           >
-            Browse All Games
+            Browse All Ice Breaker Games
             <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>

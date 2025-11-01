@@ -1,9 +1,11 @@
 import { db } from "@/db";
 import { gamesTable } from "@/db/schema";
+import { generateSlug } from "@/lib/utils/slug";
 
 const seedGames = [
   {
     id: crypto.randomUUID(),
+    slug: generateSlug("Two Truths and a Lie"),
     title: "Two Truths and a Lie",
     description: "A classic ice breaker where each person shares three statements about themselves - two true and one false. The group tries to guess which statement is the lie.",
     category: "Team Building",
@@ -17,6 +19,7 @@ const seedGames = [
   },
   {
     id: crypto.randomUUID(),
+    slug: generateSlug("Human Bingo"),
     title: "Human Bingo",
     description: "Participants receive bingo cards with various characteristics or experiences in each square. They must find people who match each description and get their signatures.",
     category: "Social Event",
@@ -30,6 +33,7 @@ const seedGames = [
   },
   {
     id: crypto.randomUUID(),
+    slug: generateSlug("Virtual Background Story"),
     title: "Virtual Background Story",
     description: "Perfect for online meetings, participants choose creative or unusual virtual backgrounds and share the story behind their choice.",
     category: "Virtual Meeting",
@@ -43,6 +47,7 @@ const seedGames = [
   },
   {
     id: crypto.randomUUID(),
+    slug: generateSlug("Speed Networking"),
     title: "Speed Networking",
     description: "Participants pair up for quick one-on-one conversations, then rotate to meet new people. Great for conferences and large networking events.",
     category: "Conference",
@@ -56,6 +61,7 @@ const seedGames = [
   },
   {
     id: crypto.randomUUID(),
+    slug: generateSlug("The Name Game"),
     title: "The Name Game",
     description: "A memory game where each person says their name along with an adjective that starts with the same letter. Helps with name retention in new groups.",
     category: "Classroom",
@@ -69,6 +75,7 @@ const seedGames = [
   },
   {
     id: crypto.randomUUID(),
+    slug: generateSlug("Desert Island Scenario"),
     title: "Desert Island Scenario",
     description: "Participants imagine they're stranded on a desert island and must choose three items to bring. Reveals personality traits and priorities.",
     category: "Team Building",
@@ -82,6 +89,7 @@ const seedGames = [
   },
   {
     id: crypto.randomUUID(),
+    slug: generateSlug("One Word Check-In"),
     title: "One Word Check-In",
     description: "A quick activity where each person shares one word that describes how they're feeling. Perfect for starting meetings or training sessions.",
     category: "Training",
@@ -95,6 +103,7 @@ const seedGames = [
   },
   {
     id: crypto.randomUUID(),
+    slug: generateSlug("Find Your Match"),
     title: "Find Your Match",
     description: "Participants receive cards with one half of a famous pair. They must find their matching partner by asking questions without directly stating what's on their card.",
     category: "Social Event",
@@ -108,6 +117,7 @@ const seedGames = [
   },
   {
     id: crypto.randomUUID(),
+    slug: generateSlug("Show and Tell"),
     title: "Show and Tell",
     description: "Participants bring an object that's meaningful to them and share its story. Creates deeper connections and reveals personal values.",
     category: "Team Building",
@@ -121,6 +131,7 @@ const seedGames = [
   },
   {
     id: crypto.randomUUID(),
+    slug: generateSlug("Would You Rather"),
     title: "Would You Rather",
     description: "Participants answer a series of Would you rather questions, choosing between two options. Reveals preferences and sparks fun debates.",
     category: "Classroom",
@@ -134,6 +145,7 @@ const seedGames = [
   },
   {
     id: crypto.randomUUID(),
+    slug: generateSlug("Emoji Introduction"),
     title: "Emoji Introduction",
     description: "Participants introduce themselves using only emojis. Others try to guess what the emojis represent. A modern, visual twist on introductions.",
     category: "Virtual Meeting",
@@ -147,6 +159,7 @@ const seedGames = [
   },
   {
     id: crypto.randomUUID(),
+    slug: generateSlug("Common Ground"),
     title: "Common Ground",
     description: "Small groups work together to find things they all have in common. Builds team cohesion and reveals unexpected connections.",
     category: "Team Building",
@@ -160,6 +173,7 @@ const seedGames = [
   },
   {
     id: crypto.randomUUID(),
+    slug: generateSlug("The Question Web"),
     title: "The Question Web",
     description: "Using a ball of yarn, participants toss it to each other while asking questions. The yarn creates a physical web showing connections between people.",
     category: "Training",
@@ -173,6 +187,7 @@ const seedGames = [
   },
   {
     id: crypto.randomUUID(),
+    slug: generateSlug("Scavenger Hunt"),
     title: "Scavenger Hunt",
     description: "Participants race to find specific items or complete challenges within a time limit. Promotes teamwork, creativity, and friendly competition.",
     category: "Conference",
@@ -186,6 +201,7 @@ const seedGames = [
   },
   {
     id: crypto.randomUUID(),
+    slug: generateSlug("Appreciation Circle"),
     title: "Appreciation Circle",
     description: "Participants sit in a circle and take turns sharing something they appreciate about others. Creates a positive atmosphere and strengthens relationships.",
     category: "Team Building",

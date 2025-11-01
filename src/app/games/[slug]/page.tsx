@@ -1,4 +1,4 @@
-import { getGameById } from "@/db/queries/games";
+import { getGameBySlug } from "@/db/queries/games";
 import { GameDetail } from "@/components/games/GameDetail";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
@@ -8,12 +8,12 @@ import Link from "next/link";
 export const dynamic = 'force-dynamic';
 
 type Props = {
-  params: Promise<{ id: string }>;
+  params: Promise<{ slug: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { id } = await params;
-  const game = await getGameById(id);
+  const { slug } = await params;
+  const game = await getGameBySlug(slug);
 
   if (!game) {
     return {
@@ -21,12 +21,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const gameUrl = `https://icebreakergames.site/games/${id}`;
+  const gameUrl = `https://icebreakergames.site/games/${game.slug}`;
   const imageUrl = game.image || "/img/Hero.png";
+  
+  // 为 Human Bingo 优化 description - 控制在 160 字符内
+  const description = game.title === "Human Bingo" 
+    ? "Human Bingo - Ice Breaker Games for social events. Fun networking game where participants find people matching bingo card descriptions. Perfect for parties!"
+    : game.description.substring(0, 160);
 
   return {
     title: `${game.title} | Ice Breaker Games`,
-    description: game.description.substring(0, 160),
+    description: description,
+    keywords: game.title === "Human Bingo" 
+      ? ["ice breaker games", "human bingo", "social event games", "team building", "networking games", "party games"]
+      : ["ice breaker games", game.title.toLowerCase(), game.category.toLowerCase()],
     alternates: {
       canonical: gameUrl,
     },
@@ -34,7 +42,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "article",
       url: gameUrl,
       title: `${game.title} | Ice Breaker Games`,
-      description: game.description.substring(0, 160),
+      description: description,
       siteName: "Ice Breaker Games",
       images: [
         {
@@ -48,15 +56,26 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     twitter: {
       card: "summary_large_image",
       title: `${game.title} | Ice Breaker Games`,
-      description: game.description.substring(0, 160),
+      description: description,
       images: [imageUrl],
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
     },
   };
 }
 
 export default async function GameDetailPage({ params }: Props) {
-  const { id } = await params;
-  const game = await getGameById(id);
+  const { slug } = await params;
+  const game = await getGameBySlug(slug);
 
   if (!game) {
     notFound();
@@ -65,9 +84,13 @@ export default async function GameDetailPage({ params }: Props) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: game.title,
-    description: game.description,
-    image: game.image || "https://icebreakergames.site/img/Hero.png",
+    headline: game.title === "Human Bingo" ? "Human Bingo - Ice Breaker Game" : game.title,
+    description: game.title === "Human Bingo" 
+      ? "Human Bingo is a popular ice breaker game perfect for social events, networking, and team building. Learn how to play this engaging ice breaker game."
+      : game.description,
+    image: game.title === "Human Bingo" 
+      ? "https://icebreakergames.site/img/Human-Bingo-Hero.png"
+      : (game.image || "https://icebreakergames.site/img/Hero.png"),
     author: {
       "@type": "Organization",
       name: "Ice Breaker Games",
@@ -82,8 +105,11 @@ export default async function GameDetailPage({ params }: Props) {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://icebreakergames.site/games/${id}`,
+      "@id": `https://icebreakergames.site/games/${game.slug}`,
     },
+    keywords: game.title === "Human Bingo" 
+      ? "ice breaker games, human bingo, social event games, networking games, team building, party games"
+      : `ice breaker games, ${game.title.toLowerCase()}, ${game.category.toLowerCase()}`,
   };
 
   return (
