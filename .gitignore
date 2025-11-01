@@ -47,3 +47,7 @@ next-env.d.ts
 
 # internal documentation
 image-prompts.md
+
+# database files
+seed-games.sql
+setup-database.sql
