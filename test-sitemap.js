@@ -1,4 +1,4 @@
-// 测试 sitemap 是否可以访问
+// Test sitemap accessibility and content
 const https = require('https');
 
 const url = 'https://icebreakergames.site/sitemap.xml';
@@ -17,13 +17,23 @@ https.get(url, (res) => {
   
   res.on('end', () => {
     console.log('\nResponse length:', data.length);
-    console.log('\nFirst 500 characters:');
-    console.log(data.substring(0, 500));
     
     if (res.statusCode === 200) {
       console.log('\n✅ Sitemap is accessible!');
+      console.log('\nFull sitemap content:');
+      console.log(data);
+      
+      // Count game URLs
+      const gameUrls = (data.match(/\/games\/[^<]+/g) || []);
+      console.log(`\nFound ${gameUrls.length} game URLs in sitemap`);
+      if (gameUrls.length > 0) {
+        console.log('Game URLs:');
+        gameUrls.forEach(url => console.log(`  - ${url}`));
+      }
     } else {
       console.log('\n❌ Sitemap returned error status');
+      console.log('\nResponse content:');
+      console.log(data);
     }
   });
 }).on('error', (err) => {
