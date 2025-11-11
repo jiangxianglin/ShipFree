@@ -4,4 +4,4 @@ Disallow: /auth/
 Disallow: /dashboard/
 Disallow: /api/
 
-Sitemap: https://icebreakergames.site/sitemap.xml
+Sitemap: https://www.icebreakergames.site/sitemap.xml

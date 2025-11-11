@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const gameUrl = `https://icebreakergames.site/games/${game.slug}`;
+  const gameUrl = `https://www.icebreakergames.site/games/${game.slug}`;
   const imageUrl = game.image || "/img/Hero.png";
   
   // 为 Human Bingo 优化 description - 控制在 160 字符内
@@ -83,33 +83,62 @@ export default async function GameDetailPage({ params }: Props) {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: game.title === "Human Bingo" ? "Human Bingo - Ice Breaker Game" : game.title,
-    description: game.title === "Human Bingo" 
-      ? "Human Bingo is a popular ice breaker game perfect for social events, networking, and team building. Learn how to play this engaging ice breaker game."
-      : game.description,
-    image: game.title === "Human Bingo" 
-      ? "https://icebreakergames.site/img/Human-Bingo-Hero.png"
-      : (game.image || "https://icebreakergames.site/img/Hero.png"),
-    author: {
-      "@type": "Organization",
-      name: "Ice Breaker Games",
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "Ice Breaker Games",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://icebreakergames.site/img/Hero.png",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#article`,
+        headline: game.title === "Human Bingo" ? "Human Bingo - Ice Breaker Game" : game.title,
+        description: game.title === "Human Bingo" 
+          ? "Human Bingo is a popular ice breaker game perfect for social events, networking, and team building. Learn how to play this engaging ice breaker game."
+          : game.description,
+        image: game.title === "Human Bingo" 
+          ? "https://www.icebreakergames.site/img/Human-Bingo-Hero.png"
+          : (game.image || "https://www.icebreakergames.site/img/Hero.png"),
+        author: {
+          "@type": "Organization",
+          name: "Ice Breaker Games",
+        },
+        publisher: {
+          "@type": "Organization",
+          name: "Ice Breaker Games",
+          logo: {
+            "@type": "ImageObject",
+            url: "https://www.icebreakergames.site/img/Hero.png",
+          },
+        },
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": `https://www.icebreakergames.site/games/${game.slug}`,
+        },
+        keywords: game.title === "Human Bingo" 
+          ? "ice breaker games, human bingo, social event games, networking games, team building, party games"
+          : `ice breaker games, ${game.title.toLowerCase()}, ${game.category.toLowerCase()}`,
       },
-    },
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": `https://icebreakergames.site/games/${game.slug}`,
-    },
-    keywords: game.title === "Human Bingo" 
-      ? "ice breaker games, human bingo, social event games, networking games, team building, party games"
-      : `ice breaker games, ${game.title.toLowerCase()}, ${game.category.toLowerCase()}`,
+      {
+        "@type": "BreadcrumbList",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://www.icebreakergames.site"
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Games",
+            item: "https://www.icebreakergames.site/games"
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: game.title,
+            item: `https://www.icebreakergames.site/games/${game.slug}`
+          }
+        ]
+      }
+    ]
   };
 
   return (

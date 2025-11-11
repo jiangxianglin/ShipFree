@@ -6,7 +6,7 @@ export const dynamic = 'force-dynamic';
 export const revalidate = 3600;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://icebreakergames.site';
+  const baseUrl = 'https://www.icebreakergames.site';
 
   try {
     // Get all games from database
@@ -49,8 +49,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const gamePages: MetadataRoute.Sitemap = games.map((game) => ({
       url: `${baseUrl}/games/${game.slug}`,
       lastModified: game.updatedAt || new Date(),
-      changeFrequency: 'weekly' as const,
-      priority: 0.8,
+      changeFrequency: 'daily' as const,
+      priority: 0.9,
     }));
 
     return [...staticPages, ...gamePages];

@@ -12,11 +12,11 @@ export const metadata: Metadata = {
   description:
     "Discover engaging ice breaker games for team building, virtual meetings, classrooms, and conferences. Browse our curated collection of activities.",
   alternates: {
-    canonical: "https://icebreakergames.site",
+    canonical: "https://www.icebreakergames.site",
   },
   openGraph: {
     type: "website",
-    url: "https://icebreakergames.site",
+    url: "https://www.icebreakergames.site",
     title: "Ice Breaker Games - Find the Perfect Activity for Your Team",
     description:
       "Discover engaging ice breaker games for team building, virtual meetings, classrooms, and conferences. Browse our curated collection of activities.",
@@ -46,12 +46,12 @@ export default async function Home() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Ice Breaker Games",
-    url: "https://icebreakergames.site",
+    url: "https://www.icebreakergames.site",
     description:
       "Discover engaging ice breaker games for team building, virtual meetings, classrooms, and conferences. Browse our curated collection of activities.",
     potentialAction: {
       "@type": "SearchAction",
-      target: "https://icebreakergames.site/games?q={search_term_string}",
+      target: "https://www.icebreakergames.site/games?q={search_term_string}",
       "query-input": "required name=search_term_string",
     },
   };

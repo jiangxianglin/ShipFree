@@ -1,0 +1,40 @@
+# 需要在 Google Search Console 中手动请求索引的 URL
+# 每天请求 10-20 个，分批进行
+
+## 第一批（今天）
+https://icebreakergames.site/games/two-truths-and-a-lie
+https://icebreakergames.site/games/human-bingo
+https://icebreakergames.site/games/speed-networking
+https://icebreakergames.site/games/would-you-rather
+https://icebreakergames.site/games/the-name-game
+https://icebreakergames.site/games/find-your-match
+https://icebreakergames.site/games/common-ground
+https://icebreakergames.site/games/show-and-tell
+https://icebreakergames.site/games/one-word-check-in
+https://icebreakergames.site/games/emoji-introduction
+
+## 第二批（明天）
+https://icebreakergames.site/games/scavenger-hunt
+https://icebreakergames.site/games/the-question-web
+https://icebreakergames.site/games/appreciation-circle
+https://icebreakergames.site/games/desert-island-scenario
+https://icebreakergames.site/games/virtual-background-story
+
+## 第三批（后天）
+https://icebreakergames.site/privacy-policy
+https://icebreakergames.site/tos
+
+## 操作步骤：
+1. 打开 Google Search Console: https://search.google.com/search-console
+2. 选择你的网站资源
+3. 点击左侧的"网址检查"工具
+4. 粘贴上面的 URL
+5. 点击"请求编入索引"
+6. 等待确认消息
+7. 继续下一个 URL
+
+## 注意事项：
+- 每天限制约 10-20 个请求
+- 不要一次性请求所有 URL
+- 优先请求最重要的页面
+- 请求后等待 1-3 天观察结果
