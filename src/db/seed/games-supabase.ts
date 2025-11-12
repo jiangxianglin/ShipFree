@@ -1,12 +1,15 @@
 import { config } from "dotenv";
 import { resolve } from "path";
+import { createClient } from "@supabase/supabase-js";
+import { generateSlug } from "@/lib/utils/slug";
 
 // Load .env.local file
 config({ path: resolve(process.cwd(), ".env.local") });
 
-import { db } from "@/db";
-import { gamesTable } from "@/db/schema";
-import { generateSlug } from "@/lib/utils/slug";
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 const seedGames = [
   {
@@ -223,18 +226,37 @@ const seedGames = [
 
 async function runSeed() {
   try {
-    console.log("Starting to seed games...");
+    console.log("Starting to seed games using Supabase client...");
+    console.log(`Supabase URL: ${supabaseUrl}`);
     
-    const existingGames = await db.select().from(gamesTable).limit(1);
-    
-    if (existingGames.length > 0) {
+    // Check if games already exist
+    const { data: existingGames, error: checkError } = await supabase
+      .from("games")
+      .select("id")
+      .limit(1);
+
+    if (checkError) {
+      console.error("Error checking existing games:", checkError);
+      throw checkError;
+    }
+
+    if (existingGames && existingGames.length > 0) {
       console.log("Games already exist in database. Skipping seed.");
       console.log("To re-seed, first delete existing games from the database.");
       return;
     }
 
-    await db.insert(gamesTable).values(seedGames);
-    
+    // Insert games
+    const { data, error } = await supabase
+      .from("games")
+      .insert(seedGames)
+      .select();
+
+    if (error) {
+      console.error("Error inserting games:", error);
+      throw error;
+    }
+
     console.log(`Successfully seeded ${seedGames.length} games!`);
     console.log("Games added:");
     seedGames.forEach((game, index) => {

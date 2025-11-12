@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier . --write",
-    "db:seed": "tsx src/db/seed/games.ts"
+    "db:seed": "tsx src/db/seed/games.ts",
+    "db:seed:supabase": "tsx src/db/seed/games-supabase.ts"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.2",
