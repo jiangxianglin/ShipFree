@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/:path((?!www).*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "icebreakergames.site"
+        }
+      ],
+      "destination": "https://www.icebreakergames.site/:path*",
+      "permanent": true
+    }
+  ]
+}

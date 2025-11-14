@@ -13,7 +13,7 @@ const bricolageGrotesque = Bricolage_Grotesque({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://icebreakergames.site"),
+  metadataBase: new URL("https://www.icebreakergames.site"),
   title: "Ice Breaker Games",
   description:
     "Discover the best ice breaker games for team building, virtual meetings, classrooms, and more. Find the perfect activity for your group.",
@@ -26,12 +26,12 @@ export const metadata: Metadata = {
     "training games",
   ],
   alternates: {
-    canonical: "https://icebreakergames.site",
+    canonical: "https://www.icebreakergames.site",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://icebreakergames.site",
+    url: "https://www.icebreakergames.site",
     siteName: "Ice Breaker Games",
     title: "Ice Breaker Games - Find the Perfect Activity for Your Team",
     description:
