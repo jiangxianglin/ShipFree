@@ -1,91 +1,78 @@
-import { Metadata } from "next";
-import Link from "next/link";
-
-// CHATGPT PROMPT TO GENERATE YOUR TERMS & SERVICES — replace with your own data 👇
-
-// 1. Go to https://chat.openai.com/
-// 2. Copy paste bellow
-// 3. Replace the data with your own (if needed)
-// 4. Paste the answer from ChatGPT directly in the <pre> tag below
-
-// You are an excellent lawyer.
-
-// I need your help to write a simple Terms & Services for my website. Here is some context:
-// - Website: https://gopump.co
-// - Name: Pump
-// - Contact information: official@gopump.co
-// - Description: An application responsible for help Personal Trainers and People that like to go to the gym improve their performance.
-// - Ownership: when buying a plan/subscription, users can interact with many features. They can ask for a full refund within 7 day after the purchase.
-// - User data collected: name, email, phone and payment information
-// - Non-personal data collection: web cookies
-// - Link to privacy-policy: https://gopump.co/privacy-policy
-// - Governing Law: France
-// - Updates to the Terms: users will be updated by email
-
-// Please write a simple Terms & Services for my site. Add the current date. Do not add or explain your reasoning. Answer:
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy policy",
+  title: "Terms of Service | Ice Breaker Games",
+  description: "Terms of Service for Ice Breaker Games website.",
 };
 
-const TOS = () => {
+export default function TermsOfService() {
   return (
-    <main className="max-w-xl mx-auto">
-      <div className="p-5">
-        <Link href="/" className="btn btn-ghost">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            className="w-5 h-5"
-          >
-            <path
-              fillRule="evenodd"
-              d="M15 10a.75.75 0 01-.75.75H7.612l2.158 1.96a.75.75 0 11-1.04 1.08l-3.5-3.25a.75.75 0 010-1.08l3.5-3.25a.75.75 0 111.04 1.08L7.612 9.25h6.638A.75.75 0 0115 10z"
-              clipRule="evenodd"
-            />
-          </svg>
-          Voltar
-        </Link>
-        <h1 className="text-3xl font-extrabold pb-6">
-          Termos e Condições de Uso do Pump
-        </h1>
+    <div className="container mx-auto px-4 py-12 max-w-4xl">
+      <h1 className="text-4xl font-bold mb-8">Terms of Service</h1>
+      
+      <div className="prose dark:prose-invert max-w-none">
+        <p className="text-muted-foreground mb-6">
+          Last updated: {new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
+        </p>
 
-        <pre
-          className="leading-relaxed whitespace-pre-wrap"
-          style={{ fontFamily: "sans-serif" }}
-        >
-          {`Última atualização: 12/12/2023
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-4">1. Acceptance of Terms</h2>
+          <p className="text-muted-foreground mb-4">
+            By accessing and using Ice Breaker Games ("the Website"), you accept and agree to be bound by the terms and provision of this agreement.
+          </p>
+        </section>
 
-Bem-vindo ao Pump (https://gopump.co). Estes Termos e Condições de Uso ("Termos") regem o uso do nosso aplicativo, que visa ajudar treinadores pessoais e pessoas que frequentam academias a melhorarem seu desempenho. Ao acessar ou usar o Pump, você concorda em cumprir estes Termos.
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-4">2. Use License</h2>
+          <p className="text-muted-foreground mb-4">
+            Permission is granted to temporarily download one copy of the materials (information or software) on Ice Breaker Games for personal, non-commercial transitory viewing only.
+          </p>
+          <p className="text-muted-foreground mb-4">
+            This is the grant of a license, not a transfer of title, and under this license you may not:
+          </p>
+          <ul className="list-disc list-inside text-muted-foreground mb-4 space-y-2">
+            <li>Modify or copy the materials</li>
+            <li>Use the materials for any commercial purpose or for any public display</li>
+            <li>Attempt to decompile or reverse engineer any software contained on the Website</li>
+            <li>Remove any copyright or other proprietary notations from the materials</li>
+          </ul>
+        </section>
 
-1. Informações de Contato
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-4">3. Content Usage</h2>
+          <p className="text-muted-foreground mb-4">
+            The ice breaker games and activities provided on this website are for educational and entertainment purposes. You may use these activities in your personal or professional settings, but you may not republish or redistribute the content without permission.
+          </p>
+        </section>
 
-Para quaisquer dúvidas ou informações, entre em contato conosco pelo e-mail official@gopump.co.
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-4">4. Disclaimer</h2>
+          <p className="text-muted-foreground mb-4">
+            The materials on Ice Breaker Games are provided on an 'as is' basis. Ice Breaker Games makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
+          </p>
+        </section>
 
-2. Propriedade e Uso do Serviço
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-4">5. Limitations</h2>
+          <p className="text-muted-foreground mb-4">
+            In no event shall Ice Breaker Games or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on Ice Breaker Games.
+          </p>
+        </section>
 
-Ao adquirir um plano ou assinatura no Pump, você tem acesso a diversas funcionalidades. Caso não esteja satisfeito, oferecemos um reembolso integral dentro de 7 dias após a compra.
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-4">6. Revisions</h2>
+          <p className="text-muted-foreground mb-4">
+            Ice Breaker Games may revise these terms of service at any time without notice. By using this website you are agreeing to be bound by the then current version of these terms of service.
+          </p>
+        </section>
 
-3. Coleta de Dados
-
-Coletamos dados pessoais, como nome, e-mail, telefone e informações de pagamento. Também utilizamos cookies da web para coletar dados não pessoais. Mais informações podem ser encontradas em nossa Política de Privacidade: https://gopump.co/privacy-policy.
-
-4. Lei Aplicável
-
-Estes Termos são regidos pelas leis do Brasil.
-
-5. Alterações nos Termos
-
-Reservamo-nos o direito de modificar estes Termos a qualquer momento. As alterações entrarão em vigor imediatamente após a publicação no site. Informaremos sobre alterações significativas através do e-mail fornecido por você.
-
-6. Aceitação dos Termos
-
-Ao usar o Pump, você declara que leu, entendeu e concordou em estar vinculado a estes Termos.`}
-        </pre>
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-4">7. Contact Information</h2>
+          <p className="text-muted-foreground mb-4">
+            If you have any questions about these Terms of Service, please contact us through our website.
+          </p>
+        </section>
       </div>
-    </main>
+    </div>
   );
-};
-
-export default TOS;
+}
