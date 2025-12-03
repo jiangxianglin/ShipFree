@@ -16,11 +16,11 @@ export function GameCard({ game }: GameCardProps) {
     <Link href={`/games/${game.slug}`} className="block h-full">
       <Card className="hover:shadow-lg transition-shadow cursor-pointer h-full flex flex-col">
         {game.image && (
-          <div className="aspect-video relative overflow-hidden rounded-t-lg">
+          <div className="relative w-full h-48 overflow-hidden rounded-t-lg bg-muted">
             <img
               src={game.image}
               alt={game.title}
-              className="object-cover w-full h-full"
+              className="object-contain w-full h-full"
             />
           </div>
         )}

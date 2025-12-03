@@ -1,0 +1,16 @@
+{
+  "title": "Game Title Here",
+  "description": "A detailed description of the game (minimum 20 characters). Explain what the game is about and its purpose.",
+  "category": "One of: Team Building | Virtual Meeting | Classroom | Training | Conference | Social Event",
+  "players": "e.g., 5-20 people, 10+ people, Any size",
+  "duration": "e.g., 10-15 minutes, 30-45 minutes, 1 hour",
+  "difficulty": "One of: Easy | Medium | Hard",
+  "materials": "List of materials needed, or 'None required'",
+  "steps": "Step-by-step instructions separated by newlines:\nStep 1: Do this\nStep 2: Do that\nStep 3: Continue...",
+  "tags": [
+    "tag1",
+    "tag2",
+    "tag3"
+  ],
+  "source": "URL where this game was found"
+}

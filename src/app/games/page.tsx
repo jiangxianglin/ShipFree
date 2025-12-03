@@ -1,5 +1,5 @@
 import { getAllGames } from "@/db/queries/games";
-import { GameGrid } from "@/components/games/GameGrid";
+import { FilterableGameGrid } from "@/components/games/FilterableGameGrid";
 import { EmptyState } from "@/components/games/EmptyState";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -140,8 +140,8 @@ export default async function GamesPage() {
         </div>
       </div>
 
-      {/* Games Grid */}
-      <GameGrid games={games} />
+      {/* Games Grid with Filters */}
+      <FilterableGameGrid games={games} />
 
       {/* Bottom Content Section with Image */}
       <div className="mt-12 prose max-w-none">

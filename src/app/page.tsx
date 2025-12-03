@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getAllGames } from "@/db/queries/games";
 import { GameCard } from "@/components/games/GameCard";
+import { HomeFilterSection } from "@/components/home/HomeFilterSection";
 
 // Force dynamic rendering for this page
 export const dynamic = 'force-dynamic';
@@ -104,6 +105,9 @@ export default async function Home() {
           </div>
         </div>
       </section>
+
+      {/* Filter Section */}
+      <HomeFilterSection games={allGames} />
 
       {/* Stats Section */}
       <section className="py-16 border-y">
