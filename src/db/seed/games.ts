@@ -41,7 +41,7 @@ const seedGames = [
     id: crypto.randomUUID(),
     slug: generateSlug("Virtual Background Story"),
     title: "Virtual Background Story",
-    description: "Perfect for online meetings, participants choose creative or unusual virtual backgrounds and share the story behind their choice.",
+    description: "Virtual Background Story | Ice Breaker Games: Perfect for online meetings, participants choose creative or unusual virtual backgrounds and share the story behind their choice.",
     category: "Virtual Meeting",
     players: "5-30 people",
     duration: "10-15 minutes",

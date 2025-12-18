@@ -22,18 +22,30 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const gameUrl = `https://www.icebreakergames.site/games/${game.slug}`;
-  const imageUrl = game.image || "/img/Hero.png";
   
-  // 为 Human Bingo 优化 description - 控制在 160 字符内
-  const description = game.title === "Human Bingo" 
-    ? "Human Bingo - Ice Breaker Games for social events. Fun networking game where participants find people matching bingo card descriptions. Perfect for parties!"
-    : game.description.substring(0, 160);
+  // Custom image logic
+  let imageUrl = game.image || "/img/Hero.png";
+  if (game.title === "Virtual Background Story") {
+    imageUrl = "/img/VirtualBackgroundStory_Hero.jpg";
+  } else if (game.title === "Human Bingo") {
+    imageUrl = "/img/Human-Bingo-Hero.png"; // Already handled in component, but good for metadata
+  }
+
+  // Custom description logic
+  let description = game.description.substring(0, 160);
+  if (game.title === "Human Bingo") {
+    description = "Human Bingo - Ice Breaker Games for social events. Fun networking game where participants find people matching bingo card descriptions. Perfect for parties!";
+  } else if (game.title === "Virtual Background Story") {
+    description = "Virtual Background Story | Ice Breaker Games: Perfect for online meetings, participants choose creative or unusual virtual backgrounds and share the story behind their choice.";
+  }
 
   return {
     title: `${game.title} | Ice Breaker Games`,
     description: description,
     keywords: game.title === "Human Bingo" 
       ? ["ice breaker games", "human bingo", "social event games", "team building", "networking games", "party games"]
+      : game.title === "Virtual Background Story"
+      ? ["ice breaker games", "Virtual Background Story", "virtual meeting games", "remote team building", "zoom icebreakers"]
       : ["ice breaker games", game.title.toLowerCase(), game.category.toLowerCase()],
     alternates: {
       canonical: gameUrl,
@@ -81,6 +93,21 @@ export default async function GameDetailPage({ params }: Props) {
     notFound();
   }
 
+  // Determine image and description for JSON-LD
+  let jsonLdImage = game.image || "https://www.icebreakergames.site/img/Hero.png";
+  if (game.title === "Human Bingo") {
+    jsonLdImage = "https://www.icebreakergames.site/img/Human-Bingo-Hero.png";
+  } else if (game.title === "Virtual Background Story") {
+    jsonLdImage = "https://www.icebreakergames.site/img/VirtualBackgroundStory_Hero.jpg";
+  }
+
+  let jsonLdDescription = game.description;
+  if (game.title === "Human Bingo") {
+    jsonLdDescription = "Human Bingo is a popular ice breaker game perfect for social events, networking, and team building. Learn how to play this engaging ice breaker game.";
+  } else if (game.title === "Virtual Background Story") {
+    jsonLdDescription = "Virtual Background Story | Ice Breaker Games: Perfect for online meetings, participants choose creative or unusual virtual backgrounds and share the story behind their choice.";
+  }
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -88,12 +115,8 @@ export default async function GameDetailPage({ params }: Props) {
         "@type": "Article",
         "@id": `https://www.icebreakergames.site/games/${game.slug}#article`,
         headline: game.title === "Human Bingo" ? "Human Bingo - Ice Breaker Game" : game.title,
-        description: game.title === "Human Bingo" 
-          ? "Human Bingo is a popular ice breaker game perfect for social events, networking, and team building. Learn how to play this engaging ice breaker game."
-          : game.description,
-        image: game.title === "Human Bingo" 
-          ? "https://www.icebreakergames.site/img/Human-Bingo-Hero.png"
-          : (game.image || "https://www.icebreakergames.site/img/Hero.png"),
+        description: jsonLdDescription,
+        image: jsonLdImage,
         author: {
           "@type": "Organization",
           name: "Ice Breaker Games",

@@ -33,6 +33,14 @@ export function GameDetail({ game }: GameDetailProps) {
               className="object-cover w-full h-full"
             />
           </div>
+        ) : game.title === "Virtual Background Story" ? (
+          <div className="aspect-video relative overflow-hidden rounded-lg mb-6">
+            <img
+              src="/img/VirtualBackgroundStory_Hero.jpg"
+              alt="icebreakergames Virtual Background Story - Creative Video Conference Scenes"
+              className="object-cover w-full h-full"
+            />
+          </div>
         ) : game.image ? (
           <div className="aspect-video relative overflow-hidden rounded-lg mb-6">
             <img
@@ -89,6 +97,18 @@ export function GameDetail({ game }: GameDetailProps) {
               It helps participants feel comfortable, encourages interaction, and creates a positive atmosphere. 
               Whether you're working with a small group or a large team, this activity is designed to break down barriers and foster meaningful connections.
             </p>
+          )}
+
+          {game.title === "Virtual Background Story" && (
+            <div className="flex justify-center my-6">
+              <div className="relative overflow-hidden rounded-lg max-w-md w-full">
+                <img
+                  src="/img/VirtualBackgroundStory_Setup.jpg"
+                  alt="icebreakergames Virtual Background Story - Team Building Activity Setup"
+                  className="object-contain w-full h-auto"
+                />
+              </div>
+            </div>
           )}
         </div>
 
@@ -156,6 +176,18 @@ export function GameDetail({ game }: GameDetailProps) {
             <li>Encourage participation but respect those who prefer to observe</li>
             <li>Follow up with a brief reflection or discussion to reinforce connections made during the game</li>
           </ul>
+
+          {game.title === "Virtual Background Story" && (
+            <div className="flex justify-center my-6">
+              <div className="relative overflow-hidden rounded-lg max-w-md w-full">
+                <img
+                  src="/img/VirtualBackgroundStory_Interaction.jpg"
+                  alt="icebreakergames Virtual Background Story - Engaging Group Interaction"
+                  className="object-contain w-full h-auto"
+                />
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Scene image for Human Bingo */}
