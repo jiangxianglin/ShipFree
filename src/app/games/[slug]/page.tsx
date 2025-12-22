@@ -1,6 +1,6 @@
-import { getGameBySlug } from "@/db/queries/games";
+import { getGameBySlug, getGameById } from "@/db/queries/games";
 import { GameDetail } from "@/components/games/GameDetail";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -13,11 +13,23 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const game = await getGameBySlug(slug);
+  let game = await getGameBySlug(slug);
+
+  if (!game) {
+    // Try to find by ID if it looks like a UUID
+    const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(slug);
+    if (isUuid) {
+      game = await getGameById(slug);
+    }
+  }
 
   if (!game) {
     return {
       title: "Game Not Found | Ice Breaker Games",
+      robots: {
+        index: false,
+        follow: false,
+      }
     };
   }
 
@@ -87,9 +99,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function GameDetailPage({ params }: Props) {
   const { slug } = await params;
-  const game = await getGameBySlug(slug);
+  let game = await getGameBySlug(slug);
 
   if (!game) {
+    // Try to find by ID if it looks like a UUID
+    const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(slug);
+    if (isUuid) {
+      game = await getGameById(slug);
+      if (game) {
+        // Redirect to the correct slug URL
+        redirect(`/games/${game.slug}`);
+      }
+    }
+
     notFound();
   }
 

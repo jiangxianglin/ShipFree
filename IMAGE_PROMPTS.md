@@ -16,8 +16,8 @@
 ### 图片 1：游戏概念 (Hero Image)
 **用途**：展示游戏的核心场景——视频会议中的多样化背景。
 **画面描述**：
-> A flat vector illustration of a video conference screen on a laptop. The screen shows a grid of 4 participants. Each participant has a distinct and creative virtual background: one is in outer space, one is on a tropical beach, one is in a cozy library, and one is in front of a famous landmark (like the Eiffel Tower). The participants are diverse and smiling. The atmosphere is fun and engaging.
-**建议宽高比**：`--ar 16:9`
+> A flat vector illustration of a video conference screen on a laptop. The screen shows a grid of 4 participants. Each participant has a distinct and creative virtual background: one is in outer space, one is on a tropical beach, one is in a cozy library, and one is in front of a faamous landmark (like the Eiffel Tower). The participants are diverse and smiling. The atmosphere is fun and engaging.
+**建议宽高比**：`--ar 16:9`a
 
 ### 图片 2：准备阶段 (Setup/Action)
 **用途**：展示参与者选择背景的过程。
