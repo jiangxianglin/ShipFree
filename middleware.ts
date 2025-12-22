@@ -1,7 +1,17 @@
-import { type NextRequest } from "next/server";
+import { type NextRequest, NextResponse } from "next/server";
 import { updateSession } from "@/lib/supabase/middleware";
 
 export async function middleware(request: NextRequest) {
+  const hostname = request.headers.get("host");
+
+  // Redirect non-www to www
+  if (hostname === "icebreakergames.site") {
+    const url = request.nextUrl.clone();
+    url.hostname = "www.icebreakergames.site";
+    url.protocol = "https";
+    return NextResponse.redirect(url, 301);
+  }
+
   return await updateSession(request);
 }
 
