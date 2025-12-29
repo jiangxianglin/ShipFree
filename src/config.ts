@@ -1,6 +1,6 @@
 export const config = {
   appName: "Ice Breaker Games",
-  domainName: "https://icebreakergames.site",
+  domainName: "https://www.icebreakergames.site",
   mailgun: {
     // subdomain to use when sending emails, if you don't have a subdomain, just remove it. Highly recommended to have one (i.e. mg.yourdomain.com or mail.yourdomain.com)
     subdomain: "mg",

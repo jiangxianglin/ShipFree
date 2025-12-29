@@ -12,7 +12,7 @@ export async function GET() {
       success: true,
       gamesCount: games.length,
       sampleGames: games.slice(0, 5),
-      sitemapUrl: 'https://icebreakergames.site/sitemap.xml',
+      sitemapUrl: 'https://www.icebreakergames.site/sitemap.xml',
       message: 'Database connection successful',
     });
   } catch (error) {
