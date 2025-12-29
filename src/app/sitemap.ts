@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import { db } from '@/db';
 import { gamesTable } from '@/db/schema';
+import { blogPosts } from '@/data/blog';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 3600;
@@ -32,6 +33,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.9,
       },
       {
+        url: `${baseUrl}/blog`,
+        lastModified: new Date(),
+        changeFrequency: 'weekly',
+        priority: 0.9,
+      },
+      {
         url: `${baseUrl}/privacy-policy`,
         lastModified: new Date(),
         changeFrequency: 'monthly',
@@ -53,7 +60,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.9,
     }));
 
-    return [...staticPages, ...gamePages];
+    // Blog detail pages
+    const blogPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+      url: `${baseUrl}/blog/${post.slug}`,
+      lastModified: new Date(post.date),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    }));
+
+    return [...staticPages, ...gamePages, ...blogPages];
   } catch (error) {
     console.error('Error generating sitemap:', error);
 

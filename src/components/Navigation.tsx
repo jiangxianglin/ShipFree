@@ -11,6 +11,7 @@ export function Navigation() {
   const navItems = [
     { href: "/", label: "Home" },
     { href: "/games", label: "Games" },
+    { href: "/blog", label: "Blog" },
   ];
 
   return (
