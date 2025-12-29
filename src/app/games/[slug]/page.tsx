@@ -41,6 +41,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     imageUrl = "/img/VirtualBackgroundStory_Hero.jpg";
   } else if (game.title === "Human Bingo") {
     imageUrl = "/img/Human-Bingo-Hero.png"; // Already handled in component, but good for metadata
+  } else if (game.title === "Speed Networking") {
+    imageUrl = "https://www.icebreakergames.site/img/SpeedNetworking-hero.jpg";
   }
 
   // Custom description logic
@@ -49,6 +51,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description = "Human Bingo - Ice Breaker Games for social events. Fun networking game where participants find people matching bingo card descriptions. Perfect for parties!";
   } else if (game.title === "Virtual Background Story") {
     description = "Virtual Background Story | Ice Breaker Games: Perfect for online meetings, participants choose creative or unusual virtual backgrounds and share the story behind their choice.";
+  } else if (game.title === "Speed Networking") {
+    description = "Speed Networking | Ice Breaker Games: A fast-paced structured networking event where participants have brief, timed conversations to maximize connections in a short period.";
   }
 
   return {
@@ -58,6 +62,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ? ["ice breaker games", "human bingo", "social event games", "team building", "networking games", "party games"]
       : game.title === "Virtual Background Story"
       ? ["ice breaker games", "Virtual Background Story", "virtual meeting games", "remote team building", "zoom icebreakers"]
+      : game.title === "Speed Networking"
+      ? ["Speed Networking | Ice Breaker Games", "speed networking", "business networking", "networking events", "corporate icebreakers"]
       : ["ice breaker games", game.title.toLowerCase(), game.category.toLowerCase()],
     alternates: {
       canonical: gameUrl,
@@ -121,6 +127,8 @@ export default async function GameDetailPage({ params }: Props) {
     jsonLdImage = "https://www.icebreakergames.site/img/Human-Bingo-Hero.png";
   } else if (game.title === "Virtual Background Story") {
     jsonLdImage = "https://www.icebreakergames.site/img/VirtualBackgroundStory_Hero.jpg";
+  } else if (game.title === "Speed Networking") {
+    jsonLdImage = "https://www.icebreakergames.site/img/SpeedNetworking-hero.jpg";
   }
 
   let jsonLdDescription = game.description;
@@ -128,6 +136,8 @@ export default async function GameDetailPage({ params }: Props) {
     jsonLdDescription = "Human Bingo is a popular ice breaker game perfect for social events, networking, and team building. Learn how to play this engaging ice breaker game.";
   } else if (game.title === "Virtual Background Story") {
     jsonLdDescription = "Virtual Background Story | Ice Breaker Games: Perfect for online meetings, participants choose creative or unusual virtual backgrounds and share the story behind their choice.";
+  } else if (game.title === "Speed Networking") {
+    jsonLdDescription = "Speed Networking | Ice Breaker Games: A fast-paced structured networking event where participants have brief, timed conversations to maximize connections in a short period.";
   }
 
   const jsonLd = {
@@ -157,6 +167,8 @@ export default async function GameDetailPage({ params }: Props) {
         },
         keywords: game.title === "Human Bingo" 
           ? "ice breaker games, human bingo, social event games, networking games, team building, party games"
+          : game.title === "Speed Networking"
+          ? "Speed Networking | Ice Breaker Games, speed networking, business networking, networking events, corporate icebreakers"
           : `ice breaker games, ${game.title.toLowerCase()}, ${game.category.toLowerCase()}`,
       },
       {

@@ -33,6 +33,30 @@
 
 ---
 
+## 游戏：Speed Networking (快速社交)
+
+此游戏的核心是：参与者面对面坐成两排，进行快速的一对一交流，然后轮换位置认识新朋友。
+
+### 图片 1：游戏概念 (Hero Image)
+**用途**：展示游戏的核心场景——两排参与者面对面交流。
+**画面描述**：
+> A flat vector illustration of a professional networking event. There are two rows of chairs facing each other. Diverse professionals are sitting in pairs, engaged in lively conversations. The scene is organized and energetic. In the background, there is a large clock or timer indicating the time limit. The environment is a bright, modern conference room.
+**建议宽高比**：`--ar 16:9`
+
+### 图片 2：准备/轮换阶段 (Setup/Action)
+**用途**：展示轮换座位的过程。
+**画面描述**：
+> A flat vector illustration showing the rotation mechanism of speed networking. One row of people is standing up and moving one seat to the right, while the other row remains seated. Arrows on the floor or in the air stylistically indicate the direction of movement. A facilitator stands at the end with a bell or a timer, signaling the switch. The participants look eager to meet the next person.
+**建议宽高比**：`--ar 16:9` (或与原图一致)
+
+### 图片 3：互动与交流 (Interaction)
+**用途**：展示一对一交流的专注时刻。
+**画面描述**：
+> A flat vector illustration focusing on a single pair of participants having a conversation. They are sitting face-to-face, shaking hands or exchanging business cards. One person is speaking while the other listens attentively. A speech bubble or icon above them represents "ideas" or "connection". A small timer on the table shows time running out, adding a sense of urgency but fun.
+**建议宽高比**：`--ar 16:9` (或与原图一致)
+
+---
+
 ## 通用风格后缀 (参考)
 
 如果你无法获取原图的具体风格，可以尝试添加以下通用的现代 SaaS 插图风格后缀：

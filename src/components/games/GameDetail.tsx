@@ -33,6 +33,14 @@ export function GameDetail({ game }: GameDetailProps) {
               className="object-cover w-full h-full"
             />
           </div>
+        ) : game.title === "Speed Networking" ? (
+          <div className="aspect-video relative overflow-hidden rounded-lg mb-6">
+            <img
+              src="/img/SpeedNetworking-hero.jpg"
+              alt="Speed Networking | Ice Breaker Games"
+              className="object-cover w-full h-full"
+            />
+          </div>
         ) : game.title === "Virtual Background Story" ? (
           <div className="aspect-video relative overflow-hidden rounded-lg mb-6">
             <img
@@ -105,6 +113,18 @@ export function GameDetail({ game }: GameDetailProps) {
                 <img
                   src="/img/VirtualBackgroundStory_Setup.jpg"
                   alt="icebreakergames Virtual Background Story - Team Building Activity Setup"
+                  className="object-contain w-full h-auto"
+                />
+              </div>
+            </div>
+          )}
+
+          {game.title === "Speed Networking" && (
+            <div className="flex justify-center my-6">
+              <div className="relative overflow-hidden rounded-lg max-w-md w-full">
+                <img
+                  src="/img/SpeedNetworking-Setup.jpg"
+                  alt="Speed Networking | Ice Breaker Games - Setup"
                   className="object-contain w-full h-auto"
                 />
               </div>
@@ -183,6 +203,18 @@ export function GameDetail({ game }: GameDetailProps) {
                 <img
                   src="/img/VirtualBackgroundStory_Interaction.jpg"
                   alt="icebreakergames Virtual Background Story - Engaging Group Interaction"
+                  className="object-contain w-full h-auto"
+                />
+              </div>
+            </div>
+          )}
+
+          {game.title === "Speed Networking" && (
+            <div className="flex justify-center my-6">
+              <div className="relative overflow-hidden rounded-lg max-w-md w-full">
+                <img
+                  src="/img/SpeedNetworking-Interaction.jpg"
+                  alt="Speed Networking | Ice Breaker Games - Interaction"
                   className="object-contain w-full h-auto"
                 />
               </div>

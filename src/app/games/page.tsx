@@ -32,8 +32,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/img/Hero.png",
-        width: 1200,
-        height: 630,
+        width: 1080,
+        height: 1080,
         alt: "Ice Breaker Games - Team Building Activities",
       },
     ],
@@ -57,74 +57,42 @@ export default async function GamesPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       {/* Hero Section with Image */}
-      <div className="mb-12">
-        <div className="relative w-full h-[300px] md:h-[400px] rounded-lg overflow-hidden mb-6">
+      <div className="mb-6 grid md:grid-cols-2 gap-8">
+        <div className="flex flex-col justify-center">
+          <h1 className="text-4xl font-bold mb-4">Ice Breaker Games</h1>
+          <p className="text-lg text-muted-foreground mb-8">
+            Browse our collection of {games.length} engaging ice breaker games to warm up
+            your team and create memorable experiences.
+          </p>
+
+          <div className="prose max-w-none">
+            <h2 className="text-2xl font-semibold mb-4">
+              Discover the Best Ice Breaker Games for Every Occasion
+            </h2>
+            <p className="text-base text-muted-foreground">
+              Our comprehensive collection of ice breaker games helps teams, classrooms, and groups connect meaningfully.
+              Whether you're planning virtual meetings, team building sessions, or classroom activities, these ice breaker games
+              are designed to break down barriers and foster genuine connections.
+            </p>
+          </div>
+        </div>
+        
+        <div className="relative w-full min-h-[300px] md:h-full rounded-2xl overflow-hidden shadow-xl bg-muted/20">
           <Image
             src="/img/Hero.png"
             alt="Ice breaker games for team building and group activities"
             fill
+            sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover"
             priority
           />
         </div>
-        
-        <h1 className="text-4xl font-bold mb-4">Ice Breaker Games</h1>
-        <p className="text-lg text-muted-foreground mb-6">
-          Browse our collection of {games.length} engaging ice breaker games to warm up
-          your team and create memorable experiences.
-        </p>
       </div>
 
       {/* Main Content Section */}
       <div className="mb-12">
         <div className="prose max-w-none">
-          <h2 className="text-2xl font-semibold mb-4">
-            Discover the Best Ice Breaker Games for Every Occasion
-          </h2>
-          <p className="text-base text-muted-foreground mb-6">
-            Our comprehensive collection of ice breaker games helps teams, classrooms, and groups connect meaningfully.
-            Whether you're planning virtual meetings, team building sessions, or classroom activities, these ice breaker games
-            are designed to break down barriers and foster genuine connections.
-          </p>
-
-          {/* Featured Games Section with Images */}
-          <div className="grid md:grid-cols-2 gap-8 my-8 not-prose">
-            <div className="bg-card rounded-lg overflow-hidden shadow-sm border">
-              <div className="relative h-48">
-                <Image
-                  src="/img/Two-Truths-and-a-Lie.png"
-                  alt="Two Truths and a Lie ice breaker game example"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-4">
-                <h3 className="text-lg font-semibold mb-2">Classic Ice Breaker Games</h3>
-                <p className="text-sm text-muted-foreground">
-                  Popular games like Two Truths and a Lie help participants share interesting facts and build connections quickly.
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-card rounded-lg overflow-hidden shadow-sm border">
-              <div className="relative h-48">
-                <Image
-                  src="/img/Human-Bingo-Hero.png"
-                  alt="Human Bingo ice breaker game for networking"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-4">
-                <h3 className="text-lg font-semibold mb-2">Interactive Team Activities</h3>
-                <p className="text-sm text-muted-foreground">
-                  Engaging activities like Human Bingo encourage networking and help team members discover common interests.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <h3 className="text-xl font-semibold mb-3">Why Use Ice Breaker Games?</h3>
+          <h3 className="text-xl font-semibold mb-3 mt-0">Why Use Ice Breaker Games?</h3>
           <p className="text-base text-muted-foreground mb-4">
             Ice breaker games are essential tools for creating comfortable, engaging environments. These activities help participants
             feel at ease, encourage communication, and set a positive tone for any gathering. From quick 5-minute ice breaker games
@@ -201,6 +169,43 @@ export default async function GamesPage() {
           Consider your audience and objectives when browsing our ice breaker games collection. Filter by category,
           duration, or group size to find activities that match your specific requirements.
         </p>
+
+        {/* Featured Games Section with Images */}
+        <div className="grid md:grid-cols-2 gap-8 my-8 not-prose">
+          <div className="bg-card rounded-lg overflow-hidden shadow-sm border h-full flex flex-col">
+            <div className="relative h-64 w-full">
+              <Image
+                src="/img/Two-Truths-and-a-Lie.png"
+                alt="Two Truths and a Lie ice breaker game example"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="p-4 flex-grow">
+              <h3 className="text-lg font-semibold mb-2">Classic Ice Breaker Games</h3>
+              <p className="text-sm text-muted-foreground">
+                Popular games like Two Truths and a Lie help participants share interesting facts and build connections quickly.
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-card rounded-lg overflow-hidden shadow-sm border h-full flex flex-col">
+            <div className="relative h-64 w-full">
+              <Image
+                src="/img/Human-Bingo-Hero.png"
+                alt="Human Bingo ice breaker game for networking"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="p-4 flex-grow">
+              <h3 className="text-lg font-semibold mb-2">Interactive Team Activities</h3>
+              <p className="text-sm text-muted-foreground">
+                Engaging activities like Human Bingo encourage networking and help team members discover common interests.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
