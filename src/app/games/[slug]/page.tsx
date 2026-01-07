@@ -35,8 +35,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   // Always use the canonical slug URL for SEO, even if accessed via UUID
   const gameUrl = `https://www.icebreakergames.site/games/${game.slug}`;
-
-  const gameUrl = `https://www.icebreakergames.site/games/${game.slug}`;
   
   // Custom image logic
   let imageUrl = game.image || "/img/Hero.png";
