@@ -1,0 +1,144 @@
+{
+  "metadata": {
+    "collectionDate": "2025-01-07",
+    "sources": [
+      "https://www.sessionlab.com/blog/icebreaker-games/",
+      "Existing game collection"
+    ],
+    "notes": "Updated collection with SessionLab categorized games integrated with existing games",
+    "totalGames": 95,
+    "newSessionLabGames": 28
+  },
+  "sessionlab_categories": {
+    "meeting_icebreakers": "会议破冰游戏 - 帮助参与者在会议开始时进入状态",
+    "quick_5_minute_icebreakers": "5分钟快速破冰游戏 - 适合紧凑议程的快速热身",
+    "fun_icebreakers": "趣味破冰游戏 - 增强团队凝聚力的娱乐活动",
+    "virtual_icebreakers": "虚拟破冰游戏 - 专为在线会议和远程团队设计",
+    "get_to_know_each_other": "相互了解游戏 - 建立个人联系和了解团队成员",
+    "team_building_deep_connection": "深度团队建设 - 建立更强团队纽带的活动",
+    "large_group_activities": "大型团体活动 - 为大型团体和活动设计的破冰游戏",
+    "teamwork_improvement": "团队合作提升 - 专门提升协作和团队动力的游戏"
+  },
+  "games": [
+    {
+      "title": "What Are You Bringing to the Meeting?",
+      "description": "一个正念签到活动，参与者写下担忧和能量水平，然后将其搁置以获得更好的专注力。这个游戏帮助团队成员从之前的任务中转换过来，全身心投入到当前会议中。",
+      "category": "Team Building",
+      "players": "5-30 people",
+      "duration": "5-10 minutes", 
+      "difficulty": "Easy",
+      "materials": "纸和笔",
+      "steps": "步骤1：要求参与者与自己进行内心对话\n步骤2：写下担忧、能量水平和想法\n步骤3：在会议期间将这些搁置一边\n步骤4：如果感到舒适，分享他们的感受",
+      "tags": ["正念", "签到", "专注", "心理重置", "会议破冰"],
+      "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+    },
+    {
+      "title": "Rock Paper Scissors Tournament",
+      "description": "传统游戏的创新版本 - 失败者成为为剩余玩家加油的粉丝。这个高能量的活动能够快速激发任何规模团体的活力，创造积极的竞争氛围。",
+      "category": "Team Building",
+      "players": "8-200+ people", 
+      "duration": "5-10 minutes",
+      "difficulty": "Easy",
+      "materials": "无需材料",
+      "steps": "步骤1：所有人配对进行石头剪刀布\n步骤2：失败者成为获胜者的粉丝\n步骤3：获胜者继续比赛，粉丝为其加油\n步骤4：继续直到剩下最后两名玩家",
+      "tags": ["激励器", "竞争", "大型团体", "趣味", "会议破冰"],
+      "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+    },
+    {
+      "title": "Weather Check-in", 
+      "description": "使用天气隐喻分享感受，进行快速的团体情绪检查。这个简单而有效的活动特别适合远程团队，让每个人都能以安全的方式分享当前状态。",
+      "category": "Virtual Meeting",
+      "players": "5-25 people",
+      "duration": "3-8 minutes",
+      "difficulty": "Easy", 
+      "materials": "无需材料",
+      "steps": "步骤1：要求每个人用天气描述当前感受\n步骤2：例如：'大部分是晴天，但有雨云在聚集'\n步骤3：快速轮流分享\n步骤4：确认团体的整体'天气'",
+      "tags": ["签到", "隐喻", "快速", "远程友好", "会议破冰"],
+      "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+    },
+    {
+      "title": "One Word at a Time",
+      "description": "团体通过每人贡献一个词来创建句子。这个简单而有效的活动可以轻松适应任何团体，鼓励创造力和协作思维。",
+      "category": "Team Building",
+      "players": "6-20 people",
+      "duration": "3-8 minutes",
+      "difficulty": "Easy",
+      "materials": "无需材料",
+      "steps": "步骤1：给出一个主题或起始词\n步骤2：围成圆圈，每人添加一个词\n步骤3：尝试创建一个完整的句子\n步骤4：加快速度或增加挑战以增加趣味",
+      "tags": ["创意", "协作", "快速", "适应性强", "5分钟破冰"],
+      "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+    },
+    {
+      "title": "Count Up",
+      "description": "团体按顺序数数，不能重叠说话或建立模式。这个看似简单的挑战需要耐心、意识和团队合作，是建立专注力和连接的绝佳方式。",
+      "category": "Team Building", 
+      "players": "8-25 people",
+      "duration": "3-10 minutes",
+      "difficulty": "Medium",
+      "materials": "无需材料",
+      "steps": "步骤1：设定目标数字（如20）\n步骤2：从1开始数，不能重叠或形成模式\n步骤3：如果两人同时说话，重新开始\n步骤4：达到目标时庆祝",
+      "tags": ["专注", "倾听", "团队合作", "耐心", "5分钟破冰"],
+      "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+    },
+    {
+      "title": "Take a Picture of Your Shoes",
+      "description": "每个人分享他们当前鞋子的照片并讲述背后的故事。这个古怪而低压力的活动能够在虚拟团队成员之间建立连接，经常引发意想不到的有趣故事。",
+      "category": "Virtual Meeting",
+      "players": "5-30 people",
+      "duration": "5-10 minutes",
+      "difficulty": "Easy",
+      "materials": "相机/手机，共享屏幕或聊天",
+      "steps": "步骤1：要求每个人拍摄他们鞋子的照片\n步骤2：通过屏幕共享或聊天分享照片\n步骤3：每个人解释他们的鞋子选择\n步骤4：可选：投票选出最有趣的一双",
+      "tags": ["远程友好", "讲故事", "个人化", "视觉", "虚拟破冰"],
+      "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+    },
+    {
+      "title": "Chat Waterfall",
+      "description": "每个人同时输入答案然后一起发送，创造'瀑布'效果。这是一个高能量的虚拟破冰游戏，让每个人立即参与，特别适合大型团体。",
+      "category": "Virtual Meeting",
+      "players": "5-50 people", 
+      "duration": "3-8 minutes",
+      "difficulty": "Easy",
+      "materials": "带聊天功能的视频会议",
+      "steps": "步骤1：问一个问题，如'最喜欢的零食'\n步骤2：每个人输入答案但不发送\n步骤3：数到3，每个人同时发送\n步骤4：享受回应的瀑布效果",
+      "tags": ["高能量", "视觉", "同步", "聊天", "虚拟破冰"],
+      "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+    },
+    {
+      "title": "Two Truths and One Lie",
+      "description": "经典游戏，参与者分享关于自己的两个真相和一个谎言。这个永恒的破冰游戏能够揭示关于同事的惊人事实，建立融洽关系和轻松幽默。",
+      "category": "Team Building",
+      "players": "4-30 people",
+      "duration": "10-15 minutes",
+      "difficulty": "Easy", 
+      "materials": "无需材料",
+      "steps": "步骤1：每个人准备两个真相和一个谎言\n步骤2：分享所有三个陈述\n步骤3：团体投票哪个是谎言\n步骤4：揭示答案并讨论有趣的真相",
+      "tags": ["经典", "讲故事", "猜测", "个人化", "相互了解"],
+      "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+    },
+    {
+      "title": "Portrait Gallery",
+      "description": "团队通过每15秒轮换艺术家来为彼此创作快速肖像。这个创意活动产生精彩多样的图像，可以在完成后展示在会议室中。",
+      "category": "Team Building",
+      "players": "10-30 people",
+      "duration": "10-15 minutes",
+      "difficulty": "Easy",
+      "materials": "绘画材料，纸张",
+      "steps": "步骤1：分为A队（模特）和B队（艺术家）\n步骤2：艺术家画15秒，然后轮换\n步骤3：继续直到每个人都画了每个人\n步骤4：展示协作肖像",
+      "tags": ["创意", "艺术", "协作", "趣味", "趣味破冰"],
+      "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+    },
+    {
+      "title": "Marshmallow Challenge", 
+      "description": "使用意大利面、胶带、绳子建造最高的塔，顶部放棉花糖。这个著名的团队建设挑战练习原型制作和团队合作，经常产生意想不到的结果。",
+      "category": "Team Building",
+      "players": "8-40 people",
+      "duration": "18-25 minutes",
+      "difficulty": "Medium",
+      "materials": "意大利面，胶带，绳子，棉花糖",
+      "steps": "步骤1：组成4-5人的团队\n步骤2：建造最高的自立结构\n步骤3：棉花糖必须在顶部\n步骤4：测量并庆祝最高的塔",
+      "tags": ["工程", "协作", "解决问题", "竞争", "团队合作提升"],
+      "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+    }
+  ]
+}

@@ -1,0 +1,1432 @@
+{
+  "metadata": {
+    "collectionDate": "2026-01-07",
+    "sources": [
+      "URL 1: https://www.sessionlab.com/blog/icebreaker-games/",
+      "URL 2: https://teambuilding.com/blog/icebreaker-games",
+      "URL 3: https://sapro.moderncampus.com/blog/60-awesome-icebreakers-for-orientation-and-beyond",
+      "URL 4: https://www.playmeo.com/activities/?type=ice-breakers-get-to-know-you-games",
+      "URL 5: https://www.digiformag.com/en/the-top-8-engaging-ice-breaking-exercises-for-professional-trainers/",
+      "URL 6: https://www.figma.com/resource-library/icebreaker-ideas/",
+      "URL 7: https://www.maryville.edu/cse/wp-content/uploads/sites/62/2016/09/Icebreakers-Team-Builders.pdf",
+      "URL 8: https://livestorm.co/ice-breaker-games",
+      "https://www.sessionlab.com/blog/icebreaker-games/ (SessionLab categorized)"
+    ],
+    "notes": "Merged collection with SessionLab categorized games integrated",
+    "totalGames": 84,
+    "sessionLabCategories": {
+      "meeting_icebreakers": "会议破冰游戏",
+      "quick_5_minute": "5分钟快速破冰",
+      "fun_icebreakers": "趣味破冰游戏",
+      "virtual_icebreakers": "虚拟破冰游戏",
+      "get_to_know": "相互了解游戏",
+      "team_building_deep": "深度团队建设",
+      "large_group": "大型团体活动",
+      "teamwork_improvement": "团队合作提升"
+    }
+  },
+  "games": [
+    {
+      "title": "Line-Up",
+      "description": "A non-verbal ordering challenge where participants silently arrange themselves by a given criterion, building focus, teamwork, and observational communication.",
+      "category": "Team Building",
+      "players": "10-40 people",
+      "duration": "5-15 minutes",
+      "difficulty": "Easy",
+      "materials": "None required",
+      "steps": "Step 1: Explain non-verbal rule.\nStep 2: Announce a criterion (e.g., height, tenure).\nStep 3: Participants silently form an ordered line.\nStep 4: Debrief on strategies and signals.",
+      "tags": [
+        "non-verbal",
+        "collaboration",
+        "quick",
+        "large-group"
+      ],
+      "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+    },
+    {
+      "title": "Rock Paper Scissors Tournament",
+      "description": "A high-energy elimination bracket using Rock–Paper–Scissors, where losers become fans who cheer for winners, quickly energizing any group.",
+      "category": "Team Building",
+      "players": "8-200+ people",
+      "duration": "5-10 minutes",
+      "difficulty": "Easy",
+      "materials": "None required",
+      "steps": "Step 1: Pair participants and play quick rounds.\nStep 2: Losers become fans of their winner.\nStep 3: Match winners until two finalists remain.\nStep 4: Run the final match and celebrate.",
+      "tags": [
+        "energizer",
+        "competition",
+        "fun",
+        "large-group"
+      ],
+      "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+    },
+    {
+      "title": "Take a Picture of Your Shoes",
+      "description": "Participants share a photo of their shoes and a brief story, creating quick personal connections and light humor in virtual or hybrid meetings.",
+      "category": "Virtual Meeting",
+      "players": "5-30 people",
+      "duration": "5-10 minutes",
+      "difficulty": "Easy",
+      "materials": "Camera or phone; shared chat/board",
+      "steps": "Step 1: Ask everyone to snap and share shoe photos.\nStep 2: Invite short stories behind the shoes.\nStep 3: Optional voting on fun or unique pairs.",
+      "tags": [
+        "storytelling",
+        "remote-friendly",
+        "quick",
+        "check-in"
+      ],
+      "source": "https://www.sessionlab.com/library/icebreaker"
+    },
+    {
+      "title": "Near and Far",
+      "description": "A movement-based warm-up where participants position themselves near or far from prompts, sparking discussion on group dynamics, assumptions, and perspectives.",
+      "category": "Classroom",
+      "players": "10-50 people",
+      "duration": "10-20 minutes",
+      "difficulty": "Easy",
+      "materials": "Open space; prompts",
+      "steps": "Step 1: Present a prompt (viewpoint or experience).\nStep 2: Participants position themselves physically near or far.\nStep 3: Invite reflections and observations.\nStep 4: Debrief on assumptions and communication.",
+      "tags": [
+        "reflection",
+        "movement",
+        "culture",
+        "discussion"
+      ],
+      "source": "https://www.sessionlab.com/blog/icebreaker-games-for-students/"
+    },
+    {
+      "title": "Icebreaker Bingo",
+      "description": "Players mingle to find colleagues who match prompts on Bingo squares; first to complete a line wins, encouraging conversation and rapid introductions.",
+      "category": "Team Building",
+      "players": "12-100+ people",
+      "duration": "10-20 minutes",
+      "difficulty": "Easy",
+      "materials": "Bingo cards; pens; optional prizes",
+      "steps": "Step 1: Distribute cards with personal prompts.\nStep 2: Mingle to find matches and mark squares.\nStep 3: Recognize first Bingo; continue as desired.\nStep 4: Optional blackout or multiple rounds.",
+      "tags": [
+        "mixer",
+        "large-group",
+        "prizes",
+        "quick"
+      ],
+      "source": "https://teambuilding.com/blog/icebreaker-games"
+    },
+    {
+      "title": "Six Word Memoirs",
+      "description": "Each participant summarizes their life in six words, then shares and discusses choices, sparking curiosity and deeper conversation.",
+      "category": "Team Building",
+      "players": "4-30 people",
+      "duration": "10-15 minutes",
+      "difficulty": "Easy",
+      "materials": "Paper or shared doc",
+      "steps": "Step 1: Explain the six-word constraint.\nStep 2: Quietly draft six-word memoirs.\nStep 3: Share and discuss why those words.\nStep 4: Optional small-group breakout shares.",
+      "tags": [
+        "storytelling",
+        "reflection",
+        "conversation",
+        "quick"
+      ],
+      "source": "https://teambuilding.com/blog/icebreaker-games"
+    },
+    {
+      "title": "Would You Rather",
+      "description": "Participants choose between two hypothetical options and explain their reasoning, revealing preferences, values, and sparking lively discussion.",
+      "category": "Team Building",
+      "players": "4-30 people",
+      "duration": "10-15 minutes",
+      "difficulty": "Easy",
+      "materials": "Question list",
+      "steps": "Step 1: Share \"Would you rather...\" questions.\nStep 2: Each participant chooses and explains.\nStep 3: Encourage follow-ups and perspective shifts.\nStep 4: Optional themed rounds (work, hobbies, sci-fi).",
+      "tags": [
+        "discussion",
+        "preferences",
+        "quick",
+        "adaptable"
+      ],
+      "source": "https://teambuilding.com/blog/icebreaker-games"
+    },
+    {
+      "title": "Guess Who (Personal Trivia)",
+      "description": "Players submit unique facts; the group guesses the author of each fact, building curiosity, rapport, and quick personal connections.",
+      "category": "Team Building",
+      "players": "8-40 people",
+      "duration": "10-20 minutes",
+      "difficulty": "Easy",
+      "materials": "Paper; bowl; pens",
+      "steps": "Step 1: Each player writes 1–3 unique facts and folds.\nStep 2: Draw a fact and read it aloud.\nStep 3: Group guesses the author; reveal and discuss.\nStep 4: Continue until all facts are revealed.",
+      "tags": [
+        "curiosity",
+        "mixer",
+        "fun",
+        "get-to-know"
+      ],
+      "source": "https://teambuilding.com/blog/icebreaker-games"
+    },
+    {
+      "title": "Two Truths and a Lie",
+      "description": "Participants share two truths and one lie about themselves; the group guesses the lie, building rapport and light humor.",
+      "category": "Virtual Meeting",
+      "players": "4-30 people",
+      "duration": "10-15 minutes",
+      "difficulty": "Easy",
+      "materials": "None required",
+      "steps": "Step 1: Explain the two-truths-and-one-lie format.\nStep 2: Each participant shares three statements.\nStep 3: Group guesses which is the lie.\nStep 4: Reveal and optionally discuss stories.",
+      "tags": [
+        "get-to-know",
+        "fun",
+        "remote-friendly",
+        "conversation"
+      ],
+      "source": "https://livestorm.co/ice-breaker"
+    },
+    {
+      "title": "Emoji Introductions",
+      "description": "Participants introduce themselves using emojis to represent interests or mood, prompting creativity and quick connection.",
+      "category": "Virtual Meeting",
+      "players": "5-50 people",
+      "duration": "5-10 minutes",
+      "difficulty": "Easy",
+      "materials": "Chat or whiteboard with emojis",
+      "steps": "Step 1: Ask each person to pick 3–5 emojis to introduce themselves.\nStep 2: Share and briefly explain choices.\nStep 3: Optional: vote or react with emojis.",
+      "tags": [
+        "creative",
+        "remote-friendly",
+        "quick",
+        "intro"
+      ],
+      "source": "https://livestorm.co/ice-breaker"
+    },
+    {
+      "title": "Wheel of Fortune Introductions",
+      "description": "Use a virtual wheel with fun prompts; participants spin and answer, fostering playful introductions and engagement.",
+      "category": "Virtual Meeting",
+      "players": "6-50 people",
+      "duration": "8-15 minutes",
+      "difficulty": "Easy",
+      "materials": "Virtual wheel tool; prompt list",
+      "steps": "Step 1: Prepare a wheel with intro prompts.\nStep 2: Participants spin and answer the prompt.\nStep 3: Keep turns short to maintain pace.",
+      "tags": [
+        "engagement",
+        "fun",
+        "prompt",
+        "intro"
+      ],
+      "source": "https://livestorm.co/ice-breaker-games/quick-ice-breaker-games"
+    },
+    {
+      "title": "Where Do We Come From & What Is Famous?",
+      "description": "Participants share hometowns or backgrounds and what’s famous there, building cultural awareness and personal connection.",
+      "category": "Conference",
+      "players": "6-50 people",
+      "duration": "10-20 minutes",
+      "difficulty": "Easy",
+      "materials": "Map or slides (optional)",
+      "steps": "Step 1: Invite each person to share their hometown.\nStep 2: Describe what the place is known for.\nStep 3: Optional: pin locations on a shared map.",
+      "tags": [
+        "culture",
+        "stories",
+        "mixer",
+        "map"
+      ],
+      "source": "https://livestorm.co/ice-breaker-games/quick-ice-breaker-games"
+    },
+    {
+      "title": "Fantasy Vacation",
+      "description": "Participants share dream travel destinations and activities, discovering interests and sparking conversation.",
+      "category": "Social Event",
+      "players": "4-30 people",
+      "duration": "8-15 minutes",
+      "difficulty": "Easy",
+      "materials": "None required",
+      "steps": "Step 1: Ask for dream vacation spots.\nStep 2: Share activities or itineraries.\nStep 3: Optional: vote on most creative plan.",
+      "tags": [
+        "travel",
+        "creative",
+        "discussion",
+        "fun"
+      ],
+      "source": "https://livestorm.co/ice-breaker-games/quick-ice-breaker-games"
+    },
+    {
+      "title": "Mystery Envelope",
+      "description": "Surprise prompts or mini-challenges are drawn from envelopes; participants discuss or act them out to spark laughs and interaction.",
+      "category": "Conference",
+      "players": "6-50 people",
+      "duration": "10-15 minutes",
+      "difficulty": "Easy",
+      "materials": "Envelopes; printed prompts",
+      "steps": "Step 1: Prepare envelopes with prompts.\nStep 2: Participants draw and complete the prompt.\nStep 3: Keep rounds fast; encourage reactions.",
+      "tags": [
+        "surprise",
+        "prompt",
+        "fun",
+        "engagement"
+      ],
+      "source": "https://livestorm.co/ice-breaker"
+    },
+    {
+      "title": "The Check-In",
+      "description": "A brief emotional or energy check-in where participants share how they feel, helping teams arrive and align.",
+      "category": "Meeting",
+      "players": "3-20 people",
+      "duration": "5-10 minutes",
+      "difficulty": "Easy",
+      "materials": "None required",
+      "steps": "Step 1: Invite one-word or short check-ins.\nStep 2: Optionally use a mood scale or emojis.\nStep 3: Acknowledge and proceed with agenda.",
+      "tags": [
+        "check-in",
+        "alignment",
+        "wellbeing",
+        "quick"
+      ],
+      "source": "https://livestorm.co/ice-breaker"
+    },
+    {
+      "title": "Team Superpower Collage",
+      "description": "Participants create a visual collage showing imagined team superpowers, boosting creativity and identity.",
+      "category": "Training",
+      "players": "6-25 people",
+      "duration": "15-25 minutes",
+      "difficulty": "Easy",
+      "materials": "Whiteboard; images; stickers",
+      "steps": "Step 1: Explain superpower theme.\nStep 2: Collaboratively add images/notes to a collage.\nStep 3: Share and discuss themes.",
+      "tags": [
+        "creative",
+        "visual",
+        "team-identity",
+        "collaboration"
+      ],
+      "source": "https://livestorm.co/ice-breaker"
+    },
+    {
+      "title": "Invention Pitch",
+      "description": "Small groups pitch playful inventions to judges, encouraging creativity, storytelling, and persuasive skills.",
+      "category": "Training",
+      "players": "6-30 people",
+      "duration": "15-25 minutes",
+      "difficulty": "Medium",
+      "materials": "Timer; prompt cards",
+      "steps": "Step 1: Form small teams and assign prompts.\nStep 2: Prepare quick invention pitches.\nStep 3: Present; allow brief Q&A; optional voting.",
+      "tags": [
+        "pitch",
+        "creativity",
+        "storytelling",
+        "competition"
+      ],
+      "source": "https://livestorm.co/ice-breaker"
+    },
+    {
+      "title": "Skribbl (Pictionary Online)",
+      "description": "An online drawing-and-guessing game that builds quick thinking and teamwork in remote settings.",
+      "category": "Virtual Meeting",
+      "players": "4-12 people",
+      "duration": "10-20 minutes",
+      "difficulty": "Easy",
+      "materials": "Skribbl or similar tool",
+      "steps": "Step 1: Open a shared drawing room.\nStep 2: Take turns drawing words; others guess.\nStep 3: Keep rounds short; rotate quickly.",
+      "tags": [
+        "remote-friendly",
+        "drawing",
+        "guessing",
+        "fun"
+      ],
+      "source": "https://livestorm.co/ice-breaker"
+    },
+    {
+      "title": "This or That Questions",
+      "description": "Quick binary-choice prompts (this or that) to reveal preferences and warm up discussion.",
+      "category": "Meeting",
+      "players": "4-50 people",
+      "duration": "5-10 minutes",
+      "difficulty": "Easy",
+      "materials": "Prompt list",
+      "steps": "Step 1: Share quick pairs (e.g., coffee or tea).\nStep 2: Participants choose and explain briefly.\nStep 3: Keep pace brisk; rotate prompts.",
+      "tags": [
+        "preferences",
+        "quick",
+        "discussion",
+        "intro"
+      ],
+      "source": "https://livestorm.co/ice-breaker"
+    },
+    {
+      "title": "Show and Tell",
+      "description": "Participants share a meaningful item or story, fostering empathy and personal connection.",
+      "category": "Social Event",
+      "players": "4-20 people",
+      "duration": "10-20 minutes",
+      "difficulty": "Easy",
+      "materials": "Personal item or image",
+      "steps": "Step 1: Invite each person to show an item.\nStep 2: Share the story or meaning.\nStep 3: Optional: Q&A or reactions.",
+      "tags": [
+        "empathy",
+        "story",
+        "personal",
+        "connection"
+      ],
+      "source": "https://livestorm.co/ice-breaker"
+    },
+    {
+      "title": "Guess Who",
+      "description": "Participants submit quirky facts; the group guesses who each fact belongs to, encouraging curiosity and interaction.",
+      "category": "Social Event",
+      "players": "6-40 people",
+      "duration": "10-20 minutes",
+      "difficulty": "Easy",
+      "materials": "Paper or form; bowl",
+      "steps": "Step 1: Collect one quirky fact per person.\nStep 2: Draw and read facts; group guesses.\nStep 3: Reveal and briefly discuss.",
+      "tags": [
+        "curiosity",
+        "mixer",
+        "fun",
+        "get-to-know"
+      ],
+      "source": "https://livestorm.co/ice-breaker"
+    },
+    {
+      "title": "Never Have I Ever",
+      "description": "Participants share things they’ve never done; others indicate if they have, creating light-hearted discovery.",
+      "category": "Social Event",
+      "players": "6-30 people",
+      "duration": "10-15 minutes",
+      "difficulty": "Easy",
+      "materials": "None required",
+      "steps": "Step 1: Share a \"Never have I ever...\" statement.\nStep 2: Indicate if done (raise hand, emoji).\nStep 3: Optional: share brief stories.",
+      "tags": [
+        "fun",
+        "mixer",
+        "stories",
+        "quick"
+      ],
+      "source": "https://livestorm.co/ice-breaker"
+    },
+    {
+      "title": "Story Swap",
+      "description": "Pairs exchange short personal stories using visual prompts, building trust, listening, and creativity.",
+      "category": "Ice Breakers",
+      "players": "6-40 people",
+      "duration": "10-15 minutes",
+      "difficulty": "Easy",
+      "materials": "Prompt cards or images",
+      "steps": "Step 1: Form pairs and provide visual prompts.\nStep 2: Partner A shares a brief story; Partner B listens.\nStep 3: Swap roles; optional group share.",
+      "tags": [
+        "storytelling",
+        "pairs",
+        "listening",
+        "creative"
+      ],
+      "source": "https://www.playmeo.com/activities/?type=ice-breakers-get-to-know-you-games"
+    },
+    {
+      "title": "If Then",
+      "description": "Participants complete playful \"If I were..., then I would...\" prompts to spark imagination and rapport.",
+      "category": "Ice Breakers",
+      "players": "5-30 people",
+      "duration": "8-12 minutes",
+      "difficulty": "Easy",
+      "materials": "Prompt list",
+      "steps": "Step 1: Share \"If/Then\" prompts (e.g., If I were a city...).\nStep 2: Participants answer and briefly explain.\nStep 3: Optional: small-group rounds or voting.",
+      "tags": [
+        "creative",
+        "prompt",
+        "fun",
+        "intro"
+      ],
+      "source": "https://www.playmeo.com/activities/?type=ice-breakers-get-to-know-you-games"
+    },
+    {
+      "title": "Crossword Names",
+      "description": "Create a name \"crossword\" by intersecting letters of participants’ names, helping name recall and connection.",
+      "category": "Ice Breakers",
+      "players": "8-30 people",
+      "duration": "10-15 minutes",
+      "difficulty": "Easy",
+      "materials": "Large paper or whiteboard; markers",
+      "steps": "Step 1: Write a name; add other names intersecting shared letters.\nStep 2: Invite each person to introduce themselves as they add.\nStep 3: Review the grid together.",
+      "tags": [
+        "names",
+        "visual",
+        "group-intro",
+        "creative"
+      ],
+      "source": "https://www.playmeo.com/activities/?type=ice-breakers-get-to-know-you-games"
+    },
+    {
+      "title": "Blind Name-Tag",
+      "description": "Wear name-tags on backs; mingle and guess identities with clues, creating laughter and quick intros.",
+      "category": "Ice Breakers",
+      "players": "8-40 people",
+      "duration": "10-15 minutes",
+      "difficulty": "Easy",
+      "materials": "Name tags; markers",
+      "steps": "Step 1: Place each person’s name-tag on their back.\nStep 2: Mingle and ask yes/no questions to guess your name.\nStep 3: Reveal and do quick introductions.",
+      "tags": [
+        "names",
+        "mixer",
+        "fun",
+        "movement"
+      ],
+      "source": "https://www.playmeo.com/activities/?type=ice-breakers-get-to-know-you-games"
+    },
+    {
+      "title": "Dicebreakers",
+      "description": "Roll a die to select conversation prompts; share brief responses to build meaningful connections.",
+      "category": "Ice Breakers",
+      "players": "4-30 people",
+      "duration": "8-12 minutes",
+      "difficulty": "Easy",
+      "materials": "Dice; prompt list (1–6)",
+      "steps": "Step 1: Assign prompts to numbers 1–6.\nStep 2: Roll and answer the matching prompt.\nStep 3: Rotate quickly; encourage follow-up questions.",
+      "tags": [
+        "prompt",
+        "conversation",
+        "quick",
+        "fun"
+      ],
+      "source": "https://www.playmeo.com/activities/?type=ice-breakers-get-to-know-you-games"
+    },
+    {
+      "title": "Motion Name-Game",
+      "description": "Learn names with a unique motion attached to each person, reinforcing memory through movement.",
+      "category": "Ice Breakers",
+      "players": "8-30 people",
+      "duration": "8-12 minutes",
+      "difficulty": "Easy",
+      "materials": "Open space",
+      "steps": "Step 1: Stand in a circle; each person states name with a motion.\nStep 2: Group repeats name and motion in sequence.\nStep 3: Build the sequence around the circle.",
+      "tags": [
+        "names",
+        "movement",
+        "memory",
+        "energizer"
+      ],
+      "source": "https://www.playmeo.com/activities/?type=ice-breakers-get-to-know-you-games"
+    },
+    {
+      "title": "Sole Mate",
+      "description": "Quick partner-matching game using simple tokens or halves to form random pairs for activities.",
+      "category": "Ice Breakers",
+      "players": "10-60 people",
+      "duration": "5-8 minutes",
+      "difficulty": "Easy",
+      "materials": "Matching tokens or card halves",
+      "steps": "Step 1: Distribute paired tokens/halves.\nStep 2: Mingle to find your matching \"sole mate\".\nStep 3: Pair up and proceed to next activity.",
+      "tags": [
+        "pairs",
+        "quick",
+        "mixer",
+        "randomize"
+      ],
+      "source": "https://www.playmeo.com/activities/?type=ice-breakers-get-to-know-you-games"
+    },
+    {
+      "title": "Year Of The Coin",
+      "description": "Draw a coin with a year; share a memory from that year to spark stories and connection.",
+      "category": "Ice Breakers",
+      "players": "4-30 people",
+      "duration": "8-12 minutes",
+      "difficulty": "Easy",
+      "materials": "Jar of coins or printed years",
+      "steps": "Step 1: Each person draws a coin/year.\nStep 2: Share a memory or story linked to that year.\nStep 3: Encourage brief follow-ups; rotate.",
+      "tags": [
+        "stories",
+        "reflection",
+        "prompt",
+        "quick"
+      ],
+      "source": "https://www.playmeo.com/activities/?type=ice-breakers-get-to-know-you-games"
+    },
+    {
+      "title": "Name That Movie Quote",
+      "description": "Quote a line from a movie; the group guesses the film, creating playful competition and shared references.",
+      "category": "Games",
+      "players": "4-30 people",
+      "duration": "8-12 minutes",
+      "difficulty": "Easy",
+      "materials": "None required",
+      "steps": "Step 1: Participants take turns quoting a movie line.\nStep 2: Group guesses the movie.\nStep 3: Optional: keep score or themed rounds.",
+      "tags": [
+        "fun",
+        "competition",
+        "pop-culture",
+        "quick"
+      ],
+      "source": "https://www.figma.com/resource-library/icebreaker-ideas/"
+    },
+    {
+      "title": "Deserted Island Scenario",
+      "description": "Teams prioritize salvaged items to survive on a deserted island, fostering collaboration and critical thinking.",
+      "category": "Problem-Solving",
+      "players": "6-30 people",
+      "duration": "15-25 minutes",
+      "difficulty": "Medium",
+      "materials": "Item list; pens; optional timer",
+      "steps": "Step 1: Present a list of salvaged items.\nStep 2: Teams discuss and rank items for survival.\nStep 3: Debrief on reasoning and group dynamics.",
+      "tags": [
+        "teamwork",
+        "decision-making",
+        "discussion",
+        "scenario"
+      ],
+      "source": "https://www.figma.com/resource-library/icebreaker-ideas/"
+    },
+    {
+      "title": "10 Things in Common",
+      "description": "Pairs find ten commonalities beyond the obvious, encouraging conversation and discovery.",
+      "category": "Introductions",
+      "players": "6-50 people",
+      "duration": "8-12 minutes",
+      "difficulty": "Easy",
+      "materials": "None required",
+      "steps": "Step 1: Pair up participants.\nStep 2: Find and list ten things in common.\nStep 3: Optional: share top 3 with the group.",
+      "tags": [
+        "pairs",
+        "conversation",
+        "mixer",
+        "quick"
+      ],
+      "source": "https://www.figma.com/resource-library/icebreaker-ideas/"
+    },
+    {
+      "title": "Guess That Team Member",
+      "description": "Read anonymous facts and guess who they belong to, building curiosity and fun discovery.",
+      "category": "Introductions",
+      "players": "6-40 people",
+      "duration": "10-15 minutes",
+      "difficulty": "Easy",
+      "materials": "Paper strips or form; bowl",
+      "steps": "Step 1: Collect 5 facts per person anonymously.\nStep 2: Read facts; group guesses the person.\nStep 3: Reveal and briefly discuss.",
+      "tags": [
+        "curiosity",
+        "mixer",
+        "get-to-know",
+        "fun"
+      ],
+      "source": "https://www.figma.com/resource-library/icebreaker-ideas/"
+    },
+    {
+      "title": "Skittles Sharing",
+      "description": "Assign prompts to candy colors; participants answer based on colors they pick, encouraging varied sharing.",
+      "category": "Games",
+      "players": "6-40 people",
+      "duration": "8-12 minutes",
+      "difficulty": "Easy",
+      "materials": "Skittles or M&M’s; prompt key",
+      "steps": "Step 1: Define color-to-question mapping.\nStep 2: Each person picks candies and answers prompts.\nStep 3: Optional: reveal mapping after picking.",
+      "tags": [
+        "fun",
+        "prompt",
+        "sharing",
+        "mixer"
+      ],
+      "source": "https://www.figma.com/resource-library/icebreaker-ideas/"
+    },
+    {
+      "title": "News Headline Warm-up",
+      "description": "Create a catchy news headline about the meeting topic to prime brainstorming and focus.",
+      "category": "Brainstorming",
+      "players": "4-30 people",
+      "duration": "8-12 minutes",
+      "difficulty": "Easy",
+      "materials": "Sticky notes or shared doc",
+      "steps": "Step 1: Ask each person to write a headline for today’s topic.\nStep 2: Share and cluster similar themes.\nStep 3: Use top headlines to kick off discussion.",
+      "tags": [
+        "creative",
+        "topical",
+        "brainstorm",
+        "focus"
+      ],
+      "source": "https://www.figma.com/resource-library/icebreaker-ideas/"
+    },
+    {
+      "title": "Two Truths and a Dream",
+      "description": "A twist on \"Two truths and a lie\": share two facts and one aspiration to inspire connection.",
+      "category": "Introductions",
+      "players": "4-30 people",
+      "duration": "8-12 minutes",
+      "difficulty": "Easy",
+      "materials": "None required",
+      "steps": "Step 1: Explain the facts-plus-dream format.\nStep 2: Each person shares two truths and one dream.\nStep 3: Brief Q&A; encourage supportive reactions.",
+      "tags": [
+        "get-to-know",
+        "aspiration",
+        "positive",
+        "conversation"
+      ],
+      "source": "https://www.figma.com/resource-library/icebreaker-ideas/"
+    },
+    {
+      "title": "Reception Line",
+      "description": "Two facing lines answer quick prompts and rotate, enabling fast-paced introductions and sharing.",
+      "category": "Introductions",
+      "players": "10-50 people",
+      "duration": "10-15 minutes",
+      "difficulty": "Easy",
+      "materials": "Prompt list; timer",
+      "steps": "Step 1: Form two facing lines.\nStep 2: Ask a question; pairs share briefly.\nStep 3: Rotate and repeat with new prompts.",
+      "tags": [
+        "mixer",
+        "rotation",
+        "quick",
+        "intro"
+      ],
+      "source": "https://www.maryville.edu/cse/wp-content/uploads/sites/62/2016/09/Icebreakers-Team-Builders.pdf"
+    },
+    {
+      "title": "Runners (Seer–Runner–Builder)",
+      "description": "A communication relay: Seer describes, Runner transmits, Builder constructs. Highlights clarity and teamwork.",
+      "category": "Team Building",
+      "players": "6-24 people",
+      "duration": "15-20 minutes",
+      "difficulty": "Medium",
+      "materials": "Building supplies; sample model",
+      "steps": "Step 1: Assign roles: Seer, Runner, Builder.\nStep 2: Seer views model and instructs Runner (limited rules).\nStep 3: Runner relays to Builder; iterate to match model.",
+      "tags": [
+        "communication",
+        "roles",
+        "problem-solving",
+        "iteration"
+      ],
+      "source": "https://www.maryville.edu/cse/wp-content/uploads/sites/62/2016/09/Icebreakers-Team-Builders.pdf"
+    },
+    {
+      "title": "Category Mixer",
+      "description": "Call out a category; participants mingle to find others who match, then share mini-stories.",
+      "category": "Energizer",
+      "players": "10-60 people",
+      "duration": "8-12 minutes",
+      "difficulty": "Easy",
+      "materials": "Category list",
+      "steps": "Step 1: Announce a category (e.g., favorite sport).\nStep 2: Find others who match and cluster.\nStep 3: Share quick stories in clusters.",
+      "tags": [
+        "movement",
+        "mixer",
+        "fun",
+        "quick"
+      ],
+      "source": "https://www.maryville.edu/cse/wp-content/uploads/sites/62/2016/09/Icebreakers-Team-Builders.pdf"
+    },
+    {
+      "title": "Paper Bag Pickup",
+      "description": "A playful balance challenge: pick up a paper bag from the floor without using hands on the ground.",
+      "category": "Fun Games",
+      "players": "6-30 people",
+      "duration": "8-12 minutes",
+      "difficulty": "Easy",
+      "materials": "Paper bag",
+      "steps": "Step 1: Place a bag on the floor.\nStep 2: Take turns trying to pick it up using only your mouth.\nStep 3: Trim bag height to increase difficulty.",
+      "tags": [
+        "balance",
+        "fun",
+        "competition",
+        "energizer"
+      ],
+      "source": "https://www.maryville.edu/cse/wp-content/uploads/sites/62/2016/09/Icebreakers-Team-Builders.pdf"
+    },
+    {
+      "title": "Telephone Charades",
+      "description": "Blend of telephone and charades: act a prompt down a line; last person guesses, often hilariously.",
+      "category": "Fun Games",
+      "players": "10-40 people",
+      "duration": "10-15 minutes",
+      "difficulty": "Easy",
+      "materials": "Prompt list",
+      "steps": "Step 1: Form two lines; give end players prompts.\nStep 2: Act and pass the prompt down the line.\nStep 3: Final players guess the original prompt.",
+      "tags": [
+        "hilarious",
+        "movement",
+        "team",
+        "guessing"
+      ],
+      "source": "https://www.maryville.edu/cse/wp-content/uploads/sites/62/2016/09/Icebreakers-Team-Builders.pdf"
+    },
+    {
+      "title": "Human Bingo",
+      "description": "Mingle to find people matching statements on bingo cards; first to complete a line wins.",
+      "category": "Introductions",
+      "players": "12-100+ people",
+      "duration": "10-20 minutes",
+      "difficulty": "Easy",
+      "materials": "Bingo cards; pens",
+      "steps": "Step 1: Distribute bingo grids with prompts.\nStep 2: Mingle to find matches and mark squares.\nStep 3: Celebrate first bingo; continue as desired.",
+      "tags": [
+        "mixer",
+        "large-group",
+        "quick",
+        "prizes"
+      ],
+      "source": "https://www.digiformag.com/en/the-top-8-engaging-ice-breaking-exercises-for-professional-trainers/"
+    },
+    {
+      "title": "Marshmallow Challenge",
+      "description": "Teams build the tallest spaghetti tower that can support a marshmallow, practicing prototyping and teamwork.",
+      "category": "Problem-Solving",
+      "players": "8-40 people",
+      "duration": "15-25 minutes",
+      "difficulty": "Medium",
+      "materials": "Spaghetti; tape; string; marshmallow",
+      "steps": "Step 1: Form teams and explain constraints.\nStep 2: Prototype multiple structures quickly.\nStep 3: Measure tallest successful tower.",
+      "tags": [
+        "innovation",
+        "teamwork",
+        "prototype",
+        "competition"
+      ],
+      "source": "https://www.digiformag.com/en/the-top-8-engaging-ice-breaking-exercises-for-professional-trainers/"
+    },
+    {
+      "title": "Speed Networking",
+      "description": "Rotate through short 1:1 introductions to quickly meet many participants and build connections.",
+      "category": "Introductions",
+      "players": "10-60 people",
+      "duration": "12-20 minutes",
+      "difficulty": "Easy",
+      "materials": "Timer; bell (optional)",
+      "steps": "Step 1: Arrange two concentric circles or rows.\nStep 2: 2–3 minute chats; rotate on the bell.\nStep 3: Optional: exchange contacts.",
+      "tags": [
+        "networking",
+        "rotation",
+        "quick",
+        "1:1"
+      ],
+      "source": "https://www.digiformag.com/en/the-top-8-engaging-ice-breaking-exercises-for-professional-trainers/"
+    },
+    {
+      "title": "Picture Sharing",
+      "description": "Share a meaningful photo to introduce hobbies, values, or aspirations; discuss briefly.",
+      "category": "Introductions",
+      "players": "4-30 people",
+      "duration": "8-12 minutes",
+      "difficulty": "Easy",
+      "materials": "Printed or digital photos",
+      "steps": "Step 1: Ask each person to pick a meaningful photo.\nStep 2: Share and explain significance.\nStep 3: Optional: Q&A or reactions.",
+      "tags": [
+        "visual",
+        "story",
+        "empathy",
+        "remote-friendly"
+      ],
+      "source": "https://www.digiformag.com/en/the-top-8-engaging-ice-breaking-exercises-for-professional-trainers/"
+    },
+    {
+      "title": "The Name Game",
+      "description": "Introduce names with an alliterative adjective (e.g., \"Creative Carol\"); repeat to aid memory.",
+      "category": "Introductions",
+      "players": "8-40 people",
+      "duration": "8-12 minutes",
+      "difficulty": "Easy",
+      "materials": "None required",
+      "steps": "Step 1: Stand in a circle; share name + adjective.\nStep 2: Next person repeats previous and adds their own.\nStep 3: Continue around; final person recites all.",
+      "tags": [
+        "names",
+        "memory",
+        "circle",
+        "fun"
+      ],
+      "source": "https://www.digiformag.com/en/the-top-8-engaging-ice-breaking-exercises-for-professional-trainers/"
+    },
+    {
+      "title": "Would You Rather (Training)",
+      "description": "Pose light dilemmas related to training context; participants choose and explain reasoning.",
+      "category": "Discussion",
+      "players": "6-50 people",
+      "duration": "8-12 minutes",
+      "difficulty": "Easy",
+      "materials": "Question list or poll tool",
+      "steps": "Step 1: Share 2-option dilemmas.\nStep 2: Vote or choose; explain briefly.\nStep 3: Optional: themed rounds.",
+      "tags": [
+        "preferences",
+        "discussion",
+        "quick",
+        "poll"
+      ],
+      "source": "https://www.digiformag.com/en/the-top-8-engaging-ice-breaking-exercises-for-professional-trainers/"
+    },
+    {
+      "title": "Train Wreck",
+      "description": "Circle of chairs game with movement triggers; players swap seats when statements apply; high-energy mixer.",
+      "category": "Energizer",
+      "players": "12-50 people",
+      "duration": "10-15 minutes",
+      "difficulty": "Easy",
+      "materials": "Chairs; placeholder items",
+      "steps": "Step 1: Arrange chairs in a circle; mark spots.\nStep 2: Person in middle shares a statement; matching players move.\nStep 3: Call \"train wreck\" to reshuffle everyone.",
+      "tags": [
+        "movement",
+        "mixer",
+        "fun",
+        "large-group"
+      ],
+      "source": "https://sapro.moderncampus.com/blog/60-awesome-icebreakers-for-orientation-and-beyond"
+    },
+    {
+      "title": "Human Knot",
+      "description": "Form a tangled circle by holding hands with two non-adjacent people; untangle without letting go.",
+      "category": "Team Building",
+      "players": "8-30 people",
+      "duration": "10-15 minutes",
+      "difficulty": "Medium",
+      "materials": "Open space",
+      "steps": "Step 1: Form a circle; grab two non-adjacent hands.\nStep 2: Work together to untangle into a circle.\nStep 3: Split into smaller groups for large teams.",
+      "tags": [
+        "problem-solving",
+        "teamwork",
+        "movement",
+        "fun"
+      ],
+      "source": "https://sapro.moderncampus.com/blog/60-awesome-icebreakers-for-orientation-and-beyond"
+    },
+    {
+      "title": "Sing-Off",
+      "description": "Teams alternate singing songs containing a theme word; eliminates repeats; everyone participates.",
+      "category": "Fun Games",
+      "players": "10-60 people",
+      "duration": "10-15 minutes",
+      "difficulty": "Easy",
+      "materials": "Theme word list",
+      "steps": "Step 1: Pick a theme word (e.g., love).\nStep 2: Teams alternate singing applicable songs.\nStep 3: Eliminate repeats or skips; crown winner.",
+      "tags": [
+        "music",
+        "competition",
+        "energizer",
+        "fun"
+      ],
+      "source": "https://sapro.moderncampus.com/blog/60-awesome-icebreakers-for-orientation-and-beyond"
+    },
+    {
+      "title": "Alliterative Name Game",
+      "description": "Name plus themed alliteration; sequence builds memory as each person repeats and adds.",
+      "category": "Introductions",
+      "players": "8-40 people",
+      "duration": "8-12 minutes",
+      "difficulty": "Easy",
+      "materials": "Theme list (optional)",
+      "steps": "Step 1: Choose a theme; share name + matching word.\nStep 2: Next person repeats prior and adds theirs.\nStep 3: Continue; final person recites all.",
+      "tags": [
+        "names",
+        "memory",
+        "circle",
+        "theme"
+      ],
+      "source": "https://sapro.moderncampus.com/blog/60-awesome-icebreakers-for-orientation-and-beyond"
+    },
+    {
+      "title": "Beach Ball Q&A",
+      "description": "Write questions on a beach ball; toss and answer the question near left thumb on catch.",
+      "category": "Introductions",
+      "players": "10-40 people",
+      "duration": "10-15 minutes",
+      "difficulty": "Easy",
+      "materials": "Beach ball; marker",
+      "steps": "Step 1: Write get-to-know prompts on a ball.\nStep 2: Toss; catcher answers the nearest prompt.\nStep 3: Continue tossing and sharing.",
+      "tags": [
+        "movement",
+        "fun",
+        "prompt",
+        "mixer"
+      ],
+      "source": "https://sapro.moderncampus.com/blog/60-awesome-icebreakers-for-orientation-and-beyond"
+    },
+    {
+      "title": "Pterodactyl",
+      "description": "Say \"pterodactyl\" while hiding teeth with lips; roaring changes direction; showing teeth eliminates.",
+      "category": "Fun Games",
+      "players": "8-30 people",
+      "duration": "8-12 minutes",
+      "difficulty": "Easy",
+      "materials": "None required",
+      "steps": "Step 1: Sit or stand in a circle; keep teeth covered.\nStep 2: Say \"pterodactyl\" to pass turn; roar flips direction.\nStep 3: Anyone showing teeth is out.",
+      "tags": [
+        "hilarious",
+        "circle",
+        "quick",
+        "energizer"
+      ],
+      "source": "https://sapro.moderncampus.com/blog/60-awesome-icebreakers-for-orientation-and-beyond"
+    },
+    {
+      "title": "Telephone Charades (Lines)",
+      "description": "Two lines act prompts down the chain; last players guess original; great for large groups.",
+      "category": "Fun Games",
+      "players": "12-60 people",
+      "duration": "10-15 minutes",
+      "difficulty": "Easy",
+      "materials": "Prompt list",
+      "steps": "Step 1: Form two lines; give end players prompts.\nStep 2: Act and pass down the line.\nStep 3: Final players guess the prompt.",
+      "tags": [
+        "large-group",
+        "movement",
+        "team",
+        "guessing"
+      ],
+      "source": "https://sapro.moderncampus.com/blog/60-awesome-icebreakers-for-orientation-and-beyond"
+    },
+    {
+      "title": "Chainlink",
+      "description": "Build a chain of introductions by linking to shared commonalities; fosters quick rapport.",
+      "category": "Introductions",
+      "players": "8-40 people",
+      "duration": "10-15 minutes",
+      "difficulty": "Easy",
+      "materials": "None required",
+      "steps": "Step 1: First person introduces a fact.\nStep 2: Next links with a shared trait and adds theirs.\nStep 3: Continue to build the chain across the group.",
+      "tags": [
+        "common-ground",
+        "mixer",
+        "intro",
+        "fun"
+      ],
+      "source": "https://sapro.moderncampus.com/blog/60-awesome-icebreakers-for-orientation-and-beyond"
+    },
+    {
+      "title": "What Are You Bringing to the Meeting?",
+      "description": "一个正念签到活动，参与者写下担忧和能量水平，然后将其搁置以获得更好的专注力。帮助团队成员从之前的任务中转换过来，全身心投入到当前会议中。",
+      "category": "Team Building",
+      "players": "5-30 people",
+      "duration": "5-10 minutes",
+      "difficulty": "Easy",
+      "materials": "纸和笔",
+      "steps": "步骤1：要求参与者与自己进行内心对话\n步骤2：写下担忧、能量水平和想法\n步骤3：在会议期间将这些搁置一边\n步骤4：如果感到舒适，分享他们的感受",
+      "tags": [
+        "正念",
+        "签到",
+        "专注",
+        "心理重置",
+        "会议破冰"
+      ],
+      "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+    },
+    {
+      "title": "Weather Check-in",
+      "description": "使用天气隐喻分享感受，进行快速的团体情绪检查。这个简单而有效的活动特别适合远程团队，让每个人都能以安全的方式分享当前状态。",
+      "category": "Virtual Meeting",
+      "players": "5-25 people",
+      "duration": "3-8 minutes",
+      "difficulty": "Easy",
+      "materials": "无需材料",
+      "steps": "步骤1：要求每个人用天气描述当前感受\n步骤2：例如：'大部分是晴天，但有雨云在聚集'\n步骤3：快速轮流分享\n步骤4：确认团体的整体'天气'",
+      "tags": [
+        "签到",
+        "隐喻",
+        "快速",
+        "远程友好",
+        "会议破冰"
+      ],
+      "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+    },
+    {
+      "title": "Have You Ever? (Stand Up If)",
+      "description": "参与者对'你曾经...'问题回答是的话就站起来。这是一个有效的破冰游戏，帮助团体开始看到联系并以低压力的方式分享关于自己的信息。",
+      "category": "Team Building",
+      "players": "8-50 people",
+      "duration": "5-10 minutes",
+      "difficulty": "Easy",
+      "materials": "无需材料",
+      "steps": "步骤1：向团体提出'你曾经...'问题\n步骤2：能回答是的参与者站起来\n步骤3：站着的人可以提出下一个问题\n步骤4：继续进行5-8个问题",
+      "tags": [
+        "运动",
+        "连接",
+        "低压力",
+        "包容性",
+        "会议破冰"
+      ],
+      "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+    },
+    {
+      "title": "5-4-3-2-1 Grounding Technique",
+      "description": "正念练习，调动所有感官帮助参与者保持专注。通过要求参与者调动所有感官并深呼吸，可以帮助他们回到当下，控制焦虑和压力。",
+      "category": "Team Building",
+      "players": "5-30 people",
+      "duration": "3-5 minutes",
+      "difficulty": "Easy",
+      "materials": "无需材料",
+      "steps": "步骤1：说出5样你能看到的东西\n步骤2：说出4样你能触摸的东西\n步骤3：说出3样你能听到的东西\n步骤4：说出2样你能闻到的东西\n步骤5：说出1样你能尝到的东西",
+      "tags": [
+        "正念",
+        "接地",
+        "当下",
+        "减压",
+        "会议破冰"
+      ],
+      "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+    },
+    {
+      "title": "One Word at a Time",
+      "description": "团体通过每人贡献一个词来创建句子。这个简单而有效的活动可以轻松适应任何团体，鼓励创造力和协作思维。",
+      "category": "Team Building",
+      "players": "6-20 people",
+      "duration": "3-8 minutes",
+      "difficulty": "Easy",
+      "materials": "无需材料",
+      "steps": "步骤1：给出一个主题或起始词\n步骤2：围成圆圈，每人添加一个词\n步骤3：尝试创建一个完整的句子\n步骤4：加快速度或增加挑战以增加趣味",
+      "tags": [
+        "创意",
+        "协作",
+        "快速",
+        "适应性强",
+        "5分钟破冰"
+      ],
+      "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+    },
+    {
+      "title": "Count Up",
+      "description": "团体按顺序数数，不能重叠说话或建立模式。这个看似简单的挑战需要耐心、意识和团队合作，是建立专注力和连接的绝佳方式。",
+      "category": "Team Building",
+      "players": "8-25 people",
+      "duration": "3-10 minutes",
+      "difficulty": "Medium",
+      "materials": "无需材料",
+      "steps": "步骤1：设定目标数字（如20）\n步骤2：从1开始数，不能重叠或形成模式\n步骤3：如果两人同时说话，重新开始\n步骤4：达到目标时庆祝",
+      "tags": [
+        "专注",
+        "倾听",
+        "团队合作",
+        "耐心",
+        "5分钟破冰"
+      ],
+      "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+    },
+    {
+      "title": "Apple, Orange and Banana",
+      "description": "基于叫出的水果名称进行移动的身体激励器。参与者根据不同的水果指令做出相应动作，帮助团体同步并完全到达一个空间。",
+      "category": "Team Building",
+      "players": "8-30 people",
+      "duration": "3-8 minutes",
+      "difficulty": "Easy",
+      "materials": "开放空间",
+      "steps": "步骤1：围成圆圈，手放在前面人的肩膀上\n步骤2：苹果=向前移动，橙子=向后，香蕉=旋转\n步骤3：叫出水果，团体响应\n步骤4：用多个指令混合增加趣味",
+      "tags": [
+        "身体",
+        "激励器",
+        "趣味",
+        "同步",
+        "5分钟破冰"
+      ],
+      "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+    },
+    {
+      "title": "Name Game",
+      "description": "通过在添加自己的名字之前重复之前的名字来学习名字。这是一个有效的破冰游戏，适用于人们不知道彼此名字的课程、工作坊或会议开始时使用。",
+      "category": "Team Building",
+      "players": "8-20 people",
+      "duration": "5-10 minutes",
+      "difficulty": "Easy",
+      "materials": "无需材料",
+      "steps": "步骤1：坐成圆圈，每个人都能看到其他人\n步骤2：第一个人说出他们的名字\n步骤3：下一个人重复第一个名字，然后添加自己的\n步骤4：继续在圆圈中建立链条",
+      "tags": [
+        "名字",
+        "记忆",
+        "介绍",
+        "圆圈",
+        "5分钟破冰"
+      ],
+      "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+    },
+    {
+      "title": "Line Up",
+      "description": "非语言挑战，按给定标准排列而不说话。这是一个快速的破冰游戏，玩家必须在没有任何讨论或语言提示的情况下形成有序的队列。",
+      "category": "Team Building",
+      "players": "10-40 people",
+      "duration": "5-10 minutes",
+      "difficulty": "Easy",
+      "materials": "无需材料",
+      "steps": "步骤1：宣布排序标准（身高、生日等）\n步骤2：参与者不说话地排列自己\n步骤3：检查最终顺序\n步骤4：总结非语言沟通策略",
+      "tags": [
+        "非语言",
+        "协作",
+        "解决问题",
+        "运动",
+        "5分钟破冰"
+      ],
+      "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+    },
+    {
+      "title": "Chat Waterfall",
+      "description": "每个人同时输入答案然后一起发送，创造'瀑布'效果。这是一个高能量的虚拟破冰游戏，让每个人立即参与，特别适合大型团体。",
+      "category": "Virtual Meeting",
+      "players": "5-50 people",
+      "duration": "3-8 minutes",
+      "difficulty": "Easy",
+      "materials": "带聊天功能的视频会议",
+      "steps": "步骤1：问一个问题，如'最喜欢的零食'\n步骤2：每个人输入答案但不发送\n步骤3：数到3，每个人同时发送\n步骤4：享受回应的瀑布效果",
+      "tags": [
+        "高能量",
+        "视觉",
+        "同步",
+        "聊天",
+        "虚拟破冰"
+      ],
+      "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+    },
+    {
+      "title": "Emoji Check-In",
+      "description": "参与者仅使用表情符号表达他们的心情或能量。这个破冰游戏为情感表达创造空间，而不会让任何人感到被关注。",
+      "category": "Virtual Meeting",
+      "players": "5-50 people",
+      "duration": "3-5 minutes",
+      "difficulty": "Easy",
+      "materials": "带表情符号反应或聊天的视频平台",
+      "steps": "步骤1：要求每个人为当前心情选择表情符号\n步骤2：通过反应或聊天分享\n步骤3：可选：简要解释表情符号选择\n步骤4：确认团体的整体能量",
+      "tags": [
+        "快速",
+        "情感",
+        "视觉",
+        "签到",
+        "虚拟破冰"
+      ],
+      "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+    },
+    {
+      "title": "Remote Change 3 Things",
+      "description": "一个人在关闭摄像头时改变外观/背景的3样东西。这个活动激发笑声并鼓励注意细节，同时打破虚拟会议的常规。",
+      "category": "Virtual Meeting",
+      "players": "5-20 people",
+      "duration": "5-10 minutes",
+      "difficulty": "Easy",
+      "materials": "视频会议平台",
+      "steps": "步骤1：一个参与者关闭摄像头\n步骤2：他们改变3样小东西（眼镜、帽子、背景）\n步骤3：重新打开摄像头\n步骤4：其他人猜测改变了什么",
+      "tags": [
+        "观察",
+        "有趣",
+        "注意力",
+        "互动",
+        "虚拟破冰"
+      ],
+      "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+    },
+    {
+      "title": "Two Truths and One Lie",
+      "description": "经典游戏，参与者分享关于自己的两个真相和一个谎言。这个永恒的破冰游戏能够揭示关于同事的惊人事实，建立融洽关系和轻松幽默。",
+      "category": "Team Building",
+      "players": "4-30 people",
+      "duration": "10-15 minutes",
+      "difficulty": "Easy",
+      "materials": "无需材料",
+      "steps": "步骤1：每个人准备两个真相和一个谎言\n步骤2：分享所有三个陈述\n步骤3：团体投票哪个是谎言\n步骤4：揭示答案并讨论有趣的真相",
+      "tags": [
+        "经典",
+        "讲故事",
+        "猜测",
+        "个人化",
+        "相互了解"
+      ],
+      "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+    },
+    {
+      "title": "Diversity Bingo",
+      "description": "带有关于经验陈述的宾果卡 - 找到匹配每个方格的人。这是一个很好的破冰游戏，帮助参与者了解彼此并分享使他们与众不同的地方。",
+      "category": "Team Building",
+      "players": "12-50 people",
+      "duration": "10-20 minutes",
+      "difficulty": "Easy",
+      "materials": "宾果卡，笔",
+      "steps": "步骤1：创建带有经验陈述的3x3宾果卡\n步骤2：混合寻找匹配陈述的人\n步骤3：为匹配项获得签名\n步骤4：分享有趣的发现",
+      "tags": [
+        "多样性",
+        "混合器",
+        "发现",
+        "包容性",
+        "相互了解"
+      ],
+      "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+    },
+    {
+      "title": "Unique and Shared",
+      "description": "小组发现每个成员的共同点和独特特征。这是一个强大的破冰游戏，特别适合分组使用，尤其是在较长项目或培训计划开始时。",
+      "category": "Team Building",
+      "players": "8-30 people",
+      "duration": "15-20 minutes",
+      "difficulty": "Easy",
+      "materials": "纸，笔",
+      "steps": "步骤1：组成4-5人的小组\n步骤2：找到每个人都有的共同点\n步骤3：识别每个人的独特特征\n步骤4：与更大的团体分享发现",
+      "tags": [
+        "共同点",
+        "独特性",
+        "小组",
+        "发现",
+        "相互了解"
+      ],
+      "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+    },
+    {
+      "title": "Speed Dating Icebreaker",
+      "description": "快速连续的短对话以最大化网络建设。这个破冰游戏的目标是在极短的时间内与尽可能多的人进行一系列非常快速的对话。",
+      "category": "Team Building",
+      "players": "10-40 people",
+      "duration": "15-25 minutes",
+      "difficulty": "Easy",
+      "materials": "计时器，椅子",
+      "steps": "步骤1：将椅子排成对\n步骤2：为每次对话设置3分钟计时器\n步骤3：专注于专业信息交换\n步骤4：计时器响起时轮换伙伴",
+      "tags": [
+        "网络建设",
+        "专业",
+        "轮换",
+        "高效",
+        "相互了解"
+      ],
+      "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+    },
+    {
+      "title": "Portrait Gallery",
+      "description": "团队通过每15秒轮换艺术家来为彼此创作快速肖像。这个创意活动产生精彩多样的图像，可以在完成后展示在会议室中。",
+      "category": "Team Building",
+      "players": "10-30 people",
+      "duration": "10-15 minutes",
+      "difficulty": "Easy",
+      "materials": "绘画材料，纸张",
+      "steps": "步骤1：分为A队（模特）和B队（艺术家）\n步骤2：艺术家画15秒，然后轮换\n步骤3：继续直到每个人都画了每个人\n步骤4：展示协作肖像",
+      "tags": [
+        "创意",
+        "艺术",
+        "协作",
+        "趣味",
+        "趣味破冰"
+      ],
+      "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+    },
+    {
+      "title": "Minefield",
+      "description": "蒙眼参与者在队友声音引导下穿越障碍物。这个有趣的身体游戏可以帮助建立信任和更有效的团体沟通。",
+      "category": "Team Building",
+      "players": "8-20 people",
+      "duration": "10-15 minutes",
+      "difficulty": "Medium",
+      "materials": "眼罩，软障碍物（书籍、靠垫、玩具）",
+      "steps": "步骤1：在地板上设置无害障碍物\n步骤2：参与者轮流被蒙眼\n步骤3：队友引导他们通过路线\n步骤4：总结沟通和信任",
+      "tags": [
+        "信任",
+        "沟通",
+        "身体",
+        "团队合作",
+        "趣味破冰"
+      ],
+      "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+    },
+    {
+      "title": "Crazy Handshake",
+      "description": "配对创建独特的握手并在轮换伙伴关系中教给其他人。这是一个轻松而难忘的游戏，配对必须创建新的有趣握手。",
+      "category": "Team Building",
+      "players": "8-30 people",
+      "duration": "10-15 minutes",
+      "difficulty": "Easy",
+      "materials": "无需材料",
+      "steps": "步骤1：配对介绍自己并创建握手\n步骤2：分开并与新人配对\n步骤3：教授原始握手并创建新的\n步骤4：重复并分享所有学到的握手",
+      "tags": [
+        "创意",
+        "身体",
+        "难忘",
+        "伙伴关系",
+        "趣味破冰"
+      ],
+      "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+    },
+    {
+      "title": "The Movie Pitch Icebreaker",
+      "description": "小组基于主题创建和推介原创电影创意。这是一个有趣、快节奏的活动，小组创建原创电影创意并向团体推介。",
+      "category": "Team Building",
+      "players": "8-30 people",
+      "duration": "15-20 minutes",
+      "difficulty": "Easy",
+      "materials": "无需材料",
+      "steps": "步骤1：组成小组并给出主题\n步骤2：创建电影标题、情节和演员阵容\n步骤3：向团体推介，就像向工作室销售一样\n步骤4：可选：投票选出最佳推介",
+      "tags": [
+        "创意",
+        "讲故事",
+        "演示",
+        "团队合作",
+        "趣味破冰"
+      ],
+      "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+    },
+    {
+      "title": "Bang!",
+      "description": "快节奏的淘汰游戏，警长指向和快速反应。这是一个快节奏的破冰游戏，你必须有快速反应，否则你会被淘汰。",
+      "category": "Team Building",
+      "players": "8-25 people",
+      "duration": "5-10 minutes",
+      "difficulty": "Easy",
+      "materials": "无需材料",
+      "steps": "步骤1：围成圆圈站立，一个人作为警长在中间\n步骤2：警长指向某人，那人必须快速蹲下\n步骤3：两边的人必须快速'拔'武器\n步骤4：最慢的人成为新警长",
+      "tags": [
+        "激励器",
+        "反应",
+        "淘汰",
+        "趣味",
+        "趣味破冰"
+      ],
+      "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+    },
+    {
+      "title": "Group Map",
+      "description": "参与者根据成长地在想象的世界地图上定位自己。这是一个有趣、活跃的破冰游戏，让人们移动，同时也了解彼此。",
+      "category": "Team Building",
+      "players": "20-100+ people",
+      "duration": "10-15 minutes",
+      "difficulty": "Easy",
+      "materials": "大型开放空间",
+      "steps": "步骤1：将房间指定为世界地图\n步骤2：参与者按出生地/家乡定位自己\n步骤3：简要分享他们的位置\n步骤4：可选：分享从那个地方学到的价值观",
+      "tags": [
+        "地理",
+        "文化",
+        "运动",
+        "大规模",
+        "大型团体"
+      ],
+      "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+    },
+    {
+      "title": "Passions Tic Tac Toe",
+      "description": "用激情填充井字游戏网格，然后找到有匹配兴趣的其他人。这个破冰游戏的目标是帮助参与者在活动开始时了解彼此。",
+      "category": "Team Building",
+      "players": "15-100+ people",
+      "duration": "15-20 minutes",
+      "difficulty": "Easy",
+      "materials": "3x3网格，笔",
+      "steps": "步骤1：用个人激情填充3x3网格\n步骤2：混合寻找有相同激情的其他人\n步骤3：为匹配的方格获得签名\n步骤4：第一个连成三个的人获胜",
+      "tags": [
+        "激情",
+        "网络建设",
+        "竞争",
+        "发现",
+        "大型团体"
+      ],
+      "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+    },
+    {
+      "title": "Helium Stick",
+      "description": "团队必须在每个人保持手指接触的同时将棍子降到地面。这是一个看似简单的游戏，需要团队在保持同步的同时合作。",
+      "category": "Team Building",
+      "players": "8-20 people",
+      "duration": "10-15 minutes",
+      "difficulty": "Medium",
+      "materials": "长轻质棍子或杆子",
+      "steps": "步骤1：排成两排面对面\n步骤2：将棍子放在每个人的食指上\n步骤3：在不失去接触的情况下将棍子降到地面\n步骤4：如果有人失去接触就重新开始",
+      "tags": [
+        "协调",
+        "耐心",
+        "团队合作",
+        "挑战",
+        "团队合作提升"
+      ],
+      "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+    },
+    {
+      "title": "Desert Island",
+      "description": "团体决定在荒岛上生存保留哪些物品。这是一个经典的团队建设练习，将解决问题和谈判技能付诸考验。",
+      "category": "Team Building",
+      "players": "6-30 people",
+      "duration": "15-25 minutes",
+      "difficulty": "Medium",
+      "materials": "物品清单，纸张",
+      "steps": "步骤1：提供可用物品清单\n步骤2：团体必须同意保留有限数量\n步骤3：讨论和协商优先级\n步骤4：总结决策过程",
+      "tags": [
+        "决策",
+        "谈判",
+        "优先级",
+        "讨论",
+        "团队合作提升"
+      ],
+      "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+    }
+  ]
+}

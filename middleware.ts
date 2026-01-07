@@ -1,8 +1,10 @@
 import { type NextRequest, NextResponse } from "next/server";
 import { updateSession } from "@/lib/supabase/middleware";
+import { createClient } from "@/lib/supabase/server";
 
 export async function middleware(request: NextRequest) {
   const hostname = request.headers.get("host");
+  const pathname = request.nextUrl.pathname;
 
   // Redirect non-www to www
   if (hostname === "icebreakergames.site") {
@@ -10,6 +12,27 @@ export async function middleware(request: NextRequest) {
     url.hostname = "www.icebreakergames.site";
     url.protocol = "https";
     return NextResponse.redirect(url, 301);
+  }
+
+  // Handle UUID to slug redirects for game pages
+  const gameUuidMatch = pathname.match(/^\/games\/([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$/i);
+  if (gameUuidMatch) {
+    try {
+      const supabase = await createClient();
+      const { data: game } = await supabase
+        .from("games")
+        .select("slug")
+        .eq("id", gameUuidMatch[1])
+        .single();
+
+      if (game?.slug) {
+        const url = request.nextUrl.clone();
+        url.pathname = `/games/${game.slug}`;
+        return NextResponse.redirect(url, 301);
+      }
+    } catch (error) {
+      console.error("Error redirecting UUID to slug:", error);
+    }
   }
 
   return await updateSession(request);

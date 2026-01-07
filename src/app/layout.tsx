@@ -17,16 +17,13 @@ export const metadata: Metadata = {
   title: "Ice Breaker Games",
   description:
     "Discover the best ice breaker games for team building, virtual meetings, classrooms, and more. Find the perfect activity for your group.",
-  keywords: [
-    "ice breaker games",
-    "team building activities",
-    "virtual icebreakers",
-    "classroom games",
-    "conference activities",
-    "training games",
-  ],
   alternates: {
     canonical: "https://www.icebreakergames.site",
+  },
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
   },
   openGraph: {
     type: "website",

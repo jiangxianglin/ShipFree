@@ -1,0 +1,447 @@
+{
+  "metadata": {
+    "source": "https://www.sessionlab.com/blog/icebreaker-games/",
+    "collectionDate": "2025-01-07",
+    "description": "Ice breaker games organized by SessionLab categories",
+    "totalGames": 67,
+    "categories": [
+      "Meeting Icebreakers",
+      "Quick 5-Minute Icebreakers", 
+      "Fun Icebreakers",
+      "Virtual Icebreakers",
+      "Get to Know Each Other",
+      "Team Building & Deep Connection",
+      "Small Group Activities",
+      "Large Group Activities",
+      "Teamwork Improvement"
+    ]
+  },
+  "categories": {
+    "meeting_icebreakers": {
+      "name": "Meeting Icebreakers",
+      "description": "Perfect for starting team meetings and helping participants mentally arrive",
+      "games": [
+        {
+          "title": "What Are You Bringing to the Meeting?",
+          "description": "A mindful check-in where participants write down worries and energy levels, then set them aside for better focus",
+          "category": "Meeting Icebreakers",
+          "players": "5-30 people",
+          "duration": "5-10 minutes",
+          "difficulty": "Easy",
+          "materials": "Paper and pens",
+          "steps": "Step 1: Ask participants to check-in with themselves\nStep 2: Write down worries, energy levels, and thoughts\nStep 3: Put these aside for the meeting duration\nStep 4: Share how they're feeling if comfortable",
+          "tags": ["mindful", "check-in", "focus", "mental-reset"],
+          "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+        },
+        {
+          "title": "Rock Paper Scissors Tournament",
+          "description": "Traditional game with a twist - losers become fans who cheer for remaining players",
+          "category": "Meeting Icebreakers", 
+          "players": "8-200+ people",
+          "duration": "5-10 minutes",
+          "difficulty": "Easy",
+          "materials": "None required",
+          "steps": "Step 1: Everyone pairs up for Rock Paper Scissors\nStep 2: Losers become fans of winners\nStep 3: Winners continue playing while fans cheer\nStep 4: Continue until final two players remain",
+          "tags": ["energizer", "competition", "large-group", "fun"],
+          "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+        },
+        {
+          "title": "Weather Check-in",
+          "description": "Share feelings using weather metaphors for a quick group sentiment check",
+          "category": "Meeting Icebreakers",
+          "players": "5-25 people", 
+          "duration": "3-8 minutes",
+          "difficulty": "Easy",
+          "materials": "None required",
+          "steps": "Step 1: Ask each person to describe their current feeling as weather\nStep 2: Examples: 'sunny skies with rain clouds looming'\nStep 3: Go around the group quickly\nStep 4: Acknowledge the group's overall 'weather'",
+          "tags": ["check-in", "metaphor", "quick", "remote-friendly"],
+          "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+        },
+        {
+          "title": "Have You Ever? (Stand Up If)",
+          "description": "Participants stand if they can answer yes to 'Have you ever...' questions",
+          "category": "Meeting Icebreakers",
+          "players": "8-50 people",
+          "duration": "5-10 minutes", 
+          "difficulty": "Easy",
+          "materials": "None required",
+          "steps": "Step 1: Ask 'Have you ever...' questions\nStep 2: Participants stand if answer is yes\nStep 3: Those standing can ask the next question\nStep 4: Continue with 5-8 questions",
+          "tags": ["movement", "connections", "low-pressure", "inclusive"],
+          "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+        },
+        {
+          "title": "5-4-3-2-1 Grounding Technique",
+          "description": "Mindful exercise engaging all senses to help participants be present",
+          "category": "Meeting Icebreakers",
+          "players": "5-30 people",
+          "duration": "3-5 minutes",
+          "difficulty": "Easy", 
+          "materials": "None required",
+          "steps": "Step 1: Name 5 things you can see\nStep 2: Name 4 things you can touch\nStep 3: Name 3 things you can hear\nStep 4: Name 2 things you can smell\nStep 5: Name 1 thing you can taste",
+          "tags": ["mindful", "grounding", "present", "stress-relief"],
+          "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+        }
+      ]
+    },
+    "quick_5_minute_icebreakers": {
+      "name": "Quick 5-Minute Icebreakers", 
+      "description": "Fast activities perfect for tight agendas and quick warm-ups",
+      "games": [
+        {
+          "title": "One Word at a Time",
+          "description": "Groups create sentences by contributing one word each while going around the circle",
+          "category": "Quick 5-Minute Icebreakers",
+          "players": "6-20 people",
+          "duration": "3-8 minutes",
+          "difficulty": "Easy",
+          "materials": "None required", 
+          "steps": "Step 1: Give a topic or starting word\nStep 2: Go around circle, each person adds one word\nStep 3: Try to create a complete sentence\nStep 4: Speed up or add challenges for fun",
+          "tags": ["creative", "collaboration", "quick", "adaptable"],
+          "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+        },
+        {
+          "title": "Count Up",
+          "description": "Group counts sequentially without speaking over each other or establishing patterns",
+          "category": "Quick 5-Minute Icebreakers",
+          "players": "8-25 people",
+          "duration": "3-10 minutes",
+          "difficulty": "Medium",
+          "materials": "None required",
+          "steps": "Step 1: Set a target number (like 20)\nStep 2: Count from 1 without overlapping or patterns\nStep 3: If two speak at once, start over\nStep 4: Celebrate when target is reached",
+          "tags": ["focus", "listening", "teamwork", "patience"],
+          "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+        },
+        {
+          "title": "Apple, Orange and Banana",
+          "description": "Physical energizer where participants move based on called fruit names",
+          "category": "Quick 5-Minute Icebreakers", 
+          "players": "8-30 people",
+          "duration": "3-8 minutes",
+          "difficulty": "Easy",
+          "materials": "Open space",
+          "steps": "Step 1: Stand in circle, hands on shoulders of person in front\nStep 2: Apple = move forward, Orange = backward, Banana = spin\nStep 3: Call out fruits, group responds\nStep 4: Mix it up with multiple commands",
+          "tags": ["physical", "energizer", "fun", "synchronization"],
+          "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+        },
+        {
+          "title": "Name Game",
+          "description": "Learn names by repeating previous names before adding your own",
+          "category": "Quick 5-Minute Icebreakers",
+          "players": "8-20 people", 
+          "duration": "5-10 minutes",
+          "difficulty": "Easy",
+          "materials": "None required",
+          "steps": "Step 1: Sit in circle where everyone can see each other\nStep 2: First person says their name\nStep 3: Next person repeats first name, then adds theirs\nStep 4: Continue building the chain around circle",
+          "tags": ["names", "memory", "introductions", "circle"],
+          "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+        },
+        {
+          "title": "Line Up",
+          "description": "Non-verbal challenge to arrange in order by given criteria without speaking",
+          "category": "Quick 5-Minute Icebreakers",
+          "players": "10-40 people",
+          "duration": "5-10 minutes", 
+          "difficulty": "Easy",
+          "materials": "None required",
+          "steps": "Step 1: Announce ordering criteria (height, birthday, etc.)\nStep 2: Participants arrange themselves without speaking\nStep 3: Check the final order\nStep 4: Debrief on non-verbal communication strategies",
+          "tags": ["non-verbal", "collaboration", "problem-solving", "movement"],
+          "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+        }
+      ]
+    }
+  }
+}
+,
+    "fun_icebreakers": {
+      "name": "Fun Icebreakers",
+      "description": "Entertaining activities that strengthen bonds and create inclusive atmosphere",
+      "games": [
+        {
+          "title": "Portrait Gallery", 
+          "description": "Teams create quick portraits of each other by rotating artists every 15 seconds",
+          "category": "Fun Icebreakers",
+          "players": "10-30 people",
+          "duration": "10-15 minutes",
+          "difficulty": "Easy",
+          "materials": "Drawing materials, paper",
+          "steps": "Step 1: Split into Team A (subjects) and Team B (artists)\nStep 2: Artists draw for 15 seconds, then rotate\nStep 3: Continue until everyone has drawn everyone\nStep 4: Display the collaborative portraits",
+          "tags": ["creative", "artistic", "collaborative", "fun"],
+          "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+        },
+        {
+          "title": "Minefield",
+          "description": "Blindfolded participants navigate obstacles guided by teammates' voices",
+          "category": "Fun Icebreakers", 
+          "players": "8-20 people",
+          "duration": "10-15 minutes",
+          "difficulty": "Medium",
+          "materials": "Blindfolds, soft obstacles (books, cushions, toys)",
+          "steps": "Step 1: Set up harmless obstacles on floor\nStep 2: Participants take turns being blindfolded\nStep 3: Teammates guide them through the course\nStep 4: Debrief on communication and trust",
+          "tags": ["trust", "communication", "physical", "teamwork"],
+          "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+        },
+        {
+          "title": "Crazy Handshake",
+          "description": "Pairs create unique handshakes and teach them to others in rotating partnerships",
+          "category": "Fun Icebreakers",
+          "players": "8-30 people", 
+          "duration": "10-15 minutes",
+          "difficulty": "Easy",
+          "materials": "None required",
+          "steps": "Step 1: Pairs introduce themselves and create a handshake\nStep 2: Split and partner with someone new\nStep 3: Teach original handshakes and create new one\nStep 4: Repeat and share all learned handshakes",
+          "tags": ["creative", "physical", "memorable", "partnership"],
+          "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+        },
+        {
+          "title": "The Movie Pitch Icebreaker",
+          "description": "Small groups create and pitch original movie ideas based on themes",
+          "category": "Fun Icebreakers",
+          "players": "8-30 people",
+          "duration": "15-20 minutes", 
+          "difficulty": "Easy",
+          "materials": "None required",
+          "steps": "Step 1: Form small groups and give theme\nStep 2: Create movie title, plot, and cast\nStep 3: Present pitch to group as if selling to studio\nStep 4: Optional voting on best pitch",
+          "tags": ["creative", "storytelling", "presentation", "teamwork"],
+          "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+        },
+        {
+          "title": "Bang!",
+          "description": "Fast-paced elimination game with sheriff pointing and quick reactions",
+          "category": "Fun Icebreakers",
+          "players": "8-25 people",
+          "duration": "5-10 minutes",
+          "difficulty": "Easy", 
+          "materials": "None required",
+          "steps": "Step 1: Stand in circle with one person as sheriff in middle\nStep 2: Sheriff points at someone who must quickly crouch\nStep 3: People on either side must 'draw' weapons quickly\nStep 4: Slowest person becomes new sheriff",
+          "tags": ["energizer", "reactions", "elimination", "fun"],
+          "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+        }
+      ]
+    },
+    "virtual_icebreakers": {
+      "name": "Virtual Icebreakers",
+      "description": "Activities designed specifically for online meetings and remote teams",
+      "games": [
+        {
+          "title": "Take a Picture of Your Shoes",
+          "description": "Everyone shares a photo of their current shoes and tells the story behind them",
+          "category": "Virtual Icebreakers",
+          "players": "5-30 people", 
+          "duration": "5-10 minutes",
+          "difficulty": "Easy",
+          "materials": "Camera/phone, shared screen or chat",
+          "steps": "Step 1: Ask everyone to take a photo of their shoes\nStep 2: Share photos via screen share or chat\nStep 3: Each person explains their shoe choice\nStep 4: Optional: vote on most interesting pair",
+          "tags": ["remote-friendly", "storytelling", "personal", "visual"],
+          "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+        },
+        {
+          "title": "Chat Waterfall", 
+          "description": "Everyone types answers simultaneously then sends all at once creating a 'waterfall' effect",
+          "category": "Virtual Icebreakers",
+          "players": "5-50 people",
+          "duration": "3-8 minutes",
+          "difficulty": "Easy",
+          "materials": "Video conferencing with chat",
+          "steps": "Step 1: Ask a question like 'favorite snack'\nStep 2: Everyone types answer but doesn't send\nStep 3: On count of 3, everyone sends at once\nStep 4: Enjoy the waterfall of responses",
+          "tags": ["high-energy", "visual", "simultaneous", "chat"],
+          "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+        },
+        {
+          "title": "Emoji Check-In",
+          "description": "Participants express their mood or energy using only emojis",
+          "category": "Virtual Icebreakers",
+          "players": "5-50 people",
+          "duration": "3-5 minutes", 
+          "difficulty": "Easy",
+          "materials": "Video platform with emoji reactions or chat",
+          "steps": "Step 1: Ask everyone to choose emojis for their current mood\nStep 2: Share via reactions or chat\nStep 3: Optional: explain emoji choices briefly\nStep 4: Acknowledge the group's overall energy",
+          "tags": ["quick", "emotional", "visual", "check-in"],
+          "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+        },
+        {
+          "title": "Remote Change 3 Things",
+          "description": "One person changes 3 things about appearance/background while camera is off",
+          "category": "Virtual Icebreakers", 
+          "players": "5-20 people",
+          "duration": "5-10 minutes",
+          "difficulty": "Easy",
+          "materials": "Video conferencing platform",
+          "steps": "Step 1: One participant turns off camera\nStep 2: They change 3 small things (glasses, hat, background)\nStep 3: Turn camera back on\nStep 4: Others guess what changed",
+          "tags": ["observation", "playful", "attention", "interactive"],
+          "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+        }
+      ]
+    },
+    "get_to_know_each_other": {
+      "name": "Get to Know Each Other",
+      "description": "Activities focused on building personal connections and learning about team members",
+      "games": [
+        {
+          "title": "Two Truths and One Lie",
+          "description": "Classic game where participants share two truths and one lie about themselves",
+          "category": "Get to Know Each Other",
+          "players": "4-30 people",
+          "duration": "10-15 minutes", 
+          "difficulty": "Easy",
+          "materials": "None required",
+          "steps": "Step 1: Each person prepares two truths and one lie\nStep 2: Share all three statements\nStep 3: Group votes on which is the lie\nStep 4: Reveal answer and discuss interesting truths",
+          "tags": ["classic", "storytelling", "guessing", "personal"],
+          "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+        },
+        {
+          "title": "Diversity Bingo",
+          "description": "Bingo cards with statements about experiences - find people who match each square",
+          "category": "Get to Know Each Other", 
+          "players": "12-50 people",
+          "duration": "10-20 minutes",
+          "difficulty": "Easy",
+          "materials": "Bingo cards, pens",
+          "steps": "Step 1: Create 3x3 bingo cards with experience statements\nStep 2: Mingle to find people who match statements\nStep 3: Get signatures for matches\nStep 4: Share interesting discoveries",
+          "tags": ["diversity", "mixer", "discovery", "inclusive"],
+          "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+        },
+        {
+          "title": "Unique and Shared",
+          "description": "Small groups discover commonalities and unique characteristics of each member",
+          "category": "Get to Know Each Other",
+          "players": "8-30 people",
+          "duration": "15-20 minutes",
+          "difficulty": "Easy", 
+          "materials": "Paper, pens",
+          "steps": "Step 1: Form groups of 4-5 people\nStep 2: Find things everyone has in common\nStep 3: Identify unique characteristics of each person\nStep 4: Share findings with larger group",
+          "tags": ["commonalities", "uniqueness", "small-groups", "discovery"],
+          "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+        },
+        {
+          "title": "Speed Dating Icebreaker",
+          "description": "Rapid succession of short conversations to maximize networking",
+          "category": "Get to Know Each Other",
+          "players": "10-40 people", 
+          "duration": "15-25 minutes",
+          "difficulty": "Easy",
+          "materials": "Timer, chairs",
+          "steps": "Step 1: Arrange chairs in pairs\nStep 2: Set 3-minute timer for each conversation\nStep 3: Focus on professional information exchange\nStep 4: Rotate partners when timer rings",
+          "tags": ["networking", "professional", "rotation", "efficient"],
+          "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+        }
+      ]
+    }
+  }
+}
+,
+    "team_building_deep_connection": {
+      "name": "Team Building & Deep Connection",
+      "description": "Activities for building stronger team bonds and deeper relationships",
+      "games": [
+        {
+          "title": "Coat of Arms",
+          "description": "Create personal coat of arms with sections representing work, values, and aspirations",
+          "category": "Team Building & Deep Connection",
+          "players": "8-25 people",
+          "duration": "20-30 minutes",
+          "difficulty": "Medium",
+          "materials": "Paper, colored pens/markers",
+          "steps": "Step 1: Draw coat of arms with 5 sections\nStep 2: Fill sections with work role, hobby, achievement, value, aspiration\nStep 3: Pair with person you know least\nStep 4: Present partner's coat of arms to group",
+          "tags": ["creative", "visual", "personal", "presentation"],
+          "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+        },
+        {
+          "title": "Four Quadrants Activity",
+          "description": "Share four things about yourself through simple drawings in quadrants",
+          "category": "Team Building & Deep Connection", 
+          "players": "8-30 people",
+          "duration": "15-25 minutes",
+          "difficulty": "Easy",
+          "materials": "Paper divided into quadrants, pens",
+          "steps": "Step 1: Draw four quadrants on paper\nStep 2: Fill each with simple drawing representing different aspects\nStep 3: Share drawings and explain meanings\nStep 4: Display all quadrants together",
+          "tags": ["creative", "visual", "adaptable", "sharing"],
+          "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+        },
+        {
+          "title": "Back to Back Drawing",
+          "description": "Communication exercise where one person describes image for partner to draw",
+          "category": "Team Building & Deep Connection",
+          "players": "6-30 people",
+          "duration": "10-15 minutes", 
+          "difficulty": "Medium",
+          "materials": "Images, paper, pens",
+          "steps": "Step 1: Pairs sit back to back\nStep 2: One person receives image to describe\nStep 3: Partner draws based only on verbal instructions\nStep 4: Compare final drawing to original image",
+          "tags": ["communication", "listening", "pairs", "challenge"],
+          "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+        }
+      ]
+    },
+    "large_group_activities": {
+      "name": "Large Group Activities", 
+      "description": "Icebreakers designed for big groups and events",
+      "games": [
+        {
+          "title": "Group Map",
+          "description": "Participants position themselves on imaginary world map based on where they grew up",
+          "category": "Large Group Activities",
+          "players": "20-100+ people",
+          "duration": "10-15 minutes",
+          "difficulty": "Easy",
+          "materials": "Large open space",
+          "steps": "Step 1: Designate room as world map\nStep 2: Participants position themselves by birthplace/hometown\nStep 3: Share briefly about their location\nStep 4: Optional: share a value learned from that place",
+          "tags": ["geography", "cultural", "movement", "large-scale"],
+          "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+        },
+        {
+          "title": "Passions Tic Tac Toe",
+          "description": "Fill tic-tac-toe grid with passions, then find others with matching interests",
+          "category": "Large Group Activities", 
+          "players": "15-100+ people",
+          "duration": "15-20 minutes",
+          "difficulty": "Easy",
+          "materials": "3x3 grids, pens",
+          "steps": "Step 1: Fill 3x3 grid with personal passions\nStep 2: Mingle to find others with same passions\nStep 3: Get signatures for matching squares\nStep 4: First to get three in a row wins",
+          "tags": ["passions", "networking", "competition", "discovery"],
+          "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+        }
+      ]
+    },
+    "teamwork_improvement": {
+      "name": "Teamwork Improvement",
+      "description": "Games specifically designed to enhance collaboration and team dynamics",
+      "games": [
+        {
+          "title": "Marshmallow Challenge",
+          "description": "Build tallest tower using spaghetti, tape, string with marshmallow on top",
+          "category": "Teamwork Improvement",
+          "players": "8-40 people", 
+          "duration": "18-25 minutes",
+          "difficulty": "Medium",
+          "materials": "Spaghetti, tape, string, marshmallows",
+          "steps": "Step 1: Form teams of 4-5 people\nStep 2: Build tallest free-standing structure\nStep 3: Marshmallow must be on top\nStep 4: Measure and celebrate tallest tower",
+          "tags": ["engineering", "collaboration", "problem-solving", "competition"],
+          "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+        },
+        {
+          "title": "Helium Stick",
+          "description": "Team must lower a stick to ground while everyone keeps finger contact",
+          "category": "Teamwork Improvement",
+          "players": "8-20 people",
+          "duration": "10-15 minutes",
+          "difficulty": "Medium", 
+          "materials": "Long lightweight stick or rod",
+          "steps": "Step 1: Line up in two rows facing each other\nStep 2: Place stick on everyone's index fingers\nStep 3: Lower stick to ground without losing contact\nStep 4: Restart if anyone loses contact",
+          "tags": ["coordination", "patience", "teamwork", "challenge"],
+          "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+        },
+        {
+          "title": "Desert Island",
+          "description": "Group decides which items to keep for survival on desert island",
+          "category": "Teamwork Improvement", 
+          "players": "6-30 people",
+          "duration": "15-25 minutes",
+          "difficulty": "Medium",
+          "materials": "List of items, paper",
+          "steps": "Step 1: Present list of available items\nStep 2: Group must agree on limited number to keep\nStep 3: Discuss and negotiate priorities\nStep 4: Debrief on decision-making process",
+          "tags": ["decision-making", "negotiation", "priorities", "discussion"],
+          "source": "https://www.sessionlab.com/blog/icebreaker-games/"
+        }
+      ]
+    }
+  }
+}

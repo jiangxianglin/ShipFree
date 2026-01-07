@@ -1,0 +1,203 @@
+{
+  "sessionLabCategories": {
+    "meeting_icebreakers": "会议破冰游戏",
+    "quick_5_minute": "5分钟快速破冰",
+    "fun_icebreakers": "趣味破冰游戏",
+    "virtual_icebreakers": "虚拟破冰游戏",
+    "get_to_know": "相互了解游戏",
+    "team_building_deep": "深度团队建设",
+    "large_group": "大型团体活动",
+    "teamwork_improvement": "团队合作提升"
+  },
+  "gamesByCategory": {
+    "meeting_icebreakers": [
+      {
+        "title": "What Are You Bringing to the Meeting?",
+        "description": "一个正念签到活动，参与者写下担忧和能量水平，然后将其搁置以获得更好的专注力。帮助团队成员从之前的任务中转换过来，全身心投入到当前会议中。",
+        "duration": "5-10 minutes",
+        "players": "5-30 people",
+        "difficulty": "Easy"
+      },
+      {
+        "title": "Weather Check-in",
+        "description": "使用天气隐喻分享感受，进行快速的团体情绪检查。这个简单而有效的活动特别适合远程团队，让每个人都能以安全的方式分享当前状态。",
+        "duration": "3-8 minutes",
+        "players": "5-25 people",
+        "difficulty": "Easy"
+      },
+      {
+        "title": "Have You Ever? (Stand Up If)",
+        "description": "参与者对'你曾经...'问题回答是的话就站起来。这是一个有效的破冰游戏，帮助团体开始看到联系并以低压力的方式分享关于自己的信息。",
+        "duration": "5-10 minutes",
+        "players": "8-50 people",
+        "difficulty": "Easy"
+      },
+      {
+        "title": "5-4-3-2-1 Grounding Technique",
+        "description": "正念练习，调动所有感官帮助参与者保持专注。通过要求参与者调动所有感官并深呼吸，可以帮助他们回到当下，控制焦虑和压力。",
+        "duration": "3-5 minutes",
+        "players": "5-30 people",
+        "difficulty": "Easy"
+      }
+    ],
+    "quick_5_minute": [
+      {
+        "title": "One Word at a Time",
+        "description": "团体通过每人贡献一个词来创建句子。这个简单而有效的活动可以轻松适应任何团体，鼓励创造力和协作思维。",
+        "duration": "3-8 minutes",
+        "players": "6-20 people",
+        "difficulty": "Easy"
+      },
+      {
+        "title": "Count Up",
+        "description": "团体按顺序数数，不能重叠说话或建立模式。这个看似简单的挑战需要耐心、意识和团队合作，是建立专注力和连接的绝佳方式。",
+        "duration": "3-10 minutes",
+        "players": "8-25 people",
+        "difficulty": "Medium"
+      },
+      {
+        "title": "Apple, Orange and Banana",
+        "description": "基于叫出的水果名称进行移动的身体激励器。参与者根据不同的水果指令做出相应动作，帮助团体同步并完全到达一个空间。",
+        "duration": "3-8 minutes",
+        "players": "8-30 people",
+        "difficulty": "Easy"
+      },
+      {
+        "title": "Name Game",
+        "description": "通过在添加自己的名字之前重复之前的名字来学习名字。这是一个有效的破冰游戏，适用于人们不知道彼此名字的课程、工作坊或会议开始时使用。",
+        "duration": "5-10 minutes",
+        "players": "8-20 people",
+        "difficulty": "Easy"
+      },
+      {
+        "title": "Line Up",
+        "description": "非语言挑战，按给定标准排列而不说话。这是一个快速的破冰游戏，玩家必须在没有任何讨论或语言提示的情况下形成有序的队列。",
+        "duration": "5-10 minutes",
+        "players": "10-40 people",
+        "difficulty": "Easy"
+      },
+      {
+        "title": "Emoji Check-In",
+        "description": "参与者仅使用表情符号表达他们的心情或能量。这个破冰游戏为情感表达创造空间，而不会让任何人感到被关注。",
+        "duration": "3-5 minutes",
+        "players": "5-50 people",
+        "difficulty": "Easy"
+      }
+    ],
+    "virtual_icebreakers": [
+      {
+        "title": "Chat Waterfall",
+        "description": "每个人同时输入答案然后一起发送，创造'瀑布'效果。这是一个高能量的虚拟破冰游戏，让每个人立即参与，特别适合大型团体。",
+        "duration": "3-8 minutes",
+        "players": "5-50 people",
+        "difficulty": "Easy"
+      },
+      {
+        "title": "Remote Change 3 Things",
+        "description": "一个人在关闭摄像头时改变外观/背景的3样东西。这个活动激发笑声并鼓励注意细节，同时打破虚拟会议的常规。",
+        "duration": "5-10 minutes",
+        "players": "5-20 people",
+        "difficulty": "Easy"
+      }
+    ],
+    "get_to_know": [
+      {
+        "title": "Two Truths and One Lie",
+        "description": "经典游戏，参与者分享关于自己的两个真相和一个谎言。这个永恒的破冰游戏能够揭示关于同事的惊人事实，建立融洽关系和轻松幽默。",
+        "duration": "10-15 minutes",
+        "players": "4-30 people",
+        "difficulty": "Easy"
+      },
+      {
+        "title": "Diversity Bingo",
+        "description": "带有关于经验陈述的宾果卡 - 找到匹配每个方格的人。这是一个很好的破冰游戏，帮助参与者了解彼此并分享使他们与众不同的地方。",
+        "duration": "10-20 minutes",
+        "players": "12-50 people",
+        "difficulty": "Easy"
+      },
+      {
+        "title": "Unique and Shared",
+        "description": "小组发现每个成员的共同点和独特特征。这是一个强大的破冰游戏，特别适合分组使用，尤其是在较长项目或培训计划开始时。",
+        "duration": "15-20 minutes",
+        "players": "8-30 people",
+        "difficulty": "Easy"
+      },
+      {
+        "title": "Speed Dating Icebreaker",
+        "description": "快速连续的短对话以最大化网络建设。这个破冰游戏的目标是在极短的时间内与尽可能多的人进行一系列非常快速的对话。",
+        "duration": "15-25 minutes",
+        "players": "10-40 people",
+        "difficulty": "Easy"
+      }
+    ],
+    "fun_icebreakers": [
+      {
+        "title": "Portrait Gallery",
+        "description": "团队通过每15秒轮换艺术家来为彼此创作快速肖像。这个创意活动产生精彩多样的图像，可以在完成后展示在会议室中。",
+        "duration": "10-15 minutes",
+        "players": "10-30 people",
+        "difficulty": "Easy"
+      },
+      {
+        "title": "Minefield",
+        "description": "蒙眼参与者在队友声音引导下穿越障碍物。这个有趣的身体游戏可以帮助建立信任和更有效的团体沟通。",
+        "duration": "10-15 minutes",
+        "players": "8-20 people",
+        "difficulty": "Medium"
+      },
+      {
+        "title": "Crazy Handshake",
+        "description": "配对创建独特的握手并在轮换伙伴关系中教给其他人。这是一个轻松而难忘的游戏，配对必须创建新的有趣握手。",
+        "duration": "10-15 minutes",
+        "players": "8-30 people",
+        "difficulty": "Easy"
+      },
+      {
+        "title": "The Movie Pitch Icebreaker",
+        "description": "小组基于主题创建和推介原创电影创意。这是一个有趣、快节奏的活动，小组创建原创电影创意并向团体推介。",
+        "duration": "15-20 minutes",
+        "players": "8-30 people",
+        "difficulty": "Easy"
+      },
+      {
+        "title": "Bang!",
+        "description": "快节奏的淘汰游戏，警长指向和快速反应。这是一个快节奏的破冰游戏，你必须有快速反应，否则你会被淘汰。",
+        "duration": "5-10 minutes",
+        "players": "8-25 people",
+        "difficulty": "Easy"
+      }
+    ],
+    "large_group": [
+      {
+        "title": "Group Map",
+        "description": "参与者根据成长地在想象的世界地图上定位自己。这是一个有趣、活跃的破冰游戏，让人们移动，同时也了解彼此。",
+        "duration": "10-15 minutes",
+        "players": "20-100+ people",
+        "difficulty": "Easy"
+      },
+      {
+        "title": "Passions Tic Tac Toe",
+        "description": "用激情填充井字游戏网格，然后找到有匹配兴趣的其他人。这个破冰游戏的目标是帮助参与者在活动开始时了解彼此。",
+        "duration": "15-20 minutes",
+        "players": "15-100+ people",
+        "difficulty": "Easy"
+      }
+    ],
+    "teamwork_improvement": [
+      {
+        "title": "Helium Stick",
+        "description": "团队必须在每个人保持手指接触的同时将棍子降到地面。这是一个看似简单的游戏，需要团队在保持同步的同时合作。",
+        "duration": "10-15 minutes",
+        "players": "8-20 people",
+        "difficulty": "Medium"
+      },
+      {
+        "title": "Desert Island",
+        "description": "团体决定在荒岛上生存保留哪些物品。这是一个经典的团队建设练习，将解决问题和谈判技能付诸考验。",
+        "duration": "15-25 minutes",
+        "players": "6-30 people",
+        "difficulty": "Medium"
+      }
+    ]
+  }
+}

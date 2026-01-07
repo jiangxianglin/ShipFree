@@ -4,6 +4,8 @@ import Image from "next/image";
 import { getAllGames } from "@/db/queries/games";
 import { GameCard } from "@/components/games/GameCard";
 import { HomeFilterSection } from "@/components/home/HomeFilterSection";
+import { TestimonialsSection } from "@/components/home/TestimonialsSection";
+import SessionLabCategories from "@/components/SessionLabCategories";
 
 // Force dynamic rendering for this page
 export const dynamic = 'force-dynamic';
@@ -64,9 +66,9 @@ export default async function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       {/* Hero Section */}
-      <section className="relative py-16 md:py-24 overflow-hidden">
+      <section className="relative py-20 md:py-32 overflow-hidden">
         {/* Hero Background Image */}
-        <div className="absolute inset-0 z-0 flex items-center justify-center">
+        <div className="absolute inset-0 z-0">
           <Image
             src="/img/Hero.png"
             alt="Ice breaker games - diverse team members engaging in fun team building activities"
@@ -77,30 +79,41 @@ export default async function Home() {
             quality={90}
             style={{ objectPosition: '50% 40%' }}
           />
-          {/* Overlay for better text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-blue-900/70 via-blue-800/60 to-purple-900/70 dark:from-gray-900/80 dark:via-gray-900/70 dark:to-gray-900/80"></div>
+          {/* Modern gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-purple-900/70 to-indigo-900/80 dark:from-gray-900/90 dark:via-gray-900/80 dark:to-gray-900/90"></div>
+          {/* Animated gradient orbs */}
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
 
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white drop-shadow-lg max-w-4xl mx-auto">
-            Unlock the Power of Connection with the Best Ice Breaker Games
-          </h1>
-          <p className="text-lg md:text-xl lg:text-2xl text-white/90 mb-8 max-w-3xl mx-auto drop-shadow-md">
-            Transform your gatherings with our curated collection of <strong>ice breaker games</strong>. Whether you're leading a corporate team, a classroom, or a social event, our <strong>ice breaker games</strong> are designed to spark conversation, build trust, and energize any group. Discover why thousands of facilitators trust our <strong>ice breaker games</strong> to create memorable experiences.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/games"
-              className="px-8 py-4 bg-white text-blue-600 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg"
-            >
-              Browse All Games
-            </Link>
-            <a
-              href="#featured"
-              className="px-8 py-4 border-2 border-white text-white rounded-lg text-lg font-semibold hover:bg-white/10 transition-colors backdrop-blur-sm"
-            >
-              See Featured Games
-            </a>
+          <div className="animate-fade-in-up">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-white drop-shadow-2xl max-w-5xl mx-auto leading-tight">
+              Unlock the Power of Connection with the Best 
+              <span className="bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent"> Ice Breaker Games</span>
+            </h1>
+            <p className="text-xl md:text-2xl lg:text-3xl text-white/95 mb-12 max-w-4xl mx-auto drop-shadow-lg leading-relaxed">
+              Transform your gatherings with our curated collection of <strong className="text-blue-200">ice breaker games</strong>. Whether you're leading a corporate team, a classroom, or a social event, our activities are designed to spark conversation, build trust, and energize any group.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <Link
+                href="/games"
+                className="group px-10 py-5 bg-white text-blue-600 rounded-2xl text-xl font-bold hover:bg-blue-50 transition-all duration-300 shadow-2xl hover:shadow-blue-500/25 hover:scale-105 transform"
+              >
+                <span className="flex items-center gap-3">
+                  Browse All Games
+                  <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </Link>
+              <a
+                href="#featured"
+                className="px-10 py-5 border-2 border-white/80 text-white rounded-2xl text-xl font-bold hover:bg-white/10 hover:border-white transition-all duration-300 backdrop-blur-md hover:scale-105 transform"
+              >
+                See Featured Games
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -109,135 +122,149 @@ export default async function Home() {
       <HomeFilterSection games={allGames} />
 
       {/* Stats Section */}
-      <section className="py-16 border-y">
+      <section className="py-20 bg-gradient-to-r from-slate-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 border-y border-blue-100 dark:border-gray-700">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold text-primary mb-2">
+            <div className="group hover:scale-105 transition-transform duration-300">
+              <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
                 {allGames.length}+
               </div>
-              <div className="text-muted-foreground">Ice Breaker Games</div>
+              <div className="text-gray-600 dark:text-gray-300 text-lg font-medium">Ice Breaker Games</div>
             </div>
-            <div>
-              <div className="text-4xl font-bold text-primary mb-2">6</div>
-              <div className="text-muted-foreground">Categories</div>
+            <div className="group hover:scale-105 transition-transform duration-300">
+              <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">6</div>
+              <div className="text-gray-600 dark:text-gray-300 text-lg font-medium">Categories</div>
             </div>
-            <div>
-              <div className="text-4xl font-bold text-primary mb-2">100%</div>
-              <div className="text-muted-foreground">Free to Use</div>
+            <div className="group hover:scale-105 transition-transform duration-300">
+              <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-4">100%</div>
+              <div className="text-gray-600 dark:text-gray-300 text-lg font-medium">Free to Use</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Categories Section */}
-      <section className="py-20 relative">
+      <section className="py-24 relative bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
               Diverse Ice Breaker Games for Every Occasion and Group Size
             </h2>
-            <div className="text-lg text-muted-foreground max-w-4xl mx-auto mb-6 space-y-4">
+            <div className="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto mb-8 space-y-6 leading-relaxed">
               <p>
-                Finding the right activity is crucial for success. Our comprehensive library of <strong>ice breaker games</strong> covers every scenario imaginable. Whether you're hosting virtual meetings, planning intensive team building sessions, or organizing fun classroom activities, we have <strong>ice breaker games</strong> to fit your needs.
+                Finding the right activity is crucial for success. Our comprehensive library of <strong className="text-blue-600">ice breaker games</strong> covers every scenario imaginable. Whether you're hosting virtual meetings, planning intensive team building sessions, or organizing fun classroom activities, we have the perfect activities to fit your needs.
               </p>
               <p>
-                Our collection includes quick 5-minute energizers for tight schedules and in-depth exercises for deeper bonding. Each of our <strong>ice breaker games</strong> is carefully selected and tested to ensure maximum engagement. From small groups to large conferences, our <strong>ice breaker games</strong> help you create meaningful connections and warm up your audience effectively.
+                Our collection includes quick 5-minute energizers for tight schedules and in-depth exercises for deeper bonding. Each activity is carefully selected and tested to ensure maximum engagement and meaningful connections.
               </p>
             </div>
-            <div className="mb-8 -mx-4 md:mx-0">
-              <div className="relative w-full h-32 md:h-40">
+            <div className="mb-12 -mx-4 md:mx-0">
+              <div className="relative w-full h-40 md:h-48 rounded-3xl overflow-hidden shadow-2xl">
                 <Image
                   src="/img/Categories.png"
                   alt="Ice breaker games for team building, virtual meetings, classrooms, training, conferences and social events"
                   fill
-                  className="object-cover scale-x-110"
+                  className="object-cover"
                   sizes="100vw"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 name: "Team Building",
                 icon: "👥",
                 description: "Strengthen bonds and improve collaboration with specialized ice breaker games",
-                color: "bg-blue-100 dark:bg-blue-900/20",
+                gradient: "from-blue-500 to-cyan-500",
+                bgGradient: "from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20",
               },
               {
                 name: "Virtual Meeting",
                 icon: "💻",
                 description: "Engage remote teams and break the distance with digital ice breaker games",
-                color: "bg-purple-100 dark:bg-purple-900/20",
+                gradient: "from-purple-500 to-pink-500",
+                bgGradient: "from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20",
               },
               {
                 name: "Classroom",
                 icon: "📚",
                 description: "Create a fun learning environment with educational ice breaker games",
-                color: "bg-green-100 dark:bg-green-900/20",
+                gradient: "from-green-500 to-emerald-500",
+                bgGradient: "from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20",
               },
               {
                 name: "Training",
                 icon: "🎯",
                 description: "Energize workshops and training sessions with active ice breaker games",
-                color: "bg-orange-100 dark:bg-orange-900/20",
+                gradient: "from-orange-500 to-red-500",
+                bgGradient: "from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20",
               },
               {
                 name: "Conference",
                 icon: "🎤",
                 description: "Network and connect at events using large-group ice breaker games",
-                color: "bg-red-100 dark:bg-red-900/20",
+                gradient: "from-indigo-500 to-purple-500",
+                bgGradient: "from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20",
               },
               {
                 name: "Social Event",
                 icon: "🎉",
                 description: "Make parties and gatherings memorable with fun ice breaker games",
-                color: "bg-pink-100 dark:bg-pink-900/20",
+                gradient: "from-pink-500 to-rose-500",
+                bgGradient: "from-pink-50 to-rose-50 dark:from-pink-900/20 dark:to-rose-900/20",
               },
             ].map((category) => (
               <div
                 key={category.name}
-                className={`${category.color} p-6 rounded-lg hover:shadow-lg transition-shadow`}
+                className={`group bg-gradient-to-br ${category.bgGradient} p-8 rounded-3xl hover:shadow-2xl transition-all duration-500 hover:scale-105 transform border border-white/50 dark:border-gray-700/50 backdrop-blur-sm`}
               >
-                <div className="text-4xl mb-3">{category.icon}</div>
-                <h3 className="text-xl font-semibold mb-2">{category.name}</h3>
-                <p className="text-muted-foreground">{category.description}</p>
+                <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">{category.icon}</div>
+                <h3 className={`text-2xl font-bold mb-4 bg-gradient-to-r ${category.gradient} bg-clip-text text-transparent`}>{category.name}</h3>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{category.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* SessionLab Categories Section */}
+      <section className="py-24 bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+        <SessionLabCategories />
+      </section>
+
       {/* Featured Games Section */}
-      <section id="featured" className="py-20 bg-gray-50 dark:bg-gray-900/50">
+      <section id="featured" className="py-24 bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Top-Rated Featured Ice Breaker Games
             </h2>
-            <div className="text-lg text-muted-foreground max-w-4xl mx-auto space-y-4">
+            <div className="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto space-y-6 leading-relaxed">
               <p>
-                Explore our selection of featured <strong>ice breaker games</strong>, loved by facilitators and participants alike. These popular <strong>ice breaker games</strong> have been proven to break down barriers and foster positive group dynamics.
+                Explore our selection of featured <strong className="text-blue-600">ice breaker games</strong>, loved by facilitators and participants alike. These popular activities have been proven to break down barriers and foster positive group dynamics.
               </p>
               <p>
-                Each of our featured <strong>ice breaker games</strong> comes with detailed step-by-step instructions, making them easy to facilitate even for beginners. Choose from our top <strong>ice breaker games</strong> to guarantee a successful start to your meeting or event. These <strong>ice breaker games</strong> are versatile and adaptable to various settings.
+                Each featured game comes with detailed step-by-step instructions, making them easy to facilitate even for beginners. Choose from our top activities to guarantee a successful start to your meeting or event.
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {featuredGames.map((game) => (
-              <GameCard key={game.id} game={game} />
+              <div key={game.id} className="transform hover:scale-105 transition-all duration-300">
+                <GameCard game={game} />
+              </div>
             ))}
           </div>
           <div className="text-center">
             <Link
               href="/games"
-              className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+              className="group inline-flex items-center px-10 py-5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl text-xl font-bold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-2xl hover:shadow-blue-500/25 hover:scale-105 transform"
             >
               View All {allGames.length} Games
               <svg
-                className="w-5 h-5 ml-2"
+                className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -481,20 +508,36 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <TestimonialsSection />
+
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to Transform Your Meetings with Ice Breaker Games?
+      <section className="py-24 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 text-white relative overflow-hidden">
+        {/* Animated background elements */}
+        <div className="absolute top-0 left-0 w-full h-full">
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-300/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 right-1/3 w-48 h-48 bg-purple-300/10 rounded-full blur-2xl animate-pulse delay-500"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
+            Ready to Transform Your Meetings with 
+            <span className="block bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">Ice Breaker Games?</span>
           </h2>
-          <p className="text-xl mb-8 opacity-90 max-w-3xl mx-auto">
-            Don't let another meeting fall flat. Start exploring our extensive collection of engaging <strong>ice breaker games</strong> today. Join the community of thousands of facilitators who rely on our <strong>ice breaker games</strong> to create unforgettable experiences. Whether you need <strong>ice breaker games</strong> for a quick huddle or a full-day workshop, we have you covered.
+          <p className="text-xl md:text-2xl mb-12 opacity-95 max-w-4xl mx-auto leading-relaxed">
+            Don't let another meeting fall flat. Start exploring our extensive collection of engaging <strong className="text-blue-200">ice breaker games</strong> today. Join the community of thousands of facilitators who rely on our activities to create unforgettable experiences.
           </p>
           <Link
             href="/games"
-            className="inline-block px-8 py-4 bg-white text-blue-600 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg"
+            className="group inline-block px-12 py-6 bg-white text-blue-600 rounded-3xl text-2xl font-bold hover:bg-blue-50 transition-all duration-300 shadow-2xl hover:shadow-white/25 hover:scale-110 transform"
           >
-            Get Started with Ice Breaker Games
+            <span className="flex items-center gap-4">
+              Get Started with Ice Breaker Games
+              <svg className="w-8 h-8 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </span>
           </Link>
         </div>
       </section>

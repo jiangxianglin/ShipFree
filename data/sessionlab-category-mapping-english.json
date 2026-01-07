@@ -1,0 +1,217 @@
+{
+  "sessionLabCategories": {
+    "meeting_icebreakers": "Meeting Icebreakers",
+    "quick_5_minute": "Quick 5-Minute Icebreakers",
+    "fun_icebreakers": "Fun Icebreakers",
+    "virtual_icebreakers": "Virtual Icebreakers",
+    "get_to_know": "Get to Know Each Other",
+    "team_building_deep": "Team Building & Deep Connection",
+    "large_group": "Large Group Activities",
+    "teamwork_improvement": "Teamwork Improvement"
+  },
+  "gamesByCategory": {
+    "meeting_icebreakers": [
+      {
+        "title": "What Are You Bringing to the Meeting?",
+        "description": "A mindful check-in where participants write down worries, energy levels, and thoughts, then set them aside for better focus during the meeting. This helps team members transition from previous tasks and arrive mentally present.",
+        "duration": "5-10 minutes",
+        "players": "5-30 people",
+        "difficulty": "Easy"
+      },
+      {
+        "title": "Weather Check-in",
+        "description": "Share feelings using weather metaphors for a quick group sentiment check. This simple yet effective activity is particularly suitable for remote teams, allowing everyone to share their current state in a safe way.",
+        "duration": "3-8 minutes",
+        "players": "5-25 people",
+        "difficulty": "Easy"
+      },
+      {
+        "title": "Have You Ever? (Stand Up If)",
+        "description": "Participants stand if they can answer yes to 'Have you ever...' questions. This is an effective icebreaker to help the group start to see connections and share something about themselves in a low-pressure way.",
+        "duration": "5-10 minutes",
+        "players": "8-50 people",
+        "difficulty": "Easy"
+      },
+      {
+        "title": "5-4-3-2-1 Grounding Technique",
+        "description": "A mindful exercise engaging all senses to help participants be present. By asking participants to engage all their senses and take a breath, you can help bring them back to the present moment and manage anxiety and stress.",
+        "duration": "3-5 minutes",
+        "players": "5-30 people",
+        "difficulty": "Easy"
+      }
+    ],
+    "quick_5_minute": [
+      {
+        "title": "One Word at a Time",
+        "description": "Groups create sentences by contributing one word each while going around the circle. This simple yet effective activity can easily be tailored to any group and encourages creative and collaborative thinking.",
+        "duration": "3-8 minutes",
+        "players": "6-20 people",
+        "difficulty": "Easy"
+      },
+      {
+        "title": "Count Up",
+        "description": "Group counts sequentially without speaking over each other or establishing patterns. This deceptively simple challenge requires patience, awareness, and teamwork, making it a great way to build focus and connection.",
+        "duration": "3-10 minutes",
+        "players": "8-25 people",
+        "difficulty": "Medium"
+      },
+      {
+        "title": "Apple, Orange and Banana",
+        "description": "Physical energizer where participants move based on called fruit names. Participants respond to different fruit commands with corresponding actions, helping the group synchronize and fully arrive in a space.",
+        "duration": "3-8 minutes",
+        "players": "8-30 people",
+        "difficulty": "Easy"
+      },
+      {
+        "title": "Name Game",
+        "description": "Learn names by repeating previous names before adding your own. This is an effective icebreaker to use at the start of a course, workshop or meeting where people don't know each other's names.",
+        "duration": "5-10 minutes",
+        "players": "8-20 people",
+        "difficulty": "Easy"
+      },
+      {
+        "title": "Line Up",
+        "description": "Non-verbal challenge to arrange in order by given criteria without speaking. This is a quick icebreaker game where players have to form an orderly line without any discussion or verbal cues.",
+        "duration": "5-10 minutes",
+        "players": "10-40 people",
+        "difficulty": "Easy"
+      },
+      {
+        "title": "Emoji Check-In",
+        "description": "Participants express their mood or energy using only emojis. This icebreaker creates space for emotional expression without putting anyone on the spot, making it fast, lighthearted, and accessible.",
+        "duration": "3-5 minutes",
+        "players": "5-50 people",
+        "difficulty": "Easy"
+      }
+    ],
+    "virtual_icebreakers": [
+      {
+        "title": "Take a Picture of Your Shoes",
+        "description": "Everyone shares a photo of their current shoes and tells the story behind them. This quirky and low-pressure activity sparks connection among virtual teammates and often leads to unexpected interesting stories.",
+        "duration": "5-10 minutes",
+        "players": "5-30 people",
+        "difficulty": "Easy"
+      },
+      {
+        "title": "Chat Waterfall",
+        "description": "Everyone types answers simultaneously then sends all at once, creating a 'waterfall' effect. This is a high-energy virtual icebreaker that gets everyone participating at once, especially effective in larger groups.",
+        "duration": "3-8 minutes",
+        "players": "5-50 people",
+        "difficulty": "Easy"
+      },
+      {
+        "title": "Remote Change 3 Things",
+        "description": "One person changes 3 things about appearance/background while camera is off. This activity sparks laughter and encourages attention to detail while breaking up the routine of virtual meetings.",
+        "duration": "5-10 minutes",
+        "players": "5-20 people",
+        "difficulty": "Easy"
+      }
+    ],
+    "get_to_know": [
+      {
+        "title": "Two Truths and One Lie",
+        "description": "Classic game where participants share two truths and one lie about themselves. This timeless icebreaker reveals surprising facts about colleagues and builds rapport through light humor and storytelling.",
+        "duration": "10-15 minutes",
+        "players": "4-30 people",
+        "difficulty": "Easy"
+      },
+      {
+        "title": "Diversity Bingo",
+        "description": "Bingo cards with statements about experiences - find people who match each square. This is a great icebreaker that helps participants learn about one another and share what differentiates them as people.",
+        "duration": "10-20 minutes",
+        "players": "12-50 people",
+        "difficulty": "Easy"
+      },
+      {
+        "title": "Unique and Shared",
+        "description": "Small groups discover commonalities and unique characteristics of each member. This is a powerful icebreaker for use with breakout groups, especially at the start of a longer project or training program.",
+        "duration": "15-20 minutes",
+        "players": "8-30 people",
+        "difficulty": "Easy"
+      },
+      {
+        "title": "Speed Dating Icebreaker",
+        "description": "Rapid succession of short conversations to maximize networking. The goal of this icebreaker is to have a succession of very rapid conversations in an extremely short amount of time with as many people as possible.",
+        "duration": "15-25 minutes",
+        "players": "10-40 people",
+        "difficulty": "Easy"
+      }
+    ],
+    "fun_icebreakers": [
+      {
+        "title": "Portrait Gallery",
+        "description": "Teams create quick portraits of each other by rotating artists every 15 seconds. This creative activity results in wonderfully varied (and probably quite messy!) images that can be displayed in the meeting room once done.",
+        "duration": "10-15 minutes",
+        "players": "10-30 people",
+        "difficulty": "Easy"
+      },
+      {
+        "title": "Minefield",
+        "description": "Blindfolded participants navigate obstacles guided by teammates' voices. This fun physical game can help build trust and more effective group communication through clear directions and active listening.",
+        "duration": "10-15 minutes",
+        "players": "8-20 people",
+        "difficulty": "Medium"
+      },
+      {
+        "title": "Crazy Handshake",
+        "description": "Pairs create unique handshakes and teach them to others in rotating partnerships. This is a lighthearted and memorable game where pairs must create a new, fun handshake before teaching it to other people.",
+        "duration": "10-15 minutes",
+        "players": "8-30 people",
+        "difficulty": "Easy"
+      },
+      {
+        "title": "The Movie Pitch Icebreaker",
+        "description": "Small groups create and pitch original movie ideas based on themes. This is a fun, fast-paced activity where small groups create and pitch an original movie idea based on a random or chosen theme.",
+        "duration": "15-20 minutes",
+        "players": "8-30 people",
+        "difficulty": "Easy"
+      },
+      {
+        "title": "Bang!",
+        "description": "Fast-paced elimination game with sheriff pointing and quick reactions. This is a fast-paced icebreaker where you have to have quick reactions or you'll be eliminated, creating high energy and laughter.",
+        "duration": "5-10 minutes",
+        "players": "8-25 people",
+        "difficulty": "Easy"
+      }
+    ],
+    "large_group": [
+      {
+        "title": "Group Map",
+        "description": "Participants position themselves on imaginary world map based on where they grew up. This is a fun, active icebreaker that gets people moving while also learning a little about one another and their cultural backgrounds.",
+        "duration": "10-15 minutes",
+        "players": "20-100+ people",
+        "difficulty": "Easy"
+      },
+      {
+        "title": "Passions Tic Tac Toe",
+        "description": "Fill tic-tac-toe grid with passions, then find others with matching interests. The goal of this icebreaker is to help participants get to know each other at the beginning of an event or training session.",
+        "duration": "15-20 minutes",
+        "players": "15-100+ people",
+        "difficulty": "Easy"
+      }
+    ],
+    "teamwork_improvement": [
+      {
+        "title": "Marshmallow Challenge",
+        "description": "Build tallest tower using spaghetti, tape, string with marshmallow on top. This famous team building challenge practices prototyping and teamwork, often producing unexpected results and valuable lessons.",
+        "duration": "18-25 minutes",
+        "players": "8-40 people",
+        "difficulty": "Medium"
+      },
+      {
+        "title": "Helium Stick",
+        "description": "Team must lower a stick to ground while everyone keeps finger contact. This seemingly simple game requires the team to work together while aiming to lower a stick to the ground while staying synchronized.",
+        "duration": "10-15 minutes",
+        "players": "8-20 people",
+        "difficulty": "Medium"
+      },
+      {
+        "title": "Desert Island",
+        "description": "Group decides which items to keep for survival on desert island. This classic team-building exercise puts problem-solving and negotiation skills to the test through collaborative decision-making.",
+        "duration": "15-25 minutes",
+        "players": "6-30 people",
+        "difficulty": "Medium"
+      }
+    ]
+  }
+}
