@@ -56,7 +56,7 @@ const nextConfig = {
       },
       // 字体文件
       {
-        source: "/(.*\\.(woff|woff2|ttf|eot))",
+        source: "/.*\\.(?:woff|woff2|ttf|eot)",
         headers: [
           {
             key: "Cache-Control",
