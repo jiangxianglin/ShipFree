@@ -56,7 +56,46 @@ const nextConfig = {
       },
       // 字体文件
       {
-        source: "/.*\\.(?:woff|woff2|ttf|eot)",
+        source: "/:path*.woff",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+          {
+            key: "X-Robots-Tag",
+            value: "noindex, nofollow",
+          },
+        ],
+      },
+      {
+        source: "/:path*.woff2",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+          {
+            key: "X-Robots-Tag",
+            value: "noindex, nofollow",
+          },
+        ],
+      },
+      {
+        source: "/:path*.ttf",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+          {
+            key: "X-Robots-Tag",
+            value: "noindex, nofollow",
+          },
+        ],
+      },
+      {
+        source: "/:path*.eot",
         headers: [
           {
             key: "Cache-Control",
