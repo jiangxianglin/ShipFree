@@ -21,9 +21,12 @@ export const metadata: Metadata = {
     canonical: "https://www.icebreakergames.site",
   },
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/favicon.ico',
+    icon: [
+      { url: '/favicon-new.ico', sizes: 'any' },
+      { url: '/favicon-new.ico', type: 'image/x-icon' },
+    ],
+    shortcut: '/favicon-new.ico',
+    apple: '/favicon-new.ico',
   },
   openGraph: {
     type: "website",
@@ -70,6 +73,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/favicon-new.ico" sizes="any" />
+        <link rel="icon" type="image/x-icon" href="/favicon-new.ico" />
+        <link rel="shortcut icon" href="/favicon-new.ico" />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-D5XT9FCNRG"
           strategy="afterInteractive"

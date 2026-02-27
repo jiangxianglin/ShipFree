@@ -21,6 +21,7 @@ export const gamesTable = pgTable("games", {
   steps: text("steps"),
   tags: text("tags").array().notNull().default(sql`ARRAY[]::text[]`),
   image: text("image"),
+  type: varchar("type", { length: 100 }),
   createdAt: timestamp("created_at").defaultNow().notNull(),
   updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });

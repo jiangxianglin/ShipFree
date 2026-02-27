@@ -18,6 +18,7 @@ export type GameFilters = {
   duration: string;
   players: string;
   difficulty: GameDifficulty | "all";
+  type: string;
   keyword: string;
 };
 
@@ -31,6 +32,7 @@ export function GameFilter({ onFilterChange }: GameFilterProps) {
     duration: "all",
     players: "all",
     difficulty: "all",
+    type: "all",
     keyword: "",
   });
 
@@ -46,6 +48,7 @@ export function GameFilter({ onFilterChange }: GameFilterProps) {
       duration: "all",
       players: "all",
       difficulty: "all",
+      type: "all",
       keyword: "",
     };
     setFilters(clearedFilters);
@@ -63,7 +66,7 @@ export function GameFilter({ onFilterChange }: GameFilterProps) {
 
       {/* Filter Panel */}
       <div className="bg-gradient-to-br from-cyan-500 to-blue-500 rounded-b-2xl p-6 shadow-lg">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
           {/* Activity Type */}
           <div>
             <label className="block text-white font-semibold mb-2 text-sm uppercase">
@@ -84,6 +87,32 @@ export function GameFilter({ onFilterChange }: GameFilterProps) {
                 <SelectItem value="Training">Training</SelectItem>
                 <SelectItem value="Conference">Conference</SelectItem>
                 <SelectItem value="Social Event">Social Event</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+
+          {/* Game Type */}
+          <div>
+            <label className="block text-white font-semibold mb-2 text-sm uppercase">
+              Game Type
+            </label>
+            <Select
+              value={filters.type}
+              onValueChange={(value) => handleFilterChange("type", value)}
+            >
+              <SelectTrigger className="bg-white">
+                <SelectValue placeholder="All game types" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All Game Types</SelectItem>
+                <SelectItem value="Table Game">Table Game</SelectItem>
+                <SelectItem value="Christmas Game">Christmas Game</SelectItem>
+                <SelectItem value="Icebreaker">Icebreaker</SelectItem>
+                <SelectItem value="Energizer">Energizer</SelectItem>
+                <SelectItem value="Quick Start">Quick Start</SelectItem>
+                <SelectItem value="Conversation Starter">Conversation Starter</SelectItem>
+                <SelectItem value="Interactive">Interactive</SelectItem>
+                <SelectItem value="Creative">Creative</SelectItem>
               </SelectContent>
             </Select>
           </div>

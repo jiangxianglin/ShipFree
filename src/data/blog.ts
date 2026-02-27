@@ -11,6 +11,16 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "christmas-table-icebreaker-games",
+    title: "Christmas Table Icebreaker Games - 15 Fun Holiday Activities",
+    excerpt: "Discover 15 engaging Christmas table icebreaker games perfect for holiday dinners. Easy-to-play activities that keep guests entertained while seated.",
+    date: "2026-02-07",
+    author: "Holiday Events Team",
+    image: "/christmas-dinner-connection.jpg",
+    tags: ["Christmas Games", "Holiday Party", "Table Games", "Dinner Party", "Family Activities"],
+    content: `Complete guide to Christmas table icebreaker games for holiday dinners and festive gatherings.`
+  },
+  {
     slug: "tips-for-running-effective-icebreakers",
     title: "Effective Icebreaker Games Tips: Expert Guide for Teams",
     excerpt: "Master icebreaker games with proven tips from experts. Learn to choose, facilitate & engage teams with professional activities for meetings & events.",

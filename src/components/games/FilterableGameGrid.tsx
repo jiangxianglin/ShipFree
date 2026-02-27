@@ -19,6 +19,7 @@ export function FilterableGameGrid({ games }: FilterableGameGridProps) {
     duration: searchParams.get("duration") || "all",
     players: searchParams.get("players") || "all",
     difficulty: (searchParams.get("difficulty") as any) || "all",
+    type: searchParams.get("type") || "all",
     keyword: searchParams.get("keyword") || "",
   });
 
@@ -29,6 +30,7 @@ export function FilterableGameGrid({ games }: FilterableGameGridProps) {
       duration: searchParams.get("duration") || "all",
       players: searchParams.get("players") || "all",
       difficulty: (searchParams.get("difficulty") as any) || "all",
+      type: searchParams.get("type") || "all",
       keyword: searchParams.get("keyword") || "",
     });
   }, [searchParams]);
@@ -42,6 +44,11 @@ export function FilterableGameGrid({ games }: FilterableGameGridProps) {
 
       // Difficulty filter
       if (filters.difficulty !== "all" && game.difficulty !== filters.difficulty) {
+        return false;
+      }
+
+      // Type filter
+      if (filters.type !== "all" && game.type !== filters.type) {
         return false;
       }
 

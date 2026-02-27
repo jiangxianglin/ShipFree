@@ -11,6 +11,7 @@ export type Game = {
   steps: string | null;
   tags: string[];
   image: string | null;
+  type: GameType | null;
   createdAt: Date;
   updatedAt: Date;
 };
@@ -24,6 +25,17 @@ export type GameCategory =
   | "Social Event";
 
 export type GameDifficulty = "Easy" | "Medium" | "Hard";
+
+export type GameType = 
+  | "Icebreaker"
+  | "Energizer"
+  | "Team Building"
+  | "Table Game"
+  | "Christmas Game"
+  | "Quick Start"
+  | "Conversation Starter"
+  | "Interactive"
+  | "Creative";
 
 export type GameCardProps = {
   game: Game;
