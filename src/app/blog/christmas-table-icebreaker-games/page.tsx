@@ -1,5 +1,5 @@
 import { christmasTableGamesOptimized } from "@/data/christmas-table-games-blog-optimized";
-import { GameCard } from "@/components/blog/GameCard";
+import { GameListItem } from "@/components/blog/GameListItem";
 import { SimpleTableOfContents } from "@/components/blog/SimpleTableOfContents";
 import Link from "next/link";
 import Image from "next/image";
@@ -223,19 +223,21 @@ export default function ChristmasTableGamesPage() {
           </header>
 
           {/* Hero Image */}
-          <div className="mb-12 rounded-3xl overflow-hidden shadow-2xl max-w-lg mx-auto">
-            <Image
-              src="/christmas-table-games-hero.jpg"
-              alt="Christmas table icebreaker games with dice and cards on festive dinner table"
-              width={1200}
-              height={630}
-              className="w-full h-auto object-contain"
-              priority
-            />
+          <div className="mb-12 max-w-2xl mx-auto">
+            <div className="rounded-3xl overflow-hidden shadow-2xl">
+              <Image
+                src="/christmas-table-games-hero.jpg"
+                alt="Christmas table icebreaker games with dice and cards on festive dinner table"
+                width={1200}
+                height={630}
+                className="w-full h-auto object-cover"
+                priority
+              />
+            </div>
           </div>
 
           {/* Introduction */}
-          <div id="intro" className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl shadow-xl border border-white/20 dark:border-gray-700/50 p-8 mb-8">
+          <div id="intro" className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl shadow-xl border border-white/20 dark:border-gray-700/50 p-8 mb-12">
             <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white flex items-center">
               <span className="text-4xl mr-3">🎅</span>
               Introduction
@@ -244,96 +246,48 @@ export default function ChristmasTableGamesPage() {
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg whitespace-pre-line">
                 {post.intro}
               </p>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg mt-4">
+                Looking for more ways to energize your gatherings? Check out our <Link href="/" className="text-red-600 hover:text-green-600 font-semibold underline">complete collection of icebreaker games</Link> or explore our <Link href="/blog/fun-icebreaker-games-ultimate-guide" className="text-red-600 hover:text-green-600 font-semibold underline">ultimate guide to fun icebreaker games</Link> for all occasions.
+              </p>
             </div>
           </div>
 
-          {/* Family Playing Games Image */}
-          <div className="mb-12 rounded-3xl overflow-hidden shadow-xl max-w-md mx-auto">
-            <Image
-              src="/christmas-family-table-games.jpg"
-              alt="Multi-generational family playing Christmas icebreaker games at dinner table"
-              width={800}
-              height={600}
-              className="w-full h-auto object-contain"
-            />
-          </div>
-
-          {/* Games Grid */}
-          <div id="games" className="mb-12">
-            <h2 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white flex items-center">
-              <span className="text-4xl mr-3">🎄</span>
-              15 Christmas Table Games
-            </h2>
-            
-            <div className="grid gap-6">
-              {post.games.slice(0, 7).map((game) => (
-                <GameCard
-                  key={game.number}
-                  number={game.number}
-                  title={game.title}
-                  description={game.description}
-                  players={game.players}
-                  duration={game.duration}
-                  materials={game.materials}
-                  fullContent={game.fullContent}
-                />
-              ))}
-            </div>
-
-            {/* Game Materials Image - Between games 7 and 8 */}
-            <div className="my-12 rounded-3xl overflow-hidden shadow-xl max-w-md mx-auto">
-              <Image
-                src="/christmas-game-materials.jpg"
-                alt="Christmas party game materials including dice, candies, and question cards"
-                width={800}
-                height={600}
-                className="w-full h-auto object-contain"
-              />
-            </div>
-
-            <div className="grid gap-6">
-              {post.games.slice(7).map((game) => (
-                <GameCard
-                  key={game.number}
-                  number={game.number}
-                  title={game.title}
-                  description={game.description}
-                  players={game.players}
-                  duration={game.duration}
-                  materials={game.materials}
-                  fullContent={game.fullContent}
-                />
-              ))}
-            </div>
-          </div>
-
-          {/* Quick Tips */}
-          <div id="quick-tips" className="bg-gradient-to-br from-red-50 to-green-50 dark:from-gray-800 dark:to-gray-700 rounded-3xl shadow-xl p-8 mb-8">
-            <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white flex items-center">
-              <span className="text-4xl mr-3">💡</span>
-              Quick Success Tips
-            </h2>
-
-            {/* Success & Connection Image */}
-            <div className="mb-8 rounded-2xl overflow-hidden shadow-xl max-w-md mx-auto">
-              <Image
-                src="/christmas-dinner-connection.jpg"
-                alt="Friends celebrating and connecting at Christmas dinner party with games"
-                width={800}
-                height={600}
-                className="w-full h-auto object-contain"
-              />
-            </div>
-
-            <div className="prose prose-lg max-w-none">
-              <div className="text-gray-700 dark:text-gray-300 leading-relaxed whitespace-pre-line">
-                {post.quickTips}
+          {/* Quick Tips with Image */}
+          <div id="quick-tips" className="mb-12">
+            <div className="max-w-5xl mx-auto bg-gradient-to-br from-red-50 to-green-50 dark:from-gray-800 dark:to-gray-700 rounded-3xl shadow-xl overflow-hidden">
+              <div className="grid md:grid-cols-2 gap-0 items-center">
+                {/* Image Side */}
+                <div className="relative h-80 md:h-96">
+                  <Image
+                    src="/christmas-family-table-games.jpg"
+                    alt="Multi-generational family playing Christmas icebreaker games at dinner table"
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                
+                {/* Content Side */}
+                <div className="p-8 md:p-10">
+                  <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white flex items-center">
+                    <span className="text-4xl mr-3">💡</span>
+                    Quick Success Tips
+                  </h2>
+                  <div className="prose prose-lg max-w-none">
+                    <div className="text-gray-700 dark:text-gray-300 leading-relaxed whitespace-pre-line text-base">
+                      {post.quickTips}
+                    </div>
+                    <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-sm mt-4">
+                      Want to become a master facilitator? Read our expert guide on <Link href="/blog/tips-for-running-effective-icebreakers" className="text-red-600 hover:text-green-600 font-semibold underline">running effective icebreaker games</Link>.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
           {/* FAQ */}
-          <div id="faq" className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 mb-8">
+          <div id="faq" className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 mb-12">
             <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white flex items-center">
               <span className="text-4xl mr-3">❓</span>
               Frequently Asked Questions
@@ -345,16 +299,63 @@ export default function ChristmasTableGamesPage() {
             </div>
           </div>
 
-          {/* Conclusion */}
-          <div id="conclusion" className="bg-gradient-to-r from-red-100 to-green-100 dark:from-red-900/30 dark:to-green-900/30 rounded-3xl shadow-xl p-8 mb-8">
-            <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white flex items-center">
-              <span className="text-4xl mr-3">🎁</span>
-              Ready for Your Best Christmas Dinner?
-            </h2>
-            <div className="prose prose-lg max-w-none">
-              <div className="text-gray-700 dark:text-gray-300 leading-relaxed whitespace-pre-line">
-                {post.conclusion}
+          {/* Conclusion with Image */}
+          <div id="conclusion" className="mb-12">
+            <div className="max-w-5xl mx-auto bg-gradient-to-r from-red-100 to-green-100 dark:from-red-900/30 dark:to-green-900/30 rounded-3xl shadow-xl overflow-hidden">
+              <div className="grid md:grid-cols-2 gap-0 items-center">
+                {/* Content Side */}
+                <div className="p-8 md:p-10 order-2 md:order-1">
+                  <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white flex items-center">
+                    <span className="text-4xl mr-3">🎁</span>
+                    Ready for Your Best Christmas Dinner?
+                  </h2>
+                  <div className="prose prose-lg max-w-none">
+                    <div className="text-gray-700 dark:text-gray-300 leading-relaxed whitespace-pre-line text-base">
+                      {post.conclusion}
+                    </div>
+                    <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-sm mt-4">
+                      Planning other types of gatherings? Discover our <Link href="/blog/ice-breaker-games-for-meetings" className="text-red-600 hover:text-green-600 font-semibold underline">best ice breaker games for meetings</Link> to energize your professional events, or explore our <Link href="/blog" className="text-red-600 hover:text-green-600 font-semibold underline">complete blog collection</Link> for more expert tips and game ideas.
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Image Side */}
+                <div className="relative h-80 md:h-96 order-1 md:order-2">
+                  <Image
+                    src="/christmas-dinner-connection.jpg"
+                    alt="Friends celebrating and connecting at Christmas dinner party with games"
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
+            </div>
+          </div>
+
+          {/* Games List */}
+          <div id="games" className="mb-12">
+            <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white flex items-center">
+              <span className="text-4xl mr-3">🎄</span>
+              15 Christmas Table Games
+            </h2>
+            
+            <p className="text-gray-700 dark:text-gray-300 mb-6 text-base leading-relaxed bg-gradient-to-r from-red-50 to-green-50 dark:from-gray-800 dark:to-gray-700 p-4 rounded-xl">
+              Click any game below to view complete instructions, variations, and pro tips on its dedicated page.
+            </p>
+
+            <div className="space-y-3">
+              {post.games.map((game) => (
+                <GameListItem
+                  key={game.number}
+                  number={game.number}
+                  title={game.title}
+                  description={game.description}
+                  players={game.players}
+                  duration={game.duration}
+                  link={game.link}
+                />
+              ))}
             </div>
           </div>
           
@@ -380,20 +381,76 @@ export default function ChristmasTableGamesPage() {
           {/* Related Links Section */}
           <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 mb-8">
             <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
-              Explore More Icebreaker Games
+              Explore More Icebreaker Games & Resources
             </h3>
             <div className="grid md:grid-cols-2 gap-4">
               <Link
-                href="/games"
+                href="/"
                 className="flex items-center p-4 bg-gradient-to-r from-red-50 to-green-50 dark:from-gray-700 dark:to-gray-600 rounded-xl hover:shadow-lg transition-all duration-300 group"
               >
-                <span className="text-3xl mr-4">🎮</span>
+                <span className="text-3xl mr-4">🏠</span>
                 <div>
                   <div className="font-semibold text-gray-900 dark:text-white group-hover:text-red-600 transition-colors">
-                    All Icebreaker Games
+                    Home - All Games
                   </div>
                   <div className="text-sm text-gray-600 dark:text-gray-400">
-                    Browse our complete collection
+                    Discover our complete collection
+                  </div>
+                </div>
+              </Link>
+              <Link
+                href="/blog"
+                className="flex items-center p-4 bg-gradient-to-r from-red-50 to-green-50 dark:from-gray-700 dark:to-gray-600 rounded-xl hover:shadow-lg transition-all duration-300 group"
+              >
+                <span className="text-3xl mr-4">📚</span>
+                <div>
+                  <div className="font-semibold text-gray-900 dark:text-white group-hover:text-red-600 transition-colors">
+                    Blog - Expert Tips
+                  </div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">
+                    Read more guides and articles
+                  </div>
+                </div>
+              </Link>
+              <Link
+                href="/blog/tips-for-running-effective-icebreakers"
+                className="flex items-center p-4 bg-gradient-to-r from-red-50 to-green-50 dark:from-gray-700 dark:to-gray-600 rounded-xl hover:shadow-lg transition-all duration-300 group"
+              >
+                <span className="text-3xl mr-4">💡</span>
+                <div>
+                  <div className="font-semibold text-gray-900 dark:text-white group-hover:text-red-600 transition-colors">
+                    Effective Icebreaker Tips
+                  </div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">
+                    Master facilitation skills
+                  </div>
+                </div>
+              </Link>
+              <Link
+                href="/blog/fun-icebreaker-games-ultimate-guide"
+                className="flex items-center p-4 bg-gradient-to-r from-red-50 to-green-50 dark:from-gray-700 dark:to-gray-600 rounded-xl hover:shadow-lg transition-all duration-300 group"
+              >
+                <span className="text-3xl mr-4">🎯</span>
+                <div>
+                  <div className="font-semibold text-gray-900 dark:text-white group-hover:text-red-600 transition-colors">
+                    Fun Games Guide
+                  </div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">
+                    Ultimate collection for teams
+                  </div>
+                </div>
+              </Link>
+              <Link
+                href="/blog/ice-breaker-games-for-meetings"
+                className="flex items-center p-4 bg-gradient-to-r from-red-50 to-green-50 dark:from-gray-700 dark:to-gray-600 rounded-xl hover:shadow-lg transition-all duration-300 group"
+              >
+                <span className="text-3xl mr-4">💼</span>
+                <div>
+                  <div className="font-semibold text-gray-900 dark:text-white group-hover:text-red-600 transition-colors">
+                    Meeting Icebreakers
+                  </div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">
+                    Perfect for professional settings
                   </div>
                 </div>
               </Link>
@@ -407,7 +464,7 @@ export default function ChristmasTableGamesPage() {
                     Team Building Games
                   </div>
                   <div className="text-sm text-gray-600 dark:text-gray-400">
-                    Perfect for workplace events
+                    Build stronger teams
                   </div>
                 </div>
               </Link>

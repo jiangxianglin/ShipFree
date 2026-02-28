@@ -5,6 +5,7 @@ import "./globals.css";
 import type React from "react"; // Import React
 import { cn } from "@/lib/utils";
 import { Navigation } from "@/components/Navigation";
+import { HomeToolbarBanner } from "@/components/HomeToolbarBanner";
 import { Footer } from "@/components/Footer";
 
 const bricolageGrotesque = Bricolage_Grotesque({
@@ -96,6 +97,7 @@ export default function RootLayout({
         )}
       >
         <Navigation />
+        <HomeToolbarBanner />
         <main className="flex-1">{children}</main>
         <Footer />
       </body>
