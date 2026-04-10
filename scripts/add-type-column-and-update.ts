@@ -78,7 +78,7 @@ async function addTypeColumnAndUpdate() {
     
     let updatedCount = 0;
     let skippedCount = 0;
-    let notFoundGames: string[] = [];
+    const notFoundGames: string[] = [];
 
     for (const gameTitle of christmasTableGames) {
       const game = allGames?.find(g => g.title === gameTitle);

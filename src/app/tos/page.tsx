@@ -3,6 +3,16 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms of Service | Ice Breaker Games",
   description: "Terms of Service for Ice Breaker Games website.",
+  alternates: {
+    canonical: "https://www.icebreakergames.site/tos",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://www.icebreakergames.site/tos",
+    title: "Terms of Service | Ice Breaker Games",
+    description: "Terms of Service for Ice Breaker Games website.",
+    siteName: "Ice Breaker Games",
+  },
 };
 
 export default function TermsOfService() {

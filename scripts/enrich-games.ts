@@ -540,7 +540,7 @@ function appendToSeedFile(newGames: ProcessedGame[]): void {
     backupPath = createBackup(seedFilePath);
     
     // Read the existing file content
-    let fileContent = readSeedFile();
+    const fileContent = readSeedFile();
     
     // Find the position to insert new games
     // Look for the closing bracket of the seedGames array

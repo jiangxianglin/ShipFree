@@ -3,6 +3,16 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy | Ice Breaker Games",
   description: "Privacy Policy for Ice Breaker Games website.",
+  alternates: {
+    canonical: "https://www.icebreakergames.site/privacy-policy",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://www.icebreakergames.site/privacy-policy",
+    title: "Privacy Policy | Ice Breaker Games",
+    description: "Privacy Policy for Ice Breaker Games website.",
+    siteName: "Ice Breaker Games",
+  },
 };
 
 export default function PrivacyPolicy() {

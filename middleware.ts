@@ -3,6 +3,21 @@ import { updateSession } from "@/lib/supabase/middleware";
 import { createClient } from "@/lib/supabase/server";
 
 export async function middleware(request: NextRequest) {
+  const hostHeader = request.headers.get("host") ?? "";
+  const hostname = hostHeader.split(":")[0];
+  const canonicalHostname = "www.icebreakergames.site";
+  const forwardedProto = request.headers.get("x-forwarded-proto") ?? "";
+
+  if (
+    hostname === "icebreakergames.site" ||
+    (hostname === canonicalHostname && forwardedProto === "http")
+  ) {
+    const url = request.nextUrl.clone();
+    url.hostname = canonicalHostname;
+    url.protocol = "https:";
+    return NextResponse.redirect(url, 308);
+  }
+
   const pathname = request.nextUrl.pathname;
 
   // Handle UUID to slug redirects for game pages
