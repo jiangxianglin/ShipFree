@@ -65,7 +65,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${baseUrl}/blog/${post.slug}`,
       lastModified: new Date(post.date),
       changeFrequency: 'monthly' as const,
-      priority: 0.8,
+      priority: post.slug === 'ice-breaker-games-for-adults' ? 0.9 : 0.8,
     }));
 
     return [...staticPages, ...gamePages, ...blogPages];
@@ -97,6 +97,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         url: `${baseUrl}/games/human-bingo`,
         lastModified: new Date(),
         changeFrequency: 'daily',
+        priority: 0.9,
+      },
+      {
+        url: `${baseUrl}/blog`,
+        lastModified: new Date(),
+        changeFrequency: 'weekly',
+        priority: 0.9,
+      },
+      {
+        url: `${baseUrl}/blog/ice-breaker-games-for-adults`,
+        lastModified: new Date("2026-04-23"),
+        changeFrequency: 'monthly',
         priority: 0.9,
       },
     ];

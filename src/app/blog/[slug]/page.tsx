@@ -89,7 +89,7 @@ function MarkdownRenderer({ content }: { content: string }) {
         <ul key={key++} className="space-y-3 mb-8 pl-6">
           {currentList.map((item, i) => (
             <li key={i} className="relative text-gray-700 dark:text-gray-300 leading-relaxed">
-              <span className="absolute -left-6 top-2 w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></span>
+      <span className="absolute -left-6 top-2 w-2 h-2 bg-emerald-500 rounded-full"></span>
               {parseInline(item)}
             </li>
           ))}
@@ -121,7 +121,7 @@ function MarkdownRenderer({ content }: { content: string }) {
       flushList();
       elements.push(
         <h2 key={key++} className="text-3xl md:text-4xl font-bold mt-12 mb-6 text-gray-900 dark:text-white relative">
-          <span className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-blue-500 to-purple-500 rounded-full"></span>
+          <span className="absolute -left-4 top-0 w-1 h-full bg-emerald-500 rounded-full"></span>
           {parseInline(line.substring(3))}
         </h2>
       );
@@ -131,7 +131,7 @@ function MarkdownRenderer({ content }: { content: string }) {
       flushList();
       elements.push(
         <h3 key={key++} className="text-2xl md:text-3xl font-bold mt-10 mb-4 text-gray-800 dark:text-gray-200 flex items-center">
-          <span className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center text-white text-sm font-bold mr-3">
+          <span className="w-8 h-8 bg-emerald-600 rounded-lg flex items-center justify-center text-white text-sm font-bold mr-3">
             {elements.filter(el => React.isValidElement(el) && el.type === 'h3').length + 1}
           </span>
           {parseInline(line.substring(4))}
@@ -159,7 +159,7 @@ function MarkdownRenderer({ content }: { content: string }) {
         // Hero image styling - larger and more prominent
         elements.push(
           <div key={key++} className="my-8 group">
-            <div className="relative overflow-hidden rounded-2xl shadow-xl bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-700">
+            <div className="relative overflow-hidden rounded-2xl shadow-xl bg-white dark:bg-gray-800">
               <img
                 src={imageMatch[2]}
                 alt={imageMatch[1]}
@@ -191,7 +191,7 @@ function MarkdownRenderer({ content }: { content: string }) {
         // Content images - compact and integrated
         elements.push(
           <div key={key++} className="my-6 group">
-            <div className="relative overflow-hidden rounded-xl shadow-lg bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-800 dark:to-gray-700 p-2">
+            <div className="relative overflow-hidden rounded-xl shadow-lg bg-white dark:bg-gray-800 p-2">
               <img
                 src={imageMatch[2]}
                 alt={imageMatch[1]}
@@ -269,7 +269,7 @@ function parseInline(text: string): React.ReactNode[] {
         parts.push(<span key={key++}>{currentText.substring(0, boldIndex)}</span>);
       }
       parts.push(
-        <strong key={key++} className="font-bold text-gray-900 dark:text-white bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+        <strong key={key++} className="font-bold text-gray-900 dark:text-white">
           {boldMatch![1]}
         </strong>
       );
@@ -283,7 +283,7 @@ function parseInline(text: string): React.ReactNode[] {
         <Link 
           key={key++} 
           href={linkMatch![2]} 
-          className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium underline decoration-2 underline-offset-2 hover:decoration-blue-600 dark:hover:decoration-blue-400 transition-all duration-300"
+          className="inline-flex items-center text-emerald-700 dark:text-emerald-300 hover:text-emerald-800 dark:hover:text-emerald-200 font-medium underline decoration-2 underline-offset-2 hover:decoration-emerald-600 dark:hover:decoration-emerald-400 transition-all duration-300"
         >
           {linkMatch![1]}
           <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -321,19 +321,19 @@ export default async function BlogPost({ params }: Props) {
         `}
       </Script>
       
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+      <div className="min-h-screen bg-slate-50 dark:bg-gray-900">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:bg-grid-slate-700/25 dark:[mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.5))]"></div>
         
         {/* Floating Elements */}
-        <div className="absolute top-20 right-10 w-20 h-20 bg-blue-200/20 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute top-60 left-10 w-32 h-32 bg-purple-200/15 rounded-full blur-2xl animate-pulse delay-1000"></div>
+        <div className="absolute top-20 right-10 w-20 h-20 bg-emerald-100/20 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute top-60 left-10 w-32 h-32 bg-emerald-200/15 rounded-full blur-2xl animate-pulse delay-1000"></div>
         
         <article className="relative container mx-auto px-4 py-12 max-w-4xl">
           {/* Back Button */}
           <Link
             href="/blog"
-            className="inline-flex items-center px-4 py-2 text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium mb-8 group transition-all duration-300 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full shadow-lg hover:shadow-xl border border-blue-100 dark:border-blue-900/50"
+            className="inline-flex items-center px-4 py-2 text-emerald-700 dark:text-emerald-300 hover:text-emerald-800 dark:hover:text-emerald-200 font-medium mb-8 group transition-all duration-300 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full shadow-md hover:shadow-lg border border-emerald-100 dark:border-emerald-900/40"
           >
             <svg className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -382,7 +382,7 @@ export default async function BlogPost({ params }: Props) {
               {post.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-4 py-2 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-800 dark:text-blue-200 text-sm font-semibold rounded-full border border-blue-200/50 dark:border-blue-700/50 backdrop-blur-sm"
+                  className="px-4 py-2 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-800 dark:text-emerald-200 text-sm font-semibold rounded-full border border-emerald-100 dark:border-emerald-800/60 backdrop-blur-sm"
                 >
                   {tag}
                 </span>
@@ -390,14 +390,14 @@ export default async function BlogPost({ params }: Props) {
             </div>
             
             {/* Title */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-gray-900 via-blue-800 to-indigo-900 dark:from-white dark:via-blue-200 dark:to-indigo-200 bg-clip-text text-transparent leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900 dark:text-white leading-tight">
               {post.title}
             </h1>
             
             {/* Meta Info */}
             <div className="flex flex-wrap items-center gap-6 text-gray-600 dark:text-gray-400 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl px-6 py-4 border border-gray-200/50 dark:border-gray-700/50">
               <div className="flex items-center">
-                <svg className="w-5 h-5 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-5 h-5 mr-2 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
                 </svg>
                 <span className="font-medium">
@@ -409,7 +409,7 @@ export default async function BlogPost({ params }: Props) {
                 </span>
               </div>
               <div className="flex items-center">
-                <svg className="w-5 h-5 mr-2 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-5 h-5 mr-2 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
                 </svg>
                 <span className="font-medium">{post.author}</span>
@@ -430,14 +430,14 @@ export default async function BlogPost({ params }: Props) {
           
           {/* Call to Action */}
           <div className="mt-16 text-center">
-            <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-8 text-white shadow-2xl">
+            <div className="rounded-3xl p-8 text-white shadow-2xl bg-emerald-600">
               <h3 className="text-2xl font-bold mb-4">Ready to Transform Your Team?</h3>
-              <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
+              <p className="text-emerald-100 mb-6 max-w-2xl mx-auto">
                 Explore our complete collection of ice breaker games and start building stronger connections today.
               </p>
               <Link
                 href="/games"
-                className="inline-flex items-center px-8 py-4 bg-white text-blue-600 rounded-2xl font-bold hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 transform"
+                className="inline-flex items-center px-8 py-4 bg-white text-emerald-700 rounded-2xl font-bold hover:bg-emerald-50 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 transform"
               >
                 Browse All Games
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -24,9 +24,22 @@
   <!-- Blog Page -->
   <url>
     <loc>https://www.icebreakergames.site/blog</loc>
-    <lastmod>2024-12-01</lastmod>
+    <lastmod>2026-04-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- Ice Breaker Games for Adults Blog Post -->
+  <url>
+    <loc>https://www.icebreakergames.site/blog/ice-breaker-games-for-adults</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.icebreakergames.site/img/blog/icebreaker-games-for-adults-online-vs-inperson.jpg</image:loc>
+      <image:title>Ice Breaker Games for Adults</image:title>
+      <image:caption>Ice breaker games for adults for online and in-person groups</image:caption>
+    </image:image>
   </url>
   
   <!-- Christmas Table Icebreaker Games Blog Post -->

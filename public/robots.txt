@@ -3,5 +3,7 @@ Allow: /
 Disallow: /auth/
 Disallow: /dashboard/
 Disallow: /api/
+Disallow: /_next/static/
 
+Host: https://www.icebreakergames.site
 Sitemap: https://www.icebreakergames.site/sitemap.xml

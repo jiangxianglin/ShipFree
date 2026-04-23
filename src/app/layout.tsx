@@ -23,11 +23,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon-new.ico', sizes: 'any' },
-      { url: '/favicon-new.ico', type: 'image/x-icon' },
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.ico", type: "image/x-icon" },
     ],
-    shortcut: '/favicon-new.ico',
-    apple: '/favicon-new.ico',
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
   },
   openGraph: {
     type: "website",
@@ -74,9 +74,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon-new.ico" sizes="any" />
-        <link rel="icon" type="image/x-icon" href="/favicon-new.ico" />
-        <link rel="shortcut icon" href="/favicon-new.ico" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon.ico" />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-D5XT9FCNRG"
           strategy="afterInteractive"
