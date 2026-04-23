@@ -2,7 +2,6 @@ import { blogPosts } from "@/data/blog";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Metadata } from "next";
-import Script from "next/script";
 import React from "react";
 
 interface Props {
@@ -308,19 +307,6 @@ export default async function BlogPost({ params }: Props) {
 
   return (
     <>
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-D5XT9FCNRG"
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-D5XT9FCNRG');
-        `}
-      </Script>
-      
       <div className="min-h-screen bg-slate-50 dark:bg-gray-900">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:bg-grid-slate-700/25 dark:[mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.5))]"></div>

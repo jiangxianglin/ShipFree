@@ -59,19 +59,6 @@ export default function ChristmasTableGamesPage() {
 
   return (
     <>
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-D5XT9FCNRG"
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-D5XT9FCNRG');
-        `}
-      </Script>
-
       {/* JSON-LD Structured Data */}
       <Script id="structured-data" type="application/ld+json" strategy="afterInteractive">
         {`

@@ -54,19 +54,6 @@ export default function ChristmasTableGamesOptimized() {
 
   return (
     <>
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-D5XT9FCNRG"
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-D5XT9FCNRG');
-        `}
-      </Script>
-      
       <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-green-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
         {/* Table of Contents - Fixed on right side */}
         <SimpleTableOfContents />
