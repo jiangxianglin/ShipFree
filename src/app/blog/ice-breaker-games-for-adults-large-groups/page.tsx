@@ -62,7 +62,7 @@ const NETWORKING_GAMES = [
 const SEATED_GAMES = [
   {
     title: "Beach Ball Q&A",
-    slug: "beach-ball-q-a",
+    slug: "beach-ball-qa",
     bestFor: "Large seated audiences and all-hands meetings",
     groupSize: "30–150 adults",
     why: "Adds just enough movement and unpredictability while keeping people in their seats.",
@@ -238,7 +238,7 @@ export default function AdultsLargeGroupsPage() {
               </p>
               <ul className="text-xs md:text-sm text-emerald-800 dark:text-emerald-200 space-y-1">
                 <li>
-                  <Link href="/games/beach-ball-q-a" className="underline font-medium">
+                  <Link href="/games/beach-ball-qa" className="underline font-medium">
                     Beach Ball Q&amp;A
                   </Link>
                 </li>

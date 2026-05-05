@@ -11,7 +11,7 @@ const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-const seedGames = [
+export const seedGames = [
   {
     id: crypto.randomUUID(),
     slug: generateSlug("Two Truths and a Lie"),
@@ -941,12 +941,14 @@ async function runSeed() {
   }
 }
 
-runSeed()
-  .then(() => {
-    console.log("Seed completed successfully!");
-    process.exit(0);
-  })
-  .catch((error) => {
-    console.error("Seed failed:", error);
-    process.exit(1);
-  });
+if (process.argv[1] && process.argv[1].includes("games-supabase.ts")) {
+  runSeed()
+    .then(() => {
+      console.log("Seed completed successfully!");
+      process.exit(0);
+    })
+    .catch((error) => {
+      console.error("Seed failed:", error);
+      process.exit(1);
+    });
+}

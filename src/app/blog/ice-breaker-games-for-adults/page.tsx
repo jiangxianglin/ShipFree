@@ -266,7 +266,7 @@ export default function AdultsIcebreakersPage() {
               </p>
               <ul className="text-xs md:text-sm text-emerald-800 dark:text-emerald-200 space-y-1">
                 <li>
-                  <Link href="/games/beach-ball-q-a" className="underline font-medium">
+                  <Link href="/games/beach-ball-qa" className="underline font-medium">
                     Beach Ball Q&amp;A
                   </Link>
                 </li>
@@ -313,7 +313,7 @@ export default function AdultsIcebreakersPage() {
               },
               {
                 name: "Ten Things in Common",
-                href: "/games/ten-things-in-common",
+                href: "/games/10-things-in-common",
                 text: "Pairs or trios discover shared interests beyond the obvious job titles.",
               },
               {
@@ -386,7 +386,7 @@ export default function AdultsIcebreakersPage() {
             items={[
               {
                 name: "Beach Ball Q&A (virtual)",
-                href: "/games/beach-ball-q-a",
+                href: "/games/beach-ball-qa",
                 text: "Use numbered questions instead of a physical ball and call out numbers at random.",
               },
               {
@@ -413,12 +413,12 @@ export default function AdultsIcebreakersPage() {
               },
               {
                 name: "Ten Things in Common",
-                href: "/games/ten-things-in-common",
+                href: "/games/10-things-in-common",
                 text: "Highlights shared values and experiences among people who may not know each other well.",
               },
               {
                 name: "Beach Ball Q&A",
-                href: "/games/beach-ball-q-a",
+                href: "/games/beach-ball-qa",
                 text: "Ask gentle, uplifting questions that work across cultures and ages.",
               },
             ]}
@@ -528,7 +528,7 @@ export default function AdultsIcebreakersPage() {
                   Six Word Memoirs
                 </Link>{" "}
                 or{" "}
-                <Link href="/games/ten-things-in-common" className="underline font-medium">
+                <Link href="/games/10-things-in-common" className="underline font-medium">
                   Ten Things in Common
                 </Link>
                 . These formats give everyone structure and choice without putting anyone on the spot.

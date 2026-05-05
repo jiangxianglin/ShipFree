@@ -11,6 +11,26 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "human-bingo-for-students-printable",
+    title: "Human Bingo for Students Printable: 3 Ready-to-Print Cards",
+    excerpt: "Download and print student-friendly Human Bingo cards for class, orientation, and first day of school activities, with prompts that work for high school, college, and mixed groups.",
+    date: "2026-05-05",
+    author: "IceBreaker Editorial Team",
+    image: "/large-group-icebreaker-event.jpg",
+    tags: ["Human Bingo", "Printable", "Student Icebreakers", "First Day of School", "Orientation"],
+    content: `Printable Human Bingo cards for students with classroom-safe prompts, quick teacher directions, and multiple versions for school and orientation use.`
+  },
+  {
+    slug: "icebreaker-games-for-students",
+    title: "Icebreaker Games for Students That Actually Work in Class",
+    excerpt: "Icebreaker Games for Students for class, high school, college, and online learning, with non-cheesy ideas, low-prep picks, and a teacher-friendly comparison table.",
+    date: "2026-05-05",
+    author: "IceBreaker Editorial Team",
+    image: "/small-group-icebreaker-activity.jpg",
+    tags: ["Student Icebreakers", "Classroom Games", "First Day of School", "High School", "College"],
+    content: `Practical guide to icebreaker games for students, including low-pressure classroom ideas, online options, and age-appropriate picks for high school and college.`
+  },
+  {
     slug: "christmas-table-icebreaker-games",
     title: "Christmas Table Icebreaker Games - 15 Fun Holiday Activities",
     excerpt: "Discover 15 engaging Christmas table icebreaker games perfect for holiday dinners. Easy-to-play activities that keep guests entertained while seated.",
@@ -906,7 +926,7 @@ Use this quick guide to choose a game for your large group:
 
 - Need a **high-energy opener** to wake everyone up? Try [Rock Paper Scissors Tournament](/games/rock-paper-scissors-tournament) or [Train Wreck](/games/train-wreck).
 - Want structured **networking and mingling**? Use [Human Bingo](/games/human-bingo), [Icebreaker Bingo](/games/icebreaker-bingo), or [Speed Networking](/games/speed-networking).
-- Have a **conference crowd that cannot move much**? Choose seated games like [Beach Ball Q&A](/games/beach-ball-q-a) or [This or That Questions](/games/this-or-that-questions).
+- Have a **conference crowd that cannot move much**? Choose seated games like [Beach Ball Q&A](/games/beach-ball-qa) or [This or That Questions](/games/this-or-that-questions).
 - Need something **low-prep and flexible**? Use [Category Mixer](/games/category-mixer) or [Line-Up](/games/line-up) as simple, scalable options.
 
 In the sections below, you will find detailed guidance on how to use each of these icebreaker games with large adult groups.
@@ -959,11 +979,11 @@ These icebreaker games are ideal for conferences, corporate events, or professio
 
 Sometimes you have a large adult group in a lecture hall or ballroom where movement is limited. These activities work well when people need to stay mostly in their seats.
 
-- **[Beach Ball Q&A](/games/beach-ball-q-a)**  
+- **[Beach Ball Q&A](/games/beach-ball-qa)**  
   - Best for: large seated audiences, all-hands meetings, and informal conferences.  
   - Group size: 30–150 adults  
   - Why choose it: adds just enough movement and unpredictability while keeping people in their seats; easy to tailor questions to any theme.  
-  - View full game: [How to run Beach Ball Q&A →](/games/beach-ball-q-a)
+  - View full game: [How to run Beach Ball Q&A →](/games/beach-ball-qa)
 
 - **[This or That Questions](/games/this-or-that-questions)**  
   - Best for: quick warm-ups in auditoriums or training rooms where you want everyone to participate at once.  

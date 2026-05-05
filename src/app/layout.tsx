@@ -13,6 +13,9 @@ const bricolageGrotesque = Bricolage_Grotesque({
   display: "swap",
 });
 
+const GOOGLE_ANALYTICS_ID = "G-D5XT9FCNRG";
+const GOOGLE_ADSENSE_ID = process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_ID;
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.icebreakergames.site"),
   title: "Ice Breaker Games",
@@ -78,7 +81,7 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/icon" />
         <link rel="apple-touch-icon" href="/apple-icon" />
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-D5XT9FCNRG"
+          src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_ID}`}
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -86,9 +89,18 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-D5XT9FCNRG');
+            gtag('config', '${GOOGLE_ANALYTICS_ID}');
           `}
         </Script>
+        {GOOGLE_ADSENSE_ID ? (
+          <Script
+            id="google-adsense"
+            async
+            strategy="afterInteractive"
+            crossOrigin="anonymous"
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${GOOGLE_ADSENSE_ID}`}
+          />
+        ) : null}
       </head>
       <body
         className={cn(
