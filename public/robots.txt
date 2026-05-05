@@ -4,6 +4,10 @@ Disallow: /auth/
 Disallow: /dashboard/
 Disallow: /api/
 Disallow: /_next/static/
+Disallow: *.woff
+Disallow: *.woff2
+Disallow: *.ttf
+Disallow: *.eot
 
 Host: https://www.icebreakergames.site
 Sitemap: https://www.icebreakergames.site/sitemap.xml

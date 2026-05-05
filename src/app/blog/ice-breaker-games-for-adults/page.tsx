@@ -5,9 +5,9 @@ import Script from "next/script";
 import Image from "next/image";
 
 const SLUG = "ice-breaker-games-for-adults";
-const title = "Ice Breaker Games for Adults: Best Group Ideas";
+const title = "Ice Breaker Games for Adults for Work, Teams & Parties";
 const description =
-  "ice breaker games for adults for teams, parties, and workshops. Compare quick ideas for small groups, large groups, and online meetings.";
+  "Discover ice breaker games for adults for work, team building, parties, and online meetings, with quick picks by group size and setting.";
 const imageUrl =
   "https://www.icebreakergames.site/img/blog/icebreaker-games-for-adults-online-vs-inperson.jpg";
 
