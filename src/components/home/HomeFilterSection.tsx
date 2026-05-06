@@ -14,18 +14,20 @@ import {
 } from "@/components/ui/select";
 import { GameGrid } from "@/components/games/GameGrid";
 import type { Game } from "@/types/game";
+import { filterGames, type GameFilters } from "@/lib/game-filtering";
 
 type HomeFilterSectionProps = {
   games: Game[];
 };
 
 export function HomeFilterSection({ games }: HomeFilterSectionProps) {
-  const [filters, setFilters] = useState({
+  const [filters, setFilters] = useState<GameFilters>({
     category: "all",
     duration: "all",
     players: "all",
     difficulty: "all",
     type: "all",
+    audience: "all",
     keyword: "",
   });
   const [showResults, setShowResults] = useState(false);
@@ -52,90 +54,16 @@ export function HomeFilterSection({ games }: HomeFilterSectionProps) {
       players: "all",
       difficulty: "all",
       type: "all",
+      audience: "all",
       keyword: "",
     });
     setShowResults(false);
   };
 
-  // Filter games based on criteria
-  const filteredGames = useMemo(() => {
-    if (!showResults) return [];
-
-    return games.filter((game) => {
-      // Category filter
-      if (filters.category !== "all" && game.category !== filters.category) {
-        return false;
-      }
-
-      // Difficulty filter
-      if (filters.difficulty !== "all" && game.difficulty !== filters.difficulty) {
-        return false;
-      }
-
-      // Type filter
-      if (filters.type !== "all" && game.type !== filters.type) {
-        return false;
-      }
-
-      // Duration filter
-      if (filters.duration !== "all" && game.duration) {
-        const duration = game.duration.toLowerCase();
-        const minutes = extractMinutes(duration);
-        
-        switch (filters.duration) {
-          case "quick":
-            if (minutes > 10) return false;
-            break;
-          case "short":
-            if (minutes < 10 || minutes > 20) return false;
-            break;
-          case "medium":
-            if (minutes < 20 || minutes > 45) return false;
-            break;
-          case "long":
-            if (minutes < 45) return false;
-            break;
-        }
-      }
-
-      // Players filter
-      if (filters.players !== "all" && game.players) {
-        const players = game.players.toLowerCase();
-        const playerCount = extractPlayerCount(players);
-        
-        switch (filters.players) {
-          case "small":
-            if (playerCount > 10) return false;
-            break;
-          case "medium":
-            if (playerCount < 10 || playerCount > 20) return false;
-            break;
-          case "large":
-            if (playerCount < 20 && !players.includes("any")) return false;
-            break;
-          case "any":
-            if (!players.includes("any")) return false;
-            break;
-        }
-      }
-
-      // Keyword filter
-      if (filters.keyword) {
-        const keyword = filters.keyword.toLowerCase();
-        const searchableText = [
-          game.title,
-          game.description,
-          ...game.tags,
-        ].join(" ").toLowerCase();
-        
-        if (!searchableText.includes(keyword)) {
-          return false;
-        }
-      }
-
-      return true;
-    });
-  }, [games, filters, showResults]);
+  const filteredGames = useMemo(
+    () => (showResults ? filterGames(games, filters) : []),
+    [games, filters, showResults]
+  );
 
   return (
     <section className="py-8 bg-gray-50 dark:bg-gray-900/30">
@@ -268,8 +196,29 @@ export function HomeFilterSection({ games }: HomeFilterSectionProps) {
                 </Select>
               </div>
 
+              <div>
+                <label className="block text-white font-semibold mb-2 text-sm uppercase">
+                  Audience
+                </label>
+                <Select
+                  value={filters.audience}
+                  onValueChange={(value) => handleFilterChange("audience", value)}
+                >
+                  <SelectTrigger className="bg-white">
+                    <SelectValue placeholder="All audiences" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="all">All audiences</SelectItem>
+                    <SelectItem value="Students">Students</SelectItem>
+                    <SelectItem value="Adults">Adults</SelectItem>
+                    <SelectItem value="Kids">Kids</SelectItem>
+                    <SelectItem value="Mixed Ages">Mixed Ages</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
               {/* Keyword Search */}
-              <div className="md:col-span-2">
+              <div>
                 <label className="block text-white font-semibold mb-2 text-sm uppercase">
                   Keyword Search
                 </label>
@@ -278,7 +227,7 @@ export function HomeFilterSection({ games }: HomeFilterSectionProps) {
                     <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
                     <Input
                       type="text"
-                      placeholder="Search games..."
+                      placeholder="students, online, orientation..."
                       value={filters.keyword}
                       onChange={(e) => handleFilterChange("keyword", e.target.value)}
                       onKeyDown={(e) => {
@@ -345,16 +294,4 @@ export function HomeFilterSection({ games }: HomeFilterSectionProps) {
       </div>
     </section>
   );
-}
-
-// Helper function to extract minutes from duration string
-function extractMinutes(duration: string): number {
-  const match = duration.match(/(\d+)/);
-  return match ? parseInt(match[1], 10) : 0;
-}
-
-// Helper function to extract player count from players string
-function extractPlayerCount(players: string): number {
-  const match = players.match(/(\d+)/);
-  return match ? parseInt(match[1], 10) : 0;
 }

@@ -26,6 +26,12 @@ export type GameCategory =
 
 export type GameDifficulty = "Easy" | "Medium" | "Hard";
 
+export type GameAudience =
+  | "Students"
+  | "Adults"
+  | "Kids"
+  | "Mixed Ages";
+
 export type GameType = 
   | "Icebreaker"
   | "Energizer"

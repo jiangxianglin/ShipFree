@@ -23,7 +23,7 @@ export const seedGames = [
     difficulty: "Easy",
     materials: "None required",
     steps: "Each person thinks of two true statements and one false statement about themselves\nGo around the room, with each person sharing their three statements\nAfter each person shares, the group discusses and votes on which statement they think is the lie\nThe person reveals which statement was false\nContinue until everyone has had a turn",
-    tags: ["getting-to-know-you", "no-prep", "indoor", "virtual-friendly"],
+    tags: ["getting-to-know-you", "no-prep", "indoor", "virtual-friendly", "students", "high-school", "college", "classroom", "non-cheesy"],
     image: null,
   },
   {
@@ -37,7 +37,7 @@ export const seedGames = [
     difficulty: "Easy",
     materials: "Bingo cards, pens",
     steps: "Create bingo cards with different characteristics in each square\nDistribute cards and pens to all participants\nSet a time limit (usually 15-20 minutes)\nParticipants mingle and find people who match each square\nFirst person to complete a line shouts Bingo\nVerify the winner's card",
-    tags: ["networking", "large-group", "active", "customizable"],
+    tags: ["networking", "large-group", "active", "customizable", "students", "classroom", "high-school", "college", "orientation", "first-day"],
     image: null,
   },
   {
@@ -51,7 +51,7 @@ export const seedGames = [
     difficulty: "Easy",
     materials: "Video conferencing software with virtual background feature",
     steps: "Before the meeting, ask participants to select an interesting virtual background\nAt the start of the meeting, go around and have each person share their background\nEach person explains why they chose that particular background\nEncourage questions and comments from the group\nOptionally vote on the most creative background",
-    tags: ["virtual", "creative", "remote-work", "quick"],
+    tags: ["virtual", "creative", "remote-work", "quick", "students", "online", "classroom", "college"],
     image: null,
   },
   {
@@ -65,7 +65,7 @@ export const seedGames = [
     difficulty: "Medium",
     materials: "Timer or bell, name tags",
     steps: "Arrange chairs in two rows facing each other\nAssign participants to seats\nSet a timer for 3-5 minutes per conversation\nRing a bell when time is up\nThe rotating row moves one seat to the right\nRepeat until everyone has met\nOptionally provide conversation prompts",
-    tags: ["networking", "structured", "large-group", "professional"],
+    tags: ["networking", "structured", "large-group", "professional", "students", "college", "orientation"],
     image: null,
   },
   {
@@ -107,7 +107,7 @@ export const seedGames = [
     difficulty: "Easy",
     materials: "None required",
     steps: "Explain that each person will share just one word\nOptionally provide a prompt\nGo around the room or call on people randomly\nEach person says their one word\nAfter everyone has shared, discuss patterns or themes\nKeep it moving quickly",
-    tags: ["quick", "emotional-intelligence", "check-in", "simple"],
+    tags: ["quick", "emotional-intelligence", "check-in", "simple", "students", "classroom", "first-day", "shy-students", "low-prep"],
     image: null,
   },
   {
@@ -135,7 +135,7 @@ export const seedGames = [
     difficulty: "Easy",
     materials: "Personal items brought by participants",
     steps: "Ask participants to bring one meaningful object\nExplain each person has 2-3 minutes to share\nGo around the group with each person presenting\nEncourage them to explain why it's meaningful\nAllow time for questions after each presentation\nOptionally vote on most interesting story",
-    tags: ["personal", "storytelling", "meaningful", "virtual-friendly"],
+    tags: ["personal", "storytelling", "meaningful", "virtual-friendly", "students", "classroom", "elementary", "middle-school"],
     image: null,
   },
   {
@@ -163,7 +163,7 @@ export const seedGames = [
     difficulty: "Easy",
     materials: "Chat function or paper and markers",
     steps: "Ask participants to think of 3-5 emojis that represent them\nHave each person post their emojis in the chat\nGo through each person's emojis one at a time\nThe group tries to guess what each emoji represents\nThe person explains the meaning behind their choices\nContinue until everyone has shared",
-    tags: ["virtual", "creative", "modern", "visual"],
+    tags: ["virtual", "creative", "modern", "visual", "students", "online", "classroom", "low-prep"],
     image: null,
   },
   {
@@ -177,7 +177,7 @@ export const seedGames = [
     difficulty: "Medium",
     materials: "Paper and pens for each group",
     steps: "Divide participants into groups of 4-6 people\nGive each group paper and a pen\nSet a timer for 10 minutes\nGroups find as many things as possible that everyone has in common\nExclude obvious things\nGroups share their most interesting commonalities\nOptionally award prizes",
-    tags: ["small-groups", "discovery", "team-bonding", "competitive"],
+    tags: ["small-groups", "discovery", "team-bonding", "competitive", "students", "classroom", "shy-students", "college"],
     image: null,
   },
   {
@@ -205,7 +205,7 @@ export const seedGames = [
     difficulty: "Hard",
     materials: "List of items/challenges, prizes",
     steps: "Create a list of items to find or challenges to complete\nDivide participants into teams of 3-5 people\nDistribute the scavenger hunt list\nSet clear boundaries and time limit\nTeams work together to find items\nTeams document their finds with photos\nReconvene and review submissions\nDeclare a winner and award prizes",
-    tags: ["active", "team-based", "competitive", "outdoor"],
+    tags: ["active", "team-based", "competitive", "outdoor", "students", "classroom", "orientation", "large-group"],
     image: null,
   },
   {
@@ -233,7 +233,7 @@ export const seedGames = [
     difficulty: "Easy",
     materials: "None required",
     steps: "Step 1: Explain non-verbal rule.\nStep 2: Announce a criterion (e.g., height, tenure).\nStep 3: Participants silently form an ordered line.\nStep 4: Debrief on strategies and signals.",
-    tags: ["non-verbal", "collaboration", "quick", "large-group"],
+    tags: ["non-verbal", "collaboration", "quick", "large-group", "students", "classroom", "high-school", "non-cheesy", "low-prep"],
     image: null,
   },
   {
@@ -289,7 +289,7 @@ export const seedGames = [
     difficulty: "Easy",
     materials: "Bingo cards; pens; optional prizes",
     steps: "Step 1: Distribute cards with personal prompts.\nStep 2: Mingle to find matches and mark squares.\nStep 3: Recognize first Bingo; continue as desired.\nStep 4: Optional blackout or multiple rounds.",
-    tags: ["mixer", "large-group", "prizes", "quick"],
+    tags: ["mixer", "large-group", "prizes", "quick", "students", "college", "orientation", "first-day"],
     image: null,
   },
   {
@@ -443,7 +443,7 @@ export const seedGames = [
     difficulty: "Easy",
     materials: "Prompt list",
     steps: "Step 1: Share quick pairs (e.g., coffee or tea).\nStep 2: Participants choose and explain briefly.\nStep 3: Keep pace brisk; rotate prompts.",
-    tags: ["preferences", "quick", "discussion", "intro"],
+    tags: ["preferences", "quick", "discussion", "intro", "students", "classroom", "online", "shy-students", "low-prep"],
     image: null,
   },
   {

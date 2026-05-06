@@ -11,16 +11,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import type { GameCategory, GameDifficulty } from "@/types/game";
-
-export type GameFilters = {
-  category: GameCategory | "all";
-  duration: string;
-  players: string;
-  difficulty: GameDifficulty | "all";
-  type: string;
-  keyword: string;
-};
+import type { GameType } from "@/types/game";
+import type { GameFilters } from "@/lib/game-filtering";
 
 type GameFilterProps = {
   onFilterChange: (filters: GameFilters) => void;
@@ -32,7 +24,8 @@ export function GameFilter({ onFilterChange }: GameFilterProps) {
     duration: "all",
     players: "all",
     difficulty: "all",
-    type: "all",
+    type: "all" as GameType | "all",
+    audience: "all",
     keyword: "",
   });
 
@@ -49,6 +42,7 @@ export function GameFilter({ onFilterChange }: GameFilterProps) {
       players: "all",
       difficulty: "all",
       type: "all",
+      audience: "all",
       keyword: "",
     };
     setFilters(clearedFilters);
@@ -184,8 +178,29 @@ export function GameFilter({ onFilterChange }: GameFilterProps) {
             </Select>
           </div>
 
+          <div>
+            <label className="block text-white font-semibold mb-2 text-sm uppercase">
+              Audience
+            </label>
+            <Select
+              value={filters.audience}
+              onValueChange={(value) => handleFilterChange("audience", value)}
+            >
+              <SelectTrigger className="bg-white">
+                <SelectValue placeholder="All audiences" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All audiences</SelectItem>
+                <SelectItem value="Students">Students</SelectItem>
+                <SelectItem value="Adults">Adults</SelectItem>
+                <SelectItem value="Kids">Kids</SelectItem>
+                <SelectItem value="Mixed Ages">Mixed Ages</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+
           {/* Keyword Search */}
-          <div className="md:col-span-2">
+          <div>
             <label className="block text-white font-semibold mb-2 text-sm uppercase">
               Keyword Search
             </label>
@@ -194,7 +209,7 @@ export function GameFilter({ onFilterChange }: GameFilterProps) {
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
                 <Input
                   type="text"
-                  placeholder="Search games..."
+                  placeholder="students, online, orientation..."
                   value={filters.keyword}
                   onChange={(e) => handleFilterChange("keyword", e.target.value)}
                   className="pl-10 bg-white"
