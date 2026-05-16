@@ -38,7 +38,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   
   // Custom image logic
   let imageUrl = game.image || "/img/Hero.png";
-  if (game.title === "Virtual Background Story") {
+  if (game.title === "Find Your Match") {
+    imageUrl = "/img/find-your-match-hero.png";
+  } else if (game.title === "Virtual Background Story") {
     imageUrl = "/img/VirtualBackgroundStory_Hero.jpg";
   } else if (game.title === "Human Bingo") {
     imageUrl = "/img/Human-Bingo-Hero.png"; // Already handled in component, but good for metadata
@@ -48,7 +50,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   // Custom description logic
   let description = game.description.substring(0, 160);
-  if (game.title === "Human Bingo") {
+  if (game.title === "Find Your Match") {
+    description = "Find Your Match | Ice Breaker Games: Participants get cards with famous pairs and find their match by asking questions. Perfect ice breaker for networking events!";
+  } else if (game.title === "Human Bingo") {
     description = "Human Bingo - Ice Breaker Games for social events. Fun networking game where participants find people matching bingo card descriptions. Perfect for parties!";
   } else if (game.title === "Virtual Background Story") {
     description = "Virtual Background Story | Ice Breaker Games: Perfect for online meetings, participants choose creative or unusual virtual backgrounds and share the story behind their choice.";
@@ -59,13 +63,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${game.title} | Ice Breaker Games`,
     description: description,
-    keywords: game.title === "Human Bingo" 
-      ? ["ice breaker games", "human bingo", "social event games", "team building", "networking games", "party games"]
-      : game.title === "Virtual Background Story"
-      ? ["ice breaker games", "Virtual Background Story", "virtual meeting games", "remote team building", "zoom icebreakers"]
-      : game.title === "Speed Networking"
-      ? ["Speed Networking | Ice Breaker Games", "speed networking", "business networking", "networking events", "corporate icebreakers"]
-      : ["ice breaker games", game.title.toLowerCase(), game.category.toLowerCase()],
     alternates: {
       canonical: gameUrl,
     },
@@ -80,7 +77,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           url: imageUrl,
           width: 1200,
           height: 630,
-          alt: `${game.title} - Ice Breaker Game`,
+          alt: game.title === "Find Your Match" 
+            ? "Find Your Match | Ice Breaker Games - Diverse adults matching cards in a modern conference room for networking ice breaker activities"
+            : `${game.title} - Ice Breaker Game`,
         },
       ],
     },
@@ -124,7 +123,9 @@ export default async function GameDetailPage({ params }: Props) {
 
   // Determine image and description for JSON-LD
   let jsonLdImage = game.image || "https://www.icebreakergames.site/img/Hero.png";
-  if (game.title === "Human Bingo") {
+  if (game.title === "Find Your Match") {
+    jsonLdImage = "https://www.icebreakergames.site/img/find-your-match-hero.png";
+  } else if (game.title === "Human Bingo") {
     jsonLdImage = "https://www.icebreakergames.site/img/Human-Bingo-Hero.png";
   } else if (game.title === "Virtual Background Story") {
     jsonLdImage = "https://www.icebreakergames.site/img/VirtualBackgroundStory_Hero.jpg";
@@ -133,7 +134,9 @@ export default async function GameDetailPage({ params }: Props) {
   }
 
   let jsonLdDescription = game.description;
-  if (game.title === "Human Bingo") {
+  if (game.title === "Find Your Match") {
+    jsonLdDescription = "Find Your Match | Ice Breaker Games: A popular pairing ice breaker game where participants receive cards with famous pairs and must find their matching partner through asking questions. Perfect for networking events and social gatherings!";
+  } else if (game.title === "Human Bingo") {
     jsonLdDescription = "Human Bingo is a popular ice breaker game perfect for social events, networking, and team building. Learn how to play this engaging ice breaker game.";
   } else if (game.title === "Virtual Background Story") {
     jsonLdDescription = "Virtual Background Story | Ice Breaker Games: Perfect for online meetings, participants choose creative or unusual virtual backgrounds and share the story behind their choice.";
@@ -147,7 +150,7 @@ export default async function GameDetailPage({ params }: Props) {
       {
         "@type": "Article",
         "@id": `https://www.icebreakergames.site/games/${game.slug}#article`,
-        headline: game.title === "Human Bingo" ? "Human Bingo - Ice Breaker Game" : game.title,
+        headline: game.title === "Find Your Match" ? "Find Your Match | Ice Breaker Games" : game.title === "Human Bingo" ? "Human Bingo - Ice Breaker Game" : game.title,
         description: jsonLdDescription,
         image: jsonLdImage,
         author: {
@@ -166,11 +169,6 @@ export default async function GameDetailPage({ params }: Props) {
           "@type": "WebPage",
           "@id": `https://www.icebreakergames.site/games/${game.slug}`,
         },
-        keywords: game.title === "Human Bingo" 
-          ? "ice breaker games, human bingo, social event games, networking games, team building, party games"
-          : game.title === "Speed Networking"
-          ? "Speed Networking | Ice Breaker Games, speed networking, business networking, networking events, corporate icebreakers"
-          : `ice breaker games, ${game.title.toLowerCase()}, ${game.category.toLowerCase()}`,
       },
       {
         "@type": "BreadcrumbList",
@@ -195,7 +193,61 @@ export default async function GameDetailPage({ params }: Props) {
             item: `https://www.icebreakergames.site/games/${game.slug}`
           }
         ]
-      }
+      },
+      ...(game.title === "Find Your Match" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you play Find Your Match?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Participants receive cards with one half of a famous pair (like Romeo and Juliet or Sherlock Holmes and Watson). They must find their matching partner by asking yes/no questions without directly stating what's on their card. Once pairs find each other, they introduce themselves to the group."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How many people can play Find Your Match?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Find Your Match works best with 10-50 people. The game requires pairs, so you need an even number of participants. For larger groups, you can prepare more famous pairs to accommodate up to 100 people."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What materials do you need for Find Your Match?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You need cards with famous pairs written on them. Prepare pairs like: peanut butter and jelly, Sherlock Holmes and Watson, Romeo and Juliet, Batman and Robin, salt and pepper, or any recognizable pairs that fit your group demographic. Print or write each half on separate cards."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does Find Your Match take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Find Your Match typically takes 15-20 minutes, including setup and introductions. The mingling phase usually lasts 5-10 minutes, and the pair introductions take another 5-10 minutes depending on group size."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are some example famous pairs for Find Your Match?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Classic pairs include: PB and Jelly, Batman and Robin, Romeo and Juliet, Sherlock Holmes and Watson, Salt and Pepper, Mac and Cheese, chips and salsa. For corporate groups, try: email and inbox, meetings and calendars. For students: Netflix and chill, WiFi and password."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can Find Your Match be played virtually?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! For virtual meetings, send participants their card via chat or email before the game starts. Use breakout rooms for mingling, or go around in a large room where each pair shares their identity. You can also use virtual collaboration tools like Miro or MURAL for card distribution."
+            }
+          }
+        ]
+      }] : [])
     ]
   };
 

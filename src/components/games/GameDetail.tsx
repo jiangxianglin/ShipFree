@@ -17,7 +17,15 @@ export function GameDetail({ game }: GameDetailProps) {
         </div>
 
         {/* Main image - use Two Truths and a Lie main image if available */}
-        {game.title === "Two Truths and a Lie" ? (
+        {game.title === "Find Your Match" ? (
+          <div className="aspect-video relative overflow-hidden rounded-lg mb-6">
+            <img
+              src="/img/find-your-match-hero.png"
+              alt="Find Your Match | Ice Breaker Games - Diverse adults matching cards in a modern conference room for networking ice breaker activities"
+              className="object-cover w-full h-full"
+            />
+          </div>
+        ) : game.title === "Two Truths and a Lie" ? (
           <div className="aspect-video relative overflow-hidden rounded-lg mb-6">
             <img
               src="/img/Two-Truths-and-a-Lie.png"
@@ -91,7 +99,15 @@ export function GameDetail({ game }: GameDetailProps) {
 
         <div>
           <h3 className="text-xl font-semibold mb-3">Why Play {game.title}?</h3>
-          {game.title === "Human Bingo" ? (
+          {game.title === "Find Your Match" ? (
+            <p className="text-base leading-relaxed text-muted-foreground">
+              Find Your Match is one of the most engaging ice breaker games for social events and networking. 
+              This pairing ice breaker game helps participants connect through fun interactions while learning about famous pairs and shared interests. 
+              Find Your Match works perfectly as an ice breaker for parties, conferences, team building sessions, and social gatherings. 
+              The game encourages movement, conversation, and makes name learning easy - ideal as an opening activity for any group event. 
+              As an ice breaker game, Find Your Match is easy to set up, requires minimal materials, and guarantees everyone will have a great time getting to know each other.
+            </p>
+          ) : game.title === "Human Bingo" ? (
             <p className="text-base leading-relaxed text-muted-foreground">
               Human Bingo is one of the most popular ice breaker games for social events and networking. 
               This engaging ice breaker game helps participants connect through fun interactions while learning interesting facts about each other. 
@@ -248,6 +264,19 @@ export function GameDetail({ game }: GameDetailProps) {
           </div>
         )}
 
+        {/* Content image for Find Your Match */}
+        {game.title === "Find Your Match" && (
+          <div className="flex justify-center my-6">
+            <div className="relative overflow-hidden rounded-lg max-w-md w-full">
+              <img
+                src="/img/find-your-match-pairs.png"
+                alt="Find Your Match | Ice Breaker Games - Participants showing matching cards and laughing together during ice breaker activity"
+                className="object-contain w-full h-auto"
+              />
+            </div>
+          </div>
+        )}
+
         {game.tags.length > 0 && (
           <div>
             <h2 className="text-2xl font-semibold mb-3">Tags</h2>
@@ -268,6 +297,20 @@ export function GameDetail({ game }: GameDetailProps) {
               <li>Human Bingo helps shy participants feel more comfortable approaching others</li>
               <li>As an ice breaker game, Human Bingo creates a fun, competitive atmosphere</li>
               <li>Human Bingo can be customized to fit any theme or group demographic</li>
+            </ul>
+          </div>
+        )}
+
+        {game.title === "Find Your Match" && (
+          <div className="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg">
+            <h3 className="text-xl font-semibold mb-3">Benefits of Find Your Match as an Ice Breaker Game</h3>
+            <ul className="list-disc list-inside space-y-2 text-base text-muted-foreground">
+              <li>Find Your Match encourages natural conversation and movement among participants</li>
+              <li>This ice breaker game is perfect for groups of 10-50 people, ideal for networking events</li>
+              <li>Find Your Match helps participants learn names quickly through active interaction</li>
+              <li>As an ice breaker game, Find Your Match creates a fun, memorable experience for first meetings</li>
+              <li>Find Your Match works well with diverse groups, making it easy for everyone to participate equally</li>
+              <li>The famous pairs theme adds a playful element that reduces social anxiety and awkwardness</li>
             </ul>
           </div>
         )}
