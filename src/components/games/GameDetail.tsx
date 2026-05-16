@@ -57,6 +57,14 @@ export function GameDetail({ game }: GameDetailProps) {
               className="object-cover w-full h-full"
             />
           </div>
+        ) : game.title === "Chat Waterfall" ? (
+          <div className="aspect-video relative overflow-hidden rounded-lg mb-6">
+            <img
+              src="/img/ChatWaterfall.png"
+              alt="Chat Waterfall | Ice Breaker Games - Simultaneous chat waterfall effect in virtual meeting ice breaker"
+              className="object-cover w-full h-full"
+            />
+          </div>
         ) : game.image ? (
           <div className="aspect-video relative overflow-hidden rounded-lg mb-6">
             <img
@@ -315,27 +323,57 @@ export function GameDetail({ game }: GameDetailProps) {
           </div>
         )}
 
-        <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-          <h3 className="text-xl font-semibold mb-3">
-            {game.title === "Human Bingo" 
-              ? "More Ice Breaker Games Like Human Bingo" 
-              : "Related Ice Breaker Games"}
-          </h3>
-          <p className="text-base text-muted-foreground mb-4">
-            {game.title === "Human Bingo" 
-              ? "If you enjoyed Human Bingo, explore our collection of other engaging ice breaker games perfect for social events, networking, and team building. Find more ice breaker games that create memorable experiences."
-              : `Looking for more activities? Explore our collection of ${game.category.toLowerCase()} ice breaker games to find the perfect fit for your next event, meeting, or gathering.`}
-          </p>
-          <a 
-            href="/games" 
-            className="inline-flex items-center text-blue-600 dark:text-blue-400 font-medium hover:underline"
-          >
-            Browse All Ice Breaker Games
-            <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </a>
-        </div>
+        {game.title === "Human Bingo" || game.title === "Chat Waterfall" ? (
+          <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+            <h3 className="text-xl font-semibold mb-3">
+              {game.title === "Human Bingo" 
+                ? "More Ice Breaker Games Like Human Bingo" 
+                : "Virtual Ice Breaker Games Like Chat Waterfall"}
+            </h3>
+            <p className="text-base text-muted-foreground mb-4">
+              {game.title === "Human Bingo" 
+                ? "If you enjoyed Human Bingo, explore our collection of other engaging ice breaker games perfect for social events, networking, and team building. Find more ice breaker games that create memorable experiences."
+                : "Chat Waterfall works great with other virtual ice breaker games. Try these interactive activities for your next online meeting or team event!"}
+            </p>
+            {game.title === "Chat Waterfall" && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                <a href="/games/speed-networking" className="block p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700">
+                  <div className="font-medium text-gray-900 dark:text-gray-100">Speed Networking</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">Fast-paced networking for virtual meetings</div>
+                </a>
+                <a href="/games/virtual-background-story" className="block p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700">
+                  <div className="font-medium text-gray-900 dark:text-gray-100">Virtual Background Story</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">Creative ice breaker for video calls</div>
+                </a>
+              </div>
+            )}
+            <a 
+              href="/games" 
+              className="inline-flex items-center text-blue-600 dark:text-blue-400 font-medium hover:underline"
+            >
+              Browse All Ice Breaker Games
+              <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        ) : (
+          <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+            <h3 className="text-xl font-semibold mb-3">Related Ice Breaker Games</h3>
+            <p className="text-base text-muted-foreground mb-4">
+              Looking for more activities? Explore our collection of {game.category.toLowerCase()} ice breaker games to find the perfect fit for your next event, meeting, or gathering.
+            </p>
+            <a 
+              href="/games" 
+              className="inline-flex items-center text-blue-600 dark:text-blue-400 font-medium hover:underline"
+            >
+              Browse All Ice Breaker Games
+              <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        )}
       </div>
     </div>
   );

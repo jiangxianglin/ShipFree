@@ -46,6 +46,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     imageUrl = "/img/Human-Bingo-Hero.png"; // Already handled in component, but good for metadata
   } else if (game.title === "Speed Networking") {
     imageUrl = "https://www.icebreakergames.site/img/SpeedNetworking-hero.jpg";
+  } else if (game.title === "Chat Waterfall") {
+    imageUrl = "/img/ChatWaterfall.png";
   }
 
   // Custom description logic
@@ -58,6 +60,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description = "Virtual Background Story | Ice Breaker Games: Perfect for online meetings, participants choose creative or unusual virtual backgrounds and share the story behind their choice.";
   } else if (game.title === "Speed Networking") {
     description = "Speed Networking | Ice Breaker Games: A fast-paced structured networking event where participants have brief, timed conversations to maximize connections in a short period.";
+  } else if (game.title === "Chat Waterfall") {
+    description = "Chat Waterfall | Ice Breaker Games: A high-energy virtual icebreaker where everyone types answers simultaneously and sends at once, creating a waterfall effect. Perfect for large groups!";
   }
 
   return {
@@ -79,6 +83,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           height: 630,
           alt: game.title === "Find Your Match" 
             ? "Find Your Match | Ice Breaker Games - Diverse adults matching cards in a modern conference room for networking ice breaker activities"
+            : game.title === "Chat Waterfall"
+            ? "Chat Waterfall | Ice Breaker Games - Simultaneous chat waterfall effect in virtual meeting ice breaker"
             : `${game.title} - Ice Breaker Game`,
         },
       ],
@@ -131,6 +137,8 @@ export default async function GameDetailPage({ params }: Props) {
     jsonLdImage = "https://www.icebreakergames.site/img/VirtualBackgroundStory_Hero.jpg";
   } else if (game.title === "Speed Networking") {
     jsonLdImage = "https://www.icebreakergames.site/img/SpeedNetworking-hero.jpg";
+  } else if (game.title === "Chat Waterfall") {
+    jsonLdImage = "https://www.icebreakergames.site/img/ChatWaterfall.png";
   }
 
   let jsonLdDescription = game.description;
@@ -142,6 +150,8 @@ export default async function GameDetailPage({ params }: Props) {
     jsonLdDescription = "Virtual Background Story | Ice Breaker Games: Perfect for online meetings, participants choose creative or unusual virtual backgrounds and share the story behind their choice.";
   } else if (game.title === "Speed Networking") {
     jsonLdDescription = "Speed Networking | Ice Breaker Games: A fast-paced structured networking event where participants have brief, timed conversations to maximize connections in a short period.";
+  } else if (game.title === "Chat Waterfall") {
+    jsonLdDescription = "Chat Waterfall | Ice Breaker Games: A high-energy virtual icebreaker where everyone types answers simultaneously and sends at once, creating a waterfall effect. Perfect for large groups!";
   }
 
   const jsonLd = {
@@ -150,7 +160,7 @@ export default async function GameDetailPage({ params }: Props) {
       {
         "@type": "Article",
         "@id": `https://www.icebreakergames.site/games/${game.slug}#article`,
-        headline: game.title === "Find Your Match" ? "Find Your Match | Ice Breaker Games" : game.title === "Human Bingo" ? "Human Bingo - Ice Breaker Game" : game.title,
+        headline: game.title === "Find Your Match" ? "Find Your Match | Ice Breaker Games" : game.title === "Human Bingo" ? "Human Bingo - Ice Breaker Game" : game.title === "Chat Waterfall" ? "Chat Waterfall | Ice Breaker Games" : game.title,
         description: jsonLdDescription,
         image: jsonLdImage,
         author: {
@@ -245,6 +255,45 @@ export default async function GameDetailPage({ params }: Props) {
               "@type": "Answer",
               "text": "Yes! For virtual meetings, send participants their card via chat or email before the game starts. Use breakout rooms for mingling, or go around in a large room where each pair shares their identity. You can also use virtual collaboration tools like Miro or MURAL for card distribution."
             }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Chat Waterfall" ? [{
+        "@type": "HowTo",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#howto`,
+        name: "How to Play Chat Waterfall",
+        description: "A high-energy virtual icebreaker game where everyone types answers simultaneously and sends at once, creating a waterfall effect.",
+        totalTime: "PT8M",
+        supply: [
+          {
+            "@type": "HowToSupply",
+            name: "Video conferencing with chat"
+          }
+        ],
+        step: [
+          {
+            "@type": "HowToStep",
+            name: "Step 1: Ask a Question",
+            text: "Ask a question like 'What is your favorite snack?' or any fun question suitable for your group.",
+            position: 1
+          },
+          {
+            "@type": "HowToStep",
+            name: "Step 2: Type Your Answer",
+            text: "Everyone types their answer in the chat but doesn't send yet. Make sure everyone has enough time to type.",
+            position: 2
+          },
+          {
+            "@type": "HowToStep",
+            name: "Step 3: Send Together",
+            text: "On count of 3, everyone sends their message at the same time. This creates the 'waterfall' effect!",
+            position: 3
+          },
+          {
+            "@type": "HowToStep",
+            name: "Step 4: Enjoy the Results",
+            text: "Watch the waterfall of responses appear on screen. Discuss the answers as a group and have fun with the results.",
+            position: 4
           }
         ]
       }] : [])
