@@ -73,6 +73,14 @@ export function GameDetail({ game }: GameDetailProps) {
               className="object-cover w-full h-full"
             />
           </div>
+        ) : game.title === "Emoji Check-In" ? (
+          <div className="aspect-video relative overflow-hidden rounded-lg mb-6">
+            <img
+              src="/img/EmojiCheck-In-hero.png"
+              alt="Emoji Check-In ice breaker game - Participants share mood using emojis in virtual meeting icebreaker"
+              className="object-cover w-full h-full"
+            />
+          </div>
         ) : game.image ? (
           <div className="aspect-video relative overflow-hidden rounded-lg mb-6">
             <img

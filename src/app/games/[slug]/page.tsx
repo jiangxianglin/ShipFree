@@ -50,6 +50,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     imageUrl = "/img/ChatWaterfall.png";
   } else if (game.title === "Emoji Introduction") {
     imageUrl = "/img/EmojiIntroduction-GameplayScene.png";
+  } else if (game.title === "Emoji Check-In") {
+    imageUrl = "/img/EmojiCheck-In-hero.png";
   }
 
   // Custom description logic
@@ -66,10 +68,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description = "Chat Waterfall | Ice Breaker Games: A high-energy virtual icebreaker where everyone types answers simultaneously and sends at once, creating a waterfall effect. Perfect for large groups!";
   } else if (game.title === "Emoji Introduction") {
     description = "Emoji Introduction | Ice Breaker Games: A fun ice breaker game where participants introduce themselves using creative emojis. Perfect for virtual meetings, online classrooms & team building. 5-30 players, 10-15 minutes. Free to play!";
+  } else if (game.title === "Emoji Check-In") {
+    description = "Emoji Check-In ice breaker game for virtual meetings. Express mood with emojis! Quick 3-5 min team activity. Free Emoji Check-In icebreaker for online meetings.";
   }
 
   return {
-    title: game.title === "Emoji Introduction" ? "Emoji Introduction Ice Breaker Game - Fun Virtual Meeting Activity" : `${game.title} | Ice Breaker Games`,
+    title: game.title === "Emoji Introduction" ? "Emoji Introduction Ice Breaker Game - Fun Virtual Meeting Activity" : game.title === "Emoji Check-In" ? "Emoji Check-In Ice Breaker Game - Quick Mood Sharing Activity" : `${game.title} | Ice Breaker Games`,
     description: description,
     alternates: {
       canonical: gameUrl,
@@ -77,12 +81,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       type: "article",
       url: gameUrl,
-      title: game.title === "Emoji Introduction" ? "Emoji Introduction Ice Breaker Game - Fun Virtual Meeting Activity" : `${game.title} | Ice Breaker Games`,
+      title: game.title === "Emoji Introduction" ? "Emoji Introduction Ice Breaker Game - Fun Virtual Meeting Activity" : game.title === "Emoji Check-In" ? "Emoji Check-In Ice Breaker Game - Quick Mood Sharing Activity" : `${game.title} | Ice Breaker Games`,
       description: description,
       siteName: "Ice Breaker Games",
       images: [
         {
-          url: imageUrl,
+          url: game.title === "Emoji Check-In" ? "/img/EmojiCheck-In-social.jpg" : imageUrl,
           width: 1200,
           height: 630,
           alt: game.title === "Find Your Match" 
@@ -91,15 +95,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             ? "Chat Waterfall | Ice Breaker Games - Simultaneous chat waterfall effect in virtual meeting ice breaker"
             : game.title === "Emoji Introduction"
             ? "Emoji Introduction | Ice Breaker Games - Participants introduce themselves using creative emojis in virtual meeting ice breaker game"
+            : game.title === "Emoji Check-In"
+            ? "Emoji Check-In ice breaker game - Participants share mood using emojis in virtual meeting icebreaker"
             : `${game.title} - Ice Breaker Game`,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: game.title === "Emoji Introduction" ? "Emoji Introduction Ice Breaker Game - Fun Virtual Meeting Activity" : `${game.title} | Ice Breaker Games`,
+      title: game.title === "Emoji Introduction" ? "Emoji Introduction Ice Breaker Game - Fun Virtual Meeting Activity" : game.title === "Emoji Check-In" ? "Emoji Check-In Ice Breaker Game - Quick Mood Sharing Activity" : `${game.title} | Ice Breaker Games`,
       description: description,
-      images: [imageUrl],
+      images: [game.title === "Emoji Check-In" ? "/img/EmojiCheck-In-social.jpg" : imageUrl],
     },
     robots: {
       index: true,
@@ -147,6 +153,8 @@ export default async function GameDetailPage({ params }: Props) {
     jsonLdImage = "https://www.icebreakergames.site/img/ChatWaterfall.png";
   } else if (game.title === "Emoji Introduction") {
     jsonLdImage = "https://www.icebreakergames.site/img/EmojiIntroduction-GameplayScene.png";
+  } else if (game.title === "Emoji Check-In") {
+    jsonLdImage = "https://www.icebreakergames.site/img/EmojiCheck-In-hero.png";
   }
 
   let jsonLdDescription = game.description;
@@ -162,6 +170,8 @@ export default async function GameDetailPage({ params }: Props) {
     jsonLdDescription = "Chat Waterfall | Ice Breaker Games: A high-energy virtual icebreaker where everyone types answers simultaneously and sends at once, creating a waterfall effect. Perfect for large groups!";
   } else if (game.title === "Emoji Introduction") {
     jsonLdDescription = "Emoji Introduction | Ice Breaker Games: A fun ice breaker game where participants introduce themselves using creative emojis. Perfect for virtual meetings, online classrooms & team building. Easy to play with 5-30 players in just 10-15 minutes.";
+  } else if (game.title === "Emoji Check-In") {
+    jsonLdDescription = "Emoji Check-In ice breaker game for virtual meetings. Express mood with emojis! Quick 3-5 min team activity. Free Emoji Check-In icebreaker for online meetings.";
   }
 
   const jsonLd = {
@@ -170,7 +180,7 @@ export default async function GameDetailPage({ params }: Props) {
       {
         "@type": "Article",
         "@id": `https://www.icebreakergames.site/games/${game.slug}#article`,
-        headline: game.title === "Find Your Match" ? "Find Your Match | Ice Breaker Games" : game.title === "Human Bingo" ? "Human Bingo - Ice Breaker Game" : game.title === "Chat Waterfall" ? "Chat Waterfall | Ice Breaker Games" : game.title === "Emoji Introduction" ? "Emoji Introduction - Ice Breaker Game for Virtual Meetings" : game.title,
+        headline: game.title === "Find Your Match" ? "Find Your Match | Ice Breaker Games" : game.title === "Human Bingo" ? "Human Bingo - Ice Breaker Game" : game.title === "Chat Waterfall" ? "Chat Waterfall | Ice Breaker Games" : game.title === "Emoji Introduction" ? "Emoji Introduction - Ice Breaker Game for Virtual Meetings" : game.title === "Emoji Check-In" ? "Emoji Check-In - Quick Mood Sharing Ice Breaker Game" : game.title,
         description: jsonLdDescription,
         image: jsonLdImage,
         author: {
@@ -366,6 +376,45 @@ export default async function GameDetailPage({ params }: Props) {
               "@type": "Answer",
               "text": "First, create a welcoming environment where everyone feels comfortable participating. Give participants time to think about their emoji choices before sharing. Encourage creative emoji combinations rather than obvious ones. Allow discussion after each reveal. And follow up with a brief reflection to reinforce the connections made during the game."
             }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Emoji Check-In" ? [{
+        "@type": "HowTo",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#howto`,
+        name: "How to Play Emoji Check-In",
+        description: "A quick and fun ice breaker for virtual meetings where participants express their mood using emojis.",
+        totalTime: "PT5M",
+        supply: [
+          {
+            "@type": "HowToSupply",
+            name: "Video platform with emoji reactions or chat"
+          }
+        ],
+        step: [
+          {
+            "@type": "HowToStep",
+            name: "Step 1: Ask everyone to choose emojis for their current mood",
+            text: "Prompt participants to select emojis that represent how they're feeling right now. They can choose one or multiple emojis.",
+            position: 1
+          },
+          {
+            "@type": "HowToStep",
+            name: "Step 2: Share via reactions or chat",
+            text: "Participants share their emoji choices using video platform reactions or by posting in the chat.",
+            position: 2
+          },
+          {
+            "@type": "HowToStep",
+            name: "Step 3: Optional - explain emoji choices briefly",
+            text: "If the group is comfortable, ask a few participants to briefly explain why they chose their emojis.",
+            position: 3
+          },
+          {
+            "@type": "HowToStep",
+            name: "Step 4: Acknowledge the group's overall energy",
+            text: "As the facilitator, acknowledge the collective mood and use this to calibrate the energy of your meeting or session.",
+            position: 4
           }
         ]
       }] : [])
