@@ -48,6 +48,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     imageUrl = "https://www.icebreakergames.site/img/SpeedNetworking-hero.jpg";
   } else if (game.title === "Chat Waterfall") {
     imageUrl = "/img/ChatWaterfall.png";
+  } else if (game.title === "Emoji Introduction") {
+    imageUrl = "/img/EmojiIntroduction-GameplayScene.png";
   }
 
   // Custom description logic
@@ -62,10 +64,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description = "Speed Networking | Ice Breaker Games: A fast-paced structured networking event where participants have brief, timed conversations to maximize connections in a short period.";
   } else if (game.title === "Chat Waterfall") {
     description = "Chat Waterfall | Ice Breaker Games: A high-energy virtual icebreaker where everyone types answers simultaneously and sends at once, creating a waterfall effect. Perfect for large groups!";
+  } else if (game.title === "Emoji Introduction") {
+    description = "Emoji Introduction | Ice Breaker Games: A fun ice breaker game where participants introduce themselves using creative emojis. Perfect for virtual meetings, online classrooms & team building. 5-30 players, 10-15 minutes. Free to play!";
   }
 
   return {
-    title: `${game.title} | Ice Breaker Games`,
+    title: game.title === "Emoji Introduction" ? "Emoji Introduction Ice Breaker Game - Fun Virtual Meeting Activity" : `${game.title} | Ice Breaker Games`,
     description: description,
     alternates: {
       canonical: gameUrl,
@@ -73,7 +77,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       type: "article",
       url: gameUrl,
-      title: `${game.title} | Ice Breaker Games`,
+      title: game.title === "Emoji Introduction" ? "Emoji Introduction Ice Breaker Game - Fun Virtual Meeting Activity" : `${game.title} | Ice Breaker Games`,
       description: description,
       siteName: "Ice Breaker Games",
       images: [
@@ -85,13 +89,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             ? "Find Your Match | Ice Breaker Games - Diverse adults matching cards in a modern conference room for networking ice breaker activities"
             : game.title === "Chat Waterfall"
             ? "Chat Waterfall | Ice Breaker Games - Simultaneous chat waterfall effect in virtual meeting ice breaker"
+            : game.title === "Emoji Introduction"
+            ? "Emoji Introduction | Ice Breaker Games - Participants introduce themselves using creative emojis in virtual meeting ice breaker game"
             : `${game.title} - Ice Breaker Game`,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${game.title} | Ice Breaker Games`,
+      title: game.title === "Emoji Introduction" ? "Emoji Introduction Ice Breaker Game - Fun Virtual Meeting Activity" : `${game.title} | Ice Breaker Games`,
       description: description,
       images: [imageUrl],
     },
@@ -139,6 +145,8 @@ export default async function GameDetailPage({ params }: Props) {
     jsonLdImage = "https://www.icebreakergames.site/img/SpeedNetworking-hero.jpg";
   } else if (game.title === "Chat Waterfall") {
     jsonLdImage = "https://www.icebreakergames.site/img/ChatWaterfall.png";
+  } else if (game.title === "Emoji Introduction") {
+    jsonLdImage = "https://www.icebreakergames.site/img/EmojiIntroduction-GameplayScene.png";
   }
 
   let jsonLdDescription = game.description;
@@ -152,6 +160,8 @@ export default async function GameDetailPage({ params }: Props) {
     jsonLdDescription = "Speed Networking | Ice Breaker Games: A fast-paced structured networking event where participants have brief, timed conversations to maximize connections in a short period.";
   } else if (game.title === "Chat Waterfall") {
     jsonLdDescription = "Chat Waterfall | Ice Breaker Games: A high-energy virtual icebreaker where everyone types answers simultaneously and sends at once, creating a waterfall effect. Perfect for large groups!";
+  } else if (game.title === "Emoji Introduction") {
+    jsonLdDescription = "Emoji Introduction | Ice Breaker Games: A fun ice breaker game where participants introduce themselves using creative emojis. Perfect for virtual meetings, online classrooms & team building. Easy to play with 5-30 players in just 10-15 minutes.";
   }
 
   const jsonLd = {
@@ -160,7 +170,7 @@ export default async function GameDetailPage({ params }: Props) {
       {
         "@type": "Article",
         "@id": `https://www.icebreakergames.site/games/${game.slug}#article`,
-        headline: game.title === "Find Your Match" ? "Find Your Match | Ice Breaker Games" : game.title === "Human Bingo" ? "Human Bingo - Ice Breaker Game" : game.title === "Chat Waterfall" ? "Chat Waterfall | Ice Breaker Games" : game.title,
+        headline: game.title === "Find Your Match" ? "Find Your Match | Ice Breaker Games" : game.title === "Human Bingo" ? "Human Bingo - Ice Breaker Game" : game.title === "Chat Waterfall" ? "Chat Waterfall | Ice Breaker Games" : game.title === "Emoji Introduction" ? "Emoji Introduction - Ice Breaker Game for Virtual Meetings" : game.title,
         description: jsonLdDescription,
         image: jsonLdImage,
         author: {
@@ -294,6 +304,68 @@ export default async function GameDetailPage({ params }: Props) {
             name: "Step 4: Enjoy the Results",
             text: "Watch the waterfall of responses appear on screen. Discuss the answers as a group and have fun with the results.",
             position: 4
+          }
+        ]
+      }] : []),
+      ...(game.title === "Emoji Introduction" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you play Emoji Introduction?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Participants think of 3-5 emojis that represent themselves. Each person then posts their emojis in the chat or shares their screen. The group tries to guess what each emoji represents, and the person explains the meaning behind their choices. This continues until everyone has shared."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How many people can play Emoji Introduction?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Emoji Introduction works best with 5-30 people. For smaller groups of 5-10, everyone can share and discuss each person's emojis in detail. For larger groups of 10-30, you may want to limit sharing time or use breakout rooms to keep the activity moving."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What materials do you need for Emoji Introduction?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You need a chat function in your video conferencing tool or a shared digital space where participants can post their emojis. If playing in person, you can use paper and markers for participants to write or draw their emojis. That's it - no special materials required!"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does Emoji Introduction take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Emoji Introduction typically takes 10-15 minutes, depending on group size. With a small group of 5-8 people, you can spend 1-2 minutes on each person for a total of 10-15 minutes. Larger groups may need to move faster, keeping introductions to 30-60 seconds each."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are good emojis to use for self-introduction?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Choose emojis that represent your hobbies, interests, or personality. For example: 🏋️ for fitness lovers, 📚 for readers, 🎮 for gamers, 🍕 for foodies, 🐕 for pet owners, ✈️ for travelers. Try to pick emojis that spark conversation and reveal something meaningful about you."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can Emoji Introduction be used in classroom settings?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Absolutely! Emoji Introduction is perfect for online classrooms, virtual training sessions, and hybrid learning environments. It's especially great for getting students comfortable with each other at the start of a new semester or course. Teachers can also use it as a fun way to check understanding of concepts."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What tips make Emoji Introduction more engaging?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "First, create a welcoming environment where everyone feels comfortable participating. Give participants time to think about their emoji choices before sharing. Encourage creative emoji combinations rather than obvious ones. Allow discussion after each reveal. And follow up with a brief reflection to reinforce the connections made during the game."
+            }
           }
         ]
       }] : [])

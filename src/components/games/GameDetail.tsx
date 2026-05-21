@@ -65,6 +65,14 @@ export function GameDetail({ game }: GameDetailProps) {
               className="object-cover w-full h-full"
             />
           </div>
+        ) : game.title === "Emoji Introduction" ? (
+          <div className="aspect-video relative overflow-hidden rounded-lg mb-6">
+            <img
+              src="/img/EmojiIntroduction-hero.png"
+              alt="Emoji Introduction | Ice Breaker Games - Participants introduce themselves using creative emojis in virtual meeting ice breaker game"
+              className="object-cover w-full h-full"
+            />
+          </div>
         ) : game.image ? (
           <div className="aspect-video relative overflow-hidden rounded-lg mb-6">
             <img
@@ -149,6 +157,18 @@ export function GameDetail({ game }: GameDetailProps) {
                 <img
                   src="/img/SpeedNetworking-Setup.jpg"
                   alt="Speed Networking | Ice Breaker Games - Setup"
+                  className="object-contain w-full h-auto"
+                />
+              </div>
+            </div>
+          )}
+
+          {game.title === "Emoji Introduction" && (
+            <div className="flex justify-center my-6">
+              <div className="relative overflow-hidden rounded-lg max-w-2xl w-full">
+                <img
+                  src="/img/EmojiIntroduction-GameplayScene.png"
+                  alt="Emoji Introduction | Ice Breaker Games - Gameplay Scene"
                   className="object-contain w-full h-auto"
                 />
               </div>
@@ -292,6 +312,91 @@ export function GameDetail({ game }: GameDetailProps) {
               {game.tags.map((tag) => (
                 <TagBadge key={tag} tag={tag} />
               ))}
+            </div>
+          </div>
+        )}
+
+        {game.title === "Emoji Introduction" && (
+          <div>
+            <h3 className="text-xl font-semibold mb-3">Frequently Asked Questions</h3>
+            <div className="space-y-2">
+              <details className="group border border-gray-200 dark:border-gray-700 rounded-lg p-3">
+                <summary className="flex items-center justify-between cursor-pointer text-base font-medium">
+                  How do you play Emoji Introduction?
+                  <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <p className="mt-2 text-base text-muted-foreground leading-relaxed">
+                  Participants think of 3-5 emojis that represent themselves. Each person then posts their emojis in the chat or shares their screen. The group tries to guess what each emoji represents, and the person explains the meaning behind their choices. This continues until everyone has shared.
+                </p>
+              </details>
+              <details className="group border border-gray-200 dark:border-gray-700 rounded-lg p-3">
+                <summary className="flex items-center justify-between cursor-pointer text-base font-medium">
+                  How many people can play Emoji Introduction?
+                  <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <p className="mt-2 text-base text-muted-foreground leading-relaxed">
+                  Emoji Introduction works best with 5-30 people. For smaller groups of 5-10, everyone can share and discuss each person&apos;s emojis in detail. For larger groups of 10-30, you may want to limit sharing time or use breakout rooms to keep the activity moving.
+                </p>
+              </details>
+              <details className="group border border-gray-200 dark:border-gray-700 rounded-lg p-3">
+                <summary className="flex items-center justify-between cursor-pointer text-base font-medium">
+                  What materials do you need for Emoji Introduction?
+                  <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <p className="mt-2 text-base text-muted-foreground leading-relaxed">
+                  You need a chat function in your video conferencing tool or a shared digital space where participants can post their emojis. If playing in person, you can use paper and markers for participants to write or draw their emojis. That&apos;s it - no special materials required!
+                </p>
+              </details>
+              <details className="group border border-gray-200 dark:border-gray-700 rounded-lg p-3">
+                <summary className="flex items-center justify-between cursor-pointer text-base font-medium">
+                  How long does Emoji Introduction take?
+                  <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <p className="mt-2 text-base text-muted-foreground leading-relaxed">
+                  Emoji Introduction typically takes 10-15 minutes, depending on group size. With a small group of 5-8 people, you can spend 1-2 minutes on each person for a total of 10-15 minutes. Larger groups may need to move faster, keeping introductions to 30-60 seconds each.
+                </p>
+              </details>
+              <details className="group border border-gray-200 dark:border-gray-700 rounded-lg p-3">
+                <summary className="flex items-center justify-between cursor-pointer text-base font-medium">
+                  What are good emojis to use for self-introduction?
+                  <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <p className="mt-2 text-base text-muted-foreground leading-relaxed">
+                  Choose emojis that represent your hobbies, interests, or personality. For example: 🏋️ for fitness lovers, 📚 for readers, 🎮 for gamers, 🍕 for foodies, 🐕 for pet owners, ✈️ for travelers. Try to pick emojis that spark conversation and reveal something meaningful about you.
+                </p>
+              </details>
+              <details className="group border border-gray-200 dark:border-gray-700 rounded-lg p-3">
+                <summary className="flex items-center justify-between cursor-pointer text-base font-medium">
+                  Can Emoji Introduction be used in classroom settings?
+                  <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <p className="mt-2 text-base text-muted-foreground leading-relaxed">
+                  Absolutely! Emoji Introduction is perfect for online classrooms, virtual training sessions, and hybrid learning environments. It&apos;s especially great for getting students comfortable with each other at the start of a new semester or course. Teachers can also use it as a fun way to check understanding of concepts.
+                </p>
+              </details>
+              <details className="group border border-gray-200 dark:border-gray-700 rounded-lg p-3">
+                <summary className="flex items-center justify-between cursor-pointer text-base font-medium">
+                  What tips make Emoji Introduction more engaging?
+                  <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <p className="mt-2 text-base text-muted-foreground leading-relaxed">
+                  First, create a welcoming environment where everyone feels comfortable participating. Give participants time to think about their emoji choices before sharing. Encourage creative emoji combinations rather than obvious ones. Allow discussion after each reveal. And follow up with a brief reflection to reinforce the connections made during the game.
+                </p>
+              </details>
             </div>
           </div>
         )}
