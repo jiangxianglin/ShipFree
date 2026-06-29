@@ -139,12 +139,188 @@ export function GameDetail({ game }: GameDetailProps) {
               Whether you're hosting a small meetup or a large event, Human Bingo creates an energetic atmosphere that encourages mingling and conversation. 
               As an ice breaker game, Human Bingo is easy to set up, requires minimal materials, and guarantees everyone will have a great time getting to know each other.
             </p>
+          ) : game.title === "Alliterative Name Game" ? (
+            <p className="text-base leading-relaxed text-muted-foreground">
+              The Alliterative Name Game (also called the Adjective Name Game) is a fast way to learn names and warm up a group.
+              Each person pairs their name with a positive adjective that starts with the same letter, and the group repeats the growing list.
+              It works especially well at the start of workshops, work meetings, and first-day-of-class sessions because it is structured, low-pressure, and surprisingly memorable.
+            </p>
+          ) : game.title === "One Word Check-In" ? (
+            <p className="text-base leading-relaxed text-muted-foreground">
+              One Word Check-In is a quick, low-pressure icebreaker for meetings and workshops. Each person shares one word to describe their
+              mood, energy, or focus. It gets everyone speaking early, helps the facilitator read the room, and can be done in a few minutes
+              without any materials.
+            </p>
+          ) : game.title === "Two Truths and a Lie" ? (
+            <p className="text-base leading-relaxed text-muted-foreground">
+              Two Truths and a Lie is a classic get-to-know-you icebreaker. Each person shares three statements about themselves (two true, one false),
+              and everyone guesses the lie. It works well for teams, classrooms, and workshops because it is simple, fun, and naturally creates follow-up conversation.
+            </p>
+          ) : game.title === "Minefield" ? (
+            <p className="text-base leading-relaxed text-muted-foreground">
+              Minefield is a trust and communication team building game. One person walks through a simple obstacle course while blindfolded,
+              guided only by a partner’s verbal instructions. It is especially effective when followed by a short debrief on clarity, assumptions, and trust.
+            </p>
+          ) : game.title === "The Name Game" ? (
+            <p className="text-base leading-relaxed text-muted-foreground">
+              The Name Game is a simple icebreaker for learning names quickly. Each person repeats the names of everyone who went before them, then adds their own.
+              It works well for new groups because it is structured, low-pressure, and gets everyone speaking early.
+            </p>
+          ) : game.title === "The Question Web" ? (
+            <p className="text-base leading-relaxed text-muted-foreground">
+              The Question Web is a get-to-know-you activity that uses a ball of yarn or string. As people ask and answer questions, the string forms a visible web,
+              helping the group notice how connection builds through attention and curiosity.
+            </p>
+          ) : game.title === "Count Up" ? (
+            <p className="text-base leading-relaxed text-muted-foreground">
+              Count Up is a deceptively simple teamwork game. The group tries to count upward together, but only one person can speak at a time. If two people speak
+              at once, the group restarts. It quickly builds listening, patience, and shared coordination.
+            </p>
+          ) : game.title === "Dicebreakers" ? (
+            <p className="text-base leading-relaxed text-muted-foreground">
+              Dicebreakers is a quick conversation starter where a simple die roll selects a prompt. It keeps things structured while still feeling natural,
+              making it a great option for meetings, workshops, and classrooms when you want everyone talking within minutes.
+            </p>
+          ) : game.slug === "topics-tables" ? (
+            <p className="text-base leading-relaxed text-muted-foreground">
+              Topics Tables is an easy way to spark conversation in groups that are already seated. Each table uses a small set of themed prompts, discusses for a few minutes,
+              then optionally rotates tables or switches prompt cards to meet new people and explore new topics.
+            </p>
+          ) : game.slug === "unique-and-shared" ? (
+            <p className="text-base leading-relaxed text-muted-foreground">
+              Unique and Shared is a low-pressure get-to-know activity where people identify one thing that is unique about themselves and one thing they share in common
+              with a partner or small group. It balances belonging (shared) with individuality (unique), which helps rapport form quickly.
+            </p>
           ) : (
             <p className="text-base leading-relaxed text-muted-foreground">
               This ice breaker game is perfect for {game.category.toLowerCase()} settings. 
               It helps participants feel comfortable, encourages interaction, and creates a positive atmosphere. 
               Whether you're working with a small group or a large team, this activity is designed to break down barriers and foster meaningful connections.
             </p>
+          )}
+
+          {game.title === "Alliterative Name Game" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">Examples</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>Brave Ben</li>
+                <li>Curious Carlos</li>
+                <li>Helpful Hannah</li>
+                <li>Joyful Jordan</li>
+                <li>Witty Will</li>
+              </ul>
+            </div>
+          )}
+
+          {game.title === "One Word Check-In" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">Prompt ideas</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>One word for your energy today</li>
+                <li>One word for your focus right now</li>
+                <li>One word for what you need from this meeting</li>
+                <li>One word for your mood</li>
+                <li>One word for your bandwidth</li>
+              </ul>
+            </div>
+          )}
+
+          {game.title === "Two Truths and a Lie" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">Facilitator tips</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>Keep statements safe for work and optional</li>
+                <li>Limit questions to 1–2 per person to keep the pace</li>
+                <li>Use breakout rooms for large groups</li>
+                <li>Ask people to make the lie believable, not extreme</li>
+              </ul>
+            </div>
+          )}
+
+          {game.title === "Minefield" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">Debrief questions</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>What instructions helped most?</li>
+                <li>When did you feel the most trust?</li>
+                <li>What assumptions showed up?</li>
+                <li>How does this relate to communication at work?</li>
+              </ul>
+            </div>
+          )}
+
+          {game.title === "The Name Game" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">Variations</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>Name + role (for work meetings)</li>
+                <li>Name + a gesture (for better memory)</li>
+                <li>Split into small circles for large groups</li>
+                <li>Virtual: type your name in chat as a backup</li>
+              </ul>
+            </div>
+          )}
+
+          {game.title === "The Question Web" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">Prompt ideas</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>What is one small win this week?</li>
+                <li>What is a hobby you enjoy?</li>
+                <li>What is something you want to learn this year?</li>
+                <li>What is a value you care about?</li>
+              </ul>
+            </div>
+          )}
+
+          {game.title === "Count Up" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">Debrief questions</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>What helped us succeed?</li>
+                <li>What caused resets?</li>
+                <li>How did we adapt as a group?</li>
+                <li>How does this relate to coordination at work?</li>
+              </ul>
+            </div>
+          )}
+
+          {game.title === "Dicebreakers" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">Prompt ideas</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>A small win this week</li>
+                <li>A hobby you enjoy</li>
+                <li>A favorite snack</li>
+                <li>Something you are learning</li>
+                <li>A place you want to visit</li>
+                <li>One thing you are grateful for</li>
+              </ul>
+            </div>
+          )}
+
+          {game.slug === "topics-tables" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">How to run it</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>Place 6–10 prompts at each table</li>
+                <li>Set a 5–8 minute timer per round</li>
+                <li>Rotate tables or swap prompt cards between rounds</li>
+                <li>Close with a quick share-out of favorite answers</li>
+              </ul>
+            </div>
+          )}
+
+          {game.slug === "unique-and-shared" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">Facilitator tips</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>Use safe categories (hobbies, food, routines, learning goals)</li>
+                <li>Time-box the search to 2–4 minutes</li>
+                <li>Encourage curiosity, not debate</li>
+                <li>For large groups, rotate partners and keep share-outs short</li>
+              </ul>
+            </div>
           )}
 
           {game.title === "Virtual Background Story" && (

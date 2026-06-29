@@ -1,12 +1,29 @@
-import { createClient } from "@/lib/supabase/server";
+import { createClient } from "@supabase/supabase-js";
+import { unstable_cache } from "next/cache";
 import type { Game } from "@/types/game";
+
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+if (!supabaseUrl || !supabaseAnonKey) {
+  throw new Error(
+    "Missing Supabase environment variables: NEXT_PUBLIC_SUPABASE_URL / NEXT_PUBLIC_SUPABASE_ANON_KEY"
+  );
+}
+
+const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+  auth: {
+    persistSession: false,
+    autoRefreshToken: false,
+    detectSessionInUrl: false,
+  },
+});
 
 /**
  * Get all games from the database, ordered by creation date (newest first)
  */
-export async function getAllGames(): Promise<Game[]> {
+async function fetchAllGames(): Promise<Game[]> {
   try {
-    const supabase = await createClient();
     const { data, error } = await supabase
       .from("games")
       .select("*")
@@ -24,12 +41,16 @@ export async function getAllGames(): Promise<Game[]> {
   }
 }
 
+export const getAllGames = unstable_cache(fetchAllGames, ["getAllGames"], {
+  revalidate: 60 * 60 * 24,
+  tags: ["games"],
+});
+
 /**
  * Get a single game by its ID
  */
-export async function getGameById(id: string): Promise<Game | null> {
+async function fetchGameById(id: string): Promise<Game | null> {
   try {
-    const supabase = await createClient();
     const { data, error } = await supabase
       .from("games")
       .select("*")
@@ -52,12 +73,16 @@ export async function getGameById(id: string): Promise<Game | null> {
   }
 }
 
+export const getGameById = unstable_cache(fetchGameById, ["getGameById"], {
+  revalidate: 60 * 60 * 24,
+  tags: ["games"],
+});
+
 /**
  * Get a single game by its slug
  */
-export async function getGameBySlug(slug: string): Promise<Game | null> {
+async function fetchGameBySlug(slug: string): Promise<Game | null> {
   try {
-    const supabase = await createClient();
     const { data, error } = await supabase
       .from("games")
       .select("*")
@@ -80,12 +105,16 @@ export async function getGameBySlug(slug: string): Promise<Game | null> {
   }
 }
 
+export const getGameBySlug = unstable_cache(fetchGameBySlug, ["getGameBySlug"], {
+  revalidate: 60 * 60 * 24,
+  tags: ["games"],
+});
+
 /**
  * Get all games in a specific category
  */
-export async function getGamesByCategory(category: string): Promise<Game[]> {
+async function fetchGamesByCategory(category: string): Promise<Game[]> {
   try {
-    const supabase = await createClient();
     const { data, error } = await supabase
       .from("games")
       .select("*")
@@ -103,3 +132,12 @@ export async function getGamesByCategory(category: string): Promise<Game[]> {
     throw new Error("Unable to load games. Please try again later.");
   }
 }
+
+export const getGamesByCategory = unstable_cache(
+  fetchGamesByCategory,
+  ["getGamesByCategory"],
+  {
+    revalidate: 60 * 60 * 24,
+    tags: ["games"],
+  }
+);

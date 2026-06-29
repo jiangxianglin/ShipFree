@@ -7,8 +7,7 @@ import { HomeFilterSection } from "@/components/home/HomeFilterSection";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import SessionLabCategories from "@/components/SessionLabCategories";
 
-// Force dynamic rendering for this page
-export const dynamic = 'force-dynamic';
+export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title: "Ice Breaker Games - Find the Perfect Activity for Your Team",
@@ -25,7 +24,7 @@ export const metadata: Metadata = {
       "Discover engaging ice breaker games for team building, virtual meetings, classrooms, and conferences. Browse our curated collection of activities.",
     images: [
       {
-        url: "/img/Hero.png",
+        url: "https://www.icebreakergames.site/img/Hero.png",
         width: 1200,
         height: 630,
         alt: "Ice Breaker Games - Team Building Activities",
@@ -37,7 +36,7 @@ export const metadata: Metadata = {
     title: "Ice Breaker Games - Find the Perfect Activity for Your Team",
     description:
       "Discover engaging ice breaker games for team building, virtual meetings, classrooms, and conferences. Browse our curated collection of activities.",
-    images: ["/img/Hero.png"],
+    images: ["https://www.icebreakergames.site/img/Hero.png"],
   },
 };
 
@@ -113,6 +112,33 @@ export default async function Home() {
               >
                 See Featured Games
               </a>
+            </div>
+
+            <div className="mt-8 flex flex-wrap gap-3 justify-center">
+              <Link
+                href="/best-icebreaker-games"
+                className="rounded-full border border-white/30 bg-white/10 px-4 py-2 text-sm font-medium text-white hover:bg-white/15 transition-colors backdrop-blur"
+              >
+                Best icebreaker games
+              </Link>
+              <Link
+                href="/icebreaker-games-for-work"
+                className="rounded-full border border-white/30 bg-white/10 px-4 py-2 text-sm font-medium text-white hover:bg-white/15 transition-colors backdrop-blur"
+              >
+                For work
+              </Link>
+              <Link
+                href="/icebreaker-games-for-meetings"
+                className="rounded-full border border-white/30 bg-white/10 px-4 py-2 text-sm font-medium text-white hover:bg-white/15 transition-colors backdrop-blur"
+              >
+                For meetings
+              </Link>
+              <Link
+                href="/virtual-icebreaker-games"
+                className="rounded-full border border-white/30 bg-white/10 px-4 py-2 text-sm font-medium text-white hover:bg-white/15 transition-colors backdrop-blur"
+              >
+                Virtual
+              </Link>
             </div>
           </div>
         </div>

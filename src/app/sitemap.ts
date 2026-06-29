@@ -37,6 +37,30 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.9,
       },
       {
+        url: `${baseUrl}/best-icebreaker-games`,
+        lastModified: new Date(),
+        changeFrequency: "weekly",
+        priority: 0.9,
+      },
+      {
+        url: `${baseUrl}/icebreaker-games-for-work`,
+        lastModified: new Date(),
+        changeFrequency: "weekly",
+        priority: 0.9,
+      },
+      {
+        url: `${baseUrl}/virtual-icebreaker-games`,
+        lastModified: new Date(),
+        changeFrequency: "weekly",
+        priority: 0.9,
+      },
+      {
+        url: `${baseUrl}/icebreaker-games-for-meetings`,
+        lastModified: new Date(),
+        changeFrequency: "weekly",
+        priority: 0.9,
+      },
+      {
         url: `${baseUrl}/blog`,
         lastModified: articleLastModified,
         changeFrequency: "weekly",

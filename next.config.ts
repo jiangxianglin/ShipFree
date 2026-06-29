@@ -4,6 +4,30 @@ const nextConfig = {
   typescript: { ignoreBuildErrors: true },
   pageExtensions: ["ts", "tsx", "mdx"],
   serverExternalPackages: ['enamdict'],
+  async redirects() {
+    return [
+      {
+        source: "/games/two-truths-and-one-lie",
+        destination: "/games/two-truths-and-a-lie",
+        permanent: true,
+      },
+      {
+        source: "/games/name-game",
+        destination: "/games/the-name-game",
+        permanent: true,
+      },
+      {
+        source: "/icebreaker-games-for-adults",
+        destination: "/blog/ice-breaker-games-for-adults",
+        permanent: true,
+      },
+      {
+        source: "/icebreaker-games-for-students",
+        destination: "/blog/icebreaker-games-for-students",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

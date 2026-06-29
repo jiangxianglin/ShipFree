@@ -3,9 +3,9 @@ import { FilterableGameGrid } from "@/components/games/FilterableGameGrid";
 import { EmptyState } from "@/components/games/EmptyState";
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
-// Force dynamic rendering for this page
-export const dynamic = 'force-dynamic';
+export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title: "Ice Breaker Games | Browse All Activities",
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
       "Discover the best ice breaker games for team building, virtual meetings, classrooms, and more. Find the perfect activity for your group.",
     images: [
       {
-        url: "/img/Hero.png",
-        width: 1080,
-        height: 1080,
+        url: "https://www.icebreakergames.site/img/Hero.png",
+        width: 1200,
+        height: 630,
         alt: "Ice Breaker Games - Team Building Activities",
       },
     ],
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "Ice Breaker Games | Browse All Activities",
     description:
       "Discover the best ice breaker games for team building, virtual meetings, classrooms, and more. Find the perfect activity for your group.",
-    images: ["/img/Hero.png"],
+    images: ["https://www.icebreakergames.site/img/Hero.png"],
   },
 };
 
@@ -54,8 +54,60 @@ export default async function GamesPage() {
     return <EmptyState />;
   }
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What are ice breaker games?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Ice breaker games are short, structured activities that help people feel comfortable, start talking, and connect quickly. They are commonly used in meetings, workshops, classrooms, and team building events.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What is a good 5-minute ice breaker game?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "For a quick 5-minute ice breaker, try One Word Check-In, Emoji Check-In, or a short This or That round. These require no materials and work well for most groups.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What ice breaker games work best for meetings?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Meeting-friendly ice breaker games are low-pressure and time-boxed. One Word Check-In, Weather Check-In, and This or That Questions help everyone participate without long turns.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What are the best virtual ice breaker games?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Virtual ice breaker games that work well online include Chat Waterfall, Emoji Introduction, Emoji Check-In, and Virtual Background Story. These formats make it easy for everyone to join using chat and quick sharing.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How do I choose the right ice breaker game?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Choose based on time, group size, comfort level, and setting (in-person or virtual). If the group is new, use predictable formats. If time is tight, use a check-in style activity.",
+        },
+      },
+    ],
+  };
+
   return (
-    <div className="container mx-auto px-4 py-8">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <div className="container mx-auto px-4 py-8">
       {/* Hero Section with Image */}
       <div className="mb-6 grid md:grid-cols-2 gap-8">
         <div className="flex flex-col justify-center">
@@ -64,6 +116,33 @@ export default async function GamesPage() {
             Browse our collection of {games.length} engaging ice breaker games to warm up
             your team and create memorable experiences.
           </p>
+
+          <div className="flex flex-wrap gap-3 mb-6">
+            <Link
+              href="/best-icebreaker-games"
+              className="inline-flex items-center rounded-full border bg-background px-4 py-2 text-sm font-medium hover:bg-muted transition-colors"
+            >
+              Best icebreaker games
+            </Link>
+            <Link
+              href="/icebreaker-games-for-work"
+              className="inline-flex items-center rounded-full border bg-background px-4 py-2 text-sm font-medium hover:bg-muted transition-colors"
+            >
+              Icebreaker games for work
+            </Link>
+            <Link
+              href="/icebreaker-games-for-meetings"
+              className="inline-flex items-center rounded-full border bg-background px-4 py-2 text-sm font-medium hover:bg-muted transition-colors"
+            >
+              Icebreaker games for meetings
+            </Link>
+            <Link
+              href="/virtual-icebreaker-games"
+              className="inline-flex items-center rounded-full border bg-background px-4 py-2 text-sm font-medium hover:bg-muted transition-colors"
+            >
+              Virtual icebreaker games
+            </Link>
+          </div>
 
           <div className="prose max-w-none">
             <h2 className="text-2xl font-semibold mb-4">
@@ -105,6 +184,49 @@ export default async function GamesPage() {
             Each game includes detailed instructions, time requirements, and group size recommendations to help you choose the perfect
             ice breaker games for your needs.
           </p>
+
+          <h3 className="text-xl font-semibold mb-3">Popular Collections</h3>
+          <p className="text-base text-muted-foreground mb-3">
+            If you want curated picks, use these quick collections. They are designed to match common search intents and help you choose faster.
+          </p>
+          <div className="not-prose grid grid-cols-1 md:grid-cols-2 gap-4">
+            <Link
+              href="/best-icebreaker-games"
+              className="rounded-xl border bg-card p-5 hover:shadow-md transition-shadow"
+            >
+              <div className="font-semibold mb-1">Best icebreaker games</div>
+              <div className="text-sm text-muted-foreground">
+                A curated list of reliable activities for teams, meetings, workshops, and events.
+              </div>
+            </Link>
+            <Link
+              href="/icebreaker-games-for-work"
+              className="rounded-xl border bg-card p-5 hover:shadow-md transition-shadow"
+            >
+              <div className="font-semibold mb-1">Icebreaker games for work</div>
+              <div className="text-sm text-muted-foreground">
+                Work-friendly, low-pressure openers with time-boxed facilitation tips.
+              </div>
+            </Link>
+            <Link
+              href="/icebreaker-games-for-meetings"
+              className="rounded-xl border bg-card p-5 hover:shadow-md transition-shadow"
+            >
+              <div className="font-semibold mb-1">Icebreaker games for meetings</div>
+              <div className="text-sm text-muted-foreground">
+                Quick meeting openers that help the group arrive and start talking.
+              </div>
+            </Link>
+            <Link
+              href="/virtual-icebreaker-games"
+              className="rounded-xl border bg-card p-5 hover:shadow-md transition-shadow"
+            >
+              <div className="font-semibold mb-1">Virtual icebreaker games</div>
+              <div className="text-sm text-muted-foreground">
+                Online-ready activities for Zoom, Teams, and remote workshops.
+              </div>
+            </Link>
+          </div>
         </div>
       </div>
 
@@ -208,5 +330,6 @@ export default async function GamesPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }
