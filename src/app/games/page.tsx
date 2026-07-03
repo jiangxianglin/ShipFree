@@ -125,6 +125,12 @@ export default async function GamesPage() {
               Best icebreaker games
             </Link>
             <Link
+              href="/blog/ice-breaker-games-for-adults"
+              className="inline-flex items-center rounded-full border bg-background px-4 py-2 text-sm font-medium hover:bg-muted transition-colors"
+            >
+              Icebreaker games for adults
+            </Link>
+            <Link
               href="/icebreaker-games-for-work"
               className="inline-flex items-center rounded-full border bg-background px-4 py-2 text-sm font-medium hover:bg-muted transition-colors"
             >
@@ -141,6 +147,12 @@ export default async function GamesPage() {
               className="inline-flex items-center rounded-full border bg-background px-4 py-2 text-sm font-medium hover:bg-muted transition-colors"
             >
               Virtual icebreaker games
+            </Link>
+            <Link
+              href="/blog/icebreaker-games-for-students"
+              className="inline-flex items-center rounded-full border bg-background px-4 py-2 text-sm font-medium hover:bg-muted transition-colors"
+            >
+              Icebreaker games for students
             </Link>
           </div>
 
@@ -200,6 +212,15 @@ export default async function GamesPage() {
               </div>
             </Link>
             <Link
+              href="/blog/ice-breaker-games-for-adults"
+              className="rounded-xl border bg-card p-5 hover:shadow-md transition-shadow"
+            >
+              <div className="font-semibold mb-1">Icebreaker games for adults</div>
+              <div className="text-sm text-muted-foreground">
+                Practical, respectful icebreakers for adult groups in meetings, socials, and remote teams.
+              </div>
+            </Link>
+            <Link
               href="/icebreaker-games-for-work"
               className="rounded-xl border bg-card p-5 hover:shadow-md transition-shadow"
             >
@@ -224,6 +245,15 @@ export default async function GamesPage() {
               <div className="font-semibold mb-1">Virtual icebreaker games</div>
               <div className="text-sm text-muted-foreground">
                 Online-ready activities for Zoom, Teams, and remote workshops.
+              </div>
+            </Link>
+            <Link
+              href="/blog/icebreaker-games-for-students"
+              className="rounded-xl border bg-card p-5 hover:shadow-md transition-shadow"
+            >
+              <div className="font-semibold mb-1">Icebreaker games for students</div>
+              <div className="text-sm text-muted-foreground">
+                Classroom-safe ideas for students, including low-pressure and online options.
               </div>
             </Link>
           </div>

@@ -3,7 +3,7 @@ import { db } from "@/db";
 import { gamesTable } from "@/db/schema";
 import { blogPosts } from "@/data/blog";
 
-export const dynamic = "force-dynamic";
+export const dynamic = "force-static";
 export const revalidate = 3600;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
