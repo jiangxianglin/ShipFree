@@ -191,6 +191,26 @@ export function GameDetail({ game }: GameDetailProps) {
               Unique and Shared is a low-pressure get-to-know activity where people identify one thing that is unique about themselves and one thing they share in common
               with a partner or small group. It balances belonging (shared) with individuality (unique), which helps rapport form quickly.
             </p>
+          ) : game.title === "Common Ground" ? (
+            <p className="text-base leading-relaxed text-muted-foreground">
+              Common Ground is a simple connection game where people try to find as many shared interests or experiences as possible in a short time.
+              It is fast, low-pressure, and works well for new teams, classrooms, and workshops because it helps people notice similarity without forcing personal disclosure.
+            </p>
+          ) : game.title === "The Check-In" ? (
+            <p className="text-base leading-relaxed text-muted-foreground">
+              The Check-In is a quick meeting icebreaker where each person shares a short update using a single prompt (for example: one word, a color, or a weather report).
+              It improves presence, alignment, and psychological safety, and it is easy to time-box for teams of any size.
+            </p>
+          ) : game.slug === "remote-change-3-things" ? (
+            <p className="text-base leading-relaxed text-muted-foreground">
+              Remote Change 3 Things is a playful virtual icebreaker for observation and laughter. One person changes three small things off camera, returns, and the group tries to spot the changes.
+              It is a great warm-up for remote meetings because everyone can participate by guessing in chat.
+            </p>
+          ) : game.slug === "ornament-guess" ? (
+            <p className="text-base leading-relaxed text-muted-foreground">
+              Ornament Guess is a light guessing game where someone shares an ornament (or any meaningful object) and gives a clue. The group guesses what it represents,
+              then the person reveals the story. It is especially good for seasonal gatherings and team socials when you want quick, friendly conversation.
+            </p>
           ) : (
             <p className="text-base leading-relaxed text-muted-foreground">
               This ice breaker game is perfect for {game.category.toLowerCase()} settings. 
@@ -319,6 +339,57 @@ export function GameDetail({ game }: GameDetailProps) {
                 <li>Time-box the search to 2–4 minutes</li>
                 <li>Encourage curiosity, not debate</li>
                 <li>For large groups, rotate partners and keep share-outs short</li>
+              </ul>
+            </div>
+          )}
+
+          {game.title === "Common Ground" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">Category ideas</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>Hobbies you enjoy</li>
+                <li>Favorite foods or snacks</li>
+                <li>Music or podcasts</li>
+                <li>Morning routines</li>
+                <li>Things you are learning</li>
+                <li>Work preferences (focus time, communication style)</li>
+              </ul>
+            </div>
+          )}
+
+          {game.title === "The Check-In" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">Prompt ideas</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>One word for your energy</li>
+                <li>A color for your mood</li>
+                <li>Weather report (sunny, cloudy, stormy)</li>
+                <li>A small win from this week</li>
+                <li>One thing you need to be successful today</li>
+              </ul>
+            </div>
+          )}
+
+          {game.slug === "remote-change-3-things" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">Good changes</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>Swap glasses, hat, or headphones</li>
+                <li>Move a mug or notebook</li>
+                <li>Add or remove a background item</li>
+                <li>Change lighting or camera angle slightly</li>
+              </ul>
+            </div>
+          )}
+
+          {game.slug === "ornament-guess" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">Facilitator tips</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>Frame it as “meaningful object guess” to keep it inclusive</li>
+                <li>Keep clues short (one sentence) and time-box guesses</li>
+                <li>Let people pass or share a neutral object if they prefer</li>
+                <li>Use breakout rooms for large groups</li>
               </ul>
             </div>
           )}

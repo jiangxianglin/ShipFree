@@ -148,6 +148,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   } else if (game.slug === "unique-and-shared") {
     description =
       "Learn how to play Unique and Shared: a quick get-to-know icebreaker where people find one thing unique and one thing in common. Rules, examples, and facilitation tips included.";
+  } else if (game.title === "Common Ground") {
+    description =
+      "Learn how to play Common Ground: a quick icebreaker where people find things they share in common. Great for teams and classrooms with rules, examples, and variations.";
+  } else if (game.title === "The Check-In") {
+    description =
+      "Learn how to run The Check-In: a fast team check-in icebreaker with simple prompts and facilitation tips. Great for meetings, workshops, and retrospectives.";
+  } else if (game.slug === "remote-change-3-things") {
+    description =
+      "Learn how to play Remote Change 3 Things: a quick virtual icebreaker for observation and laughter. 6–40 people, 5–10 minutes. Rules and variations included.";
+  } else if (game.slug === "ornament-guess") {
+    description =
+      "Learn how to play Ornament Guess: a fun guessing icebreaker for holiday parties and teams. Rules, examples, and facilitator tips included.";
   } else if (game.title === "Virtual Background Story") {
     description = "Virtual Background Story | Ice Breaker Games: Perfect for online meetings, participants choose creative or unusual virtual backgrounds and share the story behind their choice.";
   } else if (game.title === "Speed Networking") {
@@ -197,6 +209,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
                           ? "Topics Tables Icebreaker | How to Run + Prompts"
                           : game.slug === "unique-and-shared"
                             ? "Unique and Shared Icebreaker | How to Play"
+                            : game.title === "Common Ground"
+                              ? "Common Ground Icebreaker | How to Play + Examples"
+                              : game.title === "The Check-In"
+                                ? "The Check-In Icebreaker | Quick Team Check-In Prompts"
+                                : game.slug === "remote-change-3-things"
+                                  ? "Remote Change 3 Things | Quick Virtual Icebreaker"
+                                  : game.slug === "ornament-guess"
+                                    ? "Ornament Guess Icebreaker | How to Play + Tips"
         : buildDefaultTitle(game.title);
 
   const openGraphImageUrl = toAbsoluteUrl(
@@ -330,6 +350,18 @@ export default async function GameDetailPage({ params }: Props) {
   } else if (game.slug === "unique-and-shared") {
     jsonLdDescription =
       "Unique and Shared is a get-to-know icebreaker where people find one thing unique about themselves and one thing they share with a partner or small group. It creates quick connection without forcing oversharing.";
+  } else if (game.title === "Common Ground") {
+    jsonLdDescription =
+      "Common Ground is an icebreaker where participants quickly find things they have in common through short conversations. It helps groups feel connected fast and works well for teams, classrooms, and workshops.";
+  } else if (game.title === "The Check-In") {
+    jsonLdDescription =
+      "The Check-In is a simple team icebreaker where each person shares a quick update using a prompt (for example: one word, a color, a weather report, or a win and a challenge). It improves presence, alignment, and psychological safety.";
+  } else if (game.slug === "remote-change-3-things") {
+    jsonLdDescription =
+      "Remote Change 3 Things is a quick virtual icebreaker where one person changes three small things off camera, and the group tries to spot the changes. It energizes remote meetings and encourages observation and attention.";
+  } else if (game.slug === "ornament-guess") {
+    jsonLdDescription =
+      "Ornament Guess is a light, fun guessing icebreaker often used in holiday gatherings. Participants share an ornament (or a story clue) and the group guesses what it represents, sparking conversation and laughter.";
   } else if (game.title === "Virtual Background Story") {
     jsonLdDescription = "Virtual Background Story | Ice Breaker Games: Perfect for online meetings, participants choose creative or unusual virtual backgrounds and share the story behind their choice.";
   } else if (game.title === "Speed Networking") {
@@ -1272,6 +1304,190 @@ export default async function GameDetailPage({ params }: Props) {
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "It is visual, fast, and inclusive. People can participate by guessing in chat, and the focus stays on fun and collaboration."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Common Ground" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you play Common Ground?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Pair people up or use small groups. Give them 2–3 minutes to find as many things they have in common as possible. Share a few highlights, then rotate partners for another round."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are good Common Ground categories?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use safe categories like hobbies, favorite foods, routines, music, learning goals, or work preferences. Avoid sensitive identity topics in mixed work settings."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does Common Ground take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A typical version takes 8–15 minutes. Run 2–3 rounds of 2–4 minutes each, plus a quick share-out."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What if people struggle to find things in common?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Provide a short list of starter categories, or switch to prompts like ‘two things we both enjoy’ and ‘one thing we both want to learn’ to make it easier."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can Common Ground work virtually?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Use breakout rooms of 2–4 people and a shared timer. Ask each group to post their top commonalities in chat at the end of each round."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "The Check-In" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "What is The Check-In?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Check-In is a quick icebreaker where each person shares a short update using a prompt (for example: one word, a color, weather, a win, or a challenge). It helps groups become present and aligned."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long should a check-in take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most teams keep it to 3–8 minutes. Time-box each person (10–30 seconds) and use one prompt per round."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are good check-in prompts for meetings?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Try: one word for your energy, a color for your mood, weather report, a small win, one thing you need, or one thing you want from this meeting."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you keep check-ins safe and inclusive?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Make sharing optional, allow people to pass, and keep prompts professional. Avoid asking for personal details and keep the tone supportive."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can The Check-In work for remote teams?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Run it in the main room and let people answer by voice or chat. For large groups, collect responses in chat and read a few themes aloud."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.slug === "remote-change-3-things" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you play Remote Change 3 Things?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "One person turns off their camera (or steps away) and changes three small things (for example: glasses, background item, hair, lighting). They return and the group tries to spot the three changes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are good things to change?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Try small, safe changes like: switch a mug, move a book, change a hat, adjust lighting, swap headphones, or add/remove a background object."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A round takes about 2–3 minutes. Most groups do 2–4 rounds for a total of 5–10 minutes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you run it with a large group?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use volunteers and keep rounds short. Let people guess in chat so more participants can contribute at once."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is a good variation?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Try ‘Change 1 Thing’ for speed, or ‘Change 5 Things’ for a challenge. You can also theme changes (desk items only, background only, color only)."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.slug === "ornament-guess" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you play Ornament Guess?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each person shares an ornament (or a photo of it) and gives one clue. The group guesses what the ornament represents or why it is meaningful. Reveal the story and move to the next person."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you need real ornaments?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. You can use any small object, a photo, or a virtual background item. The key is a short clue and a quick reveal."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you keep it inclusive at work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Keep it optional and avoid assuming everyone celebrates the same holidays. Frame it as ‘meaningful object guess’ and allow people to share something neutral if they prefer."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does Ornament Guess take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Plan 1–2 minutes per person. For large groups, use small breakout rooms or ask for 3–5 volunteers and rotate each meeting."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are good variations?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Try ‘two clues then guess’, ‘guess the year’, or group voting for the funniest or most surprising story. For virtual teams, share photos in chat."
             }
           }
         ]
