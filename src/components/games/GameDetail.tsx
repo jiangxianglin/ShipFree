@@ -406,6 +406,350 @@ export function GameDetail({ game }: GameDetailProps) {
             </div>
           )}
 
+          {game.title === "Icebreaker Bingo" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">Facilitator tips</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>Print more cards than you think you need — extra copies keep groups moving</li>
+                <li>Announce the first bingo winner early to create energy, then let others finish the card</li>
+                <li>Walk the room to help shy participants connect and keep the conversation going</li>
+                <li>For mixed groups, use prompts that are broad enough for everyone to find matches</li>
+              </ul>
+            </div>
+          )}
+
+          {game.title === "Find Your Match" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">How to prepare pairs</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>Prepare one card per person with a famous pair (peanut butter & jelly, Batman & Robin)</li>
+                <li>Make sure there are enough pairs so everyone participates</li>
+                <li>Consider themed pairs for conferences (product names, industry references)</li>
+                <li>Have participants keep their card visible to make pairing faster</li>
+              </ul>
+            </div>
+          )}
+
+          {game.title === "Wheel of Fortune Introductions" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">Prompt ideas</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>Biggest pet peeve</li>
+                <li>Strangest thing you have eaten</li>
+                <li>Favorite comfort food</li>
+                <li>Most spontaneous thing you have done</li>
+                <li>Hidden talent</li>
+                <li>Dream travel destination</li>
+              </ul>
+            </div>
+          )}
+
+          {game.title === "Six Word Memoirs" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">Writing prompts</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>Six words about your day</li>
+                <li>Six words about your team right now</li>
+                <li>Six words about a goal you are working toward</li>
+                <li>Six words about why you do what you do</li>
+                <li>A humorous or surprising six-word life summary</li>
+              </ul>
+            </div>
+          )}
+
+          {game.title === "Where Do We Come From & What Is Famous?" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">Tips for facilitators</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>Use a world map or slide to visualize locations — it adds energy and engagement</li>
+                <li>Encourage people to share something quirky or personal, not just obvious facts</li>
+                <li>For diverse groups, acknowledge how different backgrounds enrich the team</li>
+                <li>Keep each share to 30–60 seconds to maintain pace</li>
+              </ul>
+            </div>
+          )}
+
+          {game.title === "Never Have I Ever" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">Prompt ideas</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>Never have I ever traveled solo</li>
+                <li>Never have I ever cooked a meal for more than five people</li>
+                <li>Never have I ever given a speech to 50+ people</li>
+                <li>Never have I ever learned a new language</li>
+                <li>Never have I ever worked remotely for more than a year</li>
+              </ul>
+            </div>
+          )}
+
+          {game.title === "This or That Questions" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">Prompt ideas</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>Coffee or tea?</li>
+                <li>Morning person or night owl?</li>
+                <li>Books or movies?</li>
+                <li>Mountain or beach?</li>
+                <li>Sweet or savory?</li>
+                <li>Indoor or outdoor?</li>
+              </ul>
+            </div>
+          )}
+
+          {game.title === "Would You Rather" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">Question ideas</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>Would you rather be able to fly or be invisible?</li>
+                <li>Would you rather never use social media again or never watch TV again?</li>
+                <li>Would you rather travel to the past or the future?</li>
+                <li>Would you rather have unlimited money or unlimited time?</li>
+                <li>Would you rather be famous or anonymous but respected?</li>
+              </ul>
+            </div>
+          )}
+
+          {game.title === "Rock Paper Scissors Tournament" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">Facilitator tips</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>Use a visible bracket board — it builds excitement and keeps everyone informed</li>
+                <li>Keep rounds fast (15–30 seconds) with a clear start signal</li>
+                <li>Have losers form a cheering section for the next round — it keeps everyone engaged</li>
+                <li>Use a drumroll or sound effect for dramatic moments</li>
+              </ul>
+            </div>
+          )}
+
+          {game.title === "Fantasy Vacation" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">Prompt ideas</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>Share your dream destination and one thing you would do there</li>
+                <li>Describe the most unusual place you have ever wanted to visit</li>
+                <li>What is your ideal vacation activity — adventure or relaxation?</li>
+                <li>If money was no object, where would you go?</li>
+              </ul>
+            </div>
+          )}
+
+          {game.title === "Mystery Envelope" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">Envelope prompt ideas</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>Tell the story of your first day at work</li>
+                <li>Act out your morning routine without using your hands</li>
+                <li>Share a quick win from this week</li>
+                <li>Describe your ideal weekend in three words</li>
+                <li>Show us a skill or trick you can do in 10 seconds</li>
+              </ul>
+            </div>
+          )}
+
+          {game.title === "Invention Pitch" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">Pitch prompt ideas</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>Invent an app that nobody needs but everyone would love</li>
+                <li>Design a gadget that solves a first-world problem</li>
+                <li>Create a new holiday and its signature activity</li>
+                <li>Invent a new flavor of ice cream and its catchy name</li>
+              </ul>
+            </div>
+          )}
+
+          {game.title === "Scavenger Hunt" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">Challenge ideas</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>Find something red and something blue</li>
+                <li>Take a team photo doing jumping jacks</li>
+                <li>Record a 10-second team cheer</li>
+                <li>Find a business card from someone outside your team</li>
+                <li>Create a paper airplane from office supplies</li>
+              </ul>
+            </div>
+          )}
+
+          {game.title === "Show and Tell" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">Object ideas</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>A gift from someone meaningful</li>
+                <li>A souvenir from a meaningful trip</li>
+                <li>A book that changed your perspective</li>
+                <li>A hobby item you are proud of</li>
+                <li>Something inherited from family</li>
+              </ul>
+            </div>
+          )}
+
+          {game.title === "Appreciation Circle" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">Facilitator tips</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>Model specific appreciation first — it sets the tone</li>
+                <li>Set the expectation that everyone participates</li>
+                <li>Allow people to pass if they genuinely have nothing</li>
+                <li>Close with a moment of reflection or gratitude</li>
+              </ul>
+            </div>
+          )}
+
+          {game.title === "Line-Up" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">Criterion ideas</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>Birth month (January = one end)</li>
+                <li>Alphabetical by first name</li>
+                <li>Years working in the industry</li>
+                <li>How you take your coffee</li>
+                <li>How you spent last weekend (staycation = one end, adventure = other)</li>
+              </ul>
+            </div>
+          )}
+
+          {game.title === "Take a Picture of Your Shoes" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">Story prompt ideas</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>Where have these shoes taken you?</li>
+                <li>Why did you choose these shoes today?</li>
+                <li>What is the most memorable place these shoes have been?</li>
+                <li>Do these shoes say anything about your personality?</li>
+              </ul>
+            </div>
+          )}
+
+          {game.title === "Near and Far" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">Prompt ideas</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>How much do you enjoy public speaking?</li>
+                <li>How connected do you feel to this team?</li>
+                <li>How often do you work from home?</li>
+                <li>How much do you enjoy planning vs. improvising?</li>
+                <li>How optimistic are you about the future?</li>
+              </ul>
+            </div>
+          )}
+
+          {game.title === "Desert Island Scenario" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">Item ideas</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>A guitar for entertainment</li>
+                <li>A satellite phone for emergencies</li>
+                <li>A good knife for survival and crafting</li>
+                <li>A year's supply of coffee</li>
+                <li>Photography equipment</li>
+              </ul>
+            </div>
+          )}
+
+          {game.title === "Guess Who (Personal Trivia)" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">Fact ideas</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>Has traveled to 10+ countries</li>
+                <li>Once met a celebrity</li>
+                <li>Plays a musical instrument</li>
+                <li>Volunteers on weekends</li>
+                <li>Has a hidden talent</li>
+              </ul>
+            </div>
+          )}
+
+          {game.title === "Team Trivia" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">Category ideas</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>General knowledge (history, science, geography)</li>
+                <li>Pop culture (movies, music, TV shows)</li>
+                <li>Company or industry trivia</li>
+                <li>World facts and geography</li>
+                <li>Fun and surprising facts</li>
+              </ul>
+            </div>
+          )}
+
+          {game.title === "Hot Takes" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">Hot take ideas</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>Pineapple belongs on pizza</li>
+                <li>The best season is autumn</li>
+                <li>Mondays are actually great</li>
+                <li>Email is better than Slack for complex decisions</li>
+                <li>The best team lunch is pizza</li>
+              </ul>
+            </div>
+          )}
+
+          {game.title === "Online Charades" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">Prompt ideas</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>Making coffee in the morning</li>
+                <li>Working from home</li>
+                <li>A team meeting on Zoom</li>
+                <li>Sending a tricky email</li>
+                <li>Taking a coffee break</li>
+              </ul>
+            </div>
+          )}
+
+          {game.title === "Mingle Bingo" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">Prompt ideas</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>Has traveled abroad</li>
+                <li>Speaks two languages</li>
+                <li>Enjoys cooking</li>
+                <li>Has a pet</li>
+                <li>Prefers morning coffee</li>
+              </ul>
+            </div>
+          )}
+
+          {game.title === "What's Missing" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">Item ideas</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>A colorful pen</li>
+                <li>A printed photo</li>
+                <li>A coffee mug</li>
+                <li>A sticky note with a word</li>
+                <li>A small toy or figurine</li>
+              </ul>
+            </div>
+          )}
+
+          {game.title === "Storytelling Circle" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">Opening line ideas</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>Once upon a time, in a very unusual office...</li>
+                <li>A mysterious package arrived at the office that nobody expected...</li>
+                <li>The team discovered a hidden room behind the printer...</li>
+                <li>On the first day back in the office, something strange happened...</li>
+              </ul>
+            </div>
+          )}
+
+          {game.title === "Word Association" && (
+            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3">Starting word ideas</h4>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                <li>Summer</li>
+                <li>Coffee</li>
+                <li>Monday</li>
+                <li>Success</li>
+                <li>Creativity</li>
+              </ul>
+            </div>
+          )}
+
           {game.title === "Speed Networking" && (
             <div className="flex justify-center my-6">
               <div className="relative overflow-hidden rounded-lg max-w-md w-full">

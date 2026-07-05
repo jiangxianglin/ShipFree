@@ -170,6 +170,177 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description = "Emoji Introduction | Ice Breaker Games: A fun ice breaker game where participants introduce themselves using creative emojis. Perfect for virtual meetings, online classrooms & team building. 5-30 players, 10-15 minutes. Free to play!";
   } else if (game.title === "Emoji Check-In") {
     description = "Emoji Check-In ice breaker game for virtual meetings. Express mood with emojis! Quick 3-5 min team activity. Free Emoji Check-In icebreaker for online meetings.";
+  } else if (game.title === "Icebreaker Bingo") {
+    description =
+      "Learn how to play Icebreaker Bingo: a large-group mingling game where participants find people matching prompts on a bingo card. 12–100+ players, 10–20 minutes.";
+  } else if (game.title === "Find Your Match") {
+    description =
+      "Learn how to play Find Your Match: a pairing icebreaker game where participants find their matching partner by asking questions. Perfect for networking events!";
+  } else if (game.title === "Wheel of Fortune Introductions") {
+    description =
+      "Learn how to run Wheel of Fortune Introductions: a playful virtual meeting opener where participants spin a wheel and answer prompts. 6–50 players, 8–15 minutes.";
+  } else if (game.title === "Six Word Memoirs") {
+    description =
+      "Learn how to play Six Word Memoirs: a storytelling icebreaker where participants share their life in six words. 4–30 players, 10–15 minutes. Rules and tips included.";
+  } else if (game.title === "Where Do We Come From & What Is Famous?") {
+    description =
+      "Learn how to play Where Do We Come From & What Is Famous?: a cultural icebreaker where participants share hometowns and local highlights. 6–50 players, 10–20 minutes.";
+  } else if (game.title === "Never Have I Ever") {
+    description =
+      "Learn how to play Never Have I Ever: a sharing icebreaker where participants reveal things they have never done. Rules, examples, and variations for teams and classrooms.";
+  } else if (game.title === "This or That Questions") {
+    description =
+      "Learn how to run This or That Questions: a quick binary-choice icebreaker for meetings and teams. 4–50 players, 5–10 minutes. Prompts and facilitation tips included.";
+  } else if (game.title === "Would You Rather") {
+    description =
+      "Learn how to play Would You Rather: a fun opinion icebreaker where participants choose between two options and explain. 4–30 players, 5–15 minutes. Questions and variations included.";
+  } else if (game.title === "Rock Paper Scissors Tournament") {
+    description =
+      "Learn how to run a Rock Paper Scissors Tournament: a high-energy large-group icebreaker with a bracket competition. 10–100+ players, 10–20 minutes. Setup and tips included.";
+  } else if (game.title === "Fantasy Vacation") {
+    description =
+      "Learn how to play Fantasy Vacation: a creative conversation icebreaker where participants share dream travel destinations. 4–30 players, 8–15 minutes. No materials needed.";
+  } else if (game.title === "Mystery Envelope") {
+    description =
+      "Learn how to play Mystery Envelope: a surprise icebreaker where participants draw prompts from envelopes and discuss. 6–50 players, 10–15 minutes. Examples and tips included.";
+  } else if (game.title === "Invention Pitch") {
+    description =
+      "Learn how to run Invention Pitch: a creative team building game where small groups pitch playful inventions. 6–30 players, 15–25 minutes. Rules and variation ideas included.";
+  } else if (game.title === "Scavenger Hunt") {
+    description =
+      "Learn how to run a Scavenger Hunt: a team competition where participants find items or complete challenges within a time limit. 10–100+ players, 30–60 minutes. Setup and tips included.";
+  } else if (game.title === "Show and Tell") {
+    description =
+      "Learn how to run Show and Tell: a storytelling icebreaker where participants share meaningful objects and their stories. 4–15 players, 20–40 minutes. Tips for facilitation included.";
+  } else if (game.title === "Appreciation Circle") {
+    description =
+      "Learn how to run an Appreciation Circle: a gratitude activity where participants share what they appreciate about each other. 5–20 players, 15–30 minutes. How-to and tips included.";
+  } else if (game.title === "Line-Up") {
+    description =
+      "Learn how to run Line-Up: a non-verbal team challenge where participants silently arrange themselves by a criterion. 10–40 players, 5–15 minutes. Steps and debrief questions included.";
+  } else if (game.title === "Take a Picture of Your Shoes") {
+    description =
+      "Learn how to play Take a Picture of Your Shoes: a quick virtual icebreaker where participants share shoe photos and stories. 5–30 players, 5–10 minutes. Examples and tips included.";
+  } else if (game.title === "Near and Far") {
+    description =
+      "Learn how to run Near and Far: a movement-based icebreaker where participants position themselves by prompts. 10–50 players, 10–20 minutes. Steps and debrief ideas included.";
+  } else if (game.title === "Desert Island Scenario") {
+    description =
+      "Learn how to run Desert Island Scenario: a creative get-to-know-you icebreaker where participants choose three items to bring. 4–20 players, 15–25 minutes. Examples and discussion prompts included.";
+  } else if (game.title === "Guess Who (Personal Trivia)") {
+    description =
+      "Learn how to play Guess Who (Personal Trivia): participants submit fun facts and the group guesses who each fact belongs to. 8–40 players, 10–20 minutes. Rules and facilitation tips included.";
+  } else if (game.title === "Team Trivia") {
+    description =
+      "Learn how to run Team Trivia: a knowledge competition where teams answer quiz questions together. 10–100+ players, 30–60 minutes. Setup and team formats included.";
+  } else if (game.title === "Hot Takes") {
+    description =
+      "Learn how to run Hot Takes: a fast-paced opinion icebreaker where participants share and debate hot takes. 6–30 players, 10–20 minutes. Prompts and facilitation tips included.";
+  } else if (game.title === "Online Charades") {
+    description =
+      "Learn how to play Online Charades: a virtual charades game where participants act out prompts for others to guess. 4–20 players, 10–20 minutes. Tips and prompt ideas included.";
+  } else if (game.title === "Mingle Bingo") {
+    description =
+      "Learn how to play Mingle Bingo: a mingling icebreaker where participants find people matching bingo prompts. 10–50 players, 15–25 minutes. Setup and prompt ideas included.";
+  } else if (game.title === "What's Missing") {
+    description =
+      "Learn how to play What's Missing: an observation icebreaker where participants recall items removed from view. 4–20 players, 5–10 minutes. Steps and variations included.";
+  } else if (game.title === "Storytelling Circle") {
+    description =
+      "Learn how to run Storytelling Circle: a collaborative story-building icebreaker where participants add sentences in turn. 6–30 players, 10–20 minutes. Examples and facilitation tips included.";
+  } else if (game.title === "Word Association") {
+    description =
+      "Learn how to play Word Association: a fast-paced mental warm-up where participants say the first word that comes to mind. 6–30 players, 5–15 minutes. How to run and debrief tips.";
+  } else if (game.title === "Human Bingo") {
+    description =
+      "Learn how to play Human Bingo: a networking icebreaker where participants find people matching bingo card descriptions. 10–50 players, 20–30 minutes. Setup, prompts, and tips included.";
+  } else if (game.title === "Emoji Introduction") {
+    description =
+      "Learn how to play Emoji Introduction: participants introduce themselves using emojis and others guess the meaning. 5–30 players, 10–15 minutes. Steps and variation ideas included.";
+  } else if (game.title === "Emoji Check-In") {
+    description =
+      "Learn how to play Emoji Check-In: a quick mood-sharing activity where participants express how they feel using emojis. 3–30 players, 3–5 minutes. Examples and variation ideas included.";
+  } else if (game.title === "Chat Waterfall") {
+    description =
+      "Learn how to play Chat Waterfall: a high-energy virtual icebreaker where everyone types answers simultaneously and sends at once. 5–100+ players, 5–15 minutes. Setup and prompt ideas included.";
+  } else if (game.title === "Virtual Background Story") {
+    description =
+      "Learn how to play Virtual Background Story: participants share creative virtual backgrounds and the story behind them. 5–30 players, 10–15 minutes. Prompt ideas and variation tips included.";
+  } else if (game.title === "Speed Networking") {
+    description =
+      "Learn how to run Speed Networking: a structured networking activity where participants rotate through brief conversations. 10–100+ players, 30–45 minutes. Setup and conversation prompts included.";
+  } else if (game.title === "Find Your Match") {
+    description =
+      "Learn how to play Find Your Match: a pairing icebreaker where participants find matching partners by asking yes/no questions. 10–50 players, 15–20 minutes. Setup and variation tips included.";
+  } else if (game.title === "Desert Island Scenario") {
+    description =
+      "Learn how to play Desert Island Scenario: a creative get-to-know-you activity where participants choose three items to bring. 4–20 players, 15–25 minutes. Examples and discussion prompts included.";
+  } else if (game.title === "Story Swap") {
+    description =
+      "Learn how to play Story Swap: a paired storytelling icebreaker where partners exchange stories using visual prompts. 6–40 players, 10–15 minutes. Steps and variation tips included.";
+  } else if (game.title === "If Then") {
+    description =
+      "Learn how to play If Then: a creative icebreaker where participants complete playful If/Then prompts. 5–30 players, 8–12 minutes. Prompt ideas and facilitation tips included.";
+  } else if (game.title === "Crossword Names") {
+    description =
+      "Learn how to run Crossword Names: a name-learning icebreaker that creates a visual crossword of participants' names. 8–30 players, 10–15 minutes. Steps and tips included.";
+  } else if (game.title === "Blind Name-Tag") {
+    description =
+      "Learn how to play Blind Name-Tag: a fun movement icebreaker where participants guess their own name from clues. 8–40 players, 10–15 minutes. How-to and tips included.";
+  } else if (game.title === "Sole Mate") {
+    description =
+      "Learn how to play Sole Mate: a quick pairing game using tokens to form random pairs for activities. 10–60 players, 5–8 minutes. Setup and variation tips included.";
+  } else if (game.title === "Year Of The Coin") {
+    description =
+      "Learn how to play Year Of The Coin: a storytelling icebreaker where participants share a memory from a drawn year. 4–30 players, 8–12 minutes. Prompt ideas and facilitation tips included.";
+  } else if (game.title === "Name That Movie Quote") {
+    description =
+      "Learn how to play Name That Movie Quote: a pop-culture icebreaker where participants guess movies from quotes. 4–30 players, 8–12 minutes. Examples and variation tips included.";
+  } else if (game.title === "10 Things in Common") {
+    description =
+      "Learn how to play 10 Things in Common: a paired discovery activity where partners find shared interests. 6–50 players, 8–12 minutes. Steps and variation tips included.";
+  } else if (game.title === "Guess That Team Member") {
+    description =
+      "Learn how to play Guess That Team Member: an anonymous fact guessing game for teams. 6–40 players, 10–15 minutes. Setup and facilitation tips included.";
+  } else if (game.title === "Skittles Sharing") {
+    description =
+      "Learn how to play Skittles Sharing: a candy-based icebreaker where participants answer prompts by color. 6–40 players, 8–12 minutes. Setup and variation tips included.";
+  } else if (game.title === "News Headline Warm-up") {
+    description =
+      "Learn how to run News Headline Warm-up: a creative brainstorming activity where participants write headlines about the topic. 4–30 players, 8–12 minutes. Examples and facilitation tips included.";
+  } else if (game.title === "Team Superpower Collage") {
+    description =
+      "Learn how to run Team Superpower Collage: a visual team identity activity where groups create a superpower collage. 6–25 players, 15–25 minutes. Setup and facilitation tips included.";
+  } else if (game.title === "Two Truths and a Dream") {
+    description =
+      "Learn how to play Two Truths and a Dream: a creative twist on get-to-know-you where participants share two facts and one aspiration. 4–30 players, 8–12 minutes. Steps and tips included.";
+  } else if (game.title === "Reception Line") {
+    description =
+      "Learn how to run Reception Line: a fast-paced introduction game where participants answer prompts in two facing lines. 10–50 players, 10–15 minutes. Setup and prompt ideas included.";
+  } else if (game.title === "Marshmallow Challenge") {
+    description =
+      "Learn how to run the Marshmallow Challenge: a team building activity where teams build towers to support a marshmallow. 8–40 players, 15–25 minutes. Setup and variation tips included.";
+  } else if (game.title === "Picture Sharing") {
+    description =
+      "Learn how to play Picture Sharing: a visual storytelling icebreaker where participants share meaningful photos. 4–30 players, 8–12 minutes. Tips and variation ideas included.";
+  } else if (game.title === "Train Wreck") {
+    description =
+      "Learn how to play Train Wreck: a high-energy movement mixer where participants swap seats when statements apply. 12–50 players, 10–15 minutes. How-to and tips included.";
+  } else if (game.title === "Human Knot") {
+    description =
+      "Learn how to play Human Knot: a physical team challenge where participants untangle a human knot without letting go. 8–30 players, 10–15 minutes. Steps and variation tips included.";
+  } else if (game.title === "Sing-Off") {
+    description =
+      "Learn how to run a Sing-Off: a music-based team activity where teams compete by singing songs containing a theme word. 10–60 players, 10–15 minutes. Setup and tips included.";
+  } else if (game.title === "Beach Ball Q&A") {
+    description =
+      "Learn how to play Beach Ball Q&A: a fun tossing game where participants answer prompts written on a beach ball. 10–40 players, 10–15 minutes. Setup and variation tips included.";
+  } else if (game.title === "Pterodactyl") {
+    description =
+      "Learn how to play Pterodactyl: a hilarious circle game where participants say 'pterodactyl' without showing teeth. 8–30 players, 8–12 minutes. Rules and variation tips included.";
+  } else if (game.title === "Chainlink") {
+    description =
+      "Learn how to play Chainlink: an introduction chain activity where participants link facts with shared traits. 8–40 players, 10–15 minutes. Steps and tips included.";
   }
 
   const title =
@@ -217,6 +388,118 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
                                   ? "Remote Change 3 Things | Quick Virtual Icebreaker"
                                   : game.slug === "ornament-guess"
                                     ? "Ornament Guess Icebreaker | How to Play + Tips"
+                                  : game.title === "Icebreaker Bingo"
+                                    ? "Icebreaker Bingo Game | How to Play + Tips"
+                                  : game.title === "Find Your Match"
+                                    ? "Find Your Match Icebreaker | How to Play + Tips"
+                                  : game.title === "Wheel of Fortune Introductions"
+                                    ? "Wheel of Fortune Introductions | How to Play + Prompts"
+                                  : game.title === "Six Word Memoirs"
+                                    ? "Six Word Memoirs Icebreaker | How to Play"
+                                  : game.title === "Where Do We Come From & What Is Famous?"
+                                    ? "Where Do We Come From & What Is Famous? | Icebreaker"
+                                  : game.title === "Never Have I Ever"
+                                    ? "Never Have I Ever Icebreaker | How to Play + Examples"
+                                  : game.title === "This or That Questions"
+                                    ? "This or That Questions Icebreaker | Quick Team Activity"
+                                  : game.title === "Would You Rather"
+                                    ? "Would You Rather Icebreaker | How to Play + Questions"
+                                  : game.title === "Rock Paper Scissors Tournament"
+                                    ? "Rock Paper Scissors Tournament | Large Group Icebreaker"
+                                  : game.title === "Fantasy Vacation"
+                                    ? "Fantasy Vacation Icebreaker | How to Play"
+                                  : game.title === "Mystery Envelope"
+                                    ? "Mystery Envelope Icebreaker | How to Play + Tips"
+                                  : game.title === "Invention Pitch"
+                                    ? "Invention Pitch Team Building Game | How to Play"
+                                  : game.title === "Scavenger Hunt"
+                                    ? "Scavenger Hunt Team Building Game | How to Run"
+                                  : game.title === "Show and Tell"
+                                    ? "Show and Tell Icebreaker | How to Play + Tips"
+                                  : game.title === "Appreciation Circle"
+                                    ? "Appreciation Circle Icebreaker | How to Run"
+                                  : game.title === "Line-Up"
+                                    ? "Line-Up Icebreaker | Non-Verbal Team Challenge"
+                                  : game.title === "Take a Picture of Your Shoes"
+                                    ? "Take a Picture of Your Shoes | Virtual Icebreaker"
+                                  : game.title === "Near and Far"
+                                    ? "Near and Far Icebreaker | How to Run"
+                                  : game.title === "Desert Island Scenario"
+                                    ? "Desert Island Scenario Icebreaker | How to Play"
+                                  : game.title === "Guess Who (Personal Trivia)"
+                                    ? "Guess Who (Personal Trivia) | How to Play + Tips"
+                                  : game.title === "Team Trivia"
+                                    ? "Team Trivia Icebreaker | How to Run"
+                                  : game.title === "Hot Takes"
+                                    ? "Hot Takes Icebreaker | How to Play + Prompts"
+                                  : game.title === "Online Charades"
+                                    ? "Online Charades Icebreaker | How to Play"
+                                  : game.title === "Mingle Bingo"
+                                    ? "Mingle Bingo Icebreaker | How to Play"
+                                  : game.title === "What's Missing"
+                                    ? "What's Missing Icebreaker | How to Play"
+                                  : game.title === "Storytelling Circle"
+                                    ? "Storytelling Circle Icebreaker | How to Run"
+                                  : game.title === "Word Association"
+                                    ? "Word Association Icebreaker | How to Play"
+                                  : game.title === "Human Bingo"
+                                    ? "Human Bingo Icebreaker | How to Play + Prompts"
+                                  : game.title === "Emoji Introduction"
+                                    ? "Emoji Introduction Ice Breaker Game - Fun Virtual Meeting Activity"
+                                  : game.title === "Emoji Check-In"
+                                    ? "Emoji Check-In Ice Breaker Game - Quick Mood Sharing Activity"
+                                  : game.title === "Chat Waterfall"
+                                    ? "Chat Waterfall Icebreaker | How to Play + Prompts"
+                                  : game.title === "Virtual Background Story"
+                                    ? "Virtual Background Story Icebreaker | How to Play"
+                                  : game.title === "Speed Networking"
+                                    ? "Speed Networking Icebreaker | How to Run"
+                                  : game.title === "Find Your Match"
+                                    ? "Find Your Match Icebreaker | How to Play"
+                                  : game.title === "Story Swap"
+                                    ? "Story Swap Icebreaker | How to Play"
+                                  : game.title === "If Then"
+                                    ? "If Then Icebreaker | How to Play"
+                                  : game.title === "Crossword Names"
+                                    ? "Crossword Names Icebreaker | How to Run"
+                                  : game.title === "Blind Name-Tag"
+                                    ? "Blind Name-Tag Icebreaker | How to Play"
+                                  : game.title === "Sole Mate"
+                                    ? "Sole Mate Icebreaker | How to Play"
+                                  : game.title === "Year Of The Coin"
+                                    ? "Year Of The Coin Icebreaker | How to Play"
+                                  : game.title === "Name That Movie Quote"
+                                    ? "Name That Movie Quote | Icebreaker"
+                                  : game.title === "10 Things in Common"
+                                    ? "10 Things in Common | Icebreaker"
+                                  : game.title === "Guess That Team Member"
+                                    ? "Guess That Team Member | Icebreaker"
+                                  : game.title === "Skittles Sharing"
+                                    ? "Skittles Sharing Icebreaker | How to Play"
+                                  : game.title === "News Headline Warm-up"
+                                    ? "News Headline Warm-up | Icebreaker"
+                                  : game.title === "Team Superpower Collage"
+                                    ? "Team Superpower Collage | Icebreaker"
+                                  : game.title === "Two Truths and a Dream"
+                                    ? "Two Truths and a Dream | Icebreaker"
+                                  : game.title === "Reception Line"
+                                    ? "Reception Line Icebreaker | How to Run"
+                                  : game.title === "Marshmallow Challenge"
+                                    ? "Marshmallow Challenge | Team Building Activity"
+                                  : game.title === "Picture Sharing"
+                                    ? "Picture Sharing Icebreaker | How to Play"
+                                  : game.title === "Train Wreck"
+                                    ? "Train Wreck Icebreaker | How to Play"
+                                  : game.title === "Human Knot"
+                                    ? "Human Knot Team Challenge | How to Play"
+                                  : game.title === "Sing-Off"
+                                    ? "Sing-Off Team Activity | How to Run"
+                                  : game.title === "Beach Ball Q&A"
+                                    ? "Beach Ball Q&A Icebreaker | How to Play"
+                                  : game.title === "Pterodactyl"
+                                    ? "Pterodactyl Circle Game | How to Play"
+                                  : game.title === "Chainlink"
+                                    ? "Chainlink Icebreaker | How to Play"
         : buildDefaultTitle(game.title);
 
   const openGraphImageUrl = toAbsoluteUrl(
@@ -372,6 +655,174 @@ export default async function GameDetailPage({ params }: Props) {
     jsonLdDescription = "Emoji Introduction | Ice Breaker Games: A fun ice breaker game where participants introduce themselves using creative emojis. Perfect for virtual meetings, online classrooms & team building. Easy to play with 5-30 players in just 10-15 minutes.";
   } else if (game.title === "Emoji Check-In") {
     jsonLdDescription = "Emoji Check-In ice breaker game for virtual meetings. Express mood with emojis! Quick 3-5 min team activity. Free Emoji Check-In icebreaker for online meetings.";
+  } else if (game.title === "Icebreaker Bingo") {
+    jsonLdDescription =
+      "Icebreaker Bingo is a large-group mingling game where participants circulate to find people who match prompts on a bingo-style card. It encourages conversation, rapid introductions, and works for 12–100+ people in 10–20 minutes.";
+  } else if (game.title === "Find Your Match") {
+    jsonLdDescription =
+      "Find Your Match is a pairing icebreaker game where participants receive a card with a famous pair and must find their matching partner by asking only yes-or-no questions. It builds curiosity, movement, and conversation at networking events.";
+  } else if (game.title === "Wheel of Fortune Introductions") {
+    jsonLdDescription =
+      "Wheel of Fortune Introductions is a playful virtual meeting opener using a spinning wheel with fun prompts. Participants take turns spinning and answering, creating energy and engagement at the start of any meeting or event.";
+  } else if (game.title === "Six Word Memoirs") {
+    jsonLdDescription =
+      "Six Word Memoirs is a storytelling icebreaker where each participant summarizes something meaningful about themselves in exactly six words, then shares and discusses their choices. It sparks curiosity, reflection, and deeper conversation.";
+  } else if (game.title === "Where Do We Come From & What Is Famous?") {
+    jsonLdDescription =
+      "Where Do We Come From & What Is Famous? is a cultural icebreaker where participants share their hometown or background and what it is known for. It builds cultural awareness, personal stories, and connection across diverse groups.";
+  } else if (game.title === "Never Have I Ever") {
+    jsonLdDescription =
+      "Never Have I Ever is a sharing icebreaker where participants read statements starting with 'never have I ever' and indicate if they have done something. It is great for revealing common ground, sparking stories, and getting people to open up in a lighthearted way.";
+  } else if (game.title === "This or That Questions") {
+    jsonLdDescription =
+      "This or That Questions is a quick binary-choice icebreaker where participants choose between two options and briefly explain their choice. It is fast, inclusive, and works well for meetings, workshops, and classrooms with 4–50 people.";
+  } else if (game.title === "Would You Rather") {
+    jsonLdDescription =
+      "Would You Rather is a fun opinion icebreaker where participants choose between two scenarios and explain their reasoning. It is great for revealing values, sparking debate, and getting people laughing. It works for 4–30 people in 5–15 minutes.";
+  } else if (game.title === "Rock Paper Scissors Tournament") {
+    jsonLdDescription =
+      "A Rock Paper Scissors Tournament is a high-energy large-group icebreaker where participants compete in a bracket until one winner remains. It is a simple, physical, and surprisingly engaging activity that works for 10–100+ people.";
+  } else if (game.title === "Fantasy Vacation") {
+    jsonLdDescription =
+      "Fantasy Vacation is a creative conversation icebreaker where participants share their dream travel destinations and activities. It is a simple, low-pressure activity that sparks imagination and reveals shared interests and travel stories.";
+  } else if (game.title === "Mystery Envelope") {
+    jsonLdDescription =
+      "Mystery Envelope is a surprise icebreaker where participants draw prompts from envelopes and complete mini-challenges or discussions. It adds variety and humor to any meeting or event and works for 6–50 people.";
+  } else if (game.title === "Invention Pitch") {
+    jsonLdDescription =
+      "Invention Pitch is a creative team building game where small groups invent and pitch a playful product to the group. It encourages storytelling, humor, and teamwork, and works well as a workshop or training activity for 6–30 people.";
+  } else if (game.title === "Scavenger Hunt") {
+    jsonLdDescription =
+      "Scavenger Hunt is a team competition where participants race to find specific items or complete challenges within a time limit. It promotes teamwork, creativity, and friendly competition, and works for 10–100+ people in 30–60 minutes.";
+  } else if (game.title === "Show and Tell") {
+    jsonLdDescription =
+      "Show and Tell is a storytelling icebreaker where each participant shares an object that is meaningful to them and explains why. It creates deeper personal connections and reveals values, and works for 4–15 people in 20–40 minutes.";
+  } else if (game.title === "Appreciation Circle") {
+    jsonLdDescription =
+      "Appreciation Circle is a gratitude activity where participants take turns sharing something they appreciate about the person next to them. It creates a positive atmosphere, strengthens relationships, and works for 5–20 people in 15–30 minutes.";
+  } else if (game.title === "Line-Up") {
+    jsonLdDescription =
+      "Line-Up is a non-verbal ordering challenge where participants silently arrange themselves by a given criterion. It builds focus, teamwork, and observational communication, and works for 10–40 people in 5–15 minutes.";
+  } else if (game.title === "Take a Picture of Your Shoes") {
+    jsonLdDescription =
+      "Take a Picture of Your Shoes is a quick, lighthearted virtual icebreaker where participants share a photo of their shoes and a brief story behind them. It is simple, inclusive, and works for 5–30 people in 5–10 minutes.";
+  } else if (game.title === "Near and Far") {
+    jsonLdDescription =
+      "Near and Far is a movement-based warm-up where participants physically position themselves near or far from a reference point based on prompts about preferences or experiences. It sparks discussion on group dynamics and works for 10–50 people in 10–20 minutes.";
+  } else if (game.title === "Desert Island Scenario") {
+    jsonLdDescription =
+      "Desert Island Scenario is a creative get-to-know-you icebreaker where participants imagine being stranded on a desert island and choose three items to bring. It reveals personality traits and priorities, and works for 4–20 people in 15–25 minutes.";
+  } else if (game.title === "Guess Who (Personal Trivia)") {
+    jsonLdDescription =
+      "Guess Who (Personal Trivia) is a personal trivia icebreaker where participants submit unique facts and the group guesses who each fact belongs to. It builds curiosity and quick personal connections, and works for 8–40 people in 10–20 minutes.";
+  } else if (game.title === "Team Trivia") {
+    jsonLdDescription =
+      "Team Trivia is a knowledge competition where teams answer quiz questions together. It encourages collaboration, friendly competition, and shared learning, and works for 10–100+ people in 30–60 minutes.";
+  } else if (game.title === "Hot Takes") {
+    jsonLdDescription =
+      "Hot Takes is a fast-paced opinion icebreaker where participants share a hot take and the group reacts. It sparks discussion, humor, and reveals values, and works for 6–30 people in 10–20 minutes.";
+  } else if (game.title === "Online Charades") {
+    jsonLdDescription =
+      "Online Charades is a virtual charades game where participants act out prompts for others to guess in real time. It is visual, fast, and inclusive, and works for 4–20 people in 10–20 minutes.";
+  } else if (game.title === "Mingle Bingo") {
+    jsonLdDescription =
+      "Mingle Bingo is a mingling icebreaker where participants find people matching bingo-style prompts and record names. It encourages conversation and rapid introductions, and works for 10–50 people in 15–25 minutes.";
+  } else if (game.title === "What's Missing") {
+    jsonLdDescription =
+      "What's Missing is an observation icebreaker where a display of items is covered and participants recall what they saw. It sharpens attention and creates a shared experience, and works for 4–20 people in 5–10 minutes.";
+  } else if (game.title === "Storytelling Circle") {
+    jsonLdDescription =
+      "Storytelling Circle is a collaborative story-building icebreaker where participants add sentences to a shared story in turn. It encourages creativity, listening, and humor, and works for 6–30 people in 10–20 minutes.";
+  } else if (game.title === "Word Association") {
+    jsonLdDescription =
+      "Word Association is a fast-paced mental warm-up where participants say the first word that comes to mind in response to a prompt. It reveals thought patterns, builds energy, and works for 6–30 people in 5–15 minutes.";
+  } else if (game.title === "Human Bingo") {
+    jsonLdDescription =
+      "Human Bingo is a networking icebreaker where participants receive bingo cards with personal characteristic prompts and mingle to find matches. First to complete a line wins. It encourages conversation and rapid introductions for 10–50 people in 20–30 minutes.";
+  } else if (game.title === "Emoji Introduction") {
+    jsonLdDescription =
+      "Emoji Introduction is a modern visual icebreaker where participants introduce themselves using only emojis and others guess what the emojis represent. It is creative, inclusive, and works for 5–30 people in 10–15 minutes.";
+  } else if (game.title === "Emoji Check-In") {
+    jsonLdDescription =
+      "Emoji Check-In is a quick mood-sharing activity where participants express how they are feeling using emojis in a virtual or in-person setting. It gets everyone speaking in seconds and helps the facilitator read the room in 3–5 minutes.";
+  } else if (game.title === "Chat Waterfall") {
+    jsonLdDescription =
+      "Chat Waterfall is a high-energy virtual icebreaker where everyone types answers to a prompt simultaneously and sends them at the same time, creating a visual 'waterfall' effect. It is inclusive, fast, and works for 5–100+ people in 5–15 minutes.";
+  } else if (game.title === "Virtual Background Story") {
+    jsonLdDescription =
+      "Virtual Background Story is a creative virtual meeting opener where participants choose a fun or unusual virtual background and share the story behind it. It sparks curiosity, laughter, and connection in 10–15 minutes for 5–30 people.";
+  } else if (game.title === "Speed Networking") {
+    jsonLdDescription =
+      "Speed Networking is a structured networking activity where participants rotate through brief one-on-one conversations. It maximizes connections efficiently and works for 10–100+ people in 30–45 minutes.";
+  } else if (game.title === "Find Your Match") {
+    jsonLdDescription =
+      "Find Your Match is a pairing icebreaker where participants receive a famous pair card and must find their match by asking only yes-or-no questions. It promotes movement, curiosity, and conversation for 10–50 people in 15–20 minutes.";
+  } else if (game.title === "Story Swap") {
+    jsonLdDescription =
+      "Story Swap is a paired storytelling icebreaker where partners exchange short stories using visual prompts. It builds trust, listening skills, and creativity, and works for 6–40 people in 10–15 minutes.";
+  } else if (game.title === "If Then") {
+    jsonLdDescription =
+      "If Then is a creative icebreaker where participants complete playful If/Then prompts to spark imagination and rapport. It is fast, inclusive, and works for 5–30 people in 8–12 minutes.";
+  } else if (game.title === "Crossword Names") {
+    jsonLdDescription =
+      "Crossword Names is a name-learning icebreaker that creates a visual crossword of participants' intersecting name letters. It aids name recall and creates a memorable group artifact, and works for 8–30 people in 10–15 minutes.";
+  } else if (game.title === "Blind Name-Tag") {
+    jsonLdDescription =
+      "Blind Name-Tag is a fun movement icebreaker where participants wear name-tags on their backs and guess their own names from yes/no clues. It creates laughter and quick introductions, and works for 8–40 people in 10–15 minutes.";
+  } else if (game.title === "Sole Mate") {
+    jsonLdDescription =
+      "Sole Mate is a quick pairing game using tokens or card halves to form random pairs for activities. It is simple, fast, and scalable, and works for 10–60 people in 5–8 minutes.";
+  } else if (game.title === "Year Of The Coin") {
+    jsonLdDescription =
+      "Year Of The Coin is a storytelling icebreaker where participants draw a year and share a memory or story from that year. It sparks nostalgia, connection, and conversation, and works for 4–30 people in 8–12 minutes.";
+  } else if (game.title === "Name That Movie Quote") {
+    jsonLdDescription =
+      "Name That Movie Quote is a pop-culture icebreaker where participants quote a movie line and the group guesses the film. It creates playful competition and shared references, and works for 4–30 people in 8–12 minutes.";
+  } else if (game.title === "10 Things in Common") {
+    jsonLdDescription =
+      "10 Things in Common is a paired discovery activity where partners find ten things they have in common beyond the obvious. It encourages deeper conversation and works for 6–50 people in 8–12 minutes.";
+  } else if (game.title === "Guess That Team Member") {
+    jsonLdDescription =
+      "Guess That Team Member is an anonymous fact guessing game where participants read facts and the group guesses who they belong to. It builds curiosity and fun discovery, and works for 6–40 people in 10–15 minutes.";
+  } else if (game.title === "Skittles Sharing") {
+    jsonLdDescription =
+      "Skittles Sharing is a candy-based icebreaker where participants pick candies and answer prompts assigned to each color. It adds variety and surprise to sharing activities, and works for 6–40 people in 8–12 minutes.";
+  } else if (game.title === "News Headline Warm-up") {
+    jsonLdDescription =
+      "News Headline Warm-up is a creative brainstorming activity where participants write catchy headlines about the meeting topic. It primes focus, creativity, and shared context, and works for 4–30 people in 8–12 minutes.";
+  } else if (game.title === "Team Superpower Collage") {
+    jsonLdDescription =
+      "Team Superpower Collage is a visual team identity activity where participants collaboratively create a collage representing imagined team superpowers. It boosts creativity, identity, and collaboration, and works for 6–25 people in 15–25 minutes.";
+  } else if (game.title === "Two Truths and a Dream") {
+    jsonLdDescription =
+      "Two Truths and a Dream is a creative twist on the classic get-to-know-you icebreaker. Participants share two true facts and one aspiration, inspiring connection and forward-looking conversation for 4–30 people in 8–12 minutes.";
+  } else if (game.title === "Reception Line") {
+    jsonLdDescription =
+      "Reception Line is a fast-paced introduction game where two facing lines answer quick prompts and rotate to meet new people. It maximizes introductions efficiently and works for 10–50 people in 10–15 minutes.";
+  } else if (game.title === "Marshmallow Challenge") {
+    jsonLdDescription =
+      "The Marshmallow Challenge is a team building activity where small teams compete to build the tallest spaghetti tower that can support a marshmallow. It practices prototyping, collaboration, and iteration, and works for 8–40 people in 15–25 minutes.";
+  } else if (game.title === "Picture Sharing") {
+    jsonLdDescription =
+      "Picture Sharing is a visual storytelling icebreaker where participants share a meaningful photo and explain its significance. It builds empathy, reveals values, and creates personal connection for 4–30 people in 8–12 minutes.";
+  } else if (game.title === "Train Wreck") {
+    jsonLdDescription =
+      "Train Wreck is a high-energy movement mixer where participants swap seats when a statement applies to them. It gets everyone moving, creates laughter, and works for 12–50 people in 10–15 minutes.";
+  } else if (game.title === "Human Knot") {
+    jsonLdDescription =
+      "Human Knot is a physical team challenge where participants form a tangled circle, hold hands with two non-adjacent people, and work together to untangle without letting go. It builds teamwork, communication, and trust, and works for 8–30 people in 10–15 minutes.";
+  } else if (game.title === "Sing-Off") {
+    jsonLdDescription =
+      "Sing-Off is a music-based team activity where teams take turns singing songs containing a theme word. It energizes groups, creates shared fun, and works for 10–60 people in 10–15 minutes.";
+  } else if (game.title === "Beach Ball Q&A") {
+    jsonLdDescription =
+      "Beach Ball Q&A is a fun tossing game where participants write prompts on a beach ball and answer the prompt near their left thumb when caught. It adds variety and movement to icebreaker activities and works for 10–40 people in 10–15 minutes.";
+  } else if (game.title === "Pterodactyl") {
+    jsonLdDescription =
+      "Pterodactyl is a hilarious circle game where participants say 'pterodactyl' while hiding their teeth. The direction of roars flips and anyone showing teeth is out. It is pure laughter and works for 8–30 people in 8–12 minutes.";
+  } else if (game.title === "Chainlink") {
+    jsonLdDescription =
+      "Chainlink is an introduction chain activity where each person links a shared trait with the previous person and adds a new fact. It builds memory, connection, and a visual chain across the group, and works for 8–40 people in 10–15 minutes.";
   }
 
   const jsonLd = {
@@ -1488,6 +1939,2214 @@ export default async function GameDetailPage({ params }: Props) {
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Try ‘two clues then guess’, ‘guess the year’, or group voting for the funniest or most surprising story. For virtual teams, share photos in chat."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Icebreaker Bingo" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you play Icebreaker Bingo?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Give each person a bingo card with prompts like 'has traveled to 5+ countries' or 'speaks two languages'. Participants mingle to find someone matching each square and write their name. First to complete a line wins, but most people keep playing for a full card."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is a good group size for Icebreaker Bingo?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It works best with 12–100+ people. Smaller groups can play but may need multiple cards or fewer prompts per card to keep the mingling going."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does Icebreaker Bingo take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most games finish in 10–20 minutes. Announce a winner after the first line, then let the rest of the group keep playing for a full card."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are good Icebreaker Bingo prompts?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use safe, inclusive prompts like: can whistle, has a pet, speaks two languages, has traveled to 5+ countries, plays an instrument, works in tech, or prefers morning coffee. Avoid prompts about age, income, or personal identity."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can Icebreaker Bingo be played virtually?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Use breakout rooms for mingling and a shared bingo card. Alternatively, use chat reactions or a polling tool to track matches in real time."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Find Your Match" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you play Find Your Match?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Give each person a card with a famous pair (e.g., Romeo & Juliet, Batman & Robin). They must find their match by walking around and asking only yes-or-no questions. Once paired, they introduce their partner to the group."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What famous pairs work best?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use well-known pairs that are recognizable to most of the group. Examples: Batman & Robin, peanut butter & jelly, Simon & Garfunkel, Romeo & Juliet, Sherlock Holmes & Watson."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does Find Your Match take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A typical round takes 8–15 minutes. The game works well as an opening icebreaker before transitioning to the main event or meeting agenda."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you facilitate Find Your Match for large groups?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use a microphone or room leader to call out pairs as they form. For very large groups (50+), split into smaller rooms or rounds to keep movement manageable."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can Find Your Match work as a virtual icebreaker?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Use breakout rooms or a shared deck of cards in a video call. Each person picks a random card and uses private chat or direct messages to find their pair."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Wheel of Fortune Introductions" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you run Wheel of Fortune Introductions?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Prepare a virtual wheel with fun intro prompts (e.g., 'biggest pet peeve', 'strangest job', 'favorite comfort food'). Participants take turns spinning and answering. Keep each turn to 30–60 seconds."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are good prompts for Wheel of Fortune Introductions?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use light, safe-for-work prompts like: 'biggest pet peeve', 'strangest thing you have eaten', 'favorite comfort food', 'most spontaneous thing you have done', or 'hidden talent'."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does Wheel of Fortune Introductions take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A typical round is 8–15 minutes depending on group size. With 6–10 people, each person gets 1–2 spins for a quick opener. With more people, limit to one spin per person."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What tools work best for the wheel?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use Wheel Decide, Wordwall, or any spinning wheel tool integrated into your video platform. For in-person meetings, use a physical prize wheel or even a phone app."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can Wheel of Fortune Introductions work for large groups?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. For large groups, invite 4–6 volunteers to spin and answer while others observe. This keeps the pace fast and engaging without requiring everyone to take a turn."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Six Word Memoirs" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you play Six Word Memoirs?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ask each person to write or think of six words that describe something meaningful about themselves (their day, a life story, or a goal). They share their six words and briefly explain why they chose them."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What makes a good Six Word Memoir?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The best ones are specific and personal, not generic. 'Learned to code at 45' is more memorable than 'I like learning new things'. Humor and vulnerability both work well."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does Six Word Memoirs take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "With 5–10 minutes, a group of 8–15 people can share. Each person takes 30–60 seconds. For larger groups, use small-group breakouts or a volunteer format."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can Six Word Memoirs work for team building?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Ask people to write a six-word summary of their team experience, a project, or a shared goal. It is a powerful reflective exercise that also surfaces values and themes quickly."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you make Six Word Memoirs safe for all groups?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Frame it around a specific topic (e.g., 'one word about your week', 'a goal in six words') rather than open-ended life stories. This keeps it light and inclusive for work and mixed groups."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Where Do We Come From & What Is Famous?" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you play Where Do We Come From & What Is Famous?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ask each person to share their hometown or background and what their area is known for. This can be famous food, landmarks, history, or cultural quirks. A shared map or slide deck helps visualize locations."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What makes this icebreaker work well?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It combines personal stories with cultural learning, making it both fun and inclusive. It works especially well with diverse groups where people come from many different places."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does this activity take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A standard round takes 10–20 minutes with 6–50 people. For larger groups, limit sharing to volunteers or small-group breakouts to keep pace."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it be adapted for virtual meetings?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Share a world map or Google Slides with locations and ask people to add a pin or comment. In video calls, use breakout rooms for small groups to share and then do a brief report-out."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What if someone is from a place that is not well known?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Encourage them to share what they love about their area, even if it is not famous globally. The goal is personal storytelling and connection, not trivia."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Never Have I Ever" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you play Never Have I Ever?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Participants stand or raise a hand when a statement applies to them. Read statements like 'never have I ever traveled solo'. After each round, discuss surprising facts or shared experiences briefly."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are good Never Have I Ever prompts?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use prompts that are light and inclusive: 'never have I ever stayed up past midnight', 'never have I ever cooked a meal for more than five people', or 'never have I ever given a speech'. Avoid sensitive financial, health, or identity-related prompts."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does Never Have I Ever take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A typical round is 5–15 minutes with 8–12 prompts. Keep it brisk and time-box each prompt to about 30–60 seconds including a brief discussion."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can Never Have I Ever work for team building?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Use prompts that surface shared work experiences or goals, like 'never have I ever led a project from scratch' or 'never have I ever presented to 50+ people'."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you make Never Have I Ever safe for all groups?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Prepare prompts in advance, avoid anything personal or sensitive, and make participation optional. People can always stay seated or pass."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "This or That Questions" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you run This or That Questions?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Present pairs of options (e.g., coffee or tea). Participants physically move or vote to show their choice, then optionally explain briefly. Keep the pace fast."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are good This or That Questions prompts?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use binary pairs that are fun and safe for work: morning person or night owl, books or movies, sweet or savory, mountain or beach. Avoid anything personal or polarizing."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does This or That take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A quick round takes 5–10 minutes with 5–8 pairs. It works well as a 5-minute meeting opener."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it work for large groups?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Use raised hands, chat reactions, or a poll tool to show choices. Keep explanations very brief for large groups."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you make it inclusive?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use neutral or universal pairs, allow people to pass, and keep the focus on fun rather than revealing personal information."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Would You Rather" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you play Would You Rather?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Present two scenarios and ask participants to choose one and briefly explain why. Keep the pace brisk and encourage humor. Let people pass if they prefer."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are good Would You Rather questions?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use questions that are light and fun: 'would you rather be able to fly or be invisible', 'would you rather never use social media again or never watch TV again'. Avoid questions about sensitive or controversial topics."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does a round take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each question takes 1–3 minutes. A full activity with 5–8 questions takes 10–15 minutes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it be used for team building?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Use work-themed questions like 'would you rather work on something creative every day or lead a team of ten'. It reveals work preferences and values in a low-pressure way."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you keep it appropriate for all groups?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Prepare prompts in advance, review them for safety and inclusivity, and allow people to pass. Focus on light, fun scenarios rather than anything personal or controversial."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Rock Paper Scissors Tournament" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you run a Rock Paper Scissors Tournament?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Pair up participants and have them play best-of-one rounds. Losers cheer for winners or join a spectator bracket. Continue until one champion remains. Keep rounds fast (15–30 seconds each)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is a good group size for this tournament?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It works best with 10–100+ people. Smaller groups can play round-robins; larger groups should use a bracket system with designated areas for each match."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does a Rock Paper Scissors Tournament take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most tournaments finish in 10–20 minutes. A tournament with 20–30 people typically needs 8–10 rounds. Use a stopwatch or drumroll sound effect to keep rounds tight."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you keep it organized for large groups?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Designate areas or use numbers (1, 2, 3 go) to start each round simultaneously. Announce the winner of each match loudly and have losers form a cheering section for the next round."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it work virtually?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Use breakout rooms as match arenas, assign a 'referee' in each room, and bring everyone back to the main room after each round. Use a shared bracket or spreadsheet to track progress."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Fantasy Vacation" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you play Fantasy Vacation?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ask each person to share their dream vacation destination and a few details about what they would do there. Encourage creativity and humor. After a few people share, open it up for questions or comments."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What makes a good Fantasy Vacation prompt?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Encourage specific, visual descriptions: 'I would go to Japan and spend a week eating my way through Tokyo's night markets' or 'I would rent a cabin in Iceland and chase the Northern Lights every night'."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does Fantasy Vacation take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A typical round is 8–15 minutes with 6–15 people sharing. Keep each share to 30–60 seconds to maintain pace."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it work for team building?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Ask people to share a fantasy team retreat instead of a personal vacation. It surfaces shared interests and can inspire future team events."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What if someone has never traveled much?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Encourage them to dream big or imagine anywhere they have always wanted to go. There is no wrong answer in a fantasy activity."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Mystery Envelope" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you play Mystery Envelope?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Prepare envelopes with prompts or mini-challenges inside. Participants draw an envelope, open it, and complete the prompt (share a story, act something out, answer a question, etc.)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are good Mystery Envelope prompts?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use a mix of sharing and acting prompts: 'tell the story of your first day at work', 'act out your morning routine without using your hands', or 'share a quick win from this week'."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does a Mystery Envelope round take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each envelope takes 1–3 minutes. A full activity with 6–10 envelopes takes 10–20 minutes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it work for large groups?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Use multiple rounds with 3–5 volunteers per round and audience reactions. This keeps the pace fast and the whole group engaged."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you keep prompts safe and inclusive?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Prepare prompts in advance and review them for safety. Use light, work-friendly challenges. Allow people to pass or swap envelopes if they prefer."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Invention Pitch" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you run Invention Pitch?",
+            "acceptedAnswer: {
+              "@type": "Answer",
+              "text": "Divide into small teams of 3–5 people. Give each team a prompt (e.g., 'invent a useless product that would still sell'). They have 5–10 minutes to design and pitch it. Teams pitch in turn; allow brief Q&A after each."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What makes a good Invention Pitch prompt?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use playful, open-ended prompts: 'invent a new app that nobody needs but everyone would love', 'design a gadget that solves a first-world problem', or 'create a new holiday and its signature activity'."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does Invention Pitch take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "With preparation time (5–10 minutes) and presentations (3–5 minutes each), a full activity typically takes 15–25 minutes for 3–5 teams."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it work for remote teams?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Use breakout rooms for team preparation and a shared presentation tool. Teams can pitch verbally or share a quick slide or document."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What skills does Invention Pitch build?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It builds creativity, storytelling, teamwork, and presentation skills in a low-stakes, fun environment. It also reveals how different people approach problems."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Scavenger Hunt" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you run a Scavenger Hunt?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Divide participants into teams of 3–5. Give each team a list of items or challenges with clear boundaries and a time limit. Teams document their finds with photos. Reconvene, review submissions, and declare a winner."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are good Scavenger Hunt challenges?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use a mix of item hunts (find something red, find a business card) and creative challenges (take a photo doing jumping jacks, record a team cheer). Keep the list varied to involve different skills."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does a Scavenger Hunt take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A typical scavenger hunt takes 30–60 minutes depending on the complexity and number of items. For shorter meetings, use a condensed list with a 15–20 minute timer."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can a Scavenger Hunt work virtually?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Use a shared document or photo board where teams upload pictures. For a faster virtual version, use chat-based scavenger hunts where participants race to send the first correct photo."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What group size works best?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It works for 10–100+ people. Divide into teams of 3–5. For very large groups, use multiple rounds or a relay format where teams pass the list."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Show and Tell" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you run Show and Tell?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ask each person to bring or describe one meaningful object. Give each person 2–3 minutes to present and explain why it is meaningful. Allow a brief Q&A after each."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What objects work best for Show and Tell?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Encourage personal items with a story: a gift from someone meaningful, a souvenir from a trip, a book that changed something, or a hobby item. Avoid expensive or flashy items that create comparison."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does Show and Tell take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "With 4–8 people sharing, plan for 20–40 minutes total (2–3 minutes per person plus transitions). For larger groups, use a volunteer format or small-group breakouts."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it work for remote teams?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Ask people to hold up their objects to the camera or share a photo in chat before describing it. The visual element makes it engaging even through a screen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What if someone forgets to bring something?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Allow them to describe an object from memory, share something on their phone, or simply tell a short meaningful story without a physical object. Keep it low-pressure."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Appreciation Circle" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you run an Appreciation Circle?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Arrange participants in a circle. Start with one person sharing something they appreciate about the person to their right. That person then shares about the next person, and so on. Keep comments genuine and specific."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What makes appreciation comments effective?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Be specific and genuine: 'I appreciate that you stayed late to help me yesterday' is more powerful than 'you are a hard worker'. Encourage observation over general praise."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does Appreciation Circle take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A standard circle with 5–20 people takes 15–30 minutes. Keep each appreciation to about 30–60 seconds to maintain pace and energy."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it work for newly formed groups?",
+            "acceptedAnswer: {
+              "@type": "Answer",
+              "text": "Yes, but keep it light and surface-level at first. Once people have worked together for a while, deeper appreciations naturally emerge."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you make it comfortable for introverts?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Allow people to write appreciations anonymously on cards first, then read them aloud. Alternatively, let people pass or share something short if they feel uncomfortable."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Line-Up" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you run Line-Up?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Explain the non-verbal rule clearly: no speaking or pointing. Announce a criterion (e.g., birthday month, alphabetical by first name, distance from home). Participants silently arrange themselves in order. Debrief on strategies and signals after."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are good Line-Up criteria?",
+            "acceptedAnswer: {
+              "@type": "Answer",
+              "text": "Use criteria that everyone knows: birth month, alphabetical by first name, distance from workplace, years in the job. For more interesting results, use creative ones like 'how you take your coffee' or 'how you spent last weekend'."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does Line-Up take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each round takes 2–5 minutes. Run 2–3 rounds with a brief debrief after each. Total time: 5–15 minutes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What makes this game effective for teams?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It forces non-verbal communication and forces people to find creative signals. The debrief often surfaces assumptions and how different people approach coordination."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it work for very large groups?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Run multiple lines simultaneously (one for each criterion) or split into sub-groups. The non-verbal constraint makes it scalable without chaos."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Take a Picture of Your Shoes" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you run Take a Picture of Your Shoes?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ask everyone to snap a photo of their shoes and share it in the chat or on a shared board. Then invite short stories behind the shoes — where they have been, why they chose them, or a fun fact. Optionally vote on the most unique pair."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why does this icebreaker work so well?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Shoes reveal personality without requiring disclosure. A hiker reveals adventure; a dress shoe wearer might share a commute story. It is visual, fast, and surprisingly personal."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A full round with 5–15 people takes 5–10 minutes. Give people 1–2 minutes to take and post photos, then run through shares at 20–30 seconds each."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it work for large groups?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Use a shared photo board and let people post ahead of time. For very large groups, show a slideshow of photos without stories, or invite 5–6 volunteers to share."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What if someone is wearing unusual shoes?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "That is the point — lean into it. Unusual shoes generate the best stories and the most laughter."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Near and Far" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you run Near and Far?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Set up a physical spectrum in the room (one side = near/far, agree on a middle). Present a prompt about preferences or experiences (e.g., 'how much do you like mornings?'). Participants physically move to a position that represents their answer. Invite brief reflections after each round."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are good Near and Far prompts?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use prompts about preferences and experiences: 'how much do you enjoy public speaking', 'how connected do you feel to your community', 'how much do you travel'. Keep them visual and easy to position."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does Near and Far take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each round takes 3–5 minutes. Run 3–5 rounds with a debrief after each. Total time: 10–20 minutes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does this reveal in a team context?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It surfaces assumptions and group dynamics. Participants often notice that people who seemed similar are actually far apart, and that assumptions about each other are often wrong."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it work for virtual teams?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Use a scale in chat (1–5 or near/far) or a shared whiteboard with a spectrum line. Participants drop a marker at their position and share reflections in chat."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Desert Island Scenario" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you run Desert Island Scenario?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ask participants to imagine being stranded on a desert island and choose three items to bring. Give them 2–3 minutes to think. Go around sharing choices and discuss the reasoning behind each one."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What makes this icebreaker effective?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It reveals priorities, creativity, and personality without requiring personal disclosure. People are often surprised by what others choose, which sparks good conversation."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are good Desert Island Scenario prompts?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Encourage creative and specific choices: 'a guitar', 'a satellite phone', 'a year's supply of coffee'. Avoid practical essentials to keep it fun and revealing."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A full round with 8–15 people sharing takes 15–25 minutes. Keep each share to 30–60 seconds to maintain pace."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it work for remote teams?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Ask people to write their three items in chat before sharing verbally. This gives everyone time to think and keeps the pace fast."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Guess Who (Personal Trivia)" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you run Guess Who (Personal Trivia)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each player writes 1–3 unique facts about themselves and submits them anonymously. Draw and read each fact aloud; the group guesses who it belongs to. Reveal the author after each guess."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What makes a good fact for this game?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use facts that are interesting but not oversharing: 'has traveled to 10+ countries', 'once met a celebrity', 'plays guitar', 'volunteers on weekends'. Avoid facts that are too generic or too revealing."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A typical round takes 10–20 minutes depending on group size and number of facts. Collect facts before the meeting to save time."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it work for virtual teams?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Collect facts via a form or chat before the meeting. Read facts aloud in the main room or use breakout rooms for smaller group rounds."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you keep it inclusive?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Review facts in advance to remove anything sensitive or potentially exclusionary. Allow people to skip submitting if they prefer."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Team Trivia" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you run Team Trivia?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Divide into teams of 4–6 people. Read or project questions across categories (general knowledge, pop culture, workplace). Teams discuss and submit answers. Reveal answers after each round and keep score."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What kinds of questions work best?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use a mix of difficulty levels and categories: general knowledge, pop culture, company trivia, history, science. Include a few easy questions so every team scores at least something."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does a Team Trivia round take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A typical trivia night with 15–25 questions takes 30–60 minutes. For shorter meetings, use a quick 5–10 question format with faster rounds."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it work for remote teams?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Use a shared scoreboard (Google Sheets, Kahoot, or a poll tool), project questions on screen, and have teams discuss in breakout rooms or chat."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What skills does Team Trivia build?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It builds collaboration, shared knowledge, and friendly competition. Teams learn how different members think and contribute, which is useful for team dynamics debriefs."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Hot Takes" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you run Hot Takes?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each person shares a hot take (a mildly controversial opinion) and briefly explains it. The group reacts and discusses. Keep it light and time-box each take to 1–2 minutes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are good Hot Takes for icebreakers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use mild, fun controversies: 'pineapple belongs on pizza', 'the best season is autumn', ' Mondays are actually great'. Avoid political, religious, or genuinely divisive topics."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does a Hot Takes round take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A round with 8–12 people takes 10–20 minutes. Each hot take gets 1–2 minutes including reactions. Keep the energy fast and light."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it work for team building?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Use work-themed hot takes: 'meetings should be 25 minutes, not 30', 'email is better than Slack for complex decisions', or 'the best team lunch is pizza'."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you keep it safe for all groups?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Establish ground rules upfront: keep it light, no personal attacks, and allow people to pass. Frame it as fun opinions, not serious debates."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Online Charades" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you play Online Charades?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Divide into teams or play as one group. One person acts out a prompt without speaking; others guess in chat or verbally. Keep rounds short (60–90 seconds) and rotate actors quickly."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are good Online Charades prompts?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use simple, visual prompts: 'making coffee', 'working from home', 'team meeting on Zoom', 'sending an email'. Avoid abstract or difficult-to-act concepts."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does a round take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each round takes 10–20 minutes depending on group size. Use 60–90 second turns per actor and aim for 8–12 total guesses per round."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What tools work best for Online Charades?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use a shared prompt list, chat for guesses, and a timer. Some teams use a virtual whiteboard or shared document to track scores."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you make it work for large groups?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use breakout rooms for simultaneous small-group rounds, then bring everyone back to share highlights. Or use a volunteer format where one person acts and the whole group guesses."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Mingle Bingo" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you play Mingle Bingo?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Give each person a bingo card with prompts. Participants mingle to find someone matching each square and record their name. First to complete a line (or full card) wins."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are good Mingle Bingo prompts?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use safe, inclusive prompts: 'has traveled abroad', 'speaks two languages', 'enjoys cooking', 'has a pet', 'prefers morning coffee'. Avoid anything personal or sensitive."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A typical round takes 15–25 minutes. Announce a winner early to build energy and let others finish at their own pace."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it work for virtual teams?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Use breakout rooms for mingling and a shared bingo card or Google Sheet. Alternatively, use a chat-based find-someone-who activity."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between Mingle Bingo and Icebreaker Bingo?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Mingle Bingo focuses on mingling and finding people matching personal characteristics. Icebreaker Bingo often includes challenges or competitive elements. Both work well for large groups."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "What's Missing" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you play What's Missing?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Display a tray or board with 10–15 items (objects, photos, words). Give participants 30–60 seconds to memorize. Cover or remove the display; participants recall and write down what they saw."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What items work best for What's Missing?",
+            "acceptedAnswer: {
+              "@type": "Answer",
+              "text": "Use a mix of recognizable and surprising items: everyday objects, photos, printed words, colors. Make it visually interesting so there is plenty to notice."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A full round takes 5–10 minutes. Use 30–60 seconds for memorization and 2–3 minutes for recall. Reveal answers by uncovering or un-covering items one by one."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it work for virtual teams?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Share a screen with a slide of items for memorization, then switch to a blank slide. Participants type answers in chat. Reveal answers on the next slide."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What skills does this build?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It sharpens observation, attention to detail, and short-term memory. In a team context, it highlights how different people notice different things."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Storytelling Circle" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you run Storytelling Circle?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Start with an opening line. Participants add one sentence each in turn to build a collaborative story. Keep going around the circle until the story reaches a natural conclusion."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What makes a good collaborative story?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Encourage creativity and humor. Each person should add something that advances the story without derailing it. Agree on a genre upfront if you want more coherence."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does Storytelling Circle take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A typical round with 8–15 people takes 10–20 minutes. Each person adds one sentence per turn (15–30 seconds each)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it work for virtual teams?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Use a shared document or whiteboard where people write sentences in turn, or go around verbally in a video call. Keep a visible record so people can follow the story."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are good themes for Storytelling Circle?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use fun, open-ended starting lines: 'Once upon a time, in a very unusual office...', 'A package arrived at the office that nobody expected...', 'The team discovered a hidden room behind the printer...'."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Word Association" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you play Word Association?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Give a starting word or category. Participants say the first word that comes to mind. No hesitation, no explanation — just fast, instinctive responses. Go around the circle for several rounds."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What makes this icebreaker useful?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It is a fast mental warm-up that gets everyone thinking quickly. It also reveals patterns and personality in a low-pressure way."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does a Word Association round take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A quick warm-up round takes 5–10 minutes with 3–5 starting words. For longer sessions, use multiple rounds with different categories."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it be used for team building?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Use work-related starting words to spark conversation: 'teamwork', 'deadline', 'brainstorm', 'success'. The associations often reveal how the team thinks collectively."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are good starting words?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use simple, open words: 'summer', 'coffee', 'Monday', 'success', 'creativity'. Avoid words that are too specific or triggering."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Emoji Check-In" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you run an Emoji Check-In?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ask each person to share one emoji that describes how they are feeling or their energy level right now. Go around quickly (or use chat for large groups) and invite brief explanations if needed."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why does Emoji Check-In work so well?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It is visual, fast, and requires no preparation or materials. It gets everyone speaking in under a minute and gives the facilitator instant insight into group mood."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does an Emoji Check-In take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A full round takes 3–5 minutes with up to 20 people. It works as a meeting opener or mid-meeting energy check."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it work for large groups?",
+            "acceptedAnswer: {
+              "@type": "Answer",
+              "text": "Yes. For very large groups, ask people to post their emoji in chat simultaneously and scan the responses visually rather than going around verbally."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What prompts work for Emoji Check-In?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use simple prompts: 'how are you feeling right now', 'your energy level today', 'how ready you are for this meeting'. The emoji does the work — no complex instructions needed."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Two Truths and a Dream" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you play Two Truths and a Dream?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each person shares two true facts and one aspiration or dream. The group guesses which is the aspiration and discusses why they chose it."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What makes this variation effective?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It shifts focus from lying to aspiration, which is more positive and forward-looking. It reveals goals, hopes, and values rather than just curiosities."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A full round with 8–12 people takes 10–15 minutes. Each person gets about 1 minute."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it work for remote teams?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Use chat for people to post their two truths and a dream, then discuss as a group."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are good aspirational statements?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use forward-looking goals: 'I want to run a marathon', 'I am learning to code', 'I want to travel to Japan'. The group can discuss the aspiration rather than guess it."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Reception Line" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you run Reception Line?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Form two facing lines. Read a prompt; each pair discusses for 1–2 minutes. Rotate one line so everyone meets someone new. Repeat with new prompts."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What prompts work best?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use quick get-to-know prompts: 'what is a hobby you enjoy', 'what did you do last weekend', 'what is a goal you are working toward'. Keep them light and easy to answer."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A typical session with 20–30 people takes 10–15 minutes. Run 4–6 rounds of 2–3 minutes each."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it work for remote teams?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Use breakout rooms as 'tables' and rotate assignments manually or automatically. Use a shared timer."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the benefit over speed networking?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Reception Line uses prompts to guide conversation, making it less awkward for people who struggle with open-ended conversation. It is more structured and accessible."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Marshmallow Challenge" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you run the Marshmallow Challenge?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Give each team spaghetti, tape, string, and a marshmallow. Set a time limit (18 minutes is standard). Teams build the tallest freestanding tower. The team with the tallest tower wins."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What materials do you need?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Standard supplies: spaghetti, tape, string, and one marshmallow per team. Some versions also include scissors. Keep quantities equal across teams."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The classic format is 18 minutes build time plus 5 minutes for measurement and debrief. Total: 25–30 minutes. For shorter sessions, use 10–12 minutes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does the Marshmallow Challenge teach?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It surfaces how teams approach prototyping, risk, and iteration. The debrief often reveals insights about planning vs. doing, which transfer directly to workplace dynamics."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it work for remote teams?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Use virtual building kits (digital tools like Figma or even a shared document) or send physical kits ahead of time. Debrief in the main session."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Picture Sharing" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you run Picture Sharing?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ask each person to select a meaningful photo in advance. At the session, each person shares their photo and explains why it is significant. Others can react and ask follow-up questions."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What photos work best?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Encourage personal, meaningful photos: a travel photo, a family moment, a hobby, a milestone, a place that matters. Avoid professional headshots or stock images."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "With 5–10 people sharing, plan for 10–15 minutes. Each person gets 1–2 minutes. For larger groups, invite 5–8 volunteers."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it work for remote teams?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Ask people to share screens or post photos in chat before the session. This format works especially well because photos travel better online than in person."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What if someone does not have a photo?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Allow them to describe a mental image, share a screenshot, or simply tell the story verbally. The sharing is what matters, not the photo itself."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Train Wreck" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you play Train Wreck?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Arrange chairs in a circle with one fewer chair than participants. One person stands in the middle and makes a statement ('I like hiking'). Anyone who agrees stands and swaps seats. The person left standing becomes the new caller. Call 'train wreck' to reshuffle everyone randomly."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What statements work best?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use light, inclusive statements: 'I enjoy cooking', 'I have a pet', 'I speak two languages'. Avoid anything personal or sensitive. Mix statements about preferences, experiences, and fun facts."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A full game takes 10–15 minutes. Run 10–20 rounds of 30–60 seconds each."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it work for large groups?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Train Wreck is especially effective for large groups (20–50 people) because the movement keeps energy high and everyone participates."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the train wreck call for?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Calling 'train wreck' resets everyone to new seats randomly. It prevents the same group from dominating and keeps the game unpredictable and fun."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Human Knot" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you play Human Knot?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Form a circle. Each person grabs two non-adjacent hands. Without letting go, the group must communicate to untangle into a circle. If the group is too large, split into smaller circles."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A typical round with 8–15 people takes 10–15 minutes. Debrief for 5 minutes afterward."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What group size works best?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It works best with 8–20 people. With 20–30 people, split into two groups. Larger groups become chaotic and difficult to untangle."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does it reveal in a team context?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It surfaces how the team communicates under ambiguity, who takes charge, and how people react to physical closeness. The debrief often reveals insights about leadership, patience, and problem-solving."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What if the knot cannot be untangled?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "If the knot is truly unsolvable, start over or split into smaller groups. The attempt itself is valuable for team dynamics."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Sing-Off" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you run a Sing-Off?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Divide into teams. Announce a theme word (e.g., 'moon'). Teams take turns singing a line from a song containing that word. Skips or repeats eliminate a team. Last team standing wins."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What theme words work best?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use broadly recognizable words: 'moon', 'heart', 'love', 'fire', 'dream'. Avoid niche references that only one team knows well."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A typical round with 4–6 teams takes 10–20 minutes. Run 3–5 theme rounds for a full session."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it work for remote teams?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Use breakout rooms for teams and a shared timer. Display the theme word on screen and let teams brainstorm songs before presenting."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What if someone cannot sing?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Hum, rap, or recite lyrics. The fun is in the attempt, not vocal quality. Encourage participation over performance."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Beach Ball Q&A" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you run Beach Ball Q&A?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Write get-to-know prompts on a beach ball (e.g., 'a goal you have', 'a place you want to visit'). Toss the ball. Whoever catches it reads and answers the prompt nearest their left thumb."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What prompts work on the ball?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use varied prompts across difficulty levels: simple ('favorite food'), reflective ('a fear you have overcome'), and fun ('a talent you have'). Cover the ball evenly so any thumb landing lands on a prompt."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A full round with 10–20 people takes 10–15 minutes. Toss for 15–20 rounds."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it work for remote teams?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Use a virtual ball (spin wheel, random prompt generator, or shared doc) and pass the turn to a random person."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What if the ball is hard to read?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Write prompts large and clearly. Use different colors for different prompt categories. Have the caller read the prompt aloud after the catcher identifies it."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Pterodactyl" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you play Pterodactyl?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sit or stand in a circle. Take turns saying 'pterodactyl'. Anyone who shows teeth while saying it is out. Roars flip the direction of play. Last person standing wins."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What makes this game effective?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It is pure laughter. The challenge of saying a long word while hiding teeth is harder than it sounds, and the eliminations are always funny. It breaks tension immediately."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A full game with 10–20 people takes 5–10 minutes. The game moves fast, so it works well as a quick energizer."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it work for large groups?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Run multiple circles simultaneously for very large groups. Each circle produces its own winner."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are good variation rules?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Add speed rounds (faster pace), silent rounds (no sound, just gestures), or 'safe word' rounds (one free pass per person). Keep it fresh by changing rules each round."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Chainlink" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you play Chainlink?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Person A introduces themselves with a fact. Person B repeats Person A's fact and adds their own that links to it. Person C repeats both and adds theirs, and so on. The chain grows around the circle."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What facts work for Chainlink?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use fun, linkable facts: 'I play tennis and I like documentaries', 'I like documentaries and I have a dog'. The linking is what makes it memorable."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "With 8–15 people, a full round takes 10–15 minutes. Each person takes about 1 minute to recite the chain and add theirs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it work for large groups?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For groups over 15, split into sub-circles. Each circle produces its own chain. Bring everyone back to share highlights."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does Chainlink reveal?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It reveals how people listen, recall, and build on each other's contributions. The debrief surfaces memory, attention, and collaborative thinking."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "10 Things in Common" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you play 10 Things in Common?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Pair up participants. Give them 3–5 minutes to find ten things they have in common beyond the obvious (e.g., not just 'we both work here'). Each pair shares their top 3."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What makes this activity effective?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It goes beyond surface-level small talk. The rule 'not the obvious' forces participants to dig deeper, leading to more genuine connection."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A full round takes 8–12 minutes (3–5 minutes for finding commonalities, 1–2 minutes per pair to share). For larger groups, run it in rounds with different pairs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it work for newly formed teams?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. New teams often find surprising connections they did not know existed. It is especially powerful for teams that have been working together for a while but have not intentionally connected."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What if pairs cannot find ten things?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Lower the target to five or switch the rule to 'find three surprising things in common'. The goal is conversation, not hitting a specific number."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Guess That Team Member" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you play Guess That Team Member?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Collect 5 anonymous facts per person in advance (form or paper). Read facts aloud; the group guesses who each fact belongs to. Reveal the author after each guess."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What makes good anonymous facts?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use interesting but not oversharing facts: 'has a side business', 'speaks three languages', 'ran a marathon'. Avoid anything sensitive or that could single someone out."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A full round takes 10–15 minutes. Collect facts before the meeting to save time during the session."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it work for remote teams?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Collect facts via a form before the meeting. Read facts in the main session or use a shared document that reveals facts one by one."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What skills does it build?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It builds curiosity about colleagues, reveals surprising skills and experiences, and creates a sense of shared discovery as a team."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Skittles Sharing" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you play Skittles Sharing?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Define a color-to-question mapping before the activity (e.g., red = 'a goal you are proud of', green = 'a hobby you enjoy'). Each person picks candies and answers the question for each color."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What questions work for each color?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Mix emotional, professional, and fun questions: red = proudest moment, orange = a goal, yellow = a fear, green = a hobby, purple = a value. Adjust to your group and meeting goal."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does Skittles Sharing take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A full round with 6–15 people takes 8–12 minutes. Give people 30–60 seconds per color they pick."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it work for remote teams?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Send each person a bag of candy before the meeting, or use a virtual version where people pick colors in a shared form or spreadsheet."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What if someone has dietary restrictions?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use candy-free alternatives: colored cards, numbered spins, or a virtual wheel. The structure and variety matter more than the candy itself."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "News Headline Warm-up" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you run News Headline Warm-up?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ask each person to write a catchy news headline related to today's meeting topic. Share and cluster similar themes. Use the top headlines to frame the discussion."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What makes a good headline?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Encourage creativity and humor: 'Local Team Discovers Infinite Coffee Supply', 'Sprint Planning Runners-up Announced'. Keep them specific to the team's context."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A full round with 8–15 people takes 8–12 minutes. Give people 3–5 minutes to write, then 1–2 minutes per headline to share and cluster."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it work for remote teams?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Use a shared doc or whiteboard for writing and clustering. Display headlines in real time so everyone can see themes emerge."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the benefit of this activity?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It primes the brain for the meeting topic, surfaces expectations and concerns, and creates a shared context before the formal session begins."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Team Superpower Collage" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you run Team Superpower Collage?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Give small teams a shared board or sticky notes. Define a theme (e.g., 'our team's superpower is...'). Teams add words, images, and notes collaboratively. Each team presents their superpower in 2–3 minutes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What makes a good superpower theme?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Frame it as a positive team attribute: 'Our team superpower is...', 'If our team were a superhero team, we would be...', 'The one skill that makes us unstoppable is...'."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A full round takes 15–25 minutes (5–10 minutes of creation, 5–10 minutes of sharing). For very short meetings, use a 5-minute express version."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it work for remote teams?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Use a shared digital whiteboard (Miro, Mural, or Google Jamboard) where everyone adds stickies simultaneously. Share the link and let teams build their superpower visually."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What skills does it build?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It builds team identity, collaborative creativity, and shared language. The resulting collage becomes a visual artifact that teams can revisit."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Emoji Introduction" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you play Emoji Introduction?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ask each person to think of 3–5 emojis that represent them. Each person posts their emojis in chat. The group guesses what each set of emojis means, then the person explains their choices."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What makes a good Emoji Introduction?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Encourage specific, personal emojis: a hobby, a travel destination, a value, a mood. The more specific, the more interesting the guess becomes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "With 5–15 people, a full round takes 10–15 minutes. Keep each person's share to about 30–60 seconds to maintain pace."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it work for large groups?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. For large groups, ask people to post their emojis in chat before the meeting and do a fast slideshow, or invite 5–8 volunteers to share live."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What if someone is not familiar with emojis?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Suggest a short list of starter emojis and let them choose. Alternatively, allow words in place of emojis for the first round."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Chat Waterfall" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you play Chat Waterfall?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ask everyone to type their answer to a prompt in chat simultaneously. Count down from three, and everyone sends at the same time. The answers appear as a visual 'waterfall' on screen. Read through highlights and discuss."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are good Chat Waterfall prompts?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use simple, quick prompts: 'one word for your mood', 'a food you love', 'something you are looking forward to this week'. Avoid anything that requires long answers."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each round takes 1–2 minutes. A full activity with 3–5 rounds takes 5–15 minutes. It works well as a 5-minute meeting opener."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it work for large groups?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Chat Waterfall is especially effective for large groups because everyone participates simultaneously. There is no bottleneck of people waiting for a turn."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What makes Chat Waterfall effective?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It is inclusive, fast, and creates a sense of shared experience. Even shy participants can engage fully because there is no verbal performance required."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Virtual Background Story" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you run Virtual Background Story?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ask participants to choose a fun, creative, or unusual virtual background before the meeting. At the start, each person shares their background and the story behind it."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What makes a good Virtual Background Story?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The best backgrounds have a story: a place visited, a memory, a joke, a fantasy setting. Encourage creativity over generic choices."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A full round with 8–15 people takes 10–20 minutes. Keep each share to 30–60 seconds. For larger groups, invite 5–8 volunteers to share."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What if someone cannot use virtual backgrounds?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Allow them to describe a background they wish they had, or share a photo or image in chat instead. The key is the story, not the background feature."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it work for team building?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. It is a great meeting opener because it is light, personal, and reveals something unexpected about colleagues. It also normalizes creativity in professional settings."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Speed Networking" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you run Speed Networking?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Arrange chairs in two facing rows. Participants sit across from a partner and talk for 3–5 minutes. Ring a bell; one row shifts one seat. Repeat until everyone has met."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What do participants talk about?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Prepare 2–3 prompts per round: 'what brought you here', 'what is your biggest challenge this quarter', 'what is a skill you want to develop'. Keep it structured but flexible."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does Speed Networking take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A typical session with 20–30 participants takes 30–45 minutes. With 40+ participants, plan for 45–60 minutes to ensure full rotations."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it work for remote teams?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Use breakout rooms as 'tables' and a timer. Rotate assignments automatically or manually. Use a shared document for people to record contacts."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the best group size?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It works best with 10–100 people. For very large groups, split into multiple sessions or use a round-robin format in a larger room."
+            }
+          }
+        ]
+      }] : []),
+      ...(game.title === "Find Your Match" ? [{
+        "@type": "FAQPage",
+        "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            "name": "How do you play Find Your Match?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Distribute cards with a famous pair (Batman & Robin, peanut butter & jelly). Participants walk around asking only yes-or-no questions to find their partner. Once matched, pairs introduce each other."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What famous pairs work best?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use well-known pairs recognizable to the group. Examples: Batman & Robin, Simon & Garfunkel, Romeo & Juliet, peanut butter & jelly, Sherlock Holmes & Watson."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does Find Your Match take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A typical round takes 15–20 minutes. It works best as an opening activity before transitioning to the main meeting or event."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it work for virtual teams?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Use breakout rooms or a shared card deck in a video call. Each person picks a random card and uses private chat or direct messages to find their pair."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What group size works best?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It works for 10–50 people. For larger groups, split into multiple rooms or rounds. For very small groups (under 10), use fewer pairs and repeat the round."
             }
           }
         ]
