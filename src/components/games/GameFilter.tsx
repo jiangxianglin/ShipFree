@@ -1,5 +1,6 @@
 "use client";
 
+import { trackEvent } from "@/lib/analytics";
 import { useState } from "react";
 import { Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -33,6 +34,13 @@ export function GameFilter({ onFilterChange }: GameFilterProps) {
     const newFilters = { ...filters, [key]: value };
     setFilters(newFilters);
     onFilterChange(newFilters);
+
+    if (value && value !== "all") {
+      trackEvent("use_game_filter", {
+        filter_name: key,
+        filter_value: value,
+      });
+    }
   };
 
   const handleClearAll = () => {

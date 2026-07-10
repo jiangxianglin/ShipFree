@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import { Bricolage_Grotesque } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
-import type React from "react"; // Import React
+import type React from "react";
+import { Suspense } from "react";
 import { cn } from "@/lib/utils";
 import { Navigation } from "@/components/Navigation";
 import { HomeToolbarBanner } from "@/components/HomeToolbarBanner";
 import { Footer } from "@/components/Footer";
+import { GoogleAnalyticsPageView } from "@/components/GoogleAnalyticsPageView";
 
 const bricolageGrotesque = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -88,8 +90,9 @@ export default function RootLayout({
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
             gtag('js', new Date());
-            gtag('config', '${GOOGLE_ANALYTICS_ID}');
+            gtag('config', '${GOOGLE_ANALYTICS_ID}', { send_page_view: false });
           `}
         </Script>
         {GOOGLE_ADSENSE_ID ? (
@@ -108,6 +111,9 @@ export default function RootLayout({
           "antialiased flex flex-col min-h-screen"
         )}
       >
+        <Suspense fallback={null}>
+          <GoogleAnalyticsPageView />
+        </Suspense>
         <Navigation />
         <HomeToolbarBanner />
         <main className="flex-1">{children}</main>

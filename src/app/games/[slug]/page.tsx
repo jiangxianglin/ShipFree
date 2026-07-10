@@ -345,9 +345,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const title =
     game.title === "Emoji Introduction"
-      ? "Emoji Introduction Ice Breaker Game - Fun Virtual Meeting Activity"
+      ? "Emoji Introduction Icebreaker Activity for Meetings & Students"
       : game.title === "Emoji Check-In"
-        ? "Emoji Check-In Ice Breaker Game - Quick Mood Sharing Activity"
+        ? "Emoji Check-In Icebreaker: Quick Feelings Activity for Meetings"
         : game.title === "Alliterative Name Game"
           ? "Alliterative Name Game (Adjective Name Game) | How to Play + Examples"
           : game.title === "One Word Check-In"
@@ -357,7 +357,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
               : game.title === "Minefield"
                 ? "Minefield Team Building Game | How to Play + Debrief"
                 : game.title === "The Name Game"
-                  ? "The Name Game Icebreaker | How to Play + Examples"
+                  ? "The Name Game Icebreaker | How to Play, Rules & Variations"
                   : game.title === "The Question Web"
                     ? "The Question Web Icebreaker | How to Play + Prompts"
                     : game.title === "Count Up"
@@ -2456,7 +2456,7 @@ export default async function GameDetailPage({ params }: Props) {
           {
             "@type": "Question",
             "name": "How do you run Invention Pitch?",
-            "acceptedAnswer: {
+            "acceptedAnswer": {
               "@type": "Answer",
               "text": "Divide into small teams of 3–5 people. Give each team a prompt (e.g., 'invent a useless product that would still sell'). They have 5–10 minutes to design and pitch it. Teams pitch in turn; allow brief Q&A after each."
             }
@@ -2618,7 +2618,7 @@ export default async function GameDetailPage({ params }: Props) {
           {
             "@type": "Question",
             "name": "Can it work for newly formed groups?",
-            "acceptedAnswer: {
+            "acceptedAnswer": {
               "@type": "Answer",
               "text": "Yes, but keep it light and surface-level at first. Once people have worked together for a while, deeper appreciations naturally emerge."
             }
@@ -2648,7 +2648,7 @@ export default async function GameDetailPage({ params }: Props) {
           {
             "@type": "Question",
             "name": "What are good Line-Up criteria?",
-            "acceptedAnswer: {
+            "acceptedAnswer": {
               "@type": "Answer",
               "text": "Use criteria that everyone knows: birth month, alphabetical by first name, distance from workplace, years in the job. For more interesting results, use creative ones like 'how you take your coffee' or 'how you spent last weekend'."
             }
@@ -3062,7 +3062,7 @@ export default async function GameDetailPage({ params }: Props) {
           {
             "@type": "Question",
             "name": "What items work best for What's Missing?",
-            "acceptedAnswer: {
+            "acceptedAnswer": {
               "@type": "Answer",
               "text": "Use a mix of recognizable and surprising items: everyday objects, photos, printed words, colors. Make it visually interesting so there is plenty to notice."
             }
@@ -3216,7 +3216,7 @@ export default async function GameDetailPage({ params }: Props) {
           {
             "@type": "Question",
             "name": "Can it work for large groups?",
-            "acceptedAnswer: {
+            "acceptedAnswer": {
               "@type": "Answer",
               "text": "Yes. For very large groups, ask people to post their emoji in chat simultaneously and scan the responses visually rather than going around verbally."
             }

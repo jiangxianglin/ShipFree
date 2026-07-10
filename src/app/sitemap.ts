@@ -61,7 +61,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.9,
       },
       {
-        url: `${baseUrl}/blog`,
+        url: `${baseUrl}/emoji-icebreaker-games`,
+        lastModified: new Date(),
+        changeFrequency: "weekly",
+        priority: 0.9,
+      },
+      {
+        url: `${baseUrl}/name-game-icebreakers`,
+        lastModified: new Date(),
+        changeFrequency: "weekly",
+        priority: 0.9,
+      },
+      {
+        url: `${baseUrl}/blog`, 
         lastModified: articleLastModified,
         changeFrequency: "weekly",
         priority: 0.9,

@@ -1,4 +1,5 @@
 import { CategoryBadge } from "./CategoryBadge";
+import { GameActions } from "./GameActions";
 import { TagBadge } from "./TagBadge";
 import type { GameDetailProps } from "@/types/game";
 
@@ -111,11 +112,19 @@ export function GameDetail({ game }: GameDetailProps) {
             </div>
           )}
         </div>
+
+        <GameActions
+          title={game.title}
+          players={game.players}
+          duration={game.duration}
+          materials={game.materials}
+          steps={game.steps}
+        />
       </div>
 
       <div className="space-y-8">
-        <div>
-          <h2 className="text-2xl font-semibold mb-3">Description</h2>
+        <div className="rounded-2xl border border-blue-100 bg-blue-50/70 p-5 dark:border-blue-900 dark:bg-blue-950/30">
+          <h2 className="text-2xl font-semibold mb-3">What is {game.title}?</h2>
           <p className="text-lg leading-relaxed text-muted-foreground">
             {game.description}
           </p>
@@ -830,6 +839,68 @@ export function GameDetail({ game }: GameDetailProps) {
           </div>
         )}
 
+        <GameActions
+          title={game.title}
+          players={game.players}
+          duration={game.duration}
+          materials={game.materials}
+          steps={game.steps}
+        />
+
+        {(game.title === "Emoji Introduction" || game.title === "Emoji Check-In") && (
+          <div className="rounded-2xl border bg-card p-6">
+            <h2 className="text-2xl font-semibold mb-3">Best Variations</h2>
+            <div className="grid gap-4 md:grid-cols-2">
+              <div>
+                <h3 className="font-semibold">For meetings</h3>
+                <p className="text-sm text-muted-foreground">Ask for one emoji for energy, one for focus, and one word about what people need from the meeting.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold">For students</h3>
+                <p className="text-sm text-muted-foreground">Use three safe prompts: mood today, favorite activity, and one thing they are curious about.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold">For remote teams</h3>
+                <p className="text-sm text-muted-foreground">Have everyone post at the same time in chat, then invite only volunteers to explain their emoji choices.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold">For large groups</h3>
+                <p className="text-sm text-muted-foreground">Keep it to one emoji per person and discuss patterns instead of asking everyone to explain individually.</p>
+              </div>
+            </div>
+            <p className="mt-4 text-sm text-muted-foreground">
+              See more options in our <a href="/emoji-icebreaker-games" className="font-medium text-blue-600 hover:underline dark:text-blue-400">emoji icebreaker games guide</a>.
+            </p>
+          </div>
+        )}
+
+        {game.title === "The Name Game" && (
+          <div className="rounded-2xl border bg-card p-6">
+            <h2 className="text-2xl font-semibold mb-3">Variations for Different Groups</h2>
+            <div className="grid gap-4 md:grid-cols-2">
+              <div>
+                <h3 className="font-semibold">For classrooms</h3>
+                <p className="text-sm text-muted-foreground">Pair each name with a favorite subject, hobby, or simple adjective so students have a memory hook.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold">For work meetings</h3>
+                <p className="text-sm text-muted-foreground">Use name, role, and one current project. This keeps the activity professional and useful.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold">For large groups</h3>
+                <p className="text-sm text-muted-foreground">Split into circles of 6–10 people instead of one long round, then invite a few names to be shared back.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold">For shy groups</h3>
+                <p className="text-sm text-muted-foreground">Let people read from visible name tags and avoid turning forgotten names into a test.</p>
+              </div>
+            </div>
+            <p className="mt-4 text-sm text-muted-foreground">
+              Compare more options in our <a href="/name-game-icebreakers" className="font-medium text-blue-600 hover:underline dark:text-blue-400">name game icebreakers guide</a>.
+            </p>
+          </div>
+        )}
+
         <div>
           <h3 className="text-xl font-semibold mb-3">Tips for Success</h3>
           <ul className="list-disc list-inside space-y-2 text-base text-muted-foreground">
@@ -996,6 +1067,56 @@ export function GameDetail({ game }: GameDetailProps) {
                   First, create a welcoming environment where everyone feels comfortable participating. Give participants time to think about their emoji choices before sharing. Encourage creative emoji combinations rather than obvious ones. Allow discussion after each reveal. And follow up with a brief reflection to reinforce the connections made during the game.
                 </p>
               </details>
+            </div>
+          </div>
+        )}
+
+        {game.title === "Emoji Check-In" && (
+          <div>
+            <h3 className="text-xl font-semibold mb-3">Frequently Asked Questions</h3>
+            <div className="space-y-2">
+              {[
+                ["What is an Emoji Check-In icebreaker?", "Emoji Check-In is a quick mood-sharing activity where each participant uses one or more emojis to show how they feel, then optionally adds a short explanation."],
+                ["How long should Emoji Check-In take?", "Most groups can run it in 3–5 minutes. For larger groups, ask everyone to post one emoji and discuss only the overall pattern."],
+                ["Is Emoji Check-In good for meetings?", "Yes. It gives facilitators a fast read on energy and helps everyone participate before the main agenda starts."],
+                ["Can Emoji Check-In work in classrooms?", "Yes. Use simple, safe prompts such as mood, energy, or one thing students are looking forward to, and always allow a text alternative."],
+                ["What are good Emoji Check-In prompts?", "Try: choose one emoji for your energy, one emoji for your focus, or one emoji for what you need from today&apos;s session."],
+              ].map(([question, answer]) => (
+                <details key={question} className="group border border-gray-200 dark:border-gray-700 rounded-lg p-3">
+                  <summary className="flex items-center justify-between cursor-pointer text-base font-medium">
+                    {question}
+                    <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </summary>
+                  <p className="mt-2 text-base text-muted-foreground leading-relaxed">{answer}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {game.title === "The Name Game" && (
+          <div>
+            <h3 className="text-xl font-semibold mb-3">Frequently Asked Questions</h3>
+            <div className="space-y-2">
+              {[
+                ["How do you play The Name Game icebreaker?", "Each person says their name, the next person repeats previous names, then adds their own. You can add a simple prompt such as role, hobby, adjective, or motion."],
+                ["How many people can play The Name Game?", "It works best with 6–20 people. For larger groups, split into smaller circles so the memory challenge stays supportive."],
+                ["Is The Name Game good for students?", "Yes. It helps students learn names quickly, especially when paired with a light prompt or movement that makes names easier to remember."],
+                ["How do you make The Name Game less awkward?", "Use visible name tags, model the first turn, allow help immediately, and avoid making forgotten names feel like failure."],
+                ["What are good Name Game variations?", "Try adjective names, motion names, role-and-project introductions, or small-group rounds for large classes and workshops."],
+              ].map(([question, answer]) => (
+                <details key={question} className="group border border-gray-200 dark:border-gray-700 rounded-lg p-3">
+                  <summary className="flex items-center justify-between cursor-pointer text-base font-medium">
+                    {question}
+                    <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </summary>
+                  <p className="mt-2 text-base text-muted-foreground leading-relaxed">{answer}</p>
+                </details>
+              ))}
             </div>
           </div>
         )}

@@ -149,6 +149,18 @@ export default async function GamesPage() {
               Virtual icebreaker games
             </Link>
             <Link
+              href="/emoji-icebreaker-games"
+              className="inline-flex items-center rounded-full border bg-background px-4 py-2 text-sm font-medium hover:bg-muted transition-colors"
+            >
+              Emoji icebreaker games
+            </Link>
+            <Link
+              href="/name-game-icebreakers"
+              className="inline-flex items-center rounded-full border bg-background px-4 py-2 text-sm font-medium hover:bg-muted transition-colors"
+            >
+              Name game icebreakers
+            </Link>
+            <Link
               href="/blog/icebreaker-games-for-students"
               className="inline-flex items-center rounded-full border bg-background px-4 py-2 text-sm font-medium hover:bg-muted transition-colors"
             >
@@ -245,6 +257,24 @@ export default async function GamesPage() {
               <div className="font-semibold mb-1">Virtual icebreaker games</div>
               <div className="text-sm text-muted-foreground">
                 Online-ready activities for Zoom, Teams, and remote workshops.
+              </div>
+            </Link>
+            <Link
+              href="/emoji-icebreaker-games"
+              className="rounded-xl border bg-card p-5 hover:shadow-md transition-shadow"
+            >
+              <div className="font-semibold mb-1">Emoji icebreaker games</div>
+              <div className="text-sm text-muted-foreground">
+                Fast check-ins and visual prompts for meetings, classrooms, and remote teams.
+              </div>
+            </Link>
+            <Link
+              href="/name-game-icebreakers"
+              className="rounded-xl border bg-card p-5 hover:shadow-md transition-shadow"
+            >
+              <div className="font-semibold mb-1">Name game icebreakers</div>
+              <div className="text-sm text-muted-foreground">
+                Name-learning activities for students, teams, workshops, and large groups.
               </div>
             </Link>
             <Link
