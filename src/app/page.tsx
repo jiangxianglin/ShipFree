@@ -10,18 +10,18 @@ import SessionLabCategories from "@/components/SessionLabCategories";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Ice Breaker Games - Find the Perfect Activity for Your Team",
+  title: "Icebreaker Games for Meetings, Work & Classrooms",
   description:
-    "Discover engaging ice breaker games for team building, virtual meetings, classrooms, and conferences. Browse our curated collection of activities.",
+    "Find the right icebreaker game by setting, group size, time, and energy level. Browse free activities for meetings, work, virtual teams, and classrooms.",
   alternates: {
     canonical: "https://www.icebreakergames.site",
   },
   openGraph: {
     type: "website",
     url: "https://www.icebreakergames.site",
-    title: "Ice Breaker Games - Find the Perfect Activity for Your Team",
+    title: "Icebreaker Games for Meetings, Work & Classrooms",
     description:
-      "Discover engaging ice breaker games for team building, virtual meetings, classrooms, and conferences. Browse our curated collection of activities.",
+      "Find the right icebreaker game by setting, group size, time, and energy level. Browse free activities for meetings, work, virtual teams, and classrooms.",
     images: [
       {
         url: "https://www.icebreakergames.site/img/Hero.png",
@@ -33,9 +33,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ice Breaker Games - Find the Perfect Activity for Your Team",
+    title: "Icebreaker Games for Meetings, Work & Classrooms",
     description:
-      "Discover engaging ice breaker games for team building, virtual meetings, classrooms, and conferences. Browse our curated collection of activities.",
+      "Find the right icebreaker game by setting, group size, time, and energy level. Browse free activities for meetings, work, virtual teams, and classrooms.",
     images: ["https://www.icebreakergames.site/img/Hero.png"],
   },
 };
@@ -50,7 +50,7 @@ export default async function Home() {
     name: "Ice Breaker Games",
     url: "https://www.icebreakergames.site",
     description:
-      "Discover engaging ice breaker games for team building, virtual meetings, classrooms, and conferences. Browse our curated collection of activities.",
+      "Find the right icebreaker game by setting, group size, time, and energy level. Browse free activities for meetings, work, virtual teams, and classrooms.",
     potentialAction: {
       "@type": "SearchAction",
       target: "https://www.icebreakergames.site/games?q={search_term_string}",
@@ -87,14 +87,18 @@ export default async function Home() {
 
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="animate-fade-in-up">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-white drop-shadow-2xl max-w-5xl mx-auto leading-tight">
-              Unlock the Power of Connection with the Best 
-              <span className="bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent"> Ice Breaker Games</span>
-            </h1>
-            <p className="text-xl md:text-2xl lg:text-3xl text-white/95 mb-12 max-w-4xl mx-auto drop-shadow-lg leading-relaxed">
-              Transform your gatherings with our curated collection of <strong className="text-blue-200">ice breaker games</strong>. Whether you're leading a corporate team, a classroom, or a social event, our activities are designed to spark conversation, build trust, and energize any group.
+            <p className="mb-5 inline-flex rounded-full border border-white/30 bg-white/10 px-4 py-2 text-sm font-semibold text-blue-100 backdrop-blur">
+              Free facilitator-ready activities for meetings, work, classrooms, and remote teams
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-white drop-shadow-2xl max-w-5xl mx-auto leading-tight">
+              Find the Right
+              <span className="bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent"> Icebreaker Game </span>
+              in Minutes
+            </h1>
+            <p className="text-xl md:text-2xl text-white/95 mb-10 max-w-4xl mx-auto drop-shadow-lg leading-relaxed">
+              Browse practical <strong className="text-blue-200">icebreaker games</strong> by setting, group size, time, and energy level. Each activity includes rules, materials, facilitation tips, and variations so you can run it with confidence.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
               <Link
                 href="/games"
                 className="group px-10 py-5 bg-white text-blue-600 rounded-2xl text-xl font-bold hover:bg-blue-50 transition-all duration-300 shadow-2xl hover:shadow-blue-500/25 hover:scale-105 transform"
@@ -106,12 +110,19 @@ export default async function Home() {
                   </svg>
                 </span>
               </Link>
-              <a
-                href="#featured"
+              <Link
+                href="/icebreaker-games-for-meetings"
                 className="px-10 py-5 border-2 border-white/80 text-white rounded-2xl text-xl font-bold hover:bg-white/10 hover:border-white transition-all duration-300 backdrop-blur-md hover:scale-105 transform"
               >
-                See Featured Games
-              </a>
+                Start with Meeting Games
+              </Link>
+            </div>
+
+            <div className="mt-7 flex flex-wrap justify-center gap-3 text-sm text-white/90">
+              <span className="rounded-full bg-black/20 px-4 py-2 backdrop-blur">No prep options</span>
+              <span className="rounded-full bg-black/20 px-4 py-2 backdrop-blur">5–15 minute activities</span>
+              <span className="rounded-full bg-black/20 px-4 py-2 backdrop-blur">Virtual and in-person</span>
+              <span className="rounded-full bg-black/20 px-4 py-2 backdrop-blur">Safety-aware facilitation</span>
             </div>
 
             <div className="mt-8 flex flex-wrap gap-3 justify-center">
@@ -139,7 +150,67 @@ export default async function Home() {
               >
                 Virtual
               </Link>
+              <Link
+                href="/emoji-icebreaker-games"
+                className="rounded-full border border-white/30 bg-white/10 px-4 py-2 text-sm font-medium text-white hover:bg-white/15 transition-colors backdrop-blur"
+              >
+                Emoji icebreakers
+              </Link>
+              <Link
+                href="/name-game-icebreakers"
+                className="rounded-full border border-white/30 bg-white/10 px-4 py-2 text-sm font-medium text-white hover:bg-white/15 transition-colors backdrop-blur"
+              >
+                Name games
+              </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Quick Start Paths */}
+      <section className="py-16 bg-white dark:bg-gray-950">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto max-w-3xl text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Start with the situation you are planning for</h2>
+            <p className="text-lg text-muted-foreground">
+              Choose a path below to find games that match your audience, format, and time limit faster.
+            </p>
+          </div>
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                href: "/icebreaker-games-for-meetings",
+                title: "Meeting icebreakers",
+                description: "Quick openers for standups, workshops, retrospectives, and team meetings.",
+              },
+              {
+                href: "/icebreaker-games-for-work",
+                title: "Work icebreakers",
+                description: "Professional activities for teams, trainings, onboarding, and team building.",
+              },
+              {
+                href: "/virtual-icebreaker-games",
+                title: "Virtual icebreakers",
+                description: "Remote-friendly games for Zoom, Teams, hybrid calls, and distributed groups.",
+              },
+              {
+                href: "/games",
+                title: "Browse the library",
+                description: "Filter all games by duration, group size, category, and facilitation needs.",
+              },
+            ].map((path) => (
+              <Link
+                key={path.href}
+                href={path.href}
+                className="group rounded-3xl border bg-card p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
+              >
+                <h3 className="text-xl font-bold mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400">{path.title}</h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">{path.description}</p>
+                <span className="mt-5 inline-flex text-sm font-semibold text-blue-600 dark:text-blue-400">
+                  Explore games <span className="ml-1 transition-transform group-hover:translate-x-1">→</span>
+                </span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

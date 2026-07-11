@@ -167,9 +167,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   } else if (game.title === "Chat Waterfall") {
     description = "Chat Waterfall | Ice Breaker Games: A high-energy virtual icebreaker where everyone types answers simultaneously and sends at once, creating a waterfall effect. Perfect for large groups!";
   } else if (game.title === "Emoji Introduction") {
-    description = "Emoji Introduction | Ice Breaker Games: A fun ice breaker game where participants introduce themselves using creative emojis. Perfect for virtual meetings, online classrooms & team building. 5-30 players, 10-15 minutes. Free to play!";
+    description = "Run an Emoji Introduction activity for meetings, classrooms, and remote teams. Includes rules, emoji examples, facilitator script, variations, and safety tips.";
   } else if (game.title === "Emoji Check-In") {
-    description = "Emoji Check-In ice breaker game for virtual meetings. Express mood with emojis! Quick 3-5 min team activity. Free Emoji Check-In icebreaker for online meetings.";
+    description = "Run a quick Emoji Check-In icebreaker for meetings and online classes. Includes mood prompts, examples, facilitation tips, and remote team variations.";
   } else if (game.title === "Icebreaker Bingo") {
     description =
       "Learn how to play Icebreaker Bingo: a large-group mingling game where participants find people matching prompts on a bingo card. 12–100+ players, 10–20 minutes.";
@@ -345,9 +345,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const title =
     game.title === "Emoji Introduction"
-      ? "Emoji Introduction Icebreaker Activity for Meetings & Students"
+      ? "Emoji Introduction Activity | Emoji Icebreaker for Meetings"
       : game.title === "Emoji Check-In"
-        ? "Emoji Check-In Icebreaker: Quick Feelings Activity for Meetings"
+        ? "Emoji Check-In Icebreaker | Quick Mood Activity for Teams"
         : game.title === "Alliterative Name Game"
           ? "Alliterative Name Game (Adjective Name Game) | How to Play + Examples"
           : game.title === "One Word Check-In"
@@ -357,8 +357,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
               : game.title === "Minefield"
                 ? "Minefield Team Building Game | How to Play + Debrief"
                 : game.title === "The Name Game"
-                  ? "The Name Game Icebreaker | How to Play, Rules & Variations"
-                  : game.title === "The Question Web"
+                  ? "The Name Game Icebreaker | Name Game Rules & Variations"
+                  : game.title === "The Question Web"}iyanasууда_NONE
                     ? "The Question Web Icebreaker | How to Play + Prompts"
                     : game.title === "Count Up"
                       ? "Count Up Team Building Game | Rules + Tips"

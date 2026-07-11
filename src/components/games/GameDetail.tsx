@@ -172,8 +172,18 @@ export function GameDetail({ game }: GameDetailProps) {
             </p>
           ) : game.title === "The Name Game" ? (
             <p className="text-base leading-relaxed text-muted-foreground">
-              The Name Game is a simple icebreaker for learning names quickly. Each person repeats the names of everyone who went before them, then adds their own.
-              It works well for new groups because it is structured, low-pressure, and gets everyone speaking early.
+              The Name Game is a simple name game icebreaker for helping a new group learn names quickly. Each person repeats the names of everyone who went before them, then adds their own name with a short memory cue such as a role, adjective, or hobby.
+              It works well for meetings, classrooms, and workshops because it is structured, low-pressure, and gets everyone speaking early without needing materials.
+            </p>
+          ) : game.title === "Emoji Introduction" ? (
+            <p className="text-base leading-relaxed text-muted-foreground">
+              Emoji Introduction is a low-pressure emoji icebreaker where each person introduces themselves using two or three emojis instead of a long verbal introduction.
+              It works especially well for virtual meetings, online classrooms, and hybrid teams because people can answer in chat first, then explain only as much as they feel comfortable sharing.
+            </p>
+          ) : game.title === "Emoji Check-In" ? (
+            <p className="text-base leading-relaxed text-muted-foreground">
+              Emoji Check-In is a quick mood-sharing activity for meetings, classes, and remote teams. Participants choose one emoji to represent their energy, focus, or feeling right now.
+              It helps the facilitator read the room in 3–5 minutes while giving quieter participants a safe, simple way to participate.
             </p>
           ) : game.title === "The Question Web" ? (
             <p className="text-base leading-relaxed text-muted-foreground">
@@ -868,9 +878,48 @@ export function GameDetail({ game }: GameDetailProps) {
                 <p className="text-sm text-muted-foreground">Keep it to one emoji per person and discuss patterns instead of asking everyone to explain individually.</p>
               </div>
             </div>
+            <div className="mt-5 rounded-xl bg-blue-50 p-4 dark:bg-blue-950/30">
+              <h3 className="font-semibold">Facilitator script</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                Pick one to three emojis that show how you are arriving today. You can explain your choices in one sentence, or simply share the emojis and pass.
+              </p>
+            </div>
             <p className="mt-4 text-sm text-muted-foreground">
               See more options in our <a href="/emoji-icebreaker-games" className="font-medium text-blue-600 hover:underline dark:text-blue-400">emoji icebreaker games guide</a>.
             </p>
+          </div>
+        )}
+
+        {game.title === "Emoji Introduction" && (
+          <div className="rounded-2xl border bg-card p-6">
+            <h2 className="text-2xl font-semibold mb-3">Emoji Introduction Examples</h2>
+            <div className="grid gap-4 md:grid-cols-3">
+              <div className="rounded-xl bg-secondary p-4">
+                <p className="text-2xl">☕📚🚲</p>
+                <p className="mt-2 text-sm text-muted-foreground">Coffee, learning, and cycling are part of my week.</p>
+              </div>
+              <div className="rounded-xl bg-secondary p-4">
+                <p className="text-2xl">🎧🌱💡</p>
+                <p className="mt-2 text-sm text-muted-foreground">I like music, gardening, and new ideas.</p>
+              </div>
+              <div className="rounded-xl bg-secondary p-4">
+                <p className="text-2xl">🐶🍕✈️</p>
+                <p className="mt-2 text-sm text-muted-foreground">My dog, pizza, and travel tell you a lot about me.</p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {game.title === "Emoji Check-In" && (
+          <div className="rounded-2xl border bg-card p-6">
+            <h2 className="text-2xl font-semibold mb-3">Emoji Check-In Prompts</h2>
+            <ul className="list-disc list-inside space-y-2 text-base text-muted-foreground">
+              <li>Choose one emoji for your energy right now.</li>
+              <li>Choose one emoji for your focus today.</li>
+              <li>Choose one emoji for what you need from this meeting.</li>
+              <li>Choose one emoji for how your week is going.</li>
+              <li>Choose one emoji for the kind of support that would help you participate.</li>
+            </ul>
           </div>
         )}
 
@@ -894,6 +943,12 @@ export function GameDetail({ game }: GameDetailProps) {
                 <h3 className="font-semibold">For shy groups</h3>
                 <p className="text-sm text-muted-foreground">Let people read from visible name tags and avoid turning forgotten names into a test.</p>
               </div>
+            </div>
+            <div className="mt-5 rounded-xl bg-blue-50 p-4 dark:bg-blue-950/30">
+              <h3 className="font-semibold">Facilitator script</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                We are going to learn names in a simple chain. Say your name and one short memory cue. Each person will repeat the names before them, then add their own. It is okay to ask for help; this is practice, not a test.
+              </p>
             </div>
             <p className="mt-4 text-sm text-muted-foreground">
               Compare more options in our <a href="/name-game-icebreakers" className="font-medium text-blue-600 hover:underline dark:text-blue-400">name game icebreakers guide</a>.
