@@ -2,12 +2,15 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { getAllGames } from "@/db/queries/games";
-import { GameCard } from "@/components/games/GameCard";
 import { HomeFilterSection } from "@/components/home/HomeFilterSection";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import SessionLabCategories from "@/components/SessionLabCategories";
+import styles from "./home.module.css";
+import "./home-editorial.css";
 
 export const revalidate = 86400;
+
+const ogImage = "https://www.icebreakergames.site/img/home-hero.jpg";
 
 export const metadata: Metadata = {
   title: "Icebreaker Games for Meetings, Work & Classrooms",
@@ -24,10 +27,10 @@ export const metadata: Metadata = {
       "Find the right icebreaker game by setting, group size, time, and energy level. Browse free activities for meetings, work, virtual teams, and classrooms.",
     images: [
       {
-        url: "https://www.icebreakergames.site/img/Hero.png",
+        url: ogImage,
         width: 1200,
         height: 630,
-        alt: "Ice Breaker Games - Team Building Activities",
+        alt: "Ice Breaker Games — facilitators running icebreaker activities",
       },
     ],
   },
@@ -36,7 +39,7 @@ export const metadata: Metadata = {
     title: "Icebreaker Games for Meetings, Work & Classrooms",
     description:
       "Find the right icebreaker game by setting, group size, time, and energy level. Browse free activities for meetings, work, virtual teams, and classrooms.",
-    images: ["https://www.icebreakergames.site/img/Hero.png"],
+    images: [ogImage],
   },
 };
 
@@ -58,583 +61,613 @@ export default async function Home() {
     },
   };
 
+  const quickPaths = [
+    {
+      href: "/icebreaker-games-for-meetings",
+      label: "Meetings",
+      title: "Meeting icebreakers",
+      description: "Quick openers for standups, workshops, retrospectives, and team meetings.",
+    },
+    {
+      href: "/icebreaker-games-for-work",
+      label: "Work",
+      title: "Work icebreakers",
+      description: "Professional activities for teams, trainings, onboarding, and team building.",
+    },
+    {
+      href: "/virtual-icebreaker-games",
+      label: "Virtual",
+      title: "Virtual icebreakers",
+      description: "Remote-friendly games for Zoom, Teams, hybrid calls, and distributed groups.",
+    },
+    {
+      href: "/games",
+      label: "Library",
+      title: "Browse the library",
+      description: "Filter all games by duration, group size, category, and facilitation needs.",
+    },
+  ];
+
+  const popularGames = [
+    {
+      href: "/games-like-human-bingo",
+      title: "Games like Human Bingo",
+      description: "Mingling and networking alternatives with rules, prompts, and comparison tips.",
+    },
+    {
+      href: "/games/human-bingo",
+      title: "Human Bingo",
+      description: "The classic mixer: cards, signatures, and fast introductions for 10–50 people.",
+    },
+    {
+      href: "/games-like-the-human-knot",
+      title: "Games like the Human Knot",
+      description: "Physical and problem-solving team challenges when you want knot-style energy.",
+    },
+    {
+      href: "/icebreaker-games-for-youth-group",
+      title: "Ice breaker games for youth group",
+      description: "Age-appropriate openers for youth nights, retreats, and small groups.",
+    },
+    {
+      href: "/games/the-name-game",
+      title: "The Name Game",
+      description: "Learn names fast with a simple, low-pressure introduction round.",
+    },
+    {
+      href: "/emoji-icebreaker-games",
+      title: "Emoji icebreaker games",
+      description: "Quick visual check-ins for meetings, remote teams, and classrooms.",
+    },
+  ];
+
   return (
-    <div className="min-h-screen">
+    <div className={styles.page}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      {/* Hero Section */}
-      <section className="relative py-20 md:py-32 overflow-hidden">
-        {/* Hero Background Image */}
-        <div className="absolute inset-0 z-0">
+
+      <header className={styles.hero}>
+        <div className={styles.heroMedia}>
           <Image
-            src="/img/Hero.png"
-            alt="Ice breaker games - diverse team members engaging in fun team building activities"
+            src="/img/home-hero.jpg"
+            alt="Ice Breaker Games — diverse group laughing during a facilitator-led icebreaker"
             fill
-            className="object-cover"
             priority
             sizes="100vw"
-            quality={90}
-            style={{ objectPosition: '50% 40%' }}
           />
-          {/* Modern gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-purple-900/70 to-indigo-900/80 dark:from-gray-900/90 dark:via-gray-900/80 dark:to-gray-900/90"></div>
-          {/* Animated gradient orbs */}
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
-
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <div className="animate-fade-in-up">
-            <p className="mb-5 inline-flex rounded-full border border-white/30 bg-white/10 px-4 py-2 text-sm font-semibold text-blue-100 backdrop-blur">
-              Free facilitator-ready activities for meetings, work, classrooms, and remote teams
-            </p>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-white drop-shadow-2xl max-w-5xl mx-auto leading-tight">
-              Find the Right
-              <span className="bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent"> Icebreaker Game </span>
-              in Minutes
-            </h1>
-            <p className="text-xl md:text-2xl text-white/95 mb-10 max-w-4xl mx-auto drop-shadow-lg leading-relaxed">
-              Browse practical <strong className="text-blue-200">icebreaker games</strong> by setting, group size, time, and energy level. Each activity includes rules, materials, facilitation tips, and variations so you can run it with confidence.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
-              <Link
-                href="/games"
-                className="group px-10 py-5 bg-white text-blue-600 rounded-2xl text-xl font-bold hover:bg-blue-50 transition-all duration-300 shadow-2xl hover:shadow-blue-500/25 hover:scale-105 transform"
-              >
-                <span className="flex items-center gap-3">
-                  Browse All Games
-                  <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </span>
-              </Link>
-              <Link
-                href="/icebreaker-games-for-meetings"
-                className="px-10 py-5 border-2 border-white/80 text-white rounded-2xl text-xl font-bold hover:bg-white/10 hover:border-white transition-all duration-300 backdrop-blur-md hover:scale-105 transform"
-              >
-                Start with Meeting Games
-              </Link>
-            </div>
-
-            <div className="mt-7 flex flex-wrap justify-center gap-3 text-sm text-white/90">
-              <span className="rounded-full bg-black/20 px-4 py-2 backdrop-blur">No prep options</span>
-              <span className="rounded-full bg-black/20 px-4 py-2 backdrop-blur">5–15 minute activities</span>
-              <span className="rounded-full bg-black/20 px-4 py-2 backdrop-blur">Virtual and in-person</span>
-              <span className="rounded-full bg-black/20 px-4 py-2 backdrop-blur">Safety-aware facilitation</span>
-            </div>
-
-            <div className="mt-8 flex flex-wrap gap-3 justify-center">
-              <Link
-                href="/best-icebreaker-games"
-                className="rounded-full border border-white/30 bg-white/10 px-4 py-2 text-sm font-medium text-white hover:bg-white/15 transition-colors backdrop-blur"
-              >
-                Best icebreaker games
-              </Link>
-              <Link
-                href="/icebreaker-games-for-work"
-                className="rounded-full border border-white/30 bg-white/10 px-4 py-2 text-sm font-medium text-white hover:bg-white/15 transition-colors backdrop-blur"
-              >
-                For work
-              </Link>
-              <Link
-                href="/icebreaker-games-for-meetings"
-                className="rounded-full border border-white/30 bg-white/10 px-4 py-2 text-sm font-medium text-white hover:bg-white/15 transition-colors backdrop-blur"
-              >
-                For meetings
-              </Link>
-              <Link
-                href="/virtual-icebreaker-games"
-                className="rounded-full border border-white/30 bg-white/10 px-4 py-2 text-sm font-medium text-white hover:bg-white/15 transition-colors backdrop-blur"
-              >
-                Virtual
-              </Link>
-              <Link
-                href="/emoji-icebreaker-games"
-                className="rounded-full border border-white/30 bg-white/10 px-4 py-2 text-sm font-medium text-white hover:bg-white/15 transition-colors backdrop-blur"
-              >
-                Emoji icebreakers
-              </Link>
-              <Link
-                href="/name-game-icebreakers"
-                className="rounded-full border border-white/30 bg-white/10 px-4 py-2 text-sm font-medium text-white hover:bg-white/15 transition-colors backdrop-blur"
-              >
-                Name games
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Quick Start Paths */}
-      <section className="py-16 bg-white dark:bg-gray-950">
-        <div className="container mx-auto px-4">
-          <div className="mx-auto max-w-3xl text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Start with the situation you are planning for</h2>
-            <p className="text-lg text-muted-foreground">
-              Choose a path below to find games that match your audience, format, and time limit faster.
-            </p>
-          </div>
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                href: "/icebreaker-games-for-meetings",
-                title: "Meeting icebreakers",
-                description: "Quick openers for standups, workshops, retrospectives, and team meetings.",
-              },
-              {
-                href: "/icebreaker-games-for-work",
-                title: "Work icebreakers",
-                description: "Professional activities for teams, trainings, onboarding, and team building.",
-              },
-              {
-                href: "/virtual-icebreaker-games",
-                title: "Virtual icebreakers",
-                description: "Remote-friendly games for Zoom, Teams, hybrid calls, and distributed groups.",
-              },
-              {
-                href: "/games",
-                title: "Browse the library",
-                description: "Filter all games by duration, group size, category, and facilitation needs.",
-              },
-            ].map((path) => (
-              <Link
-                key={path.href}
-                href={path.href}
-                className="group rounded-3xl border bg-card p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
-              >
-                <h3 className="text-xl font-bold mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400">{path.title}</h3>
-                <p className="text-sm leading-relaxed text-muted-foreground">{path.description}</p>
-                <span className="mt-5 inline-flex text-sm font-semibold text-blue-600 dark:text-blue-400">
-                  Explore games <span className="ml-1 transition-transform group-hover:translate-x-1">→</span>
-                </span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Filter Section */}
-      <HomeFilterSection games={allGames} />
-
-      {/* Stats Section */}
-      <section className="py-20 bg-gradient-to-r from-slate-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 border-y border-blue-100 dark:border-gray-700">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div className="group hover:scale-105 transition-transform duration-300">
-              <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
-                {allGames.length}+
-              </div>
-              <div className="text-gray-600 dark:text-gray-300 text-lg font-medium">Ice Breaker Games</div>
-            </div>
-            <div className="group hover:scale-105 transition-transform duration-300">
-              <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">6</div>
-              <div className="text-gray-600 dark:text-gray-300 text-lg font-medium">Categories</div>
-            </div>
-            <div className="group hover:scale-105 transition-transform duration-300">
-              <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-4">100%</div>
-              <div className="text-gray-600 dark:text-gray-300 text-lg font-medium">Free to Use</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Categories Section */}
-      <section className="py-24 relative bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
-              Diverse Ice Breaker Games for Every Occasion and Group Size
-            </h2>
-            <div className="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto mb-8 space-y-6 leading-relaxed">
-              <p>
-                Finding the right activity is crucial for success. Our comprehensive library of <strong className="text-blue-600">ice breaker games</strong> covers every scenario imaginable. Whether you're hosting virtual meetings, planning intensive team building sessions, or organizing fun classroom activities, we have the perfect activities to fit your needs.
-              </p>
-              <p>
-                Our collection includes quick 5-minute energizers for tight schedules and in-depth exercises for deeper bonding. Each activity is carefully selected and tested to ensure maximum engagement and meaningful connections.
-              </p>
-            </div>
-            <div className="mb-12 -mx-4 md:mx-0">
-              <div className="relative w-full h-40 md:h-48 rounded-3xl overflow-hidden shadow-2xl">
-                <Image
-                  src="/img/Categories.png"
-                  alt="Ice breaker games for team building, virtual meetings, classrooms, training, conferences and social events"
-                  fill
-                  className="object-cover"
-                  sizes="100vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-              </div>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Team Building",
-                icon: "👥",
-                description: "Strengthen bonds and improve collaboration with specialized ice breaker games",
-                gradient: "from-blue-500 to-cyan-500",
-                bgGradient: "from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20",
-              },
-              {
-                name: "Virtual Meeting",
-                icon: "💻",
-                description: "Engage remote teams and break the distance with digital ice breaker games",
-                gradient: "from-purple-500 to-pink-500",
-                bgGradient: "from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20",
-              },
-              {
-                name: "Classroom",
-                icon: "📚",
-                description: "Create a fun learning environment with educational ice breaker games",
-                gradient: "from-green-500 to-emerald-500",
-                bgGradient: "from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20",
-              },
-              {
-                name: "Training",
-                icon: "🎯",
-                description: "Energize workshops and training sessions with active ice breaker games",
-                gradient: "from-orange-500 to-red-500",
-                bgGradient: "from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20",
-              },
-              {
-                name: "Conference",
-                icon: "🎤",
-                description: "Network and connect at events using large-group ice breaker games",
-                gradient: "from-indigo-500 to-purple-500",
-                bgGradient: "from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20",
-              },
-              {
-                name: "Social Event",
-                icon: "🎉",
-                description: "Make parties and gatherings memorable with fun ice breaker games",
-                gradient: "from-pink-500 to-rose-500",
-                bgGradient: "from-pink-50 to-rose-50 dark:from-pink-900/20 dark:to-rose-900/20",
-              },
-            ].map((category) => (
-              <div
-                key={category.name}
-                className={`group bg-gradient-to-br ${category.bgGradient} p-8 rounded-3xl hover:shadow-2xl transition-all duration-500 hover:scale-105 transform border border-white/50 dark:border-gray-700/50 backdrop-blur-sm`}
-              >
-                <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">{category.icon}</div>
-                <h3 className={`text-2xl font-bold mb-4 bg-gradient-to-r ${category.gradient} bg-clip-text text-transparent`}>{category.name}</h3>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{category.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* SessionLab Categories Section */}
-      <section className="py-24 bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-        <SessionLabCategories />
-      </section>
-
-      {/* Featured Games Section */}
-      <section id="featured" className="py-24 bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Top-Rated Featured Ice Breaker Games
-            </h2>
-            <div className="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto space-y-6 leading-relaxed">
-              <p>
-                Explore our selection of featured <strong className="text-blue-600">ice breaker games</strong>, loved by facilitators and participants alike. These popular activities have been proven to break down barriers and foster positive group dynamics.
-              </p>
-              <p>
-                Each featured game comes with detailed step-by-step instructions, making them easy to facilitate even for beginners. Choose from our top activities to guarantee a successful start to your meeting or event.
-              </p>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {featuredGames.map((game) => (
-              <div key={game.id} className="transform hover:scale-105 transition-all duration-300">
-                <GameCard game={game} />
-              </div>
-            ))}
-          </div>
-          <div className="text-center">
-            <Link
-              href="/games"
-              className="group inline-flex items-center px-10 py-5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl text-xl font-bold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-2xl hover:shadow-blue-500/25 hover:scale-105 transform"
-            >
-              View All {allGames.length} Games
-              <svg
-                className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
+        <div className={styles.heroScrim} aria-hidden="true" />
+        <div className={styles.heroInner}>
+          <p className={styles.brand}>Ice Breaker Games</p>
+          <h1 className={styles.heroTitle}>Icebreaker games for meetings, work & classrooms</h1>
+          <p className={styles.heroLead}>
+            Find free ice breaker games by setting, group size, and time—each with rules,
+            materials, and facilitation tips you can run today.
+          </p>
+          <div className={styles.ctaRow}>
+            <Link href="/games" className={styles.ctaPrimary}>
+              Browse all games
+            </Link>
+            <Link href="/icebreaker-games-for-meetings" className={styles.ctaGhost}>
+              Meeting icebreakers
+            </Link>
+            <Link href="/games-like-human-bingo" className={styles.ctaGhost}>
+              Games like Human Bingo
             </Link>
           </div>
         </div>
+      </header>
+
+      <section className={styles.bodyBand} aria-labelledby="quick-start-heading">
+        <div className={styles.sectionHead}>
+          <p className={styles.eyebrow}>Plan by setting</p>
+          <h2 id="quick-start-heading">Start with the situation you are planning for</h2>
+          <p>Choose a path to match your audience, format, and time limit faster.</p>
+        </div>
+        <div className={styles.pathGrid}>
+          {quickPaths.map((path) => (
+            <Link key={path.href} href={path.href} className={styles.pathItem}>
+              <p className={styles.pathLabel}>{path.label}</p>
+              <h3 className={styles.pathTitle}>{path.title}</h3>
+              <p className={styles.pathDesc}>{path.description}</p>
+            </Link>
+          ))}
+        </div>
       </section>
 
-      {/* How It Works Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-            How to Successfully Implement Ice Breaker Games
-          </h2>
-          <div className="text-lg text-muted-foreground text-center max-w-4xl mx-auto mb-12 space-y-4">
+      <section className={styles.popularBand} aria-labelledby="popular-games-heading">
+        <div className={styles.popularInner}>
+          <div className={styles.sectionHead}>
+            <p className={styles.eyebrow}>Most used guides</p>
+            <h2 id="popular-games-heading">Popular Games</h2>
             <p>
-              Integrating <strong>ice breaker games</strong> into your meetings and events is a seamless and rewarding process with our comprehensive platform. We have designed our resources to assist facilitators, teachers, and team leaders in finding and implementing the perfect <strong>ice breaker games</strong> with ease.
-            </p>
-            <p>
-              Whether you are a seasoned pro or new to facilitating, our guide to <strong>ice breaker games</strong> ensures you have everything you need. Each of our <strong>ice breaker games</strong> includes clear objectives, material lists, and facilitation tips. Mastering <strong>ice breaker games</strong> has never been simpler.
+              Start with the guides people use most—then open full rules and related alternatives.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-64 h-64 mx-auto mb-6">
-                <img
-                  src="/img/How It Works.png"
-                  alt="Browse ice breaker games - step 1 of finding the perfect team building activity"
-                  className="w-full h-full object-cover rounded-2xl shadow-lg"
-                />
+          <div className={styles.popularList}>
+            {popularGames.map((item, index) => (
+              <Link key={item.href} href={item.href} className={styles.popularItem}>
+                <span className={styles.popularIndex} aria-hidden="true">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <h3 className={styles.popularTitle}>{item.title}</h3>
+                  <p className={styles.popularDesc}>{item.description}</p>
+                </div>
+                <span className={styles.popularLink}>Open guide →</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="ibg-story" aria-label="Outdoor team icebreaker">
+        <div className="ibg-story__media">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/img/home-band-retreat.jpg"
+            alt="Diverse team laughing outdoors during a retreat icebreaker"
+            width={1800}
+            height={1013}
+          />
+        </div>
+        <div className="ibg-story__scrim" aria-hidden="true" />
+        <div className="ibg-story__inner">
+          <p className="ibg-story__eyebrow">Built for real rooms</p>
+          <h2 className="ibg-story__title">Activities that feel natural—not forced</h2>
+          <p className="ibg-story__lead">
+            From retreat lawns to conference halls, every guide is written for facilitators who
+            need clear steps, inclusive prompts, and a warm start.
+          </p>
+          <Link href="/best-icebreaker-games" className="ibg-story__cta">
+            See best icebreaker games
+          </Link>
+        </div>
+      </section>
+
+      <HomeFilterSection games={allGames} />
+
+      <section className={styles.statsBand} aria-label="Library snapshot">
+        <div className={styles.statsInner}>
+          <div>
+            <div className={styles.statValue}>{allGames.length}+</div>
+            <div className={styles.statLabel}>Ice breaker games</div>
+          </div>
+          <div>
+            <div className={styles.statValueAccent}>6</div>
+            <div className={styles.statLabel}>Occasion categories</div>
+          </div>
+          <div>
+            <div className={styles.statValue}>100%</div>
+            <div className={styles.statLabel}>Free to use</div>
+          </div>
+        </div>
+      </section>
+
+      <section className="ibg-occasions" aria-labelledby="occasions-heading">
+        <div className="ibg-occasions__hero">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/img/home-band-meeting.jpg"
+            alt="Facilitator leading a warm-up icebreaker in a sunlit meeting room"
+            width={1800}
+            height={771}
+          />
+        </div>
+        <div className="ibg-occasions__intro">
+          <p className="ibg-occasions__eyebrow">By occasion</p>
+          <h2 id="occasions-heading">Ice breaker games for every occasion and group size</h2>
+          <p>
+            Finding the right activity matters. Our library of{" "}
+            <strong>ice breaker games</strong> covers virtual meetings, team building,
+            classrooms, training, conferences, and social events.
+          </p>
+          <p>
+            Choose quick 5-minute energizers for tight agendas or longer exercises for deeper
+            bonding—each with clear rules you can run today.
+          </p>
+        </div>
+        <div className="ibg-occasions__grid">
+          {[
+            {
+              name: "Team Building",
+              href: "/games?category=Team%20Building",
+              image: "/img/home-cat-team.jpg",
+              description:
+                "Strengthen collaboration and trust with specialized ice breaker games for teams.",
+            },
+            {
+              name: "Virtual Meeting",
+              href: "/virtual-icebreaker-games",
+              image: "/img/home-cat-virtual.jpg",
+              description:
+                "Engage remote and hybrid groups with digital-friendly ice breaker games.",
+            },
+            {
+              name: "Classroom",
+              href: "/games?category=Classroom",
+              image: "/img/home-cat-classroom.jpg",
+              description:
+                "Warm up students and create a welcoming learning environment.",
+            },
+            {
+              name: "Training",
+              href: "/games?category=Training",
+              image: "/img/home-cat-training.jpg",
+              description:
+                "Energize workshops and onboarding sessions with active openers.",
+            },
+            {
+              name: "Conference",
+              href: "/games?category=Conference",
+              image: "/img/home-cat-conference.jpg",
+              description:
+                "Help attendees network at large events with scalable mixers.",
+            },
+            {
+              name: "Social Event",
+              href: "/games?category=Social%20Event",
+              image: "/img/home-cat-social.jpg",
+              description:
+                "Keep parties and gatherings lively with light, inclusive activities.",
+            },
+          ].map((category) => (
+            <Link key={category.name} href={category.href} className="ibg-occasions__card">
+              <span className="ibg-occasions__photo">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={category.image} alt="" width={900} height={675} />
+              </span>
+              <h3 className="ibg-occasions__name">{category.name}</h3>
+              <p className="ibg-occasions__desc">{category.description}</p>
+              <span className="ibg-occasions__more">Browse games →</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className={styles.contentShellAlt} aria-labelledby="scenario-heading">
+        <div className={styles.contentInner}>
+          <div className={styles.sectionHeadWide}>
+            <p className={styles.eyebrow}>By scenario</p>
+            <h2 id="scenario-heading">Choose ice breaker games by scenario</h2>
+            <p>
+              Eight practical scenario groups—pick a category to preview curated
+              activities, then open the full library for filters and rules.
+            </p>
+          </div>
+          <SessionLabCategories />
+        </div>
+      </section>
+
+      <section id="featured" className={styles.contentShell} aria-labelledby="featured-heading">
+        <div className={styles.sectionHeadWide}>
+          <p className={styles.eyebrow}>From the library</p>
+          <h2 id="featured-heading">Featured ice breaker games</h2>
+        </div>
+        <div className={styles.proseBlock}>
+          <p>
+            Start with proven <strong>ice breaker games</strong> facilitators return to often—clear
+            steps, practical materials, and variations for different rooms.
+          </p>
+          <p>
+            Each featured activity includes facilitation tips so beginners can run it without
+            guesswork.
+          </p>
+        </div>
+        <div className={styles.featuredList}>
+          {featuredGames.map((game, index) => (
+            <Link
+              key={game.id}
+              href={`/games/${game.slug}`}
+              className={styles.featuredItem}
+            >
+              <span className={styles.popularIndex} aria-hidden="true">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <div>
+                <h3 className={styles.popularTitle}>{game.title}</h3>
+                <p className={styles.popularDesc}>
+                  {game.description.length > 140
+                    ? `${game.description.slice(0, 140).trim()}…`
+                    : game.description}
+                </p>
+                <div className={styles.featuredMeta}>
+                  {game.players ? <span className={styles.metaChip}>{game.players}</span> : null}
+                  {game.duration ? <span className={styles.metaChip}>{game.duration}</span> : null}
+                  {game.difficulty ? (
+                    <span className={styles.metaChip}>{game.difficulty}</span>
+                  ) : null}
+                </div>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Browse Games</h3>
-              <p className="text-muted-foreground">
-                Explore our extensive collection of <strong>ice breaker games</strong> organized by category, difficulty level, group size, and duration. Use filters to narrow down options that match your specific needs for the perfect <strong>ice breaker game</strong>.
+              <span className={styles.popularLink}>Open game →</span>
+            </Link>
+          ))}
+        </div>
+        <div className={styles.featuredCtaWrap}>
+          <Link href="/games" className={styles.ctaPrimary}>
+            View all {allGames.length} games
+          </Link>
+        </div>
+      </section>
+
+      <section className={styles.contentShellAlt} aria-labelledby="how-heading">
+        <div className={styles.contentInner}>
+          <div className={styles.sectionHeadWide}>
+            <p className={styles.eyebrow}>How it works</p>
+            <h2 id="how-heading">How to run ice breaker games successfully</h2>
+          </div>
+          <div className={styles.proseBlock}>
+            <p>
+              Integrating <strong>ice breaker games</strong> into meetings and events is
+              straightforward when you match the activity to your group, time, and setting.
+            </p>
+            <p>
+              Every game includes objectives, materials, and facilitation tips—so teachers, managers,
+              and facilitators can pick up and run.
+            </p>
+          </div>
+          <div className={styles.stepsList}>
+            {[
+              {
+                title: "Browse games",
+                desc: (
+                  <>
+                    Explore <strong>ice breaker games</strong> by category, difficulty, group size,
+                    and duration. Use filters to match your agenda.
+                  </>
+                ),
+              },
+              {
+                title: "Choose your game",
+                desc: (
+                  <>
+                    Pick based on group size, available time, and in-person or virtual setting. Read
+                    the rules before you facilitate.
+                  </>
+                ),
+              },
+              {
+                title: "Play and connect",
+                desc: (
+                  <>
+                    Follow the steps, keep psychological safety in mind, and let the group connect
+                    through the activity.
+                  </>
+                ),
+              },
+            ].map((step, index) => (
+              <div key={step.title} className={styles.stepItem}>
+                <span className={styles.popularIndex} aria-hidden="true">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <h3 className={styles.stepTitle}>{step.title}</h3>
+                  <p className={styles.stepDesc}>{step.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.contentShell} aria-labelledby="benefits-heading">
+        <div className={styles.benefitsLayout}>
+          <div className={styles.benefitsPhoto}>
+            <Image
+              src="/img/home-band-group.jpg"
+              alt="Young adults laughing together during a community icebreaker circle"
+              fill
+              sizes="(max-width: 960px) 100vw, 40vw"
+            />
+          </div>
+          <div>
+            <div className={styles.sectionHeadWide}>
+              <p className={styles.eyebrow}>Why it works</p>
+              <h2 id="benefits-heading">Benefits of ice breaker games</h2>
+            </div>
+            <div className={styles.proseBlock}>
+              <p>
+                <strong>Ice breaker games</strong> go beyond introductions. They turn awkward silence
+                into structured conversation and help people feel safe enough to participate.
+              </p>
+              <p>
+                Groups that open with a short activity often show higher participation and clearer
+                collaboration—especially in remote or hybrid rooms.
               </p>
             </div>
-            <div className="text-center">
-              <div className="w-64 h-64 mx-auto mb-6">
-                <img
-                  src="/img/How It Works2.png"
-                  alt="Choose your ice breaker game - step 2 of selecting team building activities"
-                  className="w-full h-full object-cover rounded-2xl shadow-lg"
-                />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Choose Your Game</h3>
-              <p className="text-muted-foreground">
-                Select the perfect activity from our <strong>ice breaker games</strong> based on your group size, available time, setting (in-person or virtual), and desired outcomes. Read reviews to see which <strong>ice breaker games</strong> work best.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-64 h-64 mx-auto mb-6">
-                <img
-                  src="/img/How It Works3.png"
-                  alt="Play and connect with ice breaker games - step 3 of engaging your team"
-                  className="w-full h-full object-cover rounded-2xl shadow-lg"
-                />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Play & Connect</h3>
-              <p className="text-muted-foreground">
-                Follow our clear, step-by-step instructions to facilitate your chosen <strong>ice breaker games</strong>. Watch as participants engage, laugh, and build meaningful connections through these <strong>ice breaker games</strong>.
-              </p>
+            <div className={styles.benefitGrid}>
+              {[
+                {
+                  label: "Connect",
+                  title: "Build connections",
+                  desc: (
+                    <>
+                      Help people get to know each other through structured{" "}
+                      <strong>ice breaker games</strong>.
+                    </>
+                  ),
+                },
+                {
+                  label: "Energy",
+                  title: "Boost energy",
+                  desc: <>Wake up the room with active openers before the real agenda begins.</>,
+                },
+                {
+                  label: "Voice",
+                  title: "Encourage communication",
+                  desc: (
+                    <>Lower barriers so quieter participants feel comfortable contributing.</>
+                  ),
+                },
+                {
+                  label: "Tone",
+                  title: "Set the tone",
+                  desc: <>Create an inclusive start that supports the rest of the session.</>,
+                },
+              ].map((item) => (
+                <div key={item.title}>
+                  <p className={styles.benefitLabel}>{item.label}</p>
+                  <h3 className={styles.benefitTitle}>{item.title}</h3>
+                  <p className={styles.benefitDesc}>{item.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-900/30">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-            The Transformative Benefits of Ice Breaker Games
-          </h2>
-          <div className="text-lg text-muted-foreground text-center max-w-4xl mx-auto mb-12 space-y-4">
-            <p>
-              <strong>Ice breaker games</strong> are powerful tools that go far beyond simple introductions. They are essential components of effective group management and team building. One of the primary benefits of <strong>ice breaker games</strong> is their ability to transform awkward silences into engaging, meaningful conversations. By providing a structured way to interact, <strong>ice breaker games</strong> help participants feel comfortable and safe.
-            </p>
-            <p>
-              Research consistently shows that groups who start their sessions with <strong>ice breaker games</strong> demonstrate higher levels of participation, creativity, and overall team cohesion. <strong>Ice breaker games</strong> also play a vital role in humanizing interactions, especially in remote or hybrid settings. Whether you are leading a corporate training, teaching a classroom of students, or hosting a large conference, incorporating <strong>ice breaker games</strong> into your routine sets the foundation for productive outcomes.
-            </p>
+      <section className={styles.contentShellAlt} aria-labelledby="tips-heading">
+        <div className={styles.contentInner}>
+          <div className={styles.sectionHeadWide}>
+            <p className={styles.eyebrow}>Facilitation</p>
+            <h2 id="tips-heading">Facilitator tips for ice breaker games</h2>
+            <p>Six practical habits that keep activities inclusive, energetic, and on time.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-              <div className="text-3xl mb-3">🤝</div>
-              <h3 className="text-lg font-semibold mb-2">Build Connections</h3>
-              <p className="text-sm text-muted-foreground">
-                Help team members get to know each other and form meaningful relationships through fun <strong>ice breaker games</strong>.
-              </p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-              <div className="text-3xl mb-3">⚡</div>
-              <h3 className="text-lg font-semibold mb-2">Boost Energy</h3>
-              <p className="text-sm text-muted-foreground">
-                Energize your group and create an enthusiastic atmosphere with active <strong>ice breaker games</strong>.
-              </p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-              <div className="text-3xl mb-3">💬</div>
-              <h3 className="text-lg font-semibold mb-2">Encourage Communication</h3>
-              <p className="text-sm text-muted-foreground">
-                Break down barriers and help participants feel comfortable sharing ideas using <strong>ice breaker games</strong>.
-              </p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-              <div className="text-3xl mb-3">🎯</div>
-              <h3 className="text-lg font-semibold mb-2">Set the Tone</h3>
-              <p className="text-sm text-muted-foreground">
-                Create a positive, inclusive environment that sets the stage for success with <strong>ice breaker games</strong>.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Expert Tips Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Expert Tips for Facilitating Ice Breaker Games
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div className="space-y-6">
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center text-2xl">
-                  1
-                </div>
+          <div className={styles.tipsList}>
+            {[
+              {
+                title: "Know your audience",
+                desc: (
+                  <>
+                    Match <strong>ice breaker games</strong> to group size, familiarity, and
+                    professional context—what works for students may not fit executives.
+                  </>
+                ),
+              },
+              {
+                title: "Explain the why",
+                desc: (
+                  <>
+                    Share the purpose before you start so people engage with intention, not
+                    awkwardness.
+                  </>
+                ),
+              },
+              {
+                title: "Bring steady energy",
+                desc: (
+                  <>
+                    Your tone sets the room. Enthusiasm (without pressure) invites participation.
+                  </>
+                ),
+              },
+              {
+                title: "Participate when it helps",
+                desc: (
+                  <>
+                    Joining can flatten hierarchy—but some games work better when you facilitate from
+                    the side.
+                  </>
+                ),
+              },
+              {
+                title: "Adapt on the fly",
+                desc: (
+                  <>
+                    Shorten rounds, change prompts, or offer opt-outs if the energy shifts.
+                  </>
+                ),
+              },
+              {
+                title: "Watch the clock",
+                desc: (
+                  <>
+                    Keep openers crisp. A focused 5–15 minutes beats a game that overstays.
+                  </>
+                ),
+              },
+            ].map((tip, index) => (
+              <div key={tip.title} className={styles.tipItem}>
+                <span className={styles.popularIndex} aria-hidden="true">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">Know Your Audience</h3>
-                  <p className="text-muted-foreground">
-                    Choose <strong>ice breaker games</strong> that are appropriate for the group's size, familiarity, and professional level. What works for a student group might not work for executives, so select your <strong>ice breaker games</strong> wisely.
-                  </p>
+                  <h3 className={styles.tipTitle}>{tip.title}</h3>
+                  <p className={styles.tipDesc}>{tip.desc}</p>
                 </div>
               </div>
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center text-2xl">
-                  2
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Explain the 'Why'</h3>
-                  <p className="text-muted-foreground">
-                    Briefly explain the purpose of the <strong>ice breaker game</strong> before starting. When participants understand the value of <strong>ice breaker games</strong>, they are more likely to engage fully.
-                  </p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center text-2xl">
-                  3
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Be Enthusiastic</h3>
-                  <p className="text-muted-foreground">
-                    Your energy sets the tone for the <strong>ice breaker games</strong>. If you are excited about the <strong>ice breaker game</strong>, your group will be too.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="space-y-6">
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center text-2xl">
-                  4
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Participate When Appropriate</h3>
-                  <p className="text-muted-foreground">
-                    Joining in the <strong>ice breaker games</strong> can help break down hierarchy and show that you are part of the team. However, for some <strong>ice breaker games</strong>, it's better to observe.
-                  </p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center text-2xl">
-                  5
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Adapt on the Fly</h3>
-                  <p className="text-muted-foreground">
-                    Be prepared to modify <strong>ice breaker games</strong> if they aren't working as expected. Flexibility is key to successful <strong>ice breaker games</strong>.
-                  </p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-pink-100 dark:bg-pink-900/30 rounded-full flex items-center justify-center text-2xl">
-                  6
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Time Management</h3>
-                  <p className="text-muted-foreground">
-                    Keep an eye on the clock. <strong>ice breaker games</strong> should energize the group, not drag on. Efficient <strong>ice breaker games</strong> are the most effective.
-                  </p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-900/50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Frequently Asked Questions About Ice Breaker Games
-          </h2>
-          <div className="max-w-4xl mx-auto space-y-8">
-            <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-sm">
-              <h3 className="text-xl font-bold mb-3">What are the best ice breaker games for large groups?</h3>
-              <p className="text-muted-foreground">
-                For large groups, <strong>ice breaker games</strong> that allow for mingling or small sub-group interactions are best. Games like 'Human Bingo' or 'Rock Paper Scissors Tournament' are excellent <strong>ice breaker games</strong> for crowds because they scale well and keep energy high.
-              </p>
+      <section className={styles.contentShell} aria-labelledby="faq-heading">
+        <div className={styles.sectionHeadWide}>
+          <p className={styles.eyebrow}>FAQ</p>
+          <h2 id="faq-heading">Frequently asked questions about ice breaker games</h2>
+        </div>
+        <div className={styles.faqList}>
+          {[
+            {
+              q: "What are the best ice breaker games for large groups?",
+              a: (
+                <>
+                  Prefer mixers and small-subgroup formats.{" "}
+                  <Link href="/games/human-bingo">Human Bingo</Link> and tournament-style games scale
+                  well and keep energy high.
+                </>
+              ),
+            },
+            {
+              q: "Can ice breaker games be played virtually?",
+              a: (
+                <>
+                  Yes. See our{" "}
+                  <Link href="/virtual-icebreaker-games">virtual icebreaker games</Link> for Zoom,
+                  Teams, and hybrid calls.
+                </>
+              ),
+            },
+            {
+              q: "How long should ice breaker games last?",
+              a: (
+                <>
+                  Most agendas fit 5–15 minutes. We also list longer{" "}
+                  <strong>ice breaker games</strong> when you have a workshop block.
+                </>
+              ),
+            },
+            {
+              q: "Do I need equipment for ice breaker games?",
+              a: (
+                <>
+                  Many need none. Others use pen and paper or simple props—each page lists materials
+                  clearly.
+                </>
+              ),
+            },
+            {
+              q: "Are ice breaker games suitable for professional settings?",
+              a: (
+                <>
+                  Yes—when you choose respectful, inclusive prompts. Start with{" "}
+                  <Link href="/icebreaker-games-for-meetings">meeting icebreakers</Link> or{" "}
+                  <Link href="/icebreaker-games-for-work">work icebreakers</Link>.
+                </>
+              ),
+            },
+          ].map((item) => (
+            <div key={item.q} className={styles.faqItem}>
+              <h3 className={styles.faqQ}>{item.q}</h3>
+              <p className={styles.faqA}>{item.a}</p>
             </div>
-            <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-sm">
-              <h3 className="text-xl font-bold mb-3">Can ice breaker games be played virtually?</h3>
-              <p className="text-muted-foreground">
-                Absolutely! We offer a wide range of virtual <strong>ice breaker games</strong> designed specifically for platforms like Zoom or Teams. Virtual <strong>ice breaker games</strong> are crucial for maintaining remote team culture and ensuring that digital meetings are engaging.
-              </p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-sm">
-              <h3 className="text-xl font-bold mb-3">How long should ice breaker games last?</h3>
-              <p className="text-muted-foreground">
-                The duration of <strong>ice breaker games</strong> depends on your agenda. We have quick <strong>ice breaker games</strong> that take 5 minutes and longer <strong>ice breaker games</strong> that can last 30 minutes or more. It's best to choose <strong>ice breaker games</strong> that fit comfortably within your allotted time.
-              </p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-sm">
-              <h3 className="text-xl font-bold mb-3">Do I need equipment for ice breaker games?</h3>
-              <p className="text-muted-foreground">
-                Many of our <strong>ice breaker games</strong> require no equipment at all. We also have <strong>ice breaker games</strong> that use simple materials like pen and paper. Each of our <strong>ice breaker games</strong> lists the required materials clearly.
-              </p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-sm">
-              <h3 className="text-xl font-bold mb-3">Are ice breaker games suitable for professional settings?</h3>
-              <p className="text-muted-foreground">
-                Yes, <strong>ice breaker games</strong> are widely used in professional settings to improve team cohesion and communication. Professional <strong>ice breaker games</strong> are designed to be respectful, inclusive, and goal-oriented.
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
-      {/* Testimonials Section */}
       <TestimonialsSection />
 
-      {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 text-white relative overflow-hidden">
-        {/* Animated background elements */}
-        <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-300/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 right-1/3 w-48 h-48 bg-purple-300/10 rounded-full blur-2xl animate-pulse delay-500"></div>
-        </div>
-        
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
-            Ready to Transform Your Meetings with 
-            <span className="block bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">Ice Breaker Games?</span>
-          </h2>
-          <p className="text-xl md:text-2xl mb-12 opacity-95 max-w-4xl mx-auto leading-relaxed">
-            Don't let another meeting fall flat. Start exploring our extensive collection of engaging <strong className="text-blue-200">ice breaker games</strong> today. Join the community of thousands of facilitators who rely on our activities to create unforgettable experiences.
+      <section className={styles.closingCta}>
+        <div className={styles.closingInner}>
+          <h2>Ready for your next icebreaker?</h2>
+          <p>
+            Browse free ice breaker games with clear rules, materials, and facilitation tips—then
+            pick one that fits your meeting, classroom, or team.
           </p>
-          <Link
-            href="/games"
-            className="group inline-block px-12 py-6 bg-white text-blue-600 rounded-3xl text-2xl font-bold hover:bg-blue-50 transition-all duration-300 shadow-2xl hover:shadow-white/25 hover:scale-110 transform"
-          >
-            <span className="flex items-center gap-4">
-              Get Started with Ice Breaker Games
-              <svg className="w-8 h-8 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </span>
+          <Link href="/games" className={styles.ctaPrimary}>
+            Browse all games
           </Link>
         </div>
       </section>

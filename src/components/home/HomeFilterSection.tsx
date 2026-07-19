@@ -15,6 +15,7 @@ import {
 import { GameGrid } from "@/components/games/GameGrid";
 import type { Game } from "@/types/game";
 import { filterGames, type GameFilters } from "@/lib/game-filtering";
+import styles from "./home-filter.module.css";
 
 type HomeFilterSectionProps = {
   games: Game[];
@@ -38,11 +39,10 @@ export function HomeFilterSection({ games }: HomeFilterSectionProps) {
 
   const handleSearch = () => {
     setShowResults(true);
-    // Scroll to results
     setTimeout(() => {
-      document.getElementById("search-results")?.scrollIntoView({ 
+      document.getElementById("search-results")?.scrollIntoView({
         behavior: "smooth",
-        block: "start"
+        block: "start",
       });
     }, 100);
   };
@@ -66,24 +66,19 @@ export function HomeFilterSection({ games }: HomeFilterSectionProps) {
   );
 
   return (
-    <section className="py-8 bg-gray-50 dark:bg-gray-900/30">
-      <div className="container mx-auto px-4">
-        <div className="w-full">
-          {/* Header */}
-          <div className="bg-gradient-to-r from-green-400 via-teal-400 to-cyan-400 rounded-t-2xl py-6 px-6">
-            <h2 className="text-2xl font-bold text-white text-center">
-              Find the Perfect Icebreaker, Energiser or Team-Building Game
+    <section className={styles.filterSection} aria-labelledby="filter-heading">
+      <div className={styles.inner}>
+        <div className={styles.panel}>
+          <div className={styles.header}>
+            <h2 id="filter-heading">
+              Find the right icebreaker, energizer, or team-building game
             </h2>
           </div>
 
-          {/* Filter Panel */}
-          <div className="bg-gradient-to-br from-cyan-500 to-blue-500 rounded-b-2xl p-6 shadow-lg">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
-              {/* Activity Type */}
+          <div className={styles.body}>
+            <div className={styles.grid4}>
               <div>
-                <label className="block text-white font-semibold mb-2 text-sm uppercase">
-                  Activity Type
-                </label>
+                <label className={styles.label}>Activity type</label>
                 <Select
                   value={filters.category}
                   onValueChange={(value) => handleFilterChange("category", value)}
@@ -92,7 +87,7 @@ export function HomeFilterSection({ games }: HomeFilterSectionProps) {
                     <SelectValue placeholder="Select type" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="all">All Types</SelectItem>
+                    <SelectItem value="all">All types</SelectItem>
                     <SelectItem value="Team Building">Team Building</SelectItem>
                     <SelectItem value="Virtual Meeting">Virtual Meeting</SelectItem>
                     <SelectItem value="Classroom">Classroom</SelectItem>
@@ -103,11 +98,8 @@ export function HomeFilterSection({ games }: HomeFilterSectionProps) {
                 </Select>
               </div>
 
-              {/* Game Type */}
               <div>
-                <label className="block text-white font-semibold mb-2 text-sm uppercase">
-                  Game Type
-                </label>
+                <label className={styles.label}>Game type</label>
                 <Select
                   value={filters.type}
                   onValueChange={(value) => handleFilterChange("type", value)}
@@ -116,7 +108,7 @@ export function HomeFilterSection({ games }: HomeFilterSectionProps) {
                     <SelectValue placeholder="All game types" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="all">All Game Types</SelectItem>
+                    <SelectItem value="all">All game types</SelectItem>
                     <SelectItem value="Table Game">Table Game</SelectItem>
                     <SelectItem value="Christmas Game">Christmas Game</SelectItem>
                     <SelectItem value="Icebreaker">Icebreaker</SelectItem>
@@ -129,11 +121,8 @@ export function HomeFilterSection({ games }: HomeFilterSectionProps) {
                 </Select>
               </div>
 
-              {/* Duration */}
               <div>
-                <label className="block text-white font-semibold mb-2 text-sm uppercase">
-                  Time
-                </label>
+                <label className={styles.label}>Time</label>
                 <Select
                   value={filters.duration}
                   onValueChange={(value) => handleFilterChange("duration", value)}
@@ -151,11 +140,8 @@ export function HomeFilterSection({ games }: HomeFilterSectionProps) {
                 </Select>
               </div>
 
-              {/* Difficulty */}
               <div>
-                <label className="block text-white font-semibold mb-2 text-sm uppercase">
-                  Difficulty
-                </label>
+                <label className={styles.label}>Difficulty</label>
                 <Select
                   value={filters.difficulty}
                   onValueChange={(value) => handleFilterChange("difficulty", value)}
@@ -173,12 +159,9 @@ export function HomeFilterSection({ games }: HomeFilterSectionProps) {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* People */}
+            <div className={styles.grid3}>
               <div>
-                <label className="block text-white font-semibold mb-2 text-sm uppercase">
-                  People
-                </label>
+                <label className={styles.label}>People</label>
                 <Select
                   value={filters.players}
                   onValueChange={(value) => handleFilterChange("players", value)}
@@ -197,9 +180,7 @@ export function HomeFilterSection({ games }: HomeFilterSectionProps) {
               </div>
 
               <div>
-                <label className="block text-white font-semibold mb-2 text-sm uppercase">
-                  Audience
-                </label>
+                <label className={styles.label}>Audience</label>
                 <Select
                   value={filters.audience}
                   onValueChange={(value) => handleFilterChange("audience", value)}
@@ -217,39 +198,27 @@ export function HomeFilterSection({ games }: HomeFilterSectionProps) {
                 </Select>
               </div>
 
-              {/* Keyword Search */}
               <div>
-                <label className="block text-white font-semibold mb-2 text-sm uppercase">
-                  Keyword Search
-                </label>
-                <div className="flex gap-2">
-                  <div className="relative flex-1">
-                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+                <label className={styles.label}>Keyword</label>
+                <div className={styles.keywordRow}>
+                  <div className={styles.keywordInput}>
+                    <Search className={styles.searchIcon} />
                     <Input
                       type="text"
-                      placeholder="students, online, orientation..."
+                      placeholder="students, online, orientation…"
                       value={filters.keyword}
                       onChange={(e) => handleFilterChange("keyword", e.target.value)}
                       onKeyDown={(e) => {
-                        if (e.key === "Enter") {
-                          handleSearch();
-                        }
+                        if (e.key === "Enter") handleSearch();
                       }}
                       className="pl-10 bg-white"
                     />
                   </div>
-                  <Button
-                    onClick={handleSearch}
-                    className="bg-green-500 hover:bg-green-600 text-white px-8"
-                  >
-                    Search Activities
+                  <Button onClick={handleSearch} className={styles.searchBtn}>
+                    Search
                   </Button>
-                  <Button
-                    onClick={handleClearAll}
-                    variant="secondary"
-                    className="bg-white hover:bg-gray-100"
-                  >
-                    Clear All
+                  <Button onClick={handleClearAll} variant="secondary">
+                    Clear
                   </Button>
                 </div>
               </div>
@@ -257,35 +226,29 @@ export function HomeFilterSection({ games }: HomeFilterSectionProps) {
           </div>
         </div>
 
-        {/* Search Results */}
         {showResults && (
-          <div id="search-results" className="mt-8">
-            <div className="flex items-center justify-between mb-6">
+          <div id="search-results" className={styles.results}>
+            <div className={styles.resultsHead}>
               <div>
-                <h3 className="text-2xl font-bold mb-2">Search Results</h3>
-                <p className="text-muted-foreground">
-                  Found {filteredGames.length} game{filteredGames.length !== 1 ? "s" : ""} matching your criteria
+                <h3>Search results</h3>
+                <p>
+                  Found {filteredGames.length} game
+                  {filteredGames.length !== 1 ? "s" : ""} matching your criteria
                 </p>
               </div>
-              <Link
-                href="/games"
-                className="text-primary hover:underline font-semibold"
-              >
-                View All Games →
+              <Link href="/games" className={styles.resultsLink}>
+                View all games →
               </Link>
             </div>
 
             {filteredGames.length > 0 ? (
               <GameGrid games={filteredGames} />
             ) : (
-              <div className="text-center py-12 bg-white dark:bg-gray-800 rounded-lg border">
-                <div className="text-4xl mb-4">🔍</div>
-                <h3 className="text-xl font-semibold mb-2">No games found</h3>
-                <p className="text-muted-foreground mb-4">
-                  Try adjusting your filters or search terms
-                </p>
+              <div className={styles.empty}>
+                <h3>No games found</h3>
+                <p>Try adjusting your filters or search terms.</p>
                 <Button onClick={handleClearAll} variant="outline">
-                  Clear Filters
+                  Clear filters
                 </Button>
               </div>
             )}

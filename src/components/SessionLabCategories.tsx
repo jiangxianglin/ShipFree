@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from 'react';
-import Link from 'next/link';
+import React, { useState } from "react";
+import Link from "next/link";
+import styles from "./session-lab.module.css";
 
 interface Game {
   title: string;
@@ -235,198 +236,90 @@ const categoryData: CategoryData = {
   }
 };
 
-const categoryIcons: Record<string, string> = {
-  meeting_icebreakers: "🏢",
-  quick_5_minute: "⚡",
-  fun_icebreakers: "🎉",
-  virtual_icebreakers: "💻",
-  get_to_know: "🤝",
-  team_building_deep: "💪",
-  large_group: "👥",
-  teamwork_improvement: "🚀"
-};
-
-const categoryColors: Record<string, string> = {
-  meeting_icebreakers: "from-blue-500 to-blue-600",
-  quick_5_minute: "from-yellow-500 to-orange-500",
-  fun_icebreakers: "from-purple-500 to-pink-500",
-  virtual_icebreakers: "from-green-500 to-teal-500",
-  get_to_know: "from-indigo-500 to-purple-500",
-  team_building_deep: "from-red-500 to-pink-500",
-  large_group: "from-cyan-500 to-blue-500",
-  teamwork_improvement: "from-emerald-500 to-green-500"
-};
-
 const categoryDescriptions: Record<string, string> = {
-  meeting_icebreakers: "Perfect for starting team meetings and helping participants mentally arrive",
+  meeting_icebreakers:
+    "Perfect for starting team meetings and helping participants mentally arrive",
   quick_5_minute: "Fast activities for tight agendas and quick warm-ups",
-  fun_icebreakers: "Entertaining activities that strengthen bonds and create inclusive atmosphere",
-  virtual_icebreakers: "Activities designed specifically for online meetings and remote teams",
-  get_to_know: "Activities focused on building personal connections and learning about team members",
-  team_building_deep: "Activities for building stronger team bonds and deeper relationships",
+  fun_icebreakers:
+    "Entertaining activities that strengthen bonds and create an inclusive atmosphere",
+  virtual_icebreakers:
+    "Activities designed specifically for online meetings and remote teams",
+  get_to_know:
+    "Activities focused on building personal connections and learning about teammates",
+  team_building_deep:
+    "Activities for building stronger team bonds and deeper relationships",
   large_group: "Icebreakers designed for big groups and events",
-  teamwork_improvement: "Games specifically designed to enhance collaboration and team dynamics"
+  teamwork_improvement:
+    "Games designed to enhance collaboration and team dynamics",
 };
 
+/** Scenario picker only — section heading lives in page.tsx (SSR). */
 export default function SessionLabCategories() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-12">
-      {/* Header */}
-      <div className="text-center mb-12">
-        <div className="inline-flex items-center px-4 py-2 bg-blue-100 dark:bg-blue-900/30 rounded-full text-blue-700 dark:text-blue-300 text-sm font-medium mb-6">
-          <span className="mr-2">🎯</span>
-          SessionLab Professional Classification System
-        </div>
-        <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
-          Choose the Perfect Ice Breaker Game by Scenario
-        </h2>
-        <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-          Based on SessionLab's professional classification system, we organize ice breaker games into 8 major categories, each targeting specific use cases and objectives.
-        </p>
-      </div>
-
-      {/* Category Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+    <div className={styles.root} data-scenario-picker="v2">
+      <div className={styles.catGrid}>
         {Object.entries(categoryData.sessionLabCategories).map(([key, name]) => {
           const gameCount = categoryData.gamesByCategory[key]?.length || 0;
           const isSelected = selectedCategory === key;
-          
+
           return (
-            <div
+            <button
               key={key}
+              type="button"
               onClick={() => setSelectedCategory(isSelected ? null : key)}
-              className={`
-                relative cursor-pointer group transition-all duration-300 transform hover:scale-105
-                ${isSelected ? 'ring-4 ring-blue-500 ring-opacity-50' : ''}
-              `}
+              className={`${styles.catBtn} ${isSelected ? styles.catBtnSelected : ""}`}
+              aria-pressed={isSelected}
             >
-              <div className={`
-                bg-gradient-to-br ${categoryColors[key]} 
-                rounded-2xl p-6 text-white shadow-lg hover:shadow-2xl
-                transition-all duration-300
-              `}>
-                <div className="text-4xl mb-4">{categoryIcons[key]}</div>
-                <h3 className="text-lg font-bold mb-2">{name}</h3>
-                <p className="text-sm opacity-90 mb-4">
-                  {gameCount} games
-                </p>
-                <div className="flex items-center text-sm opacity-75">
-                  <span>Click to explore</span>
-                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </div>
-            </div>
+              <span className={styles.catLabel}>{gameCount} games</span>
+              <span className={styles.catName}>{name}</span>
+              <span className={styles.catMeta}>
+                {isSelected ? "Hide list" : "Show sample games"}
+              </span>
+            </button>
           );
         })}
       </div>
 
-      {/* Selected Category Details */}
       {selectedCategory && categoryData.gamesByCategory[selectedCategory] && (
-        <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-8 border border-gray-200 dark:border-gray-700">
-          <div className="flex items-center mb-6">
-            <span className="text-4xl mr-4">{categoryIcons[selectedCategory]}</span>
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
-                {categoryData.sessionLabCategories[selectedCategory]}
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-2">
-                {categoryData.gamesByCategory[selectedCategory].length} curated games
-              </p>
-              <p className="text-gray-500 dark:text-gray-400 text-sm">
-                {categoryDescriptions[selectedCategory]}
-              </p>
-            </div>
+        <div className={styles.detail}>
+          <div className={styles.detailHead}>
+            <h3>{categoryData.sessionLabCategories[selectedCategory]}</h3>
+            <p>{categoryDescriptions[selectedCategory]}</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {categoryData.gamesByCategory[selectedCategory].map((game, index) => (
-              <div
-                key={index}
-                className="bg-gray-50 dark:bg-gray-700 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300"
-              >
-                <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                  {game.title}
-                </h4>
-                <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
-                  {game.description}
-                </p>
-                
-                <div className="flex flex-wrap gap-4 text-sm">
-                  <div className="flex items-center text-blue-600 dark:text-blue-400">
-                    <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
-                    </svg>
-                    {game.duration}
-                  </div>
-                  <div className="flex items-center text-green-600 dark:text-green-400">
-                    <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z" />
-                    </svg>
-                    {game.players}
-                  </div>
-                  <div className="flex items-center text-purple-600 dark:text-purple-400">
-                    <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M3 6a3 3 0 013-3h10a1 1 0 01.8 1.6L14.25 8l2.55 3.4A1 1 0 0116 13H6a1 1 0 00-1 1v3a1 1 0 11-2 0V6z" clipRule="evenodd" />
-                    </svg>
-                    {game.difficulty}
-                  </div>
+          <div className={styles.gameList}>
+            {categoryData.gamesByCategory[selectedCategory].map((game) => (
+              <article key={game.title} className={styles.gameItem}>
+                <h4 className={styles.gameTitle}>{game.title}</h4>
+                <p className={styles.gameDesc}>{game.description}</p>
+                <div className={styles.metaRow}>
+                  <span className={styles.meta}>{game.duration}</span>
+                  <span className={styles.meta}>{game.players}</span>
+                  <span className={styles.meta}>{game.difficulty}</span>
                 </div>
-                
-                <div className="mt-4">
-                  <Link
-                    href={`/games?search=${encodeURIComponent(game.title)}`}
-                    className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium"
-                  >
-                    View Details
-                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
+                <Link
+                  href={`/games?search=${encodeURIComponent(game.title)}`}
+                  className={styles.gameLink}
+                >
+                  Search in library →
+                </Link>
+              </article>
             ))}
           </div>
 
-          <div className="mt-8 text-center">
-            <Link
-              href={`/games?category=${selectedCategory}`}
-              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
-            >
-              View All {categoryData.sessionLabCategories[selectedCategory]}
-              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
+          <div className={styles.detailCta}>
+            <Link href="/games" className={styles.ctaPrimary}>
+              Browse all games
             </Link>
           </div>
         </div>
       )}
 
-      {/* Call to Action */}
-      <div className="mt-16 text-center">
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-8 text-white">
-          <h3 className="text-2xl font-bold mb-4">Start Using SessionLab's Classification System</h3>
-          <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-            Choose the most suitable ice breaker game category based on your specific needs to achieve optimal results for every activity.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/games"
-              className="inline-flex items-center px-6 py-3 bg-white text-blue-600 rounded-xl font-semibold hover:bg-blue-50 transition-colors duration-300"
-            >
-              Browse All Games
-            </Link>
-            <Link
-              href="/blog"
-              className="inline-flex items-center px-6 py-3 border-2 border-white text-white rounded-xl font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-300"
-            >
-              Read Our Blog
-            </Link>
-          </div>
-        </div>
+      <div className={styles.footerLinks}>
+        <Link href="/games">Browse the full library →</Link>
+        <Link href="/blog">Facilitator guides →</Link>
       </div>
     </div>
   );

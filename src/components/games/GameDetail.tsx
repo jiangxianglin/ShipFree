@@ -1203,7 +1203,33 @@ export function GameDetail({ game }: GameDetailProps) {
           </div>
         )}
 
-        {game.title === "Human Bingo" || game.title === "Chat Waterfall" ? (
+        {game.title === "Human Knot" ? (
+          <div className="bg-teal-50 dark:bg-teal-900/20 p-6 rounded-lg">
+            <h3 className="text-xl font-semibold mb-3">More Games Like the Human Knot</h3>
+            <p className="text-base text-muted-foreground mb-4">
+              Want physical or problem-solving alternatives to Human Knot? Compare team challenges with the same collaboration energy and safer non-contact options.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+              <a href="/games-like-the-human-knot" className="block p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700">
+                <div className="font-medium text-gray-900 dark:text-gray-100">Games like the Human Knot</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">12 team-building alternatives with rules</div>
+              </a>
+              <a href="/icebreaker-games-for-youth-group" className="block p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700">
+                <div className="font-medium text-gray-900 dark:text-gray-100">Youth group icebreakers</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">Age-appropriate physical and social games</div>
+              </a>
+            </div>
+            <a
+              href="/games-like-the-human-knot"
+              className="inline-flex items-center text-teal-700 dark:text-teal-400 font-medium hover:underline"
+            >
+              Browse all games like the Human Knot
+              <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        ) : game.title === "Human Bingo" || game.title === "Chat Waterfall" ? (
           <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
             <h3 className="text-xl font-semibold mb-3">
               {game.title === "Human Bingo" 
@@ -1215,6 +1241,26 @@ export function GameDetail({ game }: GameDetailProps) {
                 ? "If you enjoyed Human Bingo, explore our collection of other engaging ice breaker games perfect for social events, networking, and team building. Find more ice breaker games that create memorable experiences."
                 : "Chat Waterfall works great with other virtual ice breaker games. Try these interactive activities for your next online meeting or team event!"}
             </p>
+            {game.title === "Human Bingo" && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                <a href="/games-like-human-bingo" className="block p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700">
+                  <div className="font-medium text-gray-900 dark:text-gray-100">Games like Human Bingo</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">12 networking alternatives with rules and comparisons</div>
+                </a>
+                <a href="/games/icebreaker-bingo" className="block p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700">
+                  <div className="font-medium text-gray-900 dark:text-gray-100">Icebreaker Bingo</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">Themed bingo cards for workshops and events</div>
+                </a>
+                <a href="/games/find-your-match" className="block p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700">
+                  <div className="font-medium text-gray-900 dark:text-gray-100">Find Your Match</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">Faster pairing mixer with famous pairs</div>
+                </a>
+                <a href="/icebreaker-games-for-youth-group" className="block p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700">
+                  <div className="font-medium text-gray-900 dark:text-gray-100">Youth group icebreakers</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">Age-appropriate games for youth nights</div>
+                </a>
+              </div>
+            )}
             {game.title === "Chat Waterfall" && (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                 <a href="/games/speed-networking" className="block p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700">
@@ -1228,10 +1274,10 @@ export function GameDetail({ game }: GameDetailProps) {
               </div>
             )}
             <a 
-              href="/games" 
+              href={game.title === "Human Bingo" ? "/games-like-human-bingo" : "/games"} 
               className="inline-flex items-center text-blue-600 dark:text-blue-400 font-medium hover:underline"
             >
-              Browse All Ice Breaker Games
+              {game.title === "Human Bingo" ? "Browse all games like Human Bingo" : "Browse All Ice Breaker Games"}
               <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>

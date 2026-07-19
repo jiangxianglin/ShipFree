@@ -99,7 +99,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (game.title === "Find Your Match") {
     description = "Find Your Match | Ice Breaker Games: Participants get cards with famous pairs and find their match by asking questions. Perfect ice breaker for networking events!";
   } else if (game.title === "Human Bingo") {
-    description = "Human Bingo - Ice Breaker Games for social events. Fun networking game where participants find people matching bingo card descriptions. Perfect for parties!";
+    description =
+      "How to play Human Bingo: networking icebreaker with printable-style prompts, rules, and tips. 10–50 players, 20–30 minutes. See games like Human Bingo too.";
   } else if (game.title === "Alliterative Name Game") {
     description =
       "Learn how to play the Alliterative Name Game (Adjective Name Game). A quick name icebreaker for 8-40 people (8-12 min) with rules, examples, and variations.";
@@ -253,7 +254,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       "Learn how to play Word Association: a fast-paced mental warm-up where participants say the first word that comes to mind. 6–30 players, 5–15 minutes. How to run and debrief tips.";
   } else if (game.title === "Human Bingo") {
     description =
-      "Learn how to play Human Bingo: a networking icebreaker where participants find people matching bingo card descriptions. 10–50 players, 20–30 minutes. Setup, prompts, and tips included.";
+      "How to play Human Bingo: networking icebreaker with prompts, rules, and tips. 10–50 players, 20–30 minutes. Includes links to games like Human Bingo.";
   } else if (game.title === "Emoji Introduction") {
     description =
       "Learn how to play Emoji Introduction: participants introduce themselves using emojis and others guess the meaning. 5–30 players, 10–15 minutes. Steps and variation ideas included.";
@@ -443,7 +444,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
                                   : game.title === "Word Association"
                                     ? "Word Association Icebreaker | How to Play"
                                   : game.title === "Human Bingo"
-                                    ? "Human Bingo Icebreaker | How to Play + Prompts"
+                                    ? "Human Bingo Icebreaker | How to Play + Games Like It"
                                   : game.title === "Emoji Introduction"
                                     ? "Emoji Introduction Ice Breaker Game - Fun Virtual Meeting Activity"
                                   : game.title === "Emoji Check-In"
