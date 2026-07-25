@@ -198,7 +198,15 @@ export default async function VirtualIcebreakerGamesPage() {
           <h1 className="text-4xl md:text-5xl font-bold mb-4">{title}</h1>
           <p className="text-lg text-muted-foreground">
             These virtual icebreaker games work well for online meetings because they are simple, inclusive, and easy to facilitate
-            using chat, reactions, and quick sharing.
+            using chat, reactions, and quick sharing. Looking for something specific? Try{" "}
+            <Link href="/short-virtual-icebreakers" className="font-semibold text-foreground underline-offset-2 hover:underline">
+              short virtual icebreakers / 5 minute ice breakers for virtual meetings
+            </Link>{" "}
+            or{" "}
+            <Link href="/riddle-icebreakers-for-virtual-meetings" className="font-semibold text-foreground underline-offset-2 hover:underline">
+              riddle icebreakers for virtual meetings
+            </Link>
+            .
           </p>
         </header>
 
@@ -236,6 +244,11 @@ export default async function VirtualIcebreakerGamesPage() {
           <p>
             Keep it short and predictable. Use chat-based answers for large groups, time-box the activity, and ask a single clear prompt.
             If the meeting is formal, avoid overly personal questions and give people an easy pass option.
+          </p>
+          <p>
+            Need a curated shortlist? Start with{" "}
+            <Link href="/short-virtual-icebreakers">short virtual icebreakers</Link> for five-minute warm-ups, or{" "}
+            <Link href="/riddle-icebreakers-for-virtual-meetings">riddle icebreakers for virtual meetings</Link> when you want puzzle energy.
           </p>
           <p>
             <Link href="/games" className="font-semibold">

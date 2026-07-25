@@ -10,7 +10,19 @@ export function Footer() {
           <div className="text-sm text-muted-foreground">
             © {currentYear} Ice Breaker Games. All rights reserved.
           </div>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+            <Link
+              href="/about"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              About
+            </Link>
+            <Link
+              href="/contact"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Contact
+            </Link>
             <Link
               href="/tos"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"

@@ -110,7 +110,15 @@ export default function PrivacyPolicy() {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4">10. Contact Us</h2>
           <p className="text-muted-foreground mb-4">
-            If you have questions or comments about this Privacy Policy, please contact us through our website.
+            If you have questions or comments about this Privacy Policy, please email{" "}
+            <a href="mailto:support@icebreakergames.site" className="underline underline-offset-2">
+              support@icebreakergames.site
+            </a>{" "}
+            or visit our{" "}
+            <a href="/contact" className="underline underline-offset-2">
+              contact page
+            </a>
+            .
           </p>
         </section>
       </div>

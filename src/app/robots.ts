@@ -23,11 +23,8 @@ export default function robots(): MetadataRoute.Robots {
         disallow: "/",
       },
       {
+        // Training crawler — blocked. ChatGPT-User (answer-fetch) is allowed via * rule.
         userAgent: "GPTBot",
-        disallow: "/",
-      },
-      {
-        userAgent: "ChatGPT-User",
         disallow: "/",
       },
       {

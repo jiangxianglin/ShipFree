@@ -95,9 +95,14 @@ export default async function Home() {
       description: "Mingling and networking alternatives with rules, prompts, and comparison tips.",
     },
     {
-      href: "/games/human-bingo",
-      title: "Human Bingo",
-      description: "The classic mixer: cards, signatures, and fast introductions for 10–50 people.",
+      href: "/short-virtual-icebreakers",
+      title: "Short virtual icebreakers",
+      description: "5-minute Zoom warm-ups and short virtual icebreakers that respect the clock.",
+    },
+    {
+      href: "/riddle-icebreakers-for-virtual-meetings",
+      title: "Riddle icebreakers for virtual meetings",
+      description: "Puzzle-style Zoom warm-ups with chat formats, guessing games, and facilitator tips.",
     },
     {
       href: "/games-like-the-human-knot",
@@ -108,11 +113,6 @@ export default async function Home() {
       href: "/icebreaker-games-for-youth-group",
       title: "Ice breaker games for youth group",
       description: "Age-appropriate openers for youth nights, retreats, and small groups.",
-    },
-    {
-      href: "/games/the-name-game",
-      title: "The Name Game",
-      description: "Learn names fast with a simple, low-pressure introduction round.",
     },
     {
       href: "/emoji-icebreaker-games",

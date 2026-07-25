@@ -9,6 +9,7 @@ import { Navigation } from "@/components/Navigation";
 import { HomeToolbarBanner } from "@/components/HomeToolbarBanner";
 import { Footer } from "@/components/Footer";
 import { GoogleAnalyticsPageView } from "@/components/GoogleAnalyticsPageView";
+import { SiteEntityJsonLd } from "@/components/SiteEntityJsonLd";
 
 const bricolageGrotesque = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -111,6 +112,7 @@ export default function RootLayout({
           "antialiased flex flex-col min-h-screen"
         )}
       >
+        <SiteEntityJsonLd />
         <Suspense fallback={null}>
           <GoogleAnalyticsPageView />
         </Suspense>
