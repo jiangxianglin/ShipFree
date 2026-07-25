@@ -14,9 +14,9 @@ export function GameCard({ game }: GameCardProps) {
 
   return (
     <Link href={`/games/${game.slug}`} className="block h-full">
-      <Card className="hover:shadow-lg transition-shadow cursor-pointer h-full flex flex-col">
+      <Card className="hover:shadow-md transition-shadow cursor-pointer h-full flex flex-col border-[rgba(22,53,40,0.12)] bg-white">
         {game.image && (
-          <div className="relative w-full h-48 overflow-hidden rounded-t-lg bg-muted">
+          <div className="relative w-full h-48 overflow-hidden rounded-t-lg bg-[#e7efe9]">
             <img
               src={game.image}
               alt={game.title}
@@ -26,7 +26,7 @@ export function GameCard({ game }: GameCardProps) {
         )}
         <CardHeader className="flex-none">
           <div className="flex items-start justify-between gap-2 mb-2">
-            <CardTitle className="text-xl flex-1">{game.title}</CardTitle>
+            <CardTitle className="text-xl flex-1 text-[#163528]">{game.title}</CardTitle>
             <CategoryBadge category={game.category} />
           </div>
         </CardHeader>
@@ -36,18 +36,18 @@ export function GameCard({ game }: GameCardProps) {
           </p>
           <div className="flex flex-wrap gap-2 mb-3">
             {game.players && (
-              <span className="text-xs bg-secondary px-2 py-1 rounded">
-                👥 {game.players}
+              <span className="text-xs bg-[#e7efe9] text-[#163528] px-2 py-1 rounded">
+                {game.players}
               </span>
             )}
             {game.duration && (
-              <span className="text-xs bg-secondary px-2 py-1 rounded">
-                ⏱️ {game.duration}
+              <span className="text-xs bg-[#e7efe9] text-[#163528] px-2 py-1 rounded">
+                {game.duration}
               </span>
             )}
             {game.difficulty && (
-              <span className="text-xs bg-secondary px-2 py-1 rounded">
-                📊 {game.difficulty}
+              <span className="text-xs bg-[#e7efe9] text-[#163528] px-2 py-1 rounded">
+                {game.difficulty}
               </span>
             )}
           </div>

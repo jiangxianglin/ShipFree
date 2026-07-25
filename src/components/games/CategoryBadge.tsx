@@ -1,12 +1,12 @@
 import type { GameCategory } from "@/types/game";
 
 const categoryColors: Record<GameCategory, string> = {
-  "Team Building": "bg-blue-500 text-white",
-  "Virtual Meeting": "bg-purple-500 text-white",
-  "Classroom": "bg-green-500 text-white",
-  "Training": "bg-orange-500 text-white",
-  "Conference": "bg-red-500 text-white",
-  "Social Event": "bg-pink-500 text-white",
+  "Team Building": "bg-[#e7efe9] text-[#163528]",
+  "Virtual Meeting": "bg-[#dce8e0] text-[#163528]",
+  Classroom: "bg-[#e7efe9] text-[#0f241c]",
+  Training: "bg-[#f3e6dc] text-[#a84c22]",
+  Conference: "bg-[#e7efe9] text-[#163528]",
+  "Social Event": "bg-[#f3e6dc] text-[#c45c2a]",
 };
 
 type CategoryBadgeProps = {
@@ -16,7 +16,7 @@ type CategoryBadgeProps = {
 export function CategoryBadge({ category }: CategoryBadgeProps) {
   return (
     <span
-      className={`px-3 py-1 rounded-full text-sm font-medium whitespace-nowrap ${categoryColors[category]}`}
+      className={`px-2.5 py-0.5 rounded text-xs font-semibold whitespace-nowrap ${categoryColors[category]}`}
     >
       {category}
     </span>
