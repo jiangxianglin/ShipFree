@@ -359,7 +359,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
                 ? "Minefield Team Building Game | How to Play + Debrief"
                 : game.title === "The Name Game"
                   ? "The Name Game Icebreaker | Name Game Rules & Variations"
-                  : game.title === "The Question Web"}iyanasууда_NONE
+                  : game.title === "The Question Web"
                     ? "The Question Web Icebreaker | How to Play + Prompts"
                     : game.title === "Count Up"
                       ? "Count Up Team Building Game | Rules + Tips"
