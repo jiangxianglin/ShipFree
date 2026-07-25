@@ -49,6 +49,8 @@ npm run dev
 3. 运行 `npm run db:seed:supabase` 导入数据
 4. 运行 `npm run db:setup-all` 完成设置
 
+> 开 RLS 之后 seed / 批量改数据请用 service role，见 **`DEV_DATABASE_OPS.md`**。
+
 📖 详细步骤: `ALTERNATIVE_SETUP.md`
 
 ---
@@ -68,7 +70,7 @@ SSL Mode: require
 
 完整连接字符串：
 ```
-postgresql://postgres:yiyebaofu@db.wartfmwsbzmmgeydbyhs.supabase.co:5432/postgres?sslmode=require
+postgresql://postgres:YOUR_DB_PASSWORD@db.wartfmwsbzmmgeydbyhs.supabase.co:5432/postgres?sslmode=require
 ```
 
 ---
