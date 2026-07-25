@@ -23,7 +23,7 @@ https://www.pgadmin.org/download/
 | Port | `5432` |
 | Database | `postgres` |
 | Username | `postgres` |
-| Password | `yiyebaofu` |
+| Password | `YOUR_DB_PASSWORD` |
 | SSL Mode | `Require` |
 
 ### 3️⃣ 执行 SQL
@@ -54,11 +54,11 @@ npm run dev
 
 ```bash
 # Windows
-$env:PGPASSWORD="yiyebaofu"
+$env:PGPASSWORD="YOUR_DB_PASSWORD"
 psql -h db.wartfmwsbzmmgeydbyhs.supabase.co -p 5432 -U postgres -d postgres -c "ALTER TABLE games ADD COLUMN IF NOT EXISTS type VARCHAR(100);"
 
 # Mac/Linux
-export PGPASSWORD="yiyebaofu"
+export PGPASSWORD="YOUR_DB_PASSWORD"
 psql -h db.wartfmwsbzmmgeydbyhs.supabase.co -p 5432 -U postgres -d postgres -c "ALTER TABLE games ADD COLUMN IF NOT EXISTS type VARCHAR(100);"
 ```
 

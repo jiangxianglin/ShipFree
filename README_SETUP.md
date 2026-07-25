@@ -30,7 +30,7 @@
 
 ```bash
 # Windows PowerShell
-$env:PGPASSWORD="yiyebaofu"
+$env:PGPASSWORD=YOUR_DB_PASSWORD
 psql -h db.wartfmwsbzmmgeydbyhs.supabase.co -p 5432 -U postgres -d postgres -c "ALTER TABLE games ADD COLUMN IF NOT EXISTS type VARCHAR(100); CREATE INDEX IF NOT EXISTS idx_games_type ON games(type);"
 
 # 然后运行
@@ -62,7 +62,7 @@ Host: db.wartfmwsbzmmgeydbyhs.supabase.co
 Port: 5432
 Database: postgres
 Username: postgres
-Password: yiyebaofu
+Password: YOUR_DB_PASSWORD
 SSL Mode: require
 ```
 

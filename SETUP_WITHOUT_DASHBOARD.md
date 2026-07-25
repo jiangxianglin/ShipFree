@@ -24,7 +24,7 @@
 - Port: `5432`
 - Database: `postgres`
 - Username: `postgres`
-- Password: `yiyebaofu`
+- Password: `YOUR_DB_PASSWORD`
 
 **SSL 标签**:
 - SSL mode: `Require`
@@ -104,7 +104,7 @@ https://dbeaver.io/download/
 
 ```powershell
 # 设置密码
-$env:PGPASSWORD="yiyebaofu"
+$env:PGPASSWORD="YOUR_DB_PASSWORD"
 
 # 执行 SQL
 psql -h db.wartfmwsbzmmgeydbyhs.supabase.co -p 5432 -U postgres -d postgres -c "ALTER TABLE games ADD COLUMN IF NOT EXISTS type VARCHAR(100); CREATE INDEX IF NOT EXISTS idx_games_type ON games(type);"
@@ -117,7 +117,7 @@ psql -h db.wartfmwsbzmmgeydbyhs.supabase.co -p 5432 -U postgres -d postgres -c "
 
 ```bash
 # 设置密码
-export PGPASSWORD="yiyebaofu"
+export PGPASSWORD="YOUR_DB_PASSWORD"
 
 # 执行 SQL
 psql -h db.wartfmwsbzmmgeydbyhs.supabase.co -p 5432 -U postgres -d postgres -c "ALTER TABLE games ADD COLUMN IF NOT EXISTS type VARCHAR(100); CREATE INDEX IF NOT EXISTS idx_games_type ON games(type);"
