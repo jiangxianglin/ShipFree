@@ -90,6 +90,16 @@ export default async function Home() {
 
   const popularGames = [
     {
+      href: "/icebreaker-games-for-teens",
+      title: "Ice breaker games for teens",
+      description: "Age-appropriate openers for classrooms, clubs, and youth nights with safety notes.",
+    },
+    {
+      href: "/icebreaker-games-for-small-groups",
+      title: "Ice breaker games for small groups",
+      description: "Facilitator-ready activities for circles of 4–12 in meetings, classes, and retreats.",
+    },
+    {
       href: "/games-like-human-bingo",
       title: "Games like Human Bingo",
       description: "Mingling and networking alternatives with rules, prompts, and comparison tips.",
@@ -105,19 +115,9 @@ export default async function Home() {
       description: "Puzzle-style Zoom warm-ups with chat formats, guessing games, and facilitator tips.",
     },
     {
-      href: "/games-like-the-human-knot",
-      title: "Games like the Human Knot",
-      description: "Physical and problem-solving team challenges when you want knot-style energy.",
-    },
-    {
       href: "/icebreaker-games-for-youth-group",
       title: "Ice breaker games for youth group",
       description: "Age-appropriate openers for youth nights, retreats, and small groups.",
-    },
-    {
-      href: "/emoji-icebreaker-games",
-      title: "Emoji icebreaker games",
-      description: "Quick visual check-ins for meetings, remote teams, and classrooms.",
     },
   ];
 

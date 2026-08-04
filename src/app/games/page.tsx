@@ -78,6 +78,18 @@ const clusterGuides = [
       "Puzzle and guessing games for remote teams who want low-pressure laughs.",
   },
   {
+    href: "/icebreaker-games-for-teens",
+    title: "Ice breaker games for teens",
+    description:
+      "Student-cluster hub: classroom and club openers with safety notes.",
+  },
+  {
+    href: "/icebreaker-games-for-small-groups",
+    title: "Ice breaker games for small groups",
+    description:
+      "Group-cluster hub: facilitator-ready activities for circles of 4–12.",
+  },
+  {
     href: "/icebreaker-games-for-youth-group",
     title: "Ice breaker games for youth group",
     description:

@@ -535,7 +535,13 @@ export default async function IcebreakerGamesForYouthGroupPage() {
               Start from the{" "}
               <Link href="/">Ice Breaker Games home</Link>, then explore nearby group and teen
               guides:{" "}
-              <Link href="/best-icebreaker-games">best icebreaker games</Link> and{" "}
+              <Link href="/icebreaker-games-for-teens">ice breaker games for teens</Link>{" "}
+              (student cluster hub),{" "}
+              <Link href="/icebreaker-games-for-small-groups">
+                ice breaker games for small groups
+              </Link>{" "}
+              (group cluster hub),{" "}
+              <Link href="/best-icebreaker-games">best icebreaker games</Link>, and{" "}
               <Link href="/blog/icebreaker-games-for-students">
                 icebreaker games for students
               </Link>
