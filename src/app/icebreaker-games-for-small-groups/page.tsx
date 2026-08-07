@@ -618,6 +618,10 @@ export default async function IcebreakerGamesForSmallGroupsPage() {
               <Link href="/icebreaker-games-for-meetings">
                 ice breaker games for meetings
               </Link>
+              ,{" "}
+              <Link href="/funny-icebreaker-games-for-meetings">
+                funny ice breaker games for meetings
+              </Link>
               , <Link href="/games-like-the-human-knot">games like the Human Knot</Link>, and
               the <Link href="/games">full games library</Link>.
             </p>

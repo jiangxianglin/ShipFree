@@ -78,6 +78,12 @@ const clusterGuides = [
       "Mingling and networking alternatives with rules and comparison tips.",
   },
   {
+    href: "/icebreaker-games-for-teens",
+    title: "Ice breaker games for teens",
+    description:
+      "Classroom and club openers with age-appropriate prompts and safety notes.",
+  },
+  {
     href: "/icebreaker-games-for-youth-group",
     title: "Ice breaker games for youth group",
     description:

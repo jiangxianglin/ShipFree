@@ -302,8 +302,8 @@ export default function StudentsIcebreakersPage() {
               title="High school students"
               text="Choose social formats that feel quick and not childish."
               links={[
+                { href: "/icebreaker-games-for-teens", label: "Ice breaker games for teens" },
                 { href: "/games/two-truths-and-a-lie", label: "Two Truths and a Lie" },
-                { href: "/games/line-up", label: "Line-Up" },
                 { href: "/games/human-bingo", label: "Human Bingo" },
               ]}
             />
@@ -756,7 +756,11 @@ export default function StudentsIcebreakersPage() {
                 What icebreakers work best for high school students?
               </h3>
               <p>
-                High school students usually prefer activities that feel quick, social, and not childish.{" "}
+                High school students usually prefer activities that feel quick, social, and not childish. Start with our{" "}
+                <Link href="/icebreaker-games-for-teens" className="underline font-medium">
+                  ice breaker games for teens
+                </Link>{" "}
+                hub, then try{" "}
                 <Link href="/games/two-truths-and-a-lie" className="underline font-medium">
                   Two Truths and a Lie
                 </Link>
@@ -768,7 +772,7 @@ export default function StudentsIcebreakersPage() {
                 <Link href="/games/human-bingo" className="underline font-medium">
                   Human Bingo
                 </Link>{" "}
-                are strong choices when you adapt the prompts to teen interests and keep the pace moving.
+                with teen-safe prompts and a fast pace.
               </p>
             </div>
 
@@ -796,8 +800,12 @@ export default function StudentsIcebreakersPage() {
           </div>
 
           <p className="mt-6 text-sm md:text-base text-gray-700 dark:text-gray-300">
-            Use this page as your starting hub, then open the linked game pages for full instructions. If you are building a
-            student-friendly facilitation toolkit, also browse the full{" "}
+            Use this page as your starting hub, then open the linked game pages for full instructions. For teen classrooms and
+            clubs, continue with{" "}
+            <Link href="/icebreaker-games-for-teens" className="underline font-medium">
+              ice breaker games for teens
+            </Link>
+            . If you are building a student-friendly facilitation toolkit, also browse the full{" "}
             <Link href="/games" className="underline font-medium">
               icebreaker games library
             </Link>

@@ -237,7 +237,7 @@ export default async function NameGameIcebreakersPage() {
         <section className="prose max-w-none">
           <h2>Related icebreaker guides</h2>
           <p>
-            Start with <Link href="/games/the-name-game">The Name Game</Link>, then explore <Link href="/games/blind-name-tag">Blind Name Tag</Link>, <Link href="/games/alliterative-name-game">Alliterative Name Game</Link>, <Link href="/icebreaker-games-for-meetings">meeting icebreakers</Link>, and <Link href="/games">the full games library</Link>.
+            Start with <Link href="/games/the-name-game">The Name Game</Link>, then explore <Link href="/games/blind-name-tag">Blind Name Tag</Link>, <Link href="/games/alliterative-name-game">Alliterative Name Game</Link>, <Link href="/icebreaker-games-for-teens">ice breaker games for teens</Link>, <Link href="/icebreaker-games-for-meetings">meeting icebreakers</Link>, and <Link href="/games">the full games library</Link>.
           </p>
         </section>
       </main>

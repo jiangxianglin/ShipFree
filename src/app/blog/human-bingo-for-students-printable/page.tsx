@@ -194,6 +194,12 @@ export default function HumanBingoPrintablePage() {
                 >
                   Back to student guide
                 </Link>
+                <Link
+                  href="/icebreaker-games-for-teens"
+                  className="inline-flex items-center px-5 py-3 bg-white dark:bg-gray-800 text-emerald-700 dark:text-emerald-300 rounded-2xl font-semibold border border-emerald-100 dark:border-emerald-900/40"
+                >
+                  Ice breaker games for teens
+                </Link>
               </div>
             </div>
 

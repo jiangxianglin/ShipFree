@@ -90,6 +90,16 @@ export default async function Home() {
 
   const popularGames = [
     {
+      href: "/icebreaker-games-for-meetings",
+      title: "Ice breaker games for meetings",
+      description: "Quick, low-pressure openers for standups, workshops, and team meetings.",
+    },
+    {
+      href: "/funny-icebreaker-games-for-meetings",
+      title: "Funny ice breaker games for meetings",
+      description: "Professional openers that get real laughs without cringe or oversharing.",
+    },
+    {
       href: "/icebreaker-games-for-teens",
       title: "Ice breaker games for teens",
       description: "Age-appropriate openers for classrooms, clubs, and youth nights with safety notes.",
@@ -108,16 +118,6 @@ export default async function Home() {
       href: "/short-virtual-icebreakers",
       title: "Short virtual icebreakers",
       description: "5-minute Zoom warm-ups and short virtual icebreakers that respect the clock.",
-    },
-    {
-      href: "/riddle-icebreakers-for-virtual-meetings",
-      title: "Riddle icebreakers for virtual meetings",
-      description: "Puzzle-style Zoom warm-ups with chat formats, guessing games, and facilitator tips.",
-    },
-    {
-      href: "/icebreaker-games-for-youth-group",
-      title: "Ice breaker games for youth group",
-      description: "Age-appropriate openers for youth nights, retreats, and small groups.",
     },
   ];
 

@@ -60,6 +60,12 @@ const clusterGuides = [
       "Workplace hub: quick openers for standups, workshops, and team meetings.",
   },
   {
+    href: "/funny-icebreaker-games-for-meetings",
+    title: "Funny ice breaker games for meetings",
+    description:
+      "Humor-forward meeting openers with funny scenes and work-safe prompts.",
+  },
+  {
     href: "/virtual-icebreaker-games",
     title: "Virtual ice breaker games",
     description:

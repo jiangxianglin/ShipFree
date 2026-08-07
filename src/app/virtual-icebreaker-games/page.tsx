@@ -249,6 +249,9 @@ export default async function VirtualIcebreakerGamesPage() {
             Need a curated shortlist? Start with{" "}
             <Link href="/short-virtual-icebreakers">short virtual icebreakers</Link> for five-minute warm-ups, or{" "}
             <Link href="/riddle-icebreakers-for-virtual-meetings">riddle icebreakers for virtual meetings</Link> when you want puzzle energy.
+            For in-person and hybrid agendas, see{" "}
+            <Link href="/icebreaker-games-for-meetings">ice breaker games for meetings</Link> and{" "}
+            <Link href="/funny-icebreaker-games-for-meetings">funny ice breaker games for meetings</Link>.
           </p>
           <p>
             <Link href="/games" className="font-semibold">

@@ -560,6 +560,10 @@ export default async function GamesLikeHumanBingoPage() {
               <Link href="/games-like-the-human-knot">games like the Human Knot</Link>,{" "}
               <Link href="/games/never-have-i-ever">Never Have I Ever</Link> (games like cluster),{" "}
               <Link href="/virtual-icebreaker-games">virtual icebreaker games</Link>,{" "}
+              <Link href="/icebreaker-games-for-teens">
+                ice breaker games for teens
+              </Link>
+              ,{" "}
               <Link href="/icebreaker-games-for-youth-group">
                 ice breaker games for youth group
               </Link>

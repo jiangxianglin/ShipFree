@@ -246,6 +246,14 @@ export default async function IcebreakerGamesForWorkPage() {
             <Link href="/games" className="font-semibold">
               Browse and filter all icebreaker games
             </Link>
+            {" · "}
+            <Link href="/icebreaker-games-for-meetings" className="font-semibold">
+              ice breaker games for meetings
+            </Link>
+            {" · "}
+            <Link href="/funny-icebreaker-games-for-meetings" className="font-semibold">
+              funny ice breaker games for meetings
+            </Link>
           </p>
         </section>
       </div>
