@@ -6,15 +6,66 @@ import { blogPosts } from "@/data/blog";
 export const dynamic = "force-static";
 export const revalidate = 3600;
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = "https://www.icebreakergames.site";
-  const articleLastModified = new Date("2026-05-05");
-  const highPriorityBlogSlugs = new Set([
-    "ice-breaker-games-for-adults",
-    "icebreaker-games-for-students",
-    "human-bingo-for-students-printable",
-  ]);
+const baseUrl = "https://www.icebreakergames.site";
+const articleLastModified = new Date("2026-05-05");
+const highPriorityBlogSlugs = new Set([
+  "ice-breaker-games-for-adults",
+  "icebreaker-games-for-students",
+  "human-bingo-for-students-printable",
+]);
 
+/** Always-on SEO URLs — must never depend on DB success. */
+function getStaticPages(): MetadataRoute.Sitemap {
+  const now = new Date();
+  const weekly = "weekly" as const;
+  const daily = "daily" as const;
+  const monthly = "monthly" as const;
+
+  const paths: Array<{ path: string; changeFrequency: "weekly" | "daily" | "monthly"; priority: number; lastModified?: Date }> = [
+    { path: "", changeFrequency: weekly, priority: 1.0 },
+    { path: "/games", changeFrequency: daily, priority: 0.9 },
+    { path: "/best-icebreaker-games", changeFrequency: weekly, priority: 0.9 },
+    { path: "/icebreaker-games-for-work", changeFrequency: weekly, priority: 0.9 },
+    { path: "/virtual-icebreaker-games", changeFrequency: weekly, priority: 0.9 },
+    { path: "/icebreaker-games-for-meetings", changeFrequency: weekly, priority: 0.9 },
+    { path: "/funny-icebreaker-games-for-meetings", changeFrequency: weekly, priority: 0.9 },
+    { path: "/emoji-icebreaker-games", changeFrequency: weekly, priority: 0.9 },
+    { path: "/name-game-icebreakers", changeFrequency: weekly, priority: 0.9 },
+    { path: "/games-like-human-bingo", changeFrequency: weekly, priority: 0.9 },
+    { path: "/games-like-the-human-knot", changeFrequency: weekly, priority: 0.9 },
+    { path: "/icebreaker-games-for-youth-group", changeFrequency: weekly, priority: 0.9 },
+    { path: "/riddle-icebreakers-for-virtual-meetings", changeFrequency: weekly, priority: 0.9 },
+    { path: "/short-virtual-icebreakers", changeFrequency: weekly, priority: 0.9 },
+    { path: "/icebreaker-games-for-teens", changeFrequency: weekly, priority: 0.9 },
+    { path: "/icebreaker-games-for-small-groups", changeFrequency: weekly, priority: 0.9 },
+    { path: "/about", changeFrequency: monthly, priority: 0.6 },
+    { path: "/contact", changeFrequency: monthly, priority: 0.6 },
+    { path: "/blog", changeFrequency: weekly, priority: 0.9, lastModified: articleLastModified },
+    { path: "/privacy-policy", changeFrequency: monthly, priority: 0.5 },
+    { path: "/tos", changeFrequency: monthly, priority: 0.5 },
+  ];
+
+  return paths.map(({ path, changeFrequency, priority, lastModified }) => ({
+    url: `${baseUrl}${path}`,
+    lastModified: lastModified ?? now,
+    changeFrequency,
+    priority,
+  }));
+}
+
+function getBlogPages(): MetadataRoute.Sitemap {
+  return blogPosts.map((post) => {
+    const high = highPriorityBlogSlugs.has(post.slug);
+    return {
+      url: `${baseUrl}/blog/${post.slug}`,
+      lastModified: high ? articleLastModified : new Date(post.date),
+      changeFrequency: (high ? "weekly" : "monthly") as "weekly" | "monthly",
+      priority: high ? 0.9 : 0.8,
+    };
+  });
+}
+
+async function getGamePages(): Promise<MetadataRoute.Sitemap> {
   try {
     const games = await db
       .select({
@@ -23,202 +74,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       })
       .from(gamesTable);
 
-    const staticPages: MetadataRoute.Sitemap = [
-      {
-        url: baseUrl,
-        lastModified: new Date(),
-        changeFrequency: "weekly",
-        priority: 1.0,
-      },
-      {
-        url: `${baseUrl}/games`,
-        lastModified: new Date(),
-        changeFrequency: "daily",
-        priority: 0.9,
-      },
-      {
-        url: `${baseUrl}/best-icebreaker-games`,
-        lastModified: new Date(),
-        changeFrequency: "weekly",
-        priority: 0.9,
-      },
-      {
-        url: `${baseUrl}/icebreaker-games-for-work`,
-        lastModified: new Date(),
-        changeFrequency: "weekly",
-        priority: 0.9,
-      },
-      {
-        url: `${baseUrl}/virtual-icebreaker-games`,
-        lastModified: new Date(),
-        changeFrequency: "weekly",
-        priority: 0.9,
-      },
-      {
-        url: `${baseUrl}/icebreaker-games-for-meetings`,
-        lastModified: new Date(),
-        changeFrequency: "weekly",
-        priority: 0.9,
-      },
-      {
-        url: `${baseUrl}/funny-icebreaker-games-for-meetings`,
-        lastModified: new Date(),
-        changeFrequency: "weekly",
-        priority: 0.9,
-      },
-      {
-        url: `${baseUrl}/emoji-icebreaker-games`,
-        lastModified: new Date(),
-        changeFrequency: "weekly",
-        priority: 0.9,
-      },
-      {
-        url: `${baseUrl}/name-game-icebreakers`,
-        lastModified: new Date(),
-        changeFrequency: "weekly",
-        priority: 0.9,
-      },
-      {
-        url: `${baseUrl}/games-like-human-bingo`,
-        lastModified: new Date(),
-        changeFrequency: "weekly",
-        priority: 0.9,
-      },
-      {
-        url: `${baseUrl}/games-like-the-human-knot`,
-        lastModified: new Date(),
-        changeFrequency: "weekly",
-        priority: 0.9,
-      },
-      {
-        url: `${baseUrl}/icebreaker-games-for-youth-group`,
-        lastModified: new Date(),
-        changeFrequency: "weekly",
-        priority: 0.9,
-      },
-      {
-        url: `${baseUrl}/riddle-icebreakers-for-virtual-meetings`,
-        lastModified: new Date(),
-        changeFrequency: "weekly",
-        priority: 0.9,
-      },
-      {
-        url: `${baseUrl}/short-virtual-icebreakers`,
-        lastModified: new Date(),
-        changeFrequency: "weekly",
-        priority: 0.9,
-      },
-      {
-        url: `${baseUrl}/icebreaker-games-for-teens`,
-        lastModified: new Date(),
-        changeFrequency: "weekly",
-        priority: 0.9,
-      },
-      {
-        url: `${baseUrl}/icebreaker-games-for-small-groups`,
-        lastModified: new Date(),
-        changeFrequency: "weekly",
-        priority: 0.9,
-      },
-      {
-        url: `${baseUrl}/about`,
-        lastModified: new Date(),
-        changeFrequency: "monthly",
-        priority: 0.6,
-      },
-      {
-        url: `${baseUrl}/contact`,
-        lastModified: new Date(),
-        changeFrequency: "monthly",
-        priority: 0.6,
-      },
-      {
-        url: `${baseUrl}/blog`, 
-        lastModified: articleLastModified,
-        changeFrequency: "weekly",
-        priority: 0.9,
-      },
-      {
-        url: `${baseUrl}/privacy-policy`,
-        lastModified: new Date(),
-        changeFrequency: "monthly",
-        priority: 0.5,
-      },
-      {
-        url: `${baseUrl}/tos`,
-        lastModified: new Date(),
-        changeFrequency: "monthly",
-        priority: 0.5,
-      },
-    ];
-
-    const gamePages: MetadataRoute.Sitemap = games.map((game) => ({
+    return games.map((game) => ({
       url: `${baseUrl}/games/${game.slug}`,
       lastModified: game.updatedAt || new Date(),
       changeFrequency: "daily" as const,
       priority: 0.9,
     }));
-
-    const blogPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
-      url: `${baseUrl}/blog/${post.slug}`,
-      lastModified: highPriorityBlogSlugs.has(post.slug) ? articleLastModified : new Date(post.date),
-      changeFrequency: highPriorityBlogSlugs.has(post.slug) ? "weekly" as const : "monthly" as const,
-      priority: highPriorityBlogSlugs.has(post.slug) ? 0.9 : 0.8,
-    }));
-
-    return [...staticPages, ...gamePages, ...blogPages];
   } catch (error) {
-    console.error("Error generating sitemap:", error);
-
-    return [
-      {
-        url: baseUrl,
-        lastModified: new Date(),
-        changeFrequency: "weekly",
-        priority: 1.0,
-      },
-      {
-        url: `${baseUrl}/games`,
-        lastModified: new Date(),
-        changeFrequency: "daily",
-        priority: 0.9,
-      },
-      {
-        url: `${baseUrl}/games/virtual-background-story`,
-        lastModified: new Date(),
-        changeFrequency: "daily",
-        priority: 0.9,
-      },
-      {
-        url: `${baseUrl}/games/human-bingo`,
-        lastModified: new Date(),
-        changeFrequency: "daily",
-        priority: 0.9,
-      },
-      {
-        url: `${baseUrl}/blog`,
-        lastModified: articleLastModified,
-        changeFrequency: "weekly",
-        priority: 0.9,
-      },
-      {
-        url: `${baseUrl}/blog/ice-breaker-games-for-adults`,
-        lastModified: articleLastModified,
-        changeFrequency: "monthly",
-        priority: 0.9,
-      },
-      {
-        url: `${baseUrl}/blog/icebreaker-games-for-students`,
-        lastModified: articleLastModified,
-        changeFrequency: "weekly",
-        priority: 0.9,
-      },
-      {
-        url: `${baseUrl}/blog/human-bingo-for-students-printable`,
-        lastModified: articleLastModified,
-        changeFrequency: "weekly",
-        priority: 0.9,
-      },
-    ];
+    console.error("Sitemap: failed to load games from DB; continuing with static + blog URLs.", error);
+    return [];
   }
+}
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const [staticPages, blogPages, gamePages] = await Promise.all([
+    Promise.resolve(getStaticPages()),
+    Promise.resolve(getBlogPages()),
+    getGamePages(),
+  ]);
+
+  return [...staticPages, ...gamePages, ...blogPages];
 }
