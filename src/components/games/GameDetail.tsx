@@ -1271,6 +1271,14 @@ export function GameDetail({ game }: GameDetailProps) {
             )}
             {game.title === "Chat Waterfall" && (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                <a href="/virtual-icebreaker-games" className="block p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700">
+                  <div className="font-medium text-gray-900 dark:text-gray-100">Virtual ice breaker games</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">Online hub with 14 Zoom/Teams warm-ups</div>
+                </a>
+                <a href="/short-virtual-icebreakers" className="block p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700">
+                  <div className="font-medium text-gray-900 dark:text-gray-100">Short virtual icebreakers</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">5-minute warm-ups that respect the clock</div>
+                </a>
                 <a href="/games/speed-networking" className="block p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700">
                   <div className="font-medium text-gray-900 dark:text-gray-100">Speed Networking</div>
                   <div className="text-sm text-gray-600 dark:text-gray-400">Fast-paced networking for virtual meetings</div>
@@ -1282,22 +1290,55 @@ export function GameDetail({ game }: GameDetailProps) {
               </div>
             )}
             <a 
-              href={game.title === "Human Bingo" ? "/games-like-human-bingo" : "/games"} 
+              href={game.title === "Human Bingo" ? "/games-like-human-bingo" : game.title === "Chat Waterfall" ? "/virtual-icebreaker-games" : "/games"} 
               className="inline-flex items-center text-blue-600 dark:text-blue-400 font-medium hover:underline"
             >
-              {game.title === "Human Bingo" ? "Browse all games like Human Bingo" : "Browse All Ice Breaker Games"}
+              {game.title === "Human Bingo" ? "Browse all games like Human Bingo" : game.title === "Chat Waterfall" ? "Browse virtual ice breaker games" : "Browse All Ice Breaker Games"}
               <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </a>
           </div>
-        ) : game.title === "The Name Game" || game.title === "Two Truths and a Lie" ? (
+        ) : game.title === "Two Truths and a Lie" ? (
+          <div className="bg-teal-50 dark:bg-teal-900/20 p-6 rounded-lg">
+            <h3 className="text-xl font-semibold mb-3">More games like Two Truths and a Lie</h3>
+            <p className="text-base text-muted-foreground mb-4">
+              Looking for Two Truths alternatives or classroom-safe storytelling icebreakers?
+              Continue with these guides.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+              <a href="/games-like-two-truths-and-a-lie" className="block p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700">
+                <div className="font-medium text-gray-900 dark:text-gray-100">Games like Two Truths and a Lie</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">12 get-to-know substitutes with rules and variations</div>
+              </a>
+              <a href="/icebreaker-games-for-teens" className="block p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700">
+                <div className="font-medium text-gray-900 dark:text-gray-100">Ice breaker games for teens</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">14 classroom and club openers with safety notes</div>
+              </a>
+              <a href="/virtual-icebreaker-games" className="block p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700">
+                <div className="font-medium text-gray-900 dark:text-gray-100">Virtual ice breaker games</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">Zoom and Teams hub with chat-first warm-ups</div>
+              </a>
+              <a href="/icebreaker-games-for-small-groups" className="block p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700">
+                <div className="font-medium text-gray-900 dark:text-gray-100">Small group icebreakers</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">Best formats for circles of 4–12</div>
+              </a>
+            </div>
+            <a
+              href="/games-like-two-truths-and-a-lie"
+              className="inline-flex items-center text-teal-700 dark:text-teal-400 font-medium hover:underline"
+            >
+              Browse all games like Two Truths and a Lie
+              <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        ) : game.title === "The Name Game" ? (
           <div className="bg-teal-50 dark:bg-teal-900/20 p-6 rounded-lg">
             <h3 className="text-xl font-semibold mb-3">Related teen &amp; student guides</h3>
             <p className="text-base text-muted-foreground mb-4">
-              {game.title === "The Name Game"
-                ? "The Name Game works especially well for first-day teen classrooms and new clubs. Pair it with these age-appropriate guides."
-                : "Two Truths and a Lie is a teen favorite when prompts stay light. Continue with these classroom and youth guides."}
+              The Name Game works especially well for first-day teen classrooms and new clubs. Pair it with these age-appropriate guides.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
               <a href="/icebreaker-games-for-teens" className="block p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700">

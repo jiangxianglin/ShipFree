@@ -667,6 +667,10 @@ export default async function RiddleIcebreakersForVirtualMeetingsPage() {
               <Link href="/short-virtual-icebreakers">
                 short virtual icebreakers / 5 minute virtual ice breakers
               </Link>
+              ,{" "}
+              <Link href="/games-like-two-truths-and-a-lie">
+                games like Two Truths and a Lie
+              </Link>
               , <Link href="/icebreaker-games-for-meetings">ice breaker games for meetings</Link>,{" "}
               <Link href="/emoji-icebreaker-games">emoji icebreaker games</Link>, and the{" "}
               <Link href="/games">full games library</Link>.

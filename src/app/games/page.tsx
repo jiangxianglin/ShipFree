@@ -114,6 +114,12 @@ const clusterGuides = [
       "Physical and problem-solving challenges when you want knot-style energy.",
   },
   {
+    href: "/games-like-two-truths-and-a-lie",
+    title: "Games like Two Truths and a Lie",
+    description:
+      "Storytelling get-to-know alternatives with rules, variations, and safety notes.",
+  },
+  {
     href: "/icebreaker-games-for-work",
     title: "Icebreaker games for work",
     description:

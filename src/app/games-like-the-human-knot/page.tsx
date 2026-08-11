@@ -477,7 +477,10 @@ export default async function GamesLikeTheHumanKnotPage() {
               <Link href="/">Ice Breaker Games home</Link>,{" "}
               <Link href="/games/human-knot">Human Knot rules</Link>,{" "}
               <Link href="/games-like-human-bingo">games like Human Bingo</Link>,{" "}
-              <Link href="/games/never-have-i-ever">Never Have I Ever</Link>{" "}
+              <Link href="/games-like-two-truths-and-a-lie">
+                games like Two Truths and a Lie
+              </Link>
+              , <Link href="/games/never-have-i-ever">Never Have I Ever</Link>{" "}
               (games like cluster),{" "}
               <Link href="/icebreaker-games-for-teens">
                 ice breaker games for teens

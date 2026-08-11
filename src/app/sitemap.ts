@@ -33,6 +33,7 @@ function getStaticPages(): MetadataRoute.Sitemap {
     { path: "/name-game-icebreakers", changeFrequency: weekly, priority: 0.9 },
     { path: "/games-like-human-bingo", changeFrequency: weekly, priority: 0.9 },
     { path: "/games-like-the-human-knot", changeFrequency: weekly, priority: 0.9 },
+    { path: "/games-like-two-truths-and-a-lie", changeFrequency: weekly, priority: 0.9 },
     { path: "/icebreaker-games-for-youth-group", changeFrequency: weekly, priority: 0.9 },
     { path: "/riddle-icebreakers-for-virtual-meetings", changeFrequency: weekly, priority: 0.9 },
     { path: "/short-virtual-icebreakers", changeFrequency: weekly, priority: 0.9 },

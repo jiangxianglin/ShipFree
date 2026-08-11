@@ -558,8 +558,11 @@ export default async function GamesLikeHumanBingoPage() {
               <Link href="/">Ice Breaker Games home</Link>,{" "}
               <Link href="/games/human-bingo">Human Bingo how-to</Link>,{" "}
               <Link href="/games-like-the-human-knot">games like the Human Knot</Link>,{" "}
-              <Link href="/games/never-have-i-ever">Never Have I Ever</Link> (games like cluster),{" "}
-              <Link href="/virtual-icebreaker-games">virtual icebreaker games</Link>,{" "}
+              <Link href="/games-like-two-truths-and-a-lie">
+                games like Two Truths and a Lie
+              </Link>
+              , <Link href="/games/never-have-i-ever">Never Have I Ever</Link> (games like
+              cluster), <Link href="/virtual-icebreaker-games">virtual ice breaker games</Link>,{" "}
               <Link href="/icebreaker-games-for-teens">
                 ice breaker games for teens
               </Link>

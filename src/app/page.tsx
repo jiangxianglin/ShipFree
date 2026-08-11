@@ -90,6 +90,16 @@ export default async function Home() {
 
   const popularGames = [
     {
+      href: "/games-like-two-truths-and-a-lie",
+      title: "Games like Two Truths and a Lie",
+      description: "12 get-to-know-you substitutes with rules, variations, and facilitator tips.",
+    },
+    {
+      href: "/virtual-icebreaker-games",
+      title: "Virtual ice breaker games",
+      description: "Zoom and Teams hub: chat-first warm-ups, shortlists, and riddle formats.",
+    },
+    {
       href: "/icebreaker-games-for-meetings",
       title: "Ice breaker games for meetings",
       description: "Quick, low-pressure openers for standups, workshops, and team meetings.",
@@ -98,16 +108,6 @@ export default async function Home() {
       href: "/funny-icebreaker-games-for-meetings",
       title: "Funny ice breaker games for meetings",
       description: "Professional openers that get real laughs without cringe or oversharing.",
-    },
-    {
-      href: "/icebreaker-games-for-teens",
-      title: "Ice breaker games for teens",
-      description: "Age-appropriate openers for classrooms, clubs, and youth nights with safety notes.",
-    },
-    {
-      href: "/icebreaker-games-for-small-groups",
-      title: "Ice breaker games for small groups",
-      description: "Facilitator-ready activities for circles of 4–12 in meetings, classes, and retreats.",
     },
     {
       href: "/games-like-human-bingo",
