@@ -4,9 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./blog.module.css";
 
-const title = "Ice Breaker Games Blog (2026) | Tips, Guides & Printables";
+const title = "Free Icebreaker Guides & Printables | Meetings & Classrooms";
 const description =
-  "Expert ice breaker games guides for meetings, classrooms, adults, and holidays—plus facilitation tips and printable Human Bingo cards you can use today.";
+  "Free icebreaker guides for meetings, adults, students, and holidays—plus printable Human Bingo and facilitation tips you can run in your next session.";
 const canonical = "https://www.icebreakergames.site/blog";
 const ogImage = "https://www.icebreakergames.site/img/blog-og.jpg";
 

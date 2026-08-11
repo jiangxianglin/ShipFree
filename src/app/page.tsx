@@ -12,19 +12,21 @@ export const revalidate = 86400;
 
 const ogImage = "https://www.icebreakergames.site/img/home-hero.jpg";
 
+const title = "Free Ice Breaker Games for Meetings, Work & Teams (2026)";
+const description =
+  "100+ free ice breaker games with clear rules, time, and group size. Pick activities for meetings, Zoom, work, and classrooms—no signup required.";
+
 export const metadata: Metadata = {
-  title: "Icebreaker Games for Meetings, Work & Classrooms",
-  description:
-    "Find the right icebreaker game by setting, group size, time, and energy level. Browse free activities for meetings, work, virtual teams, and classrooms.",
+  title,
+  description,
   alternates: {
     canonical: "https://www.icebreakergames.site",
   },
   openGraph: {
     type: "website",
     url: "https://www.icebreakergames.site",
-    title: "Icebreaker Games for Meetings, Work & Classrooms",
-    description:
-      "Find the right icebreaker game by setting, group size, time, and energy level. Browse free activities for meetings, work, virtual teams, and classrooms.",
+    title,
+    description,
     images: [
       {
         url: ogImage,
@@ -36,9 +38,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Icebreaker Games for Meetings, Work & Classrooms",
-    description:
-      "Find the right icebreaker game by setting, group size, time, and energy level. Browse free activities for meetings, work, virtual teams, and classrooms.",
+    title,
+    description,
     images: [ogImage],
   },
 };

@@ -9,9 +9,9 @@ import styles from "./games.module.css";
 
 export const revalidate = 86400;
 
-const title = "Browse All Ice Breaker Games (2026) | Filter by Time & Size";
+const title = "100+ Free Ice Breaker Games | Filter by Time & Size";
 const description =
-  "Browse free ice breaker games and filter by time, group size, type, and audience. Open full rules for meetings, work, virtual calls, and classrooms.";
+  "Filter 100+ free ice breaker games by minutes, players, and audience. Open step-by-step rules for meetings, work, Zoom, and classrooms—start in under a minute.";
 const canonical = "https://www.icebreakergames.site/games";
 const ogImage = "https://www.icebreakergames.site/img/games-og.jpg";
 
