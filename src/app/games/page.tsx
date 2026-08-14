@@ -90,6 +90,18 @@ const clusterGuides = [
       "Student-cluster hub: classroom and club openers with safety notes.",
   },
   {
+    href: "/icebreakers-for-teens",
+    title: "Icebreakers for teens",
+    description:
+      "Audience hub: pick icebreakers for teens by shy, energetic, or mixed groups.",
+  },
+  {
+    href: "/icebreaker-games-for-high-school-students",
+    title: "Ice breaker games for high school students",
+    description:
+      "Classroom-safe openers for advisory, first day, clubs, and PE.",
+  },
+  {
     href: "/icebreaker-games-for-small-groups",
     title: "Ice breaker games for small groups",
     description:

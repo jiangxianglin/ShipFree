@@ -1,5 +1,6 @@
 import { getGameBySlug, getGameById } from "@/db/queries/games";
 import { GameDetail } from "@/components/games/GameDetail";
+import { TwoTruthsAndALieDetail } from "@/components/games/TwoTruthsAndALieDetail";
 import { notFound, redirect } from "next/navigation";
 import type { Metadata } from "next";
 import type { Game } from "@/types/game";
@@ -85,6 +86,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     imageUrl = "/img/VirtualBackgroundStory_Hero.jpg";
   } else if (game.title === "Human Bingo") {
     imageUrl = "/img/Human-Bingo-Hero.png"; // Already handled in component, but good for metadata
+  } else if (game.title === "Two Truths and a Lie") {
+    imageUrl = "/img/games-like-two-truths-and-a-lie-hero.jpg";
   } else if (game.title === "Speed Networking") {
     imageUrl = "https://www.icebreakergames.site/img/SpeedNetworking-hero.jpg";
   } else if (game.title === "Chat Waterfall") {
@@ -569,6 +572,9 @@ export default async function GameDetailPage({ params }: Props) {
     jsonLdImage = "https://www.icebreakergames.site/img/find-your-match-hero.png";
   } else if (game.title === "Human Bingo") {
     jsonLdImage = "https://www.icebreakergames.site/img/Human-Bingo-Hero.png";
+  } else if (game.title === "Two Truths and a Lie") {
+    jsonLdImage =
+      "https://www.icebreakergames.site/img/games-like-two-truths-and-a-lie-hero.jpg";
   } else if (game.title === "Virtual Background Story") {
     jsonLdImage = "https://www.icebreakergames.site/img/VirtualBackgroundStory_Hero.jpg";
   } else if (game.title === "Speed Networking") {
@@ -4155,34 +4161,42 @@ export default async function GameDetailPage({ params }: Props) {
     ]
   };
 
+  const useEditorialDetail = game.slug === "two-truths-and-a-lie";
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="container mx-auto px-4 py-4">
-        <Link
-          href="/games"
-          className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
-        >
-          <svg
-            className="w-4 h-4 mr-1"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M15 19l-7-7 7-7"
-            />
-          </svg>
-          Back to all games
-        </Link>
-      </div>
-      <GameDetail game={game} />
+      {useEditorialDetail ? (
+        <TwoTruthsAndALieDetail game={game} />
+      ) : (
+        <>
+          <div className="container mx-auto px-4 py-4">
+            <Link
+              href="/games"
+              className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <svg
+                className="w-4 h-4 mr-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+              Back to all games
+            </Link>
+          </div>
+          <GameDetail game={game} />
+        </>
+      )}
     </>
   );
 }

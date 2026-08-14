@@ -91,6 +91,16 @@ export default async function Home() {
 
   const popularGames = [
     {
+      href: "/icebreaker-games-for-high-school-students",
+      title: "Ice breaker games for high school students",
+      description: "14 classroom-safe openers for advisory, first day, clubs, and PE.",
+    },
+    {
+      href: "/icebreakers-for-teens",
+      title: "Icebreakers for teens",
+      description: "Audience hub: pick openers for shy, energetic, or mixed teen groups.",
+    },
+    {
       href: "/games-like-two-truths-and-a-lie",
       title: "Games like Two Truths and a Lie",
       description: "12 get-to-know-you substitutes with rules, variations, and facilitator tips.",
@@ -106,19 +116,9 @@ export default async function Home() {
       description: "Quick, low-pressure openers for standups, workshops, and team meetings.",
     },
     {
-      href: "/funny-icebreaker-games-for-meetings",
-      title: "Funny ice breaker games for meetings",
-      description: "Professional openers that get real laughs without cringe or oversharing.",
-    },
-    {
-      href: "/games-like-human-bingo",
-      title: "Games like Human Bingo",
-      description: "Mingling and networking alternatives with rules, prompts, and comparison tips.",
-    },
-    {
-      href: "/short-virtual-icebreakers",
-      title: "Short virtual icebreakers",
-      description: "5-minute Zoom warm-ups and short virtual icebreakers that respect the clock.",
+      href: "/icebreaker-games-for-teens",
+      title: "Ice breaker games for teens",
+      description: "Student-cluster hub: classroom and club openers with safety notes.",
     },
   ];
 

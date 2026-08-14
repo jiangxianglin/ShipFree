@@ -38,6 +38,8 @@ function getStaticPages(): MetadataRoute.Sitemap {
     { path: "/riddle-icebreakers-for-virtual-meetings", changeFrequency: weekly, priority: 0.9 },
     { path: "/short-virtual-icebreakers", changeFrequency: weekly, priority: 0.9 },
     { path: "/icebreaker-games-for-teens", changeFrequency: weekly, priority: 0.9 },
+    { path: "/icebreakers-for-teens", changeFrequency: weekly, priority: 0.9 },
+    { path: "/icebreaker-games-for-high-school-students", changeFrequency: weekly, priority: 0.9 },
     { path: "/icebreaker-games-for-small-groups", changeFrequency: weekly, priority: 0.9 },
     { path: "/about", changeFrequency: monthly, priority: 0.6 },
     { path: "/contact", changeFrequency: monthly, priority: 0.6 },

@@ -2,6 +2,7 @@
 
 import { trackEvent } from "@/lib/analytics";
 import { useMemo, useState } from "react";
+import styles from "./game-detail.module.css";
 
 type GameActionsProps = {
   title: string;
@@ -9,9 +10,18 @@ type GameActionsProps = {
   duration?: string;
   materials?: string;
   steps?: string;
+  /** When true, render ghost CTAs for dark hero backgrounds */
+  variant?: "hero" | "body";
 };
 
-export function GameActions({ title, players, duration, materials, steps }: GameActionsProps) {
+export function GameActions({
+  title,
+  players,
+  duration,
+  materials,
+  steps,
+  variant = "body",
+}: GameActionsProps) {
   const [copied, setCopied] = useState(false);
 
   const instructions = useMemo(() => {
@@ -50,31 +60,36 @@ export function GameActions({ title, players, duration, materials, steps }: Game
     });
   }
 
-  return (
-    <div className="print:hidden rounded-2xl border border-emerald-200 bg-emerald-50/80 p-4 shadow-sm dark:border-emerald-900 dark:bg-emerald-950/30">
-      <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-emerald-800 dark:text-emerald-200">
-        Save this activity
-      </p>
-      <div className="flex flex-wrap gap-3">
-        <button
-          type="button"
-          onClick={copyInstructions}
-          className="inline-flex items-center rounded-xl bg-emerald-600 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-emerald-700"
-        >
+  const primaryClass = styles.ctaPrimary;
+  const ghostClass = variant === "hero" ? styles.ctaGhost : styles.ctaGhostDark;
+
+  if (variant === "hero") {
+    return (
+      <div className={`${styles.ctaRow} print:hidden`}>
+        <button type="button" onClick={copyInstructions} className={primaryClass}>
           {copied ? "Copied instructions" : "Copy instructions"}
         </button>
-        <button
-          type="button"
-          onClick={printGame}
-          className="inline-flex items-center rounded-xl border border-emerald-300 bg-white px-4 py-2.5 text-sm font-semibold text-emerald-800 transition-colors hover:bg-emerald-100 dark:border-emerald-800 dark:bg-gray-950 dark:text-emerald-200 dark:hover:bg-emerald-950"
-        >
+        <button type="button" onClick={printGame} className={ghostClass}>
           Print this game
         </button>
-        <a
-          href="/games"
-          onClick={trackSimilarGamesClick}
-          className="inline-flex items-center rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-sm font-semibold text-gray-800 transition-colors hover:bg-gray-100 dark:border-gray-800 dark:bg-gray-950 dark:text-gray-100 dark:hover:bg-gray-900"
-        >
+        <a href="/games" onClick={trackSimilarGamesClick} className={ghostClass}>
+          Browse all games
+        </a>
+      </div>
+    );
+  }
+
+  return (
+    <div className={`${styles.actionsBand} print:hidden`}>
+      <p className={styles.actionsLabel}>Save this activity</p>
+      <div className={styles.actionsRow}>
+        <button type="button" onClick={copyInstructions} className={primaryClass}>
+          {copied ? "Copied instructions" : "Copy instructions"}
+        </button>
+        <button type="button" onClick={printGame} className={ghostClass}>
+          Print this game
+        </button>
+        <a href="/games" onClick={trackSimilarGamesClick} className={ghostClass}>
           Browse similar games
         </a>
       </div>

@@ -537,6 +537,11 @@ export default async function IcebreakerGamesForYouthGroupPage() {
               guides:{" "}
               <Link href="/icebreaker-games-for-teens">ice breaker games for teens</Link>{" "}
               (student cluster hub),{" "}
+              <Link href="/icebreakers-for-teens">icebreakers for teens</Link>,{" "}
+              <Link href="/icebreaker-games-for-high-school-students">
+                ice breaker games for high school students
+              </Link>
+              ,{" "}
               <Link href="/icebreaker-games-for-small-groups">
                 ice breaker games for small groups
               </Link>{" "}

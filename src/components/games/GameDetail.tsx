@@ -1,139 +1,99 @@
-import { CategoryBadge } from "./CategoryBadge";
+import Image from "next/image";
+import Link from "next/link";
 import { GameActions } from "./GameActions";
-import { TagBadge } from "./TagBadge";
+import { getGameHeroPath, getGameScenePath } from "@/lib/games/media";
 import type { GameDetailProps } from "@/types/game";
+import styles from "./game-detail.module.css";
+
+function truncateLead(text: string, max = 180) {
+  const normalized = text.replace(/\s+/g, " ").trim();
+  if (normalized.length <= max) return normalized;
+  return `${normalized.slice(0, max - 1).trimEnd()}…`;
+}
 
 export function GameDetail({ game }: GameDetailProps) {
   const materialsList = game.materials
     ? game.materials.split("\n").filter(Boolean)
     : [];
   const stepsList = game.steps ? game.steps.split("\n").filter(Boolean) : [];
+  const heroSrc = getGameHeroPath(game);
+  const sceneSrc = getGameScenePath(game);
+  const lead = truncateLead(game.description);
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-4xl">
-      <div className="mb-6">
-        <div className="flex items-start justify-between gap-4 mb-4 flex-wrap">
-          <h1 className="text-4xl font-bold flex-1">{game.title}</h1>
-          <CategoryBadge category={game.category} />
+    <div className={styles.page}>
+      <header className={styles.hero}>
+        <div className={styles.heroMedia}>
+          <Image
+            src={heroSrc}
+            alt={`${game.title} icebreaker game — group playing together`}
+            fill
+            priority
+            sizes="100vw"
+          />
         </div>
-
-        {/* Main image - use Two Truths and a Lie main image if available */}
-        {game.title === "Find Your Match" ? (
-          <div className="aspect-video relative overflow-hidden rounded-lg mb-6">
-            <img
-              src="/img/find-your-match-hero.png"
-              alt="Find Your Match | Ice Breaker Games - Diverse adults matching cards in a modern conference room for networking ice breaker activities"
-              className="object-cover w-full h-full"
-            />
+        <div className={styles.heroScrim} aria-hidden="true" />
+        <div className={styles.heroInner}>
+          <nav className={styles.crumb} aria-label="Breadcrumb">
+            <Link href="/">Home</Link>
+            <span>/</span>
+            <Link href="/games">Games</Link>
+            <span>/</span>
+            <span>{game.title}</span>
+          </nav>
+          <p className={styles.brand}>Ice Breaker Games</p>
+          <h1 className={styles.heroTitle}>{game.title}</h1>
+          <p className={styles.heroLead}>{lead}</p>
+          <div className={styles.heroMeta}>
+            {game.category ? (
+              <span className={styles.heroMetaChip}>{game.category}</span>
+            ) : null}
+            {game.players ? (
+              <span className={styles.heroMetaChip}>{game.players} players</span>
+            ) : null}
+            {game.duration ? (
+              <span className={styles.heroMetaChip}>{game.duration}</span>
+            ) : null}
+            {game.difficulty ? (
+              <span className={styles.heroMetaChip}>{game.difficulty}</span>
+            ) : null}
           </div>
-        ) : game.title === "Two Truths and a Lie" ? (
-          <div className="aspect-video relative overflow-hidden rounded-lg mb-6">
-            <img
-              src="/img/Two-Truths-and-a-Lie.png"
-              alt="Two Truths and a Lie | Ice Breaker Games"
-              className="object-cover w-full h-full"
-            />
-          </div>
-        ) : game.title === "Human Bingo" ? (
-          <div className="aspect-video relative overflow-hidden rounded-lg mb-6">
-            <img
-              src="/img/Human-Bingo-Hero.png"
-              alt="Human Bingo | Ice Breaker Games"
-              className="object-cover w-full h-full"
-            />
-          </div>
-        ) : game.title === "Speed Networking" ? (
-          <div className="aspect-video relative overflow-hidden rounded-lg mb-6">
-            <img
-              src="/img/SpeedNetworking-hero.jpg"
-              alt="Speed Networking | Ice Breaker Games"
-              className="object-cover w-full h-full"
-            />
-          </div>
-        ) : game.title === "Virtual Background Story" ? (
-          <div className="aspect-video relative overflow-hidden rounded-lg mb-6">
-            <img
-              src="/img/VirtualBackgroundStory_Hero.jpg"
-              alt="icebreakergames Virtual Background Story - Creative Video Conference Scenes"
-              className="object-cover w-full h-full"
-            />
-          </div>
-        ) : game.title === "Chat Waterfall" ? (
-          <div className="aspect-video relative overflow-hidden rounded-lg mb-6">
-            <img
-              src="/img/ChatWaterfall.png"
-              alt="Chat Waterfall | Ice Breaker Games - Simultaneous chat waterfall effect in virtual meeting ice breaker"
-              className="object-cover w-full h-full"
-            />
-          </div>
-        ) : game.title === "Emoji Introduction" ? (
-          <div className="aspect-video relative overflow-hidden rounded-lg mb-6">
-            <img
-              src="/img/EmojiIntroduction-hero.png"
-              alt="Emoji Introduction | Ice Breaker Games - Participants introduce themselves using creative emojis in virtual meeting ice breaker game"
-              className="object-cover w-full h-full"
-            />
-          </div>
-        ) : game.title === "Emoji Check-In" ? (
-          <div className="aspect-video relative overflow-hidden rounded-lg mb-6">
-            <img
-              src="/img/EmojiCheck-In-hero.png"
-              alt="Emoji Check-In ice breaker game - Participants share mood using emojis in virtual meeting icebreaker"
-              className="object-cover w-full h-full"
-            />
-          </div>
-        ) : game.image ? (
-          <div className="aspect-video relative overflow-hidden rounded-lg mb-6">
-            <img
-              src={game.image}
-              alt={`${game.title} | Ice Breaker Games`}
-              className="object-cover w-full h-full"
-            />
-          </div>
-        ) : null}
-
-        <div className="flex flex-wrap gap-3 mb-6">
-          {game.players && (
-            <div className="flex items-center gap-2 bg-secondary px-4 py-2 rounded-lg">
-              <span className="text-lg">👥</span>
-              <span className="font-medium">{game.players}</span>
-            </div>
-          )}
-          {game.duration && (
-            <div className="flex items-center gap-2 bg-secondary px-4 py-2 rounded-lg">
-              <span className="text-lg">⏱️</span>
-              <span className="font-medium">{game.duration}</span>
-            </div>
-          )}
-          {game.difficulty && (
-            <div className="flex items-center gap-2 bg-secondary px-4 py-2 rounded-lg">
-              <span className="text-lg">📊</span>
-              <span className="font-medium">{game.difficulty}</span>
-            </div>
-          )}
+          <GameActions
+            title={game.title}
+            players={game.players ?? undefined}
+            duration={game.duration ?? undefined}
+            materials={game.materials ?? undefined}
+            steps={game.steps ?? undefined}
+            variant="hero"
+          />
         </div>
+      </header>
 
-        <GameActions
-          title={game.title}
-          players={game.players}
-          duration={game.duration}
-          materials={game.materials}
-          steps={game.steps}
-        />
-      </div>
+      <div className={styles.body}>
+        <section className={styles.snapshot} aria-label="Game at a glance">
+          <div className={styles.snapshotItem}>
+            <p className={styles.snapshotLabel}>Players</p>
+            <p>{game.players || "Flexible group size"}</p>
+          </div>
+          <div className={styles.snapshotItem}>
+            <p className={styles.snapshotLabel}>Time</p>
+            <p>{game.duration || "A few minutes"}</p>
+          </div>
+          <div className={styles.snapshotItem}>
+            <p className={styles.snapshotLabel}>Difficulty</p>
+            <p>{game.difficulty || "Easy to facilitate"}</p>
+          </div>
+        </section>
 
-      <div className="space-y-8">
-        <div className="rounded-2xl border border-blue-100 bg-blue-50/70 p-5 dark:border-blue-900 dark:bg-blue-950/30">
-          <h2 className="text-2xl font-semibold mb-3">What is {game.title}?</h2>
-          <p className="text-lg leading-relaxed text-muted-foreground">
-            {game.description}
-          </p>
-        </div>
+        <section className={styles.lede}>
+          <h2>What is {game.title}?</h2>
+          <p>{game.description}</p>
+        </section>
 
-        <div>
-          <h3 className="text-xl font-semibold mb-3">Why Play {game.title}?</h3>
+        <section className={styles.section}>
+<h3>Why Play {game.title}?</h3>
           {game.title === "Find Your Match" ? (
-            <p className="text-base leading-relaxed text-muted-foreground">
+            <p>
               Find Your Match is one of the most engaging ice breaker games for social events and networking. 
               This pairing ice breaker game helps participants connect through fun interactions while learning about famous pairs and shared interests. 
               Find Your Match works perfectly as an ice breaker for parties, conferences, team building sessions, and social gatherings. 
@@ -141,7 +101,7 @@ export function GameDetail({ game }: GameDetailProps) {
               As an ice breaker game, Find Your Match is easy to set up, requires minimal materials, and guarantees everyone will have a great time getting to know each other.
             </p>
           ) : game.title === "Human Bingo" ? (
-            <p className="text-base leading-relaxed text-muted-foreground">
+            <p>
               Human Bingo is one of the most popular ice breaker games for social events and networking. 
               This engaging ice breaker game helps participants connect through fun interactions while learning interesting facts about each other. 
               Human Bingo works perfectly as an ice breaker game for parties, conferences, team building sessions, and social gatherings. 
@@ -149,89 +109,89 @@ export function GameDetail({ game }: GameDetailProps) {
               As an ice breaker game, Human Bingo is easy to set up, requires minimal materials, and guarantees everyone will have a great time getting to know each other.
             </p>
           ) : game.title === "Alliterative Name Game" ? (
-            <p className="text-base leading-relaxed text-muted-foreground">
+            <p>
               The Alliterative Name Game (also called the Adjective Name Game) is a fast way to learn names and warm up a group.
               Each person pairs their name with a positive adjective that starts with the same letter, and the group repeats the growing list.
               It works especially well at the start of workshops, work meetings, and first-day-of-class sessions because it is structured, low-pressure, and surprisingly memorable.
             </p>
           ) : game.title === "One Word Check-In" ? (
-            <p className="text-base leading-relaxed text-muted-foreground">
+            <p>
               One Word Check-In is a quick, low-pressure icebreaker for meetings and workshops. Each person shares one word to describe their
               mood, energy, or focus. It gets everyone speaking early, helps the facilitator read the room, and can be done in a few minutes
               without any materials.
             </p>
           ) : game.title === "Two Truths and a Lie" ? (
-            <p className="text-base leading-relaxed text-muted-foreground">
+            <p>
               Two Truths and a Lie is a classic get-to-know-you icebreaker. Each person shares three statements about themselves (two true, one false),
               and everyone guesses the lie. It works well for teams, classrooms, and workshops because it is simple, fun, and naturally creates follow-up conversation.
             </p>
           ) : game.title === "Minefield" ? (
-            <p className="text-base leading-relaxed text-muted-foreground">
+            <p>
               Minefield is a trust and communication team building game. One person walks through a simple obstacle course while blindfolded,
               guided only by a partner’s verbal instructions. It is especially effective when followed by a short debrief on clarity, assumptions, and trust.
             </p>
           ) : game.title === "The Name Game" ? (
-            <p className="text-base leading-relaxed text-muted-foreground">
+            <p>
               The Name Game is a simple name game icebreaker for helping a new group learn names quickly. Each person repeats the names of everyone who went before them, then adds their own name with a short memory cue such as a role, adjective, or hobby.
               It works well for meetings, classrooms, and workshops because it is structured, low-pressure, and gets everyone speaking early without needing materials.
             </p>
           ) : game.title === "Emoji Introduction" ? (
-            <p className="text-base leading-relaxed text-muted-foreground">
+            <p>
               Emoji Introduction is a low-pressure emoji icebreaker where each person introduces themselves using two or three emojis instead of a long verbal introduction.
               It works especially well for virtual meetings, online classrooms, and hybrid teams because people can answer in chat first, then explain only as much as they feel comfortable sharing.
             </p>
           ) : game.title === "Emoji Check-In" ? (
-            <p className="text-base leading-relaxed text-muted-foreground">
+            <p>
               Emoji Check-In is a quick mood-sharing activity for meetings, classes, and remote teams. Participants choose one emoji to represent their energy, focus, or feeling right now.
               It helps the facilitator read the room in 3–5 minutes while giving quieter participants a safe, simple way to participate.
             </p>
           ) : game.title === "The Question Web" ? (
-            <p className="text-base leading-relaxed text-muted-foreground">
+            <p>
               The Question Web is a get-to-know-you activity that uses a ball of yarn or string. As people ask and answer questions, the string forms a visible web,
               helping the group notice how connection builds through attention and curiosity.
             </p>
           ) : game.title === "Count Up" ? (
-            <p className="text-base leading-relaxed text-muted-foreground">
+            <p>
               Count Up is a deceptively simple teamwork game. The group tries to count upward together, but only one person can speak at a time. If two people speak
               at once, the group restarts. It quickly builds listening, patience, and shared coordination.
             </p>
           ) : game.title === "Dicebreakers" ? (
-            <p className="text-base leading-relaxed text-muted-foreground">
+            <p>
               Dicebreakers is a quick conversation starter where a simple die roll selects a prompt. It keeps things structured while still feeling natural,
               making it a great option for meetings, workshops, and classrooms when you want everyone talking within minutes.
             </p>
           ) : game.slug === "topics-tables" ? (
-            <p className="text-base leading-relaxed text-muted-foreground">
+            <p>
               Topics Tables is an easy way to spark conversation in groups that are already seated. Each table uses a small set of themed prompts, discusses for a few minutes,
               then optionally rotates tables or switches prompt cards to meet new people and explore new topics.
             </p>
           ) : game.slug === "unique-and-shared" ? (
-            <p className="text-base leading-relaxed text-muted-foreground">
+            <p>
               Unique and Shared is a low-pressure get-to-know activity where people identify one thing that is unique about themselves and one thing they share in common
               with a partner or small group. It balances belonging (shared) with individuality (unique), which helps rapport form quickly.
             </p>
           ) : game.title === "Common Ground" ? (
-            <p className="text-base leading-relaxed text-muted-foreground">
+            <p>
               Common Ground is a simple connection game where people try to find as many shared interests or experiences as possible in a short time.
               It is fast, low-pressure, and works well for new teams, classrooms, and workshops because it helps people notice similarity without forcing personal disclosure.
             </p>
           ) : game.title === "The Check-In" ? (
-            <p className="text-base leading-relaxed text-muted-foreground">
+            <p>
               The Check-In is a quick meeting icebreaker where each person shares a short update using a single prompt (for example: one word, a color, or a weather report).
               It improves presence, alignment, and psychological safety, and it is easy to time-box for teams of any size.
             </p>
           ) : game.slug === "remote-change-3-things" ? (
-            <p className="text-base leading-relaxed text-muted-foreground">
+            <p>
               Remote Change 3 Things is a playful virtual icebreaker for observation and laughter. One person changes three small things off camera, returns, and the group tries to spot the changes.
               It is a great warm-up for remote meetings because everyone can participate by guessing in chat.
             </p>
           ) : game.slug === "ornament-guess" ? (
-            <p className="text-base leading-relaxed text-muted-foreground">
+            <p>
               Ornament Guess is a light guessing game where someone shares an ornament (or any meaningful object) and gives a clue. The group guesses what it represents,
               then the person reveals the story. It is especially good for seasonal gatherings and team socials when you want quick, friendly conversation.
             </p>
           ) : (
-            <p className="text-base leading-relaxed text-muted-foreground">
+            <p>
               This ice breaker game is perfect for {game.category.toLowerCase()} settings. 
               It helps participants feel comfortable, encourages interaction, and creates a positive atmosphere. 
               Whether you're working with a small group or a large team, this activity is designed to break down barriers and foster meaningful connections.
@@ -239,9 +199,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.title === "Alliterative Name Game" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">Examples</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>Examples</h4>
+              <ul>
                 <li>Brave Ben</li>
                 <li>Curious Carlos</li>
                 <li>Helpful Hannah</li>
@@ -252,9 +212,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.title === "One Word Check-In" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">Prompt ideas</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>Prompt ideas</h4>
+              <ul>
                 <li>One word for your energy today</li>
                 <li>One word for your focus right now</li>
                 <li>One word for what you need from this meeting</li>
@@ -265,9 +225,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.title === "Two Truths and a Lie" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">Facilitator tips</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>Facilitator tips</h4>
+              <ul>
                 <li>Keep statements safe for work and optional</li>
                 <li>Limit questions to 1–2 per person to keep the pace</li>
                 <li>Use breakout rooms for large groups</li>
@@ -277,9 +237,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.title === "Minefield" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">Debrief questions</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>Debrief questions</h4>
+              <ul>
                 <li>What instructions helped most?</li>
                 <li>When did you feel the most trust?</li>
                 <li>What assumptions showed up?</li>
@@ -289,9 +249,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.title === "The Name Game" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">Variations</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>Variations</h4>
+              <ul>
                 <li>Name + role (for work meetings)</li>
                 <li>Name + a gesture (for better memory)</li>
                 <li>Split into small circles for large groups</li>
@@ -301,9 +261,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.title === "The Question Web" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">Prompt ideas</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>Prompt ideas</h4>
+              <ul>
                 <li>What is one small win this week?</li>
                 <li>What is a hobby you enjoy?</li>
                 <li>What is something you want to learn this year?</li>
@@ -313,9 +273,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.title === "Count Up" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">Debrief questions</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>Debrief questions</h4>
+              <ul>
                 <li>What helped us succeed?</li>
                 <li>What caused resets?</li>
                 <li>How did we adapt as a group?</li>
@@ -325,9 +285,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.title === "Dicebreakers" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">Prompt ideas</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>Prompt ideas</h4>
+              <ul>
                 <li>A small win this week</li>
                 <li>A hobby you enjoy</li>
                 <li>A favorite snack</li>
@@ -339,9 +299,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.slug === "topics-tables" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">How to run it</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>How to run it</h4>
+              <ul>
                 <li>Place 6–10 prompts at each table</li>
                 <li>Set a 5–8 minute timer per round</li>
                 <li>Rotate tables or swap prompt cards between rounds</li>
@@ -351,9 +311,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.slug === "unique-and-shared" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">Facilitator tips</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>Facilitator tips</h4>
+              <ul>
                 <li>Use safe categories (hobbies, food, routines, learning goals)</li>
                 <li>Time-box the search to 2–4 minutes</li>
                 <li>Encourage curiosity, not debate</li>
@@ -363,9 +323,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.title === "Common Ground" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">Category ideas</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>Category ideas</h4>
+              <ul>
                 <li>Hobbies you enjoy</li>
                 <li>Favorite foods or snacks</li>
                 <li>Music or podcasts</li>
@@ -377,9 +337,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.title === "The Check-In" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">Prompt ideas</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>Prompt ideas</h4>
+              <ul>
                 <li>One word for your energy</li>
                 <li>A color for your mood</li>
                 <li>Weather report (sunny, cloudy, stormy)</li>
@@ -390,9 +350,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.slug === "remote-change-3-things" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">Good changes</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>Good changes</h4>
+              <ul>
                 <li>Swap glasses, hat, or headphones</li>
                 <li>Move a mug or notebook</li>
                 <li>Add or remove a background item</li>
@@ -402,9 +362,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.slug === "ornament-guess" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">Facilitator tips</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>Facilitator tips</h4>
+              <ul>
                 <li>Frame it as “meaningful object guess” to keep it inclusive</li>
                 <li>Keep clues short (one sentence) and time-box guesses</li>
                 <li>Let people pass or share a neutral object if they prefer</li>
@@ -426,9 +386,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.title === "Icebreaker Bingo" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">Facilitator tips</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>Facilitator tips</h4>
+              <ul>
                 <li>Print more cards than you think you need — extra copies keep groups moving</li>
                 <li>Announce the first bingo winner early to create energy, then let others finish the card</li>
                 <li>Walk the room to help shy participants connect and keep the conversation going</li>
@@ -438,9 +398,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.title === "Find Your Match" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">How to prepare pairs</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>How to prepare pairs</h4>
+              <ul>
                 <li>Prepare one card per person with a famous pair (peanut butter & jelly, Batman & Robin)</li>
                 <li>Make sure there are enough pairs so everyone participates</li>
                 <li>Consider themed pairs for conferences (product names, industry references)</li>
@@ -450,9 +410,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.title === "Wheel of Fortune Introductions" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">Prompt ideas</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>Prompt ideas</h4>
+              <ul>
                 <li>Biggest pet peeve</li>
                 <li>Strangest thing you have eaten</li>
                 <li>Favorite comfort food</li>
@@ -464,9 +424,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.title === "Six Word Memoirs" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">Writing prompts</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>Writing prompts</h4>
+              <ul>
                 <li>Six words about your day</li>
                 <li>Six words about your team right now</li>
                 <li>Six words about a goal you are working toward</li>
@@ -477,9 +437,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.title === "Where Do We Come From & What Is Famous?" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">Tips for facilitators</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>Tips for facilitators</h4>
+              <ul>
                 <li>Use a world map or slide to visualize locations — it adds energy and engagement</li>
                 <li>Encourage people to share something quirky or personal, not just obvious facts</li>
                 <li>For diverse groups, acknowledge how different backgrounds enrich the team</li>
@@ -489,9 +449,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.title === "Never Have I Ever" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">Prompt ideas</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>Prompt ideas</h4>
+              <ul>
                 <li>Never have I ever traveled solo</li>
                 <li>Never have I ever cooked a meal for more than five people</li>
                 <li>Never have I ever given a speech to 50+ people</li>
@@ -502,9 +462,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.title === "This or That Questions" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">Prompt ideas</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>Prompt ideas</h4>
+              <ul>
                 <li>Coffee or tea?</li>
                 <li>Morning person or night owl?</li>
                 <li>Books or movies?</li>
@@ -516,9 +476,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.title === "Would You Rather" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">Question ideas</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>Question ideas</h4>
+              <ul>
                 <li>Would you rather be able to fly or be invisible?</li>
                 <li>Would you rather never use social media again or never watch TV again?</li>
                 <li>Would you rather travel to the past or the future?</li>
@@ -529,9 +489,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.title === "Rock Paper Scissors Tournament" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">Facilitator tips</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>Facilitator tips</h4>
+              <ul>
                 <li>Use a visible bracket board — it builds excitement and keeps everyone informed</li>
                 <li>Keep rounds fast (15–30 seconds) with a clear start signal</li>
                 <li>Have losers form a cheering section for the next round — it keeps everyone engaged</li>
@@ -541,9 +501,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.title === "Fantasy Vacation" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">Prompt ideas</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>Prompt ideas</h4>
+              <ul>
                 <li>Share your dream destination and one thing you would do there</li>
                 <li>Describe the most unusual place you have ever wanted to visit</li>
                 <li>What is your ideal vacation activity — adventure or relaxation?</li>
@@ -553,9 +513,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.title === "Mystery Envelope" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">Envelope prompt ideas</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>Envelope prompt ideas</h4>
+              <ul>
                 <li>Tell the story of your first day at work</li>
                 <li>Act out your morning routine without using your hands</li>
                 <li>Share a quick win from this week</li>
@@ -566,9 +526,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.title === "Invention Pitch" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">Pitch prompt ideas</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>Pitch prompt ideas</h4>
+              <ul>
                 <li>Invent an app that nobody needs but everyone would love</li>
                 <li>Design a gadget that solves a first-world problem</li>
                 <li>Create a new holiday and its signature activity</li>
@@ -578,9 +538,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.title === "Scavenger Hunt" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">Challenge ideas</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>Challenge ideas</h4>
+              <ul>
                 <li>Find something red and something blue</li>
                 <li>Take a team photo doing jumping jacks</li>
                 <li>Record a 10-second team cheer</li>
@@ -591,9 +551,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.title === "Show and Tell" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">Object ideas</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>Object ideas</h4>
+              <ul>
                 <li>A gift from someone meaningful</li>
                 <li>A souvenir from a meaningful trip</li>
                 <li>A book that changed your perspective</li>
@@ -604,9 +564,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.title === "Appreciation Circle" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">Facilitator tips</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>Facilitator tips</h4>
+              <ul>
                 <li>Model specific appreciation first — it sets the tone</li>
                 <li>Set the expectation that everyone participates</li>
                 <li>Allow people to pass if they genuinely have nothing</li>
@@ -616,9 +576,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.title === "Line-Up" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">Criterion ideas</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>Criterion ideas</h4>
+              <ul>
                 <li>Birth month (January = one end)</li>
                 <li>Alphabetical by first name</li>
                 <li>Years working in the industry</li>
@@ -629,9 +589,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.title === "Take a Picture of Your Shoes" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">Story prompt ideas</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>Story prompt ideas</h4>
+              <ul>
                 <li>Where have these shoes taken you?</li>
                 <li>Why did you choose these shoes today?</li>
                 <li>What is the most memorable place these shoes have been?</li>
@@ -641,9 +601,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.title === "Near and Far" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">Prompt ideas</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>Prompt ideas</h4>
+              <ul>
                 <li>How much do you enjoy public speaking?</li>
                 <li>How connected do you feel to this team?</li>
                 <li>How often do you work from home?</li>
@@ -654,9 +614,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.title === "Desert Island Scenario" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">Item ideas</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>Item ideas</h4>
+              <ul>
                 <li>A guitar for entertainment</li>
                 <li>A satellite phone for emergencies</li>
                 <li>A good knife for survival and crafting</li>
@@ -667,9 +627,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.title === "Guess Who (Personal Trivia)" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">Fact ideas</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>Fact ideas</h4>
+              <ul>
                 <li>Has traveled to 10+ countries</li>
                 <li>Once met a celebrity</li>
                 <li>Plays a musical instrument</li>
@@ -680,9 +640,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.title === "Team Trivia" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">Category ideas</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>Category ideas</h4>
+              <ul>
                 <li>General knowledge (history, science, geography)</li>
                 <li>Pop culture (movies, music, TV shows)</li>
                 <li>Company or industry trivia</li>
@@ -693,9 +653,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.title === "Hot Takes" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">Hot take ideas</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>Hot take ideas</h4>
+              <ul>
                 <li>Pineapple belongs on pizza</li>
                 <li>The best season is autumn</li>
                 <li>Mondays are actually great</li>
@@ -706,9 +666,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.title === "Online Charades" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">Prompt ideas</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>Prompt ideas</h4>
+              <ul>
                 <li>Making coffee in the morning</li>
                 <li>Working from home</li>
                 <li>A team meeting on Zoom</li>
@@ -719,9 +679,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.title === "Mingle Bingo" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">Prompt ideas</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>Prompt ideas</h4>
+              <ul>
                 <li>Has traveled abroad</li>
                 <li>Speaks two languages</li>
                 <li>Enjoys cooking</li>
@@ -732,9 +692,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.title === "What's Missing" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">Item ideas</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>Item ideas</h4>
+              <ul>
                 <li>A colorful pen</li>
                 <li>A printed photo</li>
                 <li>A coffee mug</li>
@@ -745,9 +705,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.title === "Storytelling Circle" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">Opening line ideas</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>Opening line ideas</h4>
+              <ul>
                 <li>Once upon a time, in a very unusual office...</li>
                 <li>A mysterious package arrived at the office that nobody expected...</li>
                 <li>The team discovered a hidden room behind the printer...</li>
@@ -757,9 +717,9 @@ export function GameDetail({ game }: GameDetailProps) {
           )}
 
           {game.title === "Word Association" && (
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold mb-3">Starting word ideas</h4>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+            <div className={styles.tipBox}>
+              <h4>Starting word ideas</h4>
+              <ul>
                 <li>Summer</li>
                 <li>Coffee</li>
                 <li>Monday</li>
@@ -792,128 +752,128 @@ export function GameDetail({ game }: GameDetailProps) {
               </div>
             </div>
           )}
-        </div>
+        </section>
 
         {materialsList.length > 0 && (
-          <div>
-            <h2 className="text-2xl font-semibold mb-3">Materials Needed</h2>
-            <ul className="list-disc list-inside space-y-2">
+          <section className={styles.section}>
+            <h2>Materials Needed</h2>
+            <ul>
               {materialsList.map((material, index) => (
-                <li key={index} className="text-lg text-muted-foreground">
-                  {material}
-                </li>
+                <li key={index}>{material}</li>
               ))}
             </ul>
-          </div>
-        )}
-
-        {/* Materials image for Human Bingo */}
-        {game.title === "Human Bingo" && (
-          <div className="flex justify-center my-4">
-            <div className="relative overflow-hidden rounded-lg max-w-sm w-full shadow-sm">
-              <img
-                src="/img/Human-Bingo-Materis.png"
-                alt="Human Bingo | Ice Breaker Games - Materials Needed"
-                className="object-contain w-full h-auto"
-              />
-            </div>
-          </div>
-        )}
-
-        {/* First scene image for Two Truths and a Lie */}
-        {game.title === "Two Truths and a Lie" && (
-          <div className="flex justify-center my-6">
-            <div className="relative overflow-hidden rounded-lg max-w-md w-full">
-              <img
-                src="/img/Two-Truths-and-a-Lie1.png"
-                alt="Two Truths and a Lie | Ice Breaker Games - Group Playing Together"
-                className="object-contain w-full h-auto"
-              />
-            </div>
-          </div>
+          </section>
         )}
 
         {stepsList.length > 0 && (
-          <div>
-            <h2 className="text-2xl font-semibold mb-3">How to Play</h2>
-            <ol className="list-decimal list-inside space-y-3">
+          <section className={styles.section}>
+            <h2>How to Play</h2>
+            <ol>
               {stepsList.map((step, index) => (
-                <li
-                  key={index}
-                  className="text-lg leading-relaxed text-muted-foreground"
-                >
-                  {step}
-                </li>
+                <li key={index}>{step}</li>
               ))}
             </ol>
-          </div>
+          </section>
         )}
 
         <GameActions
           title={game.title}
-          players={game.players}
-          duration={game.duration}
-          materials={game.materials}
-          steps={game.steps}
+          players={game.players ?? undefined}
+          duration={game.duration ?? undefined}
+          materials={game.materials ?? undefined}
+          steps={game.steps ?? undefined}
+          variant="body"
         />
+      </div>
 
-        {(game.title === "Emoji Introduction" || game.title === "Emoji Check-In") && (
-          <div className="rounded-2xl border bg-card p-6">
-            <h2 className="text-2xl font-semibold mb-3">Best Variations</h2>
-            <div className="grid gap-4 md:grid-cols-2">
+      <aside className={styles.storyBand} aria-label="In action">
+        <div className={styles.storyMedia}>
+          <Image
+            src={sceneSrc}
+            alt={`${game.title} — facilitators running the icebreaker`}
+            fill
+            sizes="100vw"
+          />
+        </div>
+        <div className={styles.storyScrim} aria-hidden="true" />
+        <div className={styles.storyInner}>
+          <p className={styles.storyEyebrow}>In the room</p>
+          <p className={styles.storyTitle}>How {game.title} feels live</p>
+          <p className={styles.storyLead}>
+            Use the snapshot above, then run the steps with a light touch—celebrate curiosity over
+            perfect answers.
+          </p>
+        </div>
+      </aside>
+
+      <div className={styles.bodyAfterStory}>
+        <section className={styles.section}>
+          <h2>Tips for Success</h2>
+          <ul>
+            <li>Create a welcoming and inclusive environment where everyone feels comfortable participating</li>
+            <li>Clearly explain the rules and objectives before starting the activity</li>
+            <li>Be flexible and adapt the game based on your group&apos;s energy and engagement levels</li>
+            <li>Encourage participation but respect those who prefer to observe</li>
+            <li>Follow up with a brief reflection or discussion to reinforce connections made during the game</li>
+          </ul>
+        </section>
+{(game.title === "Emoji Introduction" || game.title === "Emoji Check-In") && (
+          <div className={styles.section}>
+            <h2>Best Variations</h2>
+            <div className={styles.variationGrid}>
               <div>
-                <h3 className="font-semibold">For meetings</h3>
-                <p className="text-sm text-muted-foreground">Ask for one emoji for energy, one for focus, and one word about what people need from the meeting.</p>
+                <h3>For meetings</h3>
+                <p>Ask for one emoji for energy, one for focus, and one word about what people need from the meeting.</p>
               </div>
               <div>
-                <h3 className="font-semibold">For students</h3>
-                <p className="text-sm text-muted-foreground">Use three safe prompts: mood today, favorite activity, and one thing they are curious about.</p>
+                <h3>For students</h3>
+                <p>Use three safe prompts: mood today, favorite activity, and one thing they are curious about.</p>
               </div>
               <div>
-                <h3 className="font-semibold">For remote teams</h3>
-                <p className="text-sm text-muted-foreground">Have everyone post at the same time in chat, then invite only volunteers to explain their emoji choices.</p>
+                <h3>For remote teams</h3>
+                <p>Have everyone post at the same time in chat, then invite only volunteers to explain their emoji choices.</p>
               </div>
               <div>
-                <h3 className="font-semibold">For large groups</h3>
-                <p className="text-sm text-muted-foreground">Keep it to one emoji per person and discuss patterns instead of asking everyone to explain individually.</p>
+                <h3>For large groups</h3>
+                <p>Keep it to one emoji per person and discuss patterns instead of asking everyone to explain individually.</p>
               </div>
             </div>
-            <div className="mt-5 rounded-xl bg-blue-50 p-4 dark:bg-blue-950/30">
-              <h3 className="font-semibold">Facilitator script</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+            <div className={styles.scriptNote}>
+              <h3>Facilitator script</h3>
+              <p>
                 Pick one to three emojis that show how you are arriving today. You can explain your choices in one sentence, or simply share the emojis and pass.
               </p>
             </div>
-            <p className="mt-4 text-sm text-muted-foreground">
-              See more options in our <a href="/emoji-icebreaker-games" className="font-medium text-blue-600 hover:underline dark:text-blue-400">emoji icebreaker games guide</a>.
+            <p>
+              See more options in our <a href="/emoji-icebreaker-games">emoji icebreaker games guide</a>.
             </p>
           </div>
         )}
 
         {game.title === "Emoji Introduction" && (
-          <div className="rounded-2xl border bg-card p-6">
-            <h2 className="text-2xl font-semibold mb-3">Emoji Introduction Examples</h2>
-            <div className="grid gap-4 md:grid-cols-3">
-              <div className="rounded-xl bg-secondary p-4">
-                <p className="text-2xl">☕📚🚲</p>
-                <p className="mt-2 text-sm text-muted-foreground">Coffee, learning, and cycling are part of my week.</p>
+          <div className={styles.section}>
+            <h2>Emoji Introduction Examples</h2>
+            <div className={styles.exampleGrid}>
+              <div className={styles.exampleItem}>
+                <p className={styles.exampleEmoji}>☕📚🚲</p>
+                <p>Coffee, learning, and cycling are part of my week.</p>
               </div>
-              <div className="rounded-xl bg-secondary p-4">
-                <p className="text-2xl">🎧🌱💡</p>
-                <p className="mt-2 text-sm text-muted-foreground">I like music, gardening, and new ideas.</p>
+              <div className={styles.exampleItem}>
+                <p className={styles.exampleEmoji}>🎧🌱💡</p>
+                <p>I like music, gardening, and new ideas.</p>
               </div>
-              <div className="rounded-xl bg-secondary p-4">
-                <p className="text-2xl">🐶🍕✈️</p>
-                <p className="mt-2 text-sm text-muted-foreground">My dog, pizza, and travel tell you a lot about me.</p>
+              <div className={styles.exampleItem}>
+                <p className={styles.exampleEmoji}>🐶🍕✈️</p>
+                <p>My dog, pizza, and travel tell you a lot about me.</p>
               </div>
             </div>
           </div>
         )}
 
         {game.title === "Emoji Check-In" && (
-          <div className="rounded-2xl border bg-card p-6">
-            <h2 className="text-2xl font-semibold mb-3">Emoji Check-In Prompts</h2>
-            <ul className="list-disc list-inside space-y-2 text-base text-muted-foreground">
+          <div className={styles.section}>
+            <h2>Emoji Check-In Prompts</h2>
+            <ul>
               <li>Choose one emoji for your energy right now.</li>
               <li>Choose one emoji for your focus today.</li>
               <li>Choose one emoji for what you need from this meeting.</li>
@@ -924,41 +884,41 @@ export function GameDetail({ game }: GameDetailProps) {
         )}
 
         {game.title === "The Name Game" && (
-          <div className="rounded-2xl border bg-card p-6">
-            <h2 className="text-2xl font-semibold mb-3">Variations for Different Groups</h2>
-            <div className="grid gap-4 md:grid-cols-2">
+          <div className={styles.section}>
+            <h2>Variations for Different Groups</h2>
+            <div className={styles.variationGrid}>
               <div>
-                <h3 className="font-semibold">For classrooms</h3>
-                <p className="text-sm text-muted-foreground">Pair each name with a favorite subject, hobby, or simple adjective so students have a memory hook.</p>
+                <h3>For classrooms</h3>
+                <p>Pair each name with a favorite subject, hobby, or simple adjective so students have a memory hook.</p>
               </div>
               <div>
-                <h3 className="font-semibold">For work meetings</h3>
-                <p className="text-sm text-muted-foreground">Use name, role, and one current project. This keeps the activity professional and useful.</p>
+                <h3>For work meetings</h3>
+                <p>Use name, role, and one current project. This keeps the activity professional and useful.</p>
               </div>
               <div>
-                <h3 className="font-semibold">For large groups</h3>
-                <p className="text-sm text-muted-foreground">Split into circles of 6–10 people instead of one long round, then invite a few names to be shared back.</p>
+                <h3>For large groups</h3>
+                <p>Split into circles of 6–10 people instead of one long round, then invite a few names to be shared back.</p>
               </div>
               <div>
-                <h3 className="font-semibold">For shy groups</h3>
-                <p className="text-sm text-muted-foreground">Let people read from visible name tags and avoid turning forgotten names into a test.</p>
+                <h3>For shy groups</h3>
+                <p>Let people read from visible name tags and avoid turning forgotten names into a test.</p>
               </div>
             </div>
-            <div className="mt-5 rounded-xl bg-blue-50 p-4 dark:bg-blue-950/30">
-              <h3 className="font-semibold">Facilitator script</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+            <div className={styles.scriptNote}>
+              <h3>Facilitator script</h3>
+              <p>
                 We are going to learn names in a simple chain. Say your name and one short memory cue. Each person will repeat the names before them, then add their own. It is okay to ask for help; this is practice, not a test.
               </p>
             </div>
-            <p className="mt-4 text-sm text-muted-foreground">
-              Compare more options in our <a href="/name-game-icebreakers" className="font-medium text-blue-600 hover:underline dark:text-blue-400">name game icebreakers guide</a>.
+            <p>
+              Compare more options in our <a href="/name-game-icebreakers">name game icebreakers guide</a>.
             </p>
           </div>
         )}
 
         <div>
-          <h3 className="text-xl font-semibold mb-3">Tips for Success</h3>
-          <ul className="list-disc list-inside space-y-2 text-base text-muted-foreground">
+          <h3>Tips for Success</h3>
+          <ul>
             <li>Create a welcoming and inclusive environment where everyone feels comfortable participating</li>
             <li>Clearly explain the rules and objectives before starting the activity</li>
             <li>Be flexible and adapt the game based on your group's energy and engagement levels</li>
@@ -1030,95 +990,63 @@ export function GameDetail({ game }: GameDetailProps) {
           </div>
         )}
 
-        {game.tags.length > 0 && (
-          <div>
-            <h2 className="text-2xl font-semibold mb-3">Tags</h2>
-            <div className="flex flex-wrap gap-2">
-              {game.tags.map((tag) => (
-                <TagBadge key={tag} tag={tag} />
-              ))}
-            </div>
-          </div>
-        )}
-
         {game.title === "Emoji Introduction" && (
           <div>
-            <h3 className="text-xl font-semibold mb-3">Frequently Asked Questions</h3>
-            <div className="space-y-2">
-              <details className="group border border-gray-200 dark:border-gray-700 rounded-lg p-3">
-                <summary className="flex items-center justify-between cursor-pointer text-base font-medium">
+            <h3>Frequently Asked Questions</h3>
+            <div className={styles.faqList}>
+              <details className={styles.faqItem}>
+                <summary>
                   How do you play Emoji Introduction?
-                  <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
                 </summary>
-                <p className="mt-2 text-base text-muted-foreground leading-relaxed">
+                <p>
                   Participants think of 3-5 emojis that represent themselves. Each person then posts their emojis in the chat or shares their screen. The group tries to guess what each emoji represents, and the person explains the meaning behind their choices. This continues until everyone has shared.
                 </p>
               </details>
-              <details className="group border border-gray-200 dark:border-gray-700 rounded-lg p-3">
-                <summary className="flex items-center justify-between cursor-pointer text-base font-medium">
+              <details className={styles.faqItem}>
+                <summary>
                   How many people can play Emoji Introduction?
-                  <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
                 </summary>
-                <p className="mt-2 text-base text-muted-foreground leading-relaxed">
+                <p>
                   Emoji Introduction works best with 5-30 people. For smaller groups of 5-10, everyone can share and discuss each person&apos;s emojis in detail. For larger groups of 10-30, you may want to limit sharing time or use breakout rooms to keep the activity moving.
                 </p>
               </details>
-              <details className="group border border-gray-200 dark:border-gray-700 rounded-lg p-3">
-                <summary className="flex items-center justify-between cursor-pointer text-base font-medium">
+              <details className={styles.faqItem}>
+                <summary>
                   What materials do you need for Emoji Introduction?
-                  <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
                 </summary>
-                <p className="mt-2 text-base text-muted-foreground leading-relaxed">
+                <p>
                   You need a chat function in your video conferencing tool or a shared digital space where participants can post their emojis. If playing in person, you can use paper and markers for participants to write or draw their emojis. That&apos;s it - no special materials required!
                 </p>
               </details>
-              <details className="group border border-gray-200 dark:border-gray-700 rounded-lg p-3">
-                <summary className="flex items-center justify-between cursor-pointer text-base font-medium">
+              <details className={styles.faqItem}>
+                <summary>
                   How long does Emoji Introduction take?
-                  <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
                 </summary>
-                <p className="mt-2 text-base text-muted-foreground leading-relaxed">
+                <p>
                   Emoji Introduction typically takes 10-15 minutes, depending on group size. With a small group of 5-8 people, you can spend 1-2 minutes on each person for a total of 10-15 minutes. Larger groups may need to move faster, keeping introductions to 30-60 seconds each.
                 </p>
               </details>
-              <details className="group border border-gray-200 dark:border-gray-700 rounded-lg p-3">
-                <summary className="flex items-center justify-between cursor-pointer text-base font-medium">
+              <details className={styles.faqItem}>
+                <summary>
                   What are good emojis to use for self-introduction?
-                  <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
                 </summary>
-                <p className="mt-2 text-base text-muted-foreground leading-relaxed">
+                <p>
                   Choose emojis that represent your hobbies, interests, or personality. For example: 🏋️ for fitness lovers, 📚 for readers, 🎮 for gamers, 🍕 for foodies, 🐕 for pet owners, ✈️ for travelers. Try to pick emojis that spark conversation and reveal something meaningful about you.
                 </p>
               </details>
-              <details className="group border border-gray-200 dark:border-gray-700 rounded-lg p-3">
-                <summary className="flex items-center justify-between cursor-pointer text-base font-medium">
+              <details className={styles.faqItem}>
+                <summary>
                   Can Emoji Introduction be used in classroom settings?
-                  <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
                 </summary>
-                <p className="mt-2 text-base text-muted-foreground leading-relaxed">
+                <p>
                   Absolutely! Emoji Introduction is perfect for online classrooms, virtual training sessions, and hybrid learning environments. It&apos;s especially great for getting students comfortable with each other at the start of a new semester or course. Teachers can also use it as a fun way to check understanding of concepts.
                 </p>
               </details>
-              <details className="group border border-gray-200 dark:border-gray-700 rounded-lg p-3">
-                <summary className="flex items-center justify-between cursor-pointer text-base font-medium">
+              <details className={styles.faqItem}>
+                <summary>
                   What tips make Emoji Introduction more engaging?
-                  <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
                 </summary>
-                <p className="mt-2 text-base text-muted-foreground leading-relaxed">
+                <p>
                   First, create a welcoming environment where everyone feels comfortable participating. Give participants time to think about their emoji choices before sharing. Encourage creative emoji combinations rather than obvious ones. Allow discussion after each reveal. And follow up with a brief reflection to reinforce the connections made during the game.
                 </p>
               </details>
@@ -1128,8 +1056,8 @@ export function GameDetail({ game }: GameDetailProps) {
 
         {game.title === "Emoji Check-In" && (
           <div>
-            <h3 className="text-xl font-semibold mb-3">Frequently Asked Questions</h3>
-            <div className="space-y-2">
+            <h3>Frequently Asked Questions</h3>
+            <div className={styles.faqList}>
               {[
                 ["What is an Emoji Check-In icebreaker?", "Emoji Check-In is a quick mood-sharing activity where each participant uses one or more emojis to show how they feel, then optionally adds a short explanation."],
                 ["How long should Emoji Check-In take?", "Most groups can run it in 3–5 minutes. For larger groups, ask everyone to post one emoji and discuss only the overall pattern."],
@@ -1137,14 +1065,11 @@ export function GameDetail({ game }: GameDetailProps) {
                 ["Can Emoji Check-In work in classrooms?", "Yes. Use simple, safe prompts such as mood, energy, or one thing students are looking forward to, and always allow a text alternative."],
                 ["What are good Emoji Check-In prompts?", "Try: choose one emoji for your energy, one emoji for your focus, or one emoji for what you need from today&apos;s session."],
               ].map(([question, answer]) => (
-                <details key={question} className="group border border-gray-200 dark:border-gray-700 rounded-lg p-3">
-                  <summary className="flex items-center justify-between cursor-pointer text-base font-medium">
+                <details key={question} className={styles.faqItem}>
+                  <summary>
                     {question}
-                    <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
                   </summary>
-                  <p className="mt-2 text-base text-muted-foreground leading-relaxed">{answer}</p>
+                  <p>{answer}</p>
                 </details>
               ))}
             </div>
@@ -1153,8 +1078,8 @@ export function GameDetail({ game }: GameDetailProps) {
 
         {game.title === "The Name Game" && (
           <div>
-            <h3 className="text-xl font-semibold mb-3">Frequently Asked Questions</h3>
-            <div className="space-y-2">
+            <h3>Frequently Asked Questions</h3>
+            <div className={styles.faqList}>
               {[
                 ["How do you play The Name Game icebreaker?", "Each person says their name, the next person repeats previous names, then adds their own. You can add a simple prompt such as role, hobby, adjective, or motion."],
                 ["How many people can play The Name Game?", "It works best with 6–20 people. For larger groups, split into smaller circles so the memory challenge stays supportive."],
@@ -1162,14 +1087,11 @@ export function GameDetail({ game }: GameDetailProps) {
                 ["How do you make The Name Game less awkward?", "Use visible name tags, model the first turn, allow help immediately, and avoid making forgotten names feel like failure."],
                 ["What are good Name Game variations?", "Try adjective names, motion names, role-and-project introductions, or small-group rounds for large classes and workshops."],
               ].map(([question, answer]) => (
-                <details key={question} className="group border border-gray-200 dark:border-gray-700 rounded-lg p-3">
-                  <summary className="flex items-center justify-between cursor-pointer text-base font-medium">
+                <details key={question} className={styles.faqItem}>
+                  <summary>
                     {question}
-                    <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
                   </summary>
-                  <p className="mt-2 text-base text-muted-foreground leading-relaxed">{answer}</p>
+                  <p>{answer}</p>
                 </details>
               ))}
             </div>
@@ -1177,9 +1099,9 @@ export function GameDetail({ game }: GameDetailProps) {
         )}
 
         {game.title === "Human Bingo" && (
-          <div className="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold mb-3">Benefits of Human Bingo as an Ice Breaker Game</h3>
-            <ul className="list-disc list-inside space-y-2 text-base text-muted-foreground">
+          <div className={styles.section}>
+            <h3>Benefits of Human Bingo as an Ice Breaker Game</h3>
+            <ul>
               <li>Human Bingo encourages natural conversation and networking among participants</li>
               <li>This ice breaker game works well for groups of any size, from 10 to 100+ people</li>
               <li>Human Bingo helps shy participants feel more comfortable approaching others</li>
@@ -1190,9 +1112,9 @@ export function GameDetail({ game }: GameDetailProps) {
         )}
 
         {game.title === "Find Your Match" && (
-          <div className="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold mb-3">Benefits of Find Your Match as an Ice Breaker Game</h3>
-            <ul className="list-disc list-inside space-y-2 text-base text-muted-foreground">
+          <div className={styles.section}>
+            <h3>Benefits of Find Your Match as an Ice Breaker Game</h3>
+            <ul>
               <li>Find Your Match encourages natural conversation and movement among participants</li>
               <li>This ice breaker game is perfect for groups of 10-50 people, ideal for networking events</li>
               <li>Find Your Match helps participants learn names quickly through active interaction</li>
@@ -1203,185 +1125,184 @@ export function GameDetail({ game }: GameDetailProps) {
           </div>
         )}
 
-        {game.title === "Human Knot" ? (
-          <div className="bg-teal-50 dark:bg-teal-900/20 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold mb-3">More Games Like the Human Knot</h3>
-            <p className="text-base text-muted-foreground mb-4">
+        
+        {game.tags.length > 0 && (
+          <section className={styles.section}>
+            <h2>Tags</h2>
+            <div className={styles.tags}>
+              {game.tags.map((tag) => (
+                <span key={tag} className={styles.tag}>
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </section>
+        )}
+
+{game.title === "Human Knot" ? (
+          <div className={styles.related}>
+            <h3>More Games Like the Human Knot</h3>
+            <p>
               Want physical or problem-solving alternatives to Human Knot? Compare team challenges with the same collaboration energy and safer non-contact options.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-              <a href="/games-like-the-human-knot" className="block p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700">
-                <div className="font-medium text-gray-900 dark:text-gray-100">Games like the Human Knot</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">12 team-building alternatives with rules</div>
+            <div className={styles.relatedGrid}>
+              <a href="/games-like-the-human-knot" className={styles.relatedLink}>
+                <div className={styles.relatedLinkTitle}>Games like the Human Knot</div>
+                <div className={styles.relatedLinkDesc}>12 team-building alternatives with rules</div>
               </a>
-              <a href="/icebreaker-games-for-teens" className="block p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700">
-                <div className="font-medium text-gray-900 dark:text-gray-100">Ice breaker games for teens</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Classroom and club openers with safety notes</div>
+              <a href="/icebreaker-games-for-teens" className={styles.relatedLink}>
+                <div className={styles.relatedLinkTitle}>Ice breaker games for teens</div>
+                <div className={styles.relatedLinkDesc}>Classroom and club openers with safety notes</div>
               </a>
-              <a href="/icebreaker-games-for-youth-group" className="block p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700">
-                <div className="font-medium text-gray-900 dark:text-gray-100">Youth group icebreakers</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Age-appropriate physical and social games</div>
+              <a href="/icebreaker-games-for-youth-group" className={styles.relatedLink}>
+                <div className={styles.relatedLinkTitle}>Youth group icebreakers</div>
+                <div className={styles.relatedLinkDesc}>Age-appropriate physical and social games</div>
               </a>
             </div>
             <a
               href="/games-like-the-human-knot"
-              className="inline-flex items-center text-teal-700 dark:text-teal-400 font-medium hover:underline"
+              className={styles.relatedCta}
             >
               Browse all games like the Human Knot
-              <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
             </a>
           </div>
         ) : game.title === "Human Bingo" || game.title === "Chat Waterfall" ? (
-          <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold mb-3">
+          <div className={styles.related}>
+            <h3>
               {game.title === "Human Bingo" 
                 ? "More Ice Breaker Games Like Human Bingo" 
                 : "Virtual Ice Breaker Games Like Chat Waterfall"}
             </h3>
-            <p className="text-base text-muted-foreground mb-4">
+            <p>
               {game.title === "Human Bingo" 
                 ? "If you enjoyed Human Bingo, explore our collection of other engaging ice breaker games perfect for social events, networking, and team building. Find more ice breaker games that create memorable experiences."
                 : "Chat Waterfall works great with other virtual ice breaker games. Try these interactive activities for your next online meeting or team event!"}
             </p>
             {game.title === "Human Bingo" && (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-                <a href="/games-like-human-bingo" className="block p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700">
-                  <div className="font-medium text-gray-900 dark:text-gray-100">Games like Human Bingo</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">12 networking alternatives with rules and comparisons</div>
+              <div className={styles.relatedGrid}>
+                <a href="/games-like-human-bingo" className={styles.relatedLink}>
+                  <div className={styles.relatedLinkTitle}>Games like Human Bingo</div>
+                  <div className={styles.relatedLinkDesc}>12 networking alternatives with rules and comparisons</div>
                 </a>
-                <a href="/games/icebreaker-bingo" className="block p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700">
-                  <div className="font-medium text-gray-900 dark:text-gray-100">Icebreaker Bingo</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Themed bingo cards for workshops and events</div>
+                <a href="/games/icebreaker-bingo" className={styles.relatedLink}>
+                  <div className={styles.relatedLinkTitle}>Icebreaker Bingo</div>
+                  <div className={styles.relatedLinkDesc}>Themed bingo cards for workshops and events</div>
                 </a>
-                <a href="/games/find-your-match" className="block p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700">
-                  <div className="font-medium text-gray-900 dark:text-gray-100">Find Your Match</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Faster pairing mixer with famous pairs</div>
+                <a href="/games/find-your-match" className={styles.relatedLink}>
+                  <div className={styles.relatedLinkTitle}>Find Your Match</div>
+                  <div className={styles.relatedLinkDesc}>Faster pairing mixer with famous pairs</div>
                 </a>
-                <a href="/icebreaker-games-for-teens" className="block p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700">
-                  <div className="font-medium text-gray-900 dark:text-gray-100">Ice breaker games for teens</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Classroom and club mixers with safety notes</div>
+                <a href="/icebreaker-games-for-teens" className={styles.relatedLink}>
+                  <div className={styles.relatedLinkTitle}>Ice breaker games for teens</div>
+                  <div className={styles.relatedLinkDesc}>Classroom and club mixers with safety notes</div>
                 </a>
-                <a href="/icebreaker-games-for-youth-group" className="block p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700">
-                  <div className="font-medium text-gray-900 dark:text-gray-100">Youth group icebreakers</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Age-appropriate games for youth nights</div>
+                <a href="/icebreaker-games-for-youth-group" className={styles.relatedLink}>
+                  <div className={styles.relatedLinkTitle}>Youth group icebreakers</div>
+                  <div className={styles.relatedLinkDesc}>Age-appropriate games for youth nights</div>
                 </a>
               </div>
             )}
             {game.title === "Chat Waterfall" && (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-                <a href="/virtual-icebreaker-games" className="block p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700">
-                  <div className="font-medium text-gray-900 dark:text-gray-100">Virtual ice breaker games</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Online hub with 14 Zoom/Teams warm-ups</div>
+              <div className={styles.relatedGrid}>
+                <a href="/virtual-icebreaker-games" className={styles.relatedLink}>
+                  <div className={styles.relatedLinkTitle}>Virtual ice breaker games</div>
+                  <div className={styles.relatedLinkDesc}>Online hub with 14 Zoom/Teams warm-ups</div>
                 </a>
-                <a href="/short-virtual-icebreakers" className="block p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700">
-                  <div className="font-medium text-gray-900 dark:text-gray-100">Short virtual icebreakers</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">5-minute warm-ups that respect the clock</div>
+                <a href="/short-virtual-icebreakers" className={styles.relatedLink}>
+                  <div className={styles.relatedLinkTitle}>Short virtual icebreakers</div>
+                  <div className={styles.relatedLinkDesc}>5-minute warm-ups that respect the clock</div>
                 </a>
-                <a href="/games/speed-networking" className="block p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700">
-                  <div className="font-medium text-gray-900 dark:text-gray-100">Speed Networking</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Fast-paced networking for virtual meetings</div>
+                <a href="/games/speed-networking" className={styles.relatedLink}>
+                  <div className={styles.relatedLinkTitle}>Speed Networking</div>
+                  <div className={styles.relatedLinkDesc}>Fast-paced networking for virtual meetings</div>
                 </a>
-                <a href="/games/virtual-background-story" className="block p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700">
-                  <div className="font-medium text-gray-900 dark:text-gray-100">Virtual Background Story</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Creative ice breaker for video calls</div>
+                <a href="/games/virtual-background-story" className={styles.relatedLink}>
+                  <div className={styles.relatedLinkTitle}>Virtual Background Story</div>
+                  <div className={styles.relatedLinkDesc}>Creative ice breaker for video calls</div>
                 </a>
               </div>
             )}
             <a 
               href={game.title === "Human Bingo" ? "/games-like-human-bingo" : game.title === "Chat Waterfall" ? "/virtual-icebreaker-games" : "/games"} 
-              className="inline-flex items-center text-blue-600 dark:text-blue-400 font-medium hover:underline"
+              className={styles.relatedCta}
             >
               {game.title === "Human Bingo" ? "Browse all games like Human Bingo" : game.title === "Chat Waterfall" ? "Browse virtual ice breaker games" : "Browse All Ice Breaker Games"}
-              <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
             </a>
           </div>
         ) : game.title === "Two Truths and a Lie" ? (
-          <div className="bg-teal-50 dark:bg-teal-900/20 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold mb-3">More games like Two Truths and a Lie</h3>
-            <p className="text-base text-muted-foreground mb-4">
+          <div className={styles.related}>
+            <h3>More games like Two Truths and a Lie</h3>
+            <p>
               Looking for Two Truths alternatives or classroom-safe storytelling icebreakers?
               Continue with these guides.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-              <a href="/games-like-two-truths-and-a-lie" className="block p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700">
-                <div className="font-medium text-gray-900 dark:text-gray-100">Games like Two Truths and a Lie</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">12 get-to-know substitutes with rules and variations</div>
+            <div className={styles.relatedGrid}>
+              <a href="/games-like-two-truths-and-a-lie" className={styles.relatedLink}>
+                <div className={styles.relatedLinkTitle}>Games like Two Truths and a Lie</div>
+                <div className={styles.relatedLinkDesc}>12 get-to-know substitutes with rules and variations</div>
               </a>
-              <a href="/icebreaker-games-for-teens" className="block p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700">
-                <div className="font-medium text-gray-900 dark:text-gray-100">Ice breaker games for teens</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">14 classroom and club openers with safety notes</div>
+              <a href="/icebreaker-games-for-teens" className={styles.relatedLink}>
+                <div className={styles.relatedLinkTitle}>Ice breaker games for teens</div>
+                <div className={styles.relatedLinkDesc}>14 classroom and club openers with safety notes</div>
               </a>
-              <a href="/virtual-icebreaker-games" className="block p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700">
-                <div className="font-medium text-gray-900 dark:text-gray-100">Virtual ice breaker games</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Zoom and Teams hub with chat-first warm-ups</div>
+              <a href="/virtual-icebreaker-games" className={styles.relatedLink}>
+                <div className={styles.relatedLinkTitle}>Virtual ice breaker games</div>
+                <div className={styles.relatedLinkDesc}>Zoom and Teams hub with chat-first warm-ups</div>
               </a>
-              <a href="/icebreaker-games-for-small-groups" className="block p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700">
-                <div className="font-medium text-gray-900 dark:text-gray-100">Small group icebreakers</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Best formats for circles of 4–12</div>
+              <a href="/icebreaker-games-for-small-groups" className={styles.relatedLink}>
+                <div className={styles.relatedLinkTitle}>Small group icebreakers</div>
+                <div className={styles.relatedLinkDesc}>Best formats for circles of 4–12</div>
               </a>
             </div>
             <a
               href="/games-like-two-truths-and-a-lie"
-              className="inline-flex items-center text-teal-700 dark:text-teal-400 font-medium hover:underline"
+              className={styles.relatedCta}
             >
               Browse all games like Two Truths and a Lie
-              <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
             </a>
           </div>
         ) : game.title === "The Name Game" ? (
-          <div className="bg-teal-50 dark:bg-teal-900/20 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold mb-3">Related teen &amp; student guides</h3>
-            <p className="text-base text-muted-foreground mb-4">
+          <div className={styles.related}>
+            <h3>Related teen &amp; student guides</h3>
+            <p>
               The Name Game works especially well for first-day teen classrooms and new clubs. Pair it with these age-appropriate guides.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-              <a href="/icebreaker-games-for-teens" className="block p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700">
-                <div className="font-medium text-gray-900 dark:text-gray-100">Ice breaker games for teens</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">14 classroom and club openers with safety notes</div>
+            <div className={styles.relatedGrid}>
+              <a href="/icebreaker-games-for-teens" className={styles.relatedLink}>
+                <div className={styles.relatedLinkTitle}>Ice breaker games for teens</div>
+                <div className={styles.relatedLinkDesc}>14 classroom and club openers with safety notes</div>
               </a>
-              <a href="/blog/icebreaker-games-for-students" className="block p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700">
-                <div className="font-medium text-gray-900 dark:text-gray-100">Icebreaker games for students</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Teacher-focused picks by scenario</div>
+              <a href="/blog/icebreaker-games-for-students" className={styles.relatedLink}>
+                <div className={styles.relatedLinkTitle}>Icebreaker games for students</div>
+                <div className={styles.relatedLinkDesc}>Teacher-focused picks by scenario</div>
               </a>
-              <a href="/icebreaker-games-for-youth-group" className="block p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700">
-                <div className="font-medium text-gray-900 dark:text-gray-100">Youth group icebreakers</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Retreat and youth-night openers</div>
+              <a href="/icebreaker-games-for-youth-group" className={styles.relatedLink}>
+                <div className={styles.relatedLinkTitle}>Youth group icebreakers</div>
+                <div className={styles.relatedLinkDesc}>Retreat and youth-night openers</div>
               </a>
-              <a href="/icebreaker-games-for-small-groups" className="block p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700">
-                <div className="font-medium text-gray-900 dark:text-gray-100">Small group icebreakers</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Best formats for circles of 4–12</div>
+              <a href="/icebreaker-games-for-small-groups" className={styles.relatedLink}>
+                <div className={styles.relatedLinkTitle}>Small group icebreakers</div>
+                <div className={styles.relatedLinkDesc}>Best formats for circles of 4–12</div>
               </a>
             </div>
             <a
               href="/icebreaker-games-for-teens"
-              className="inline-flex items-center text-teal-700 dark:text-teal-400 font-medium hover:underline"
+              className={styles.relatedCta}
             >
               Browse ice breaker games for teens
-              <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
             </a>
           </div>
         ) : (
-          <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold mb-3">Related Ice Breaker Games</h3>
-            <p className="text-base text-muted-foreground mb-4">
+          <div className={styles.related}>
+            <h3>Related Ice Breaker Games</h3>
+            <p>
               Looking for more activities? Explore our collection of {game.category.toLowerCase()} ice breaker games to find the perfect fit for your next event, meeting, or gathering.
             </p>
             <a 
               href="/games" 
-              className="inline-flex items-center text-blue-600 dark:text-blue-400 font-medium hover:underline"
+              className={styles.relatedCta}
             >
               Browse All Ice Breaker Games
-              <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
             </a>
           </div>
         )}
