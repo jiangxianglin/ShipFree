@@ -1,6 +1,10 @@
 import { getGameBySlug, getGameById } from "@/db/queries/games";
 import { GameDetail } from "@/components/games/GameDetail";
 import { TwoTruthsAndALieDetail } from "@/components/games/TwoTruthsAndALieDetail";
+import {
+  PortraitGalleryDetail,
+  portraitGalleryFaqs,
+} from "@/components/games/PortraitGalleryDetail";
 import { notFound, redirect } from "next/navigation";
 import type { Metadata } from "next";
 import type { Game } from "@/types/game";
@@ -96,10 +100,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     imageUrl = "/img/EmojiIntroduction-GameplayScene.png";
   } else if (game.title === "Emoji Check-In") {
     imageUrl = "/img/EmojiCheck-In-hero.png";
+  } else if (game.title === "Portrait Gallery") {
+    imageUrl = "/img/games/portrait-gallery-hero.jpg";
   }
 
   let description = buildDefaultDescription(game);
-  if (game.title === "Find Your Match") {
+  if (game.title === "Portrait Gallery") {
+    description =
+      "How to play Portrait Gallery icebreaker game: subjects & artists, 10–15 second rotate rounds, gallery walk, plus work and virtual variations. 6–30 players.";
+  } else if (game.title === "Find Your Match") {
     description = "Find Your Match | Ice Breaker Games: Participants get cards with famous pairs and find their match by asking questions. Perfect ice breaker for networking events!";
   } else if (game.title === "Human Bingo") {
     description =
@@ -348,7 +357,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const title =
-    game.title === "Emoji Introduction"
+    game.title === "Portrait Gallery"
+      ? "Portrait Gallery Icebreaker Game | How to Play (Step-by-Step)"
+      : game.title === "Emoji Introduction"
       ? "Emoji Introduction Activity | Emoji Icebreaker for Meetings"
       : game.title === "Emoji Check-In"
         ? "Emoji Check-In Icebreaker | Quick Mood Activity for Teams"
@@ -535,6 +546,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             ? "Emoji Introduction | Ice Breaker Games - Participants introduce themselves using creative emojis in virtual meeting ice breaker game"
             : game.title === "Emoji Check-In"
             ? "Emoji Check-In ice breaker game - Participants share mood using emojis in virtual meeting icebreaker"
+            : game.title === "Portrait Gallery"
+            ? "Portrait Gallery icebreaker game — group sketching quick portraits in a creative workshop"
             : `${game.title} - Ice Breaker Game`,
         },
       ],
@@ -585,10 +598,16 @@ export default async function GameDetailPage({ params }: Props) {
     jsonLdImage = "https://www.icebreakergames.site/img/EmojiIntroduction-GameplayScene.png";
   } else if (game.title === "Emoji Check-In") {
     jsonLdImage = "https://www.icebreakergames.site/img/EmojiCheck-In-hero.png";
+  } else if (game.title === "Portrait Gallery") {
+    jsonLdImage =
+      "https://www.icebreakergames.site/img/games/portrait-gallery-hero.jpg";
   }
 
   let jsonLdDescription = game.description;
-  if (game.title === "Find Your Match") {
+  if (game.title === "Portrait Gallery") {
+    jsonLdDescription =
+      "Portrait Gallery is a creative icebreaker game where subjects and artists rotate every 10–15 seconds to build collaborative portraits, then reveal them in a gallery walk. Ideal for workshops, meetings, and classrooms.";
+  } else if (game.title === "Find Your Match") {
     jsonLdDescription = "Find Your Match | Ice Breaker Games: A popular pairing ice breaker game where participants receive cards with famous pairs and must find their matching partner through asking questions. Perfect for networking events and social gatherings!";
   } else if (game.title === "Human Bingo") {
     jsonLdDescription = "Human Bingo is a popular ice breaker game perfect for social events, networking, and team building. Learn how to play this engaging ice breaker game.";
@@ -936,6 +955,57 @@ export default async function GameDetailPage({ params }: Props) {
           }
         ]
       }] : []),
+      ...(game.title === "Portrait Gallery"
+        ? [
+            {
+              "@type": "FAQPage",
+              "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+              mainEntity: portraitGalleryFaqs.map((item) => ({
+                "@type": "Question",
+                name: item.q,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: item.a,
+                },
+              })),
+            },
+            {
+              "@type": "HowTo",
+              "@id": `https://www.icebreakergames.site/games/${game.slug}#howto`,
+              name: "How to Play Portrait Gallery",
+              description:
+                "A creative icebreaker where subjects and artists rotate every 10–15 seconds to build collaborative portraits, then reveal them in a gallery walk.",
+              totalTime: "PT15M",
+              supply: [
+                { "@type": "HowToSupply", name: "Paper" },
+                { "@type": "HowToSupply", name: "Pencils or pens" },
+                { "@type": "HowToSupply", name: "Timer" },
+              ],
+              step: [
+                {
+                  "@type": "HowToStep",
+                  name: "Split into subjects and artists",
+                  text: "Divide into Team A (subjects) and Team B (artists). Use an inner/outer circle or table seating so each artist faces a subject.",
+                },
+                {
+                  "@type": "HowToStep",
+                  name: "Draw for 10–15 seconds",
+                  text: "Start the timer and have artists sketch quickly while subjects stay still.",
+                },
+                {
+                  "@type": "HowToStep",
+                  name: "Call Rotate!",
+                  text: "When the timer ends, call Rotate! Artists move one seat; subjects stay put. Repeat for 6–10 rounds.",
+                },
+                {
+                  "@type": "HowToStep",
+                  name: "Gallery walk reveal",
+                  text: "Display the portraits and invite a two-minute gallery walk before returning to the agenda.",
+                },
+              ],
+            },
+          ]
+        : []),
       ...(game.title === "Chat Waterfall" ? [{
         "@type": "HowTo",
         "@id": `https://www.icebreakergames.site/games/${game.slug}#howto`,
@@ -4161,7 +4231,8 @@ export default async function GameDetailPage({ params }: Props) {
     ]
   };
 
-  const useEditorialDetail = game.slug === "two-truths-and-a-lie";
+  const useEditorialDetail =
+    game.slug === "two-truths-and-a-lie" || game.slug === "portrait-gallery";
 
   return (
     <>
@@ -4170,7 +4241,11 @@ export default async function GameDetailPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       {useEditorialDetail ? (
-        <TwoTruthsAndALieDetail game={game} />
+        game.slug === "portrait-gallery" ? (
+          <PortraitGalleryDetail game={game} />
+        ) : (
+          <TwoTruthsAndALieDetail game={game} />
+        )
       ) : (
         <>
           <div className="container mx-auto px-4 py-4">

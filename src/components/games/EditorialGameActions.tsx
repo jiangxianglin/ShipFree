@@ -11,6 +11,8 @@ type EditorialGameActionsProps = {
   duration?: string | null;
   materials?: string | null;
   steps?: string | null;
+  relatedHref?: string;
+  relatedLabel?: string;
 };
 
 export function EditorialGameActions({
@@ -19,6 +21,8 @@ export function EditorialGameActions({
   duration,
   materials,
   steps,
+  relatedHref = "/games-like-two-truths-and-a-lie",
+  relatedLabel = "Games like Two Truths",
 }: EditorialGameActionsProps) {
   const [copied, setCopied] = useState(false);
 
@@ -60,8 +64,8 @@ export function EditorialGameActions({
         <button type="button" onClick={printGame} className={styles.actionGhost}>
           Print this game
         </button>
-        <Link href="/games-like-two-truths-and-a-lie" className={styles.actionGhost}>
-          Games like Two Truths
+        <Link href={relatedHref} className={styles.actionGhost}>
+          {relatedLabel}
         </Link>
       </div>
     </div>

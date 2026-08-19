@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
-import { db } from "@/db";
-import { gamesTable } from "@/db/schema";
+import { createClient } from "@supabase/supabase-js";
 import { blogPosts } from "@/data/blog";
+import { GAME_SLUGS } from "@/data/game-slugs";
 
 export const dynamic = "force-static";
 export const revalidate = 3600;
@@ -21,7 +21,12 @@ function getStaticPages(): MetadataRoute.Sitemap {
   const daily = "daily" as const;
   const monthly = "monthly" as const;
 
-  const paths: Array<{ path: string; changeFrequency: "weekly" | "daily" | "monthly"; priority: number; lastModified?: Date }> = [
+  const paths: Array<{
+    path: string;
+    changeFrequency: "weekly" | "daily" | "monthly";
+    priority: number;
+    lastModified?: Date;
+  }> = [
     { path: "", changeFrequency: weekly, priority: 1.0 },
     { path: "/games", changeFrequency: daily, priority: 0.9 },
     { path: "/best-icebreaker-games", changeFrequency: weekly, priority: 0.9 },
@@ -68,25 +73,66 @@ function getBlogPages(): MetadataRoute.Sitemap {
   });
 }
 
-async function getGamePages(): Promise<MetadataRoute.Sitemap> {
-  try {
-    const games = await db
-      .select({
-        slug: gamesTable.slug,
-        updatedAt: gamesTable.updatedAt,
-      })
-      .from(gamesTable);
+/**
+ * Soft-fetch live game slugs from Supabase (same source as game pages).
+ * Never throws — returns empty map on any failure so static fallback still ships.
+ */
+async function fetchLiveGameMeta(): Promise<Map<string, Date>> {
+  const meta = new Map<string, Date>();
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-    return games.map((game) => ({
-      url: `${baseUrl}/games/${game.slug}`,
-      lastModified: game.updatedAt || new Date(),
+  if (!supabaseUrl || !supabaseAnonKey) {
+    return meta;
+  }
+
+  try {
+    const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+      auth: {
+        persistSession: false,
+        autoRefreshToken: false,
+        detectSessionInUrl: false,
+      },
+    });
+
+    const { data, error } = await supabase
+      .from("games")
+      .select("slug, updated_at");
+
+    if (error || !data) {
+      console.error("Sitemap: Supabase games query failed; using static GAME_SLUGS.", error);
+      return meta;
+    }
+
+    for (const row of data) {
+      if (!row?.slug || typeof row.slug !== "string") continue;
+      const updated = row.updated_at ? new Date(row.updated_at) : new Date();
+      meta.set(row.slug, Number.isNaN(updated.getTime()) ? new Date() : updated);
+    }
+  } catch (error) {
+    console.error("Sitemap: Supabase unavailable; using static GAME_SLUGS.", error);
+  }
+
+  return meta;
+}
+
+/**
+ * Always emit /games/* detail URLs.
+ * Static GAME_SLUGS is the safety net; Supabase adds newer slugs + lastmod when available.
+ */
+async function getGamePages(): Promise<MetadataRoute.Sitemap> {
+  const now = new Date();
+  const live = await fetchLiveGameMeta();
+  const slugs = new Set<string>([...GAME_SLUGS, ...live.keys()]);
+
+  return [...slugs]
+    .sort()
+    .map((slug) => ({
+      url: `${baseUrl}/games/${slug}`,
+      lastModified: live.get(slug) ?? now,
       changeFrequency: "daily" as const,
       priority: 0.9,
     }));
-  } catch (error) {
-    console.error("Sitemap: failed to load games from DB; continuing with static + blog URLs.", error);
-    return [];
-  }
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
