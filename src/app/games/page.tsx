@@ -108,6 +108,12 @@ const clusterGuides = [
       "Group-cluster hub: facilitator-ready activities for circles of 4–12.",
   },
   {
+    href: "/name-game-icebreakers",
+    title: "Name game icebreakers",
+    description:
+      "Learn how to play the name game and other name-learning openers for students and teams.",
+  },
+  {
     href: "/icebreaker-games-for-youth-group",
     title: "Ice breaker games for youth group",
     description:

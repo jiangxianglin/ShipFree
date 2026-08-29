@@ -12,6 +12,7 @@ const highPriorityBlogSlugs = new Set([
   "ice-breaker-games-for-adults",
   "icebreaker-games-for-students",
   "human-bingo-for-students-printable",
+  "two-truths-and-a-lie-for-students-printable",
 ]);
 
 /** Always-on SEO URLs — must never depend on DB success. */

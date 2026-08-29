@@ -2,7 +2,9 @@ export type AnalyticsEventName =
   | "copy_game_instructions"
   | "print_game"
   | "click_related_game"
-  | "use_game_filter";
+  | "use_game_filter"
+  | "play_emoji_intro"
+  | "play_chainlink";
 
 declare global {
   interface Window {

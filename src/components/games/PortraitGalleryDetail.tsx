@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Game } from "@/types/game";
+import type { RelatedGameItem } from "@/lib/games/related";
 import { EditorialGameActions } from "./EditorialGameActions";
+import { RelatedGames } from "./RelatedGames";
 import styles from "./game-detail-editorial.module.css";
 
 const HERO_SRC = "/img/games/portrait-gallery-hero.jpg";
@@ -47,9 +49,10 @@ export const portraitGalleryFaqs = [
 
 type Props = {
   game: Game;
+  relatedGames?: RelatedGameItem[];
 };
 
-export function PortraitGalleryDetail({ game }: Props) {
+export function PortraitGalleryDetail({ game, relatedGames = [] }: Props) {
   const materialsText =
     game.materials ||
     "Paper (one sheet per subject), pencils or pens, a timer or phone, optional tape or clips for the gallery wall";
@@ -320,7 +323,7 @@ export function PortraitGalleryDetail({ game }: Props) {
             <Link href="/icebreaker-games-for-meetings">ice breaker games for meetings</Link> hub, or
             follow with a talking game such as{" "}
             <Link href="/games/emoji-introduction">Emoji Introduction</Link> or{" "}
-            <Link href="/games/the-name-game">The Name Game</Link> so people connect faces to names.
+            <Link href="/games/the-name-game">how to play the name game</Link> so people connect faces to names.
             For groups of 4–12, see{" "}
             <Link href="/icebreaker-games-for-small-groups">
               ice breaker games for small groups
@@ -370,51 +373,31 @@ export function PortraitGalleryDetail({ game }: Props) {
           ))}
         </section>
 
-        <section className={styles.related}>
-          <h2>Related games &amp; guides</h2>
-          <p>
-            Keep the creative energy going with picture-based and get-to-know activities from the same
-            cluster.
-          </p>
-          <ul className={styles.relatedList}>
-            <li>
-              <Link href="/games/emoji-introduction">
-                Emoji Introduction
-                <span>Low-pressure emoji icebreaker for meetings and classrooms</span>
-              </Link>
-            </li>
-            <li>
-              <Link href="/games/picture-sharing">
-                Picture Sharing
-                <span>Share a photo and the story behind it</span>
-              </Link>
-            </li>
-            <li>
-              <Link href="/games/the-name-game">
-                The Name Game
-                <span>Learn names quickly after the gallery walk</span>
-              </Link>
-            </li>
-            <li>
-              <Link href="/games/find-your-match">
-                Find Your Match
-                <span>Pairing icebreaker with famous pairs</span>
-              </Link>
-            </li>
-            <li>
-              <Link href="/icebreaker-games-for-small-groups">
-                Ice breaker games for small groups
-                <span>Hub for 4–12 person creative openers</span>
-              </Link>
-            </li>
-            <li>
-              <Link href="/virtual-icebreaker-games">
-                Virtual ice breaker games
-                <span>Remote-friendly warm-ups including drawing variants</span>
-              </Link>
-            </li>
-          </ul>
-        </section>
+        <>
+          <RelatedGames
+            items={relatedGames}
+            heading="Related games & guides"
+            intro="Keep the creative energy going with picture-based and get-to-know activities from the same cluster."
+            browseHref="/icebreaker-games-for-small-groups"
+            browseLabel="Browse small-group icebreakers"
+          />
+          <section className={styles.related} aria-label="Related guides">
+            <ul className={styles.relatedList}>
+              <li>
+                <Link href="/icebreaker-games-for-small-groups">
+                  Ice breaker games for small groups
+                  <span>Hub for 4–12 person creative openers</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/virtual-icebreaker-games">
+                  Virtual ice breaker games
+                  <span>Remote-friendly warm-ups including drawing variants</span>
+                </Link>
+              </li>
+            </ul>
+          </section>
+        </>
       </div>
     </div>
   );

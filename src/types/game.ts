@@ -47,6 +47,15 @@ export type GameCardProps = {
   game: Game;
 };
 
+export type RelatedGameCard = {
+  slug: string;
+  title: string;
+  blurb: string;
+  image: string;
+  anchorText: string;
+};
+
 export type GameDetailProps = {
   game: Game;
+  relatedGames?: RelatedGameCard[];
 };

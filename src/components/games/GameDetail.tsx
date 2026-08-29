@@ -1,6 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ChainlinkPlay } from "./ChainlinkPlay";
+import { EmojiIntroductionPlay } from "./EmojiIntroductionPlay";
 import { GameActions } from "./GameActions";
+import { GamePageExtras } from "./GamePageExtras";
+import { RelatedGames } from "./RelatedGames";
 import { getGameHeroPath, getGameScenePath } from "@/lib/games/media";
 import type { GameDetailProps } from "@/types/game";
 import styles from "./game-detail.module.css";
@@ -11,7 +15,7 @@ function truncateLead(text: string, max = 180) {
   return `${normalized.slice(0, max - 1).trimEnd()}…`;
 }
 
-export function GameDetail({ game }: GameDetailProps) {
+export function GameDetail({ game, relatedGames = [] }: GameDetailProps) {
   const materialsList = game.materials
     ? game.materials.split("\n").filter(Boolean)
     : [];
@@ -66,6 +70,16 @@ export function GameDetail({ game }: GameDetailProps) {
             steps={game.steps ?? undefined}
             variant="hero"
           />
+          {game.slug === "emoji-introduction" ? (
+            <p className={styles.heroPlayCue}>
+              <a href="#play-emoji">Try the emoji intro builder ↓</a>
+            </p>
+          ) : null}
+          {game.slug === "chainlink" ? (
+            <p className={styles.heroPlayCue}>
+              <a href="#play-chainlink">Practice a Chainlink round ↓</a>
+            </p>
+          ) : null}
         </div>
       </header>
 
@@ -85,13 +99,16 @@ export function GameDetail({ game }: GameDetailProps) {
           </div>
         </section>
 
-        <section className={styles.lede}>
+<section className={styles.lede}>
           <h2>What is {game.title}?</h2>
           <p>{game.description}</p>
         </section>
 
+        {game.slug === "emoji-introduction" ? <EmojiIntroductionPlay /> : null}
+        {game.slug === "chainlink" ? <ChainlinkPlay /> : null}
+
         <section className={styles.section}>
-<h3>Why Play {game.title}?</h3>
+          <h3>Why Play {game.title}?</h3>
           {game.title === "Find Your Match" ? (
             <p>
               Find Your Match is one of the most engaging ice breaker games for social events and networking. 
@@ -135,10 +152,23 @@ export function GameDetail({ game }: GameDetailProps) {
               The Name Game is a simple name game icebreaker for helping a new group learn names quickly. Each person repeats the names of everyone who went before them, then adds their own name with a short memory cue such as a role, adjective, or hobby.
               It works well for meetings, classrooms, and workshops because it is structured, low-pressure, and gets everyone speaking early without needing materials.
             </p>
+          ) : game.title === "Chainlink" ? (
+            <p>
+              Chainlink is an introduction chain where each person links a shared trait with the previous speaker, then adds a new fact—building memory and connection across the room.
+              After the chain, follow with{" "}
+              <Link href="/games/the-name-game">how to play the name game</Link>{" "}
+              so faces stick to names, or browse more{" "}
+              <Link href="/name-game-icebreakers">name game icebreakers</Link>.
+            </p>
           ) : game.title === "Emoji Introduction" ? (
             <p>
               Emoji Introduction is a low-pressure emoji icebreaker where each person introduces themselves using two or three emojis instead of a long verbal introduction.
               It works especially well for virtual meetings, online classrooms, and hybrid teams because people can answer in chat first, then explain only as much as they feel comfortable sharing.
+            </p>
+          ) : game.title === "Name That Movie Quote" ? (
+            <p>
+              Name That Movie Quote is a fast, low-prep icebreaker that turns shared pop culture into laughs. Players quote a line; the group guesses the film.
+              It works for parties, youth groups, and team socials when you want energy without personal disclosure—and themed rounds keep mixed audiences included.
             </p>
           ) : game.title === "Emoji Check-In" ? (
             <p>
@@ -992,7 +1022,7 @@ export function GameDetail({ game }: GameDetailProps) {
 
         {game.title === "Emoji Introduction" && (
           <div>
-            <h3>Frequently Asked Questions</h3>
+            <h2>Frequently Asked Questions</h2>
             <div className={styles.faqList}>
               <details className={styles.faqItem}>
                 <summary>
@@ -1126,7 +1156,7 @@ export function GameDetail({ game }: GameDetailProps) {
         )}
 
         
-        {game.tags.length > 0 && (
+{game.tags.length > 0 && (
           <section className={styles.section}>
             <h2>Tags</h2>
             <div className={styles.tags}>
@@ -1139,173 +1169,120 @@ export function GameDetail({ game }: GameDetailProps) {
           </section>
         )}
 
-{game.title === "Human Knot" ? (
-          <div className={styles.related}>
-            <h3>More Games Like the Human Knot</h3>
-            <p>
-              Want physical or problem-solving alternatives to Human Knot? Compare team challenges with the same collaboration energy and safer non-contact options.
-            </p>
-            <div className={styles.relatedGrid}>
-              <a href="/games-like-the-human-knot" className={styles.relatedLink}>
-                <div className={styles.relatedLinkTitle}>Games like the Human Knot</div>
-                <div className={styles.relatedLinkDesc}>12 team-building alternatives with rules</div>
-              </a>
-              <a href="/icebreaker-games-for-teens" className={styles.relatedLink}>
-                <div className={styles.relatedLinkTitle}>Ice breaker games for teens</div>
-                <div className={styles.relatedLinkDesc}>Classroom and club openers with safety notes</div>
-              </a>
-              <a href="/icebreaker-games-for-youth-group" className={styles.relatedLink}>
-                <div className={styles.relatedLinkTitle}>Youth group icebreakers</div>
-                <div className={styles.relatedLinkDesc}>Age-appropriate physical and social games</div>
-              </a>
-            </div>
-            <a
-              href="/games-like-the-human-knot"
-              className={styles.relatedCta}
-            >
-              Browse all games like the Human Knot
-            </a>
-          </div>
-        ) : game.title === "Human Bingo" || game.title === "Chat Waterfall" ? (
+        <GamePageExtras
+          slug={game.slug}
+          skipFaq={game.slug === "emoji-introduction"}
+        />
+
+        <RelatedGames
+          items={relatedGames}
+          intro={`Looking for more ${game.category.toLowerCase()} activities? Try another game, then keep browsing the full library.`}
+          browseHref={
+            game.title === "Human Knot"
+              ? "/games-like-the-human-knot"
+              : game.title === "Human Bingo"
+                ? "/games-like-human-bingo"
+                : game.title === "Chat Waterfall"
+                  ? "/virtual-icebreaker-games"
+                  : game.title === "The Name Game"
+                    ? "/name-game-icebreakers"
+                    : "/games"
+          }
+          browseLabel={
+            game.title === "Human Knot"
+              ? "Browse all games like the Human Knot"
+              : game.title === "Human Bingo"
+                ? "Browse all games like Human Bingo"
+                : game.title === "Chat Waterfall"
+                  ? "Browse virtual ice breaker games"
+                  : game.title === "The Name Game"
+                    ? "Browse name game icebreakers"
+                    : "Browse all ice breaker games"
+          }
+        />
+
+        {game.title === "Human Knot" ||
+        game.title === "Human Bingo" ||
+        game.title === "Chat Waterfall" ||
+        game.title === "The Name Game" ? (
           <div className={styles.related}>
             <h3>
-              {game.title === "Human Bingo" 
-                ? "More Ice Breaker Games Like Human Bingo" 
-                : "Virtual Ice Breaker Games Like Chat Waterfall"}
+              {game.title === "The Name Game"
+                ? "Related teen & student guides"
+                : game.title === "Human Knot"
+                  ? "More guides like the Human Knot"
+                  : game.title === "Human Bingo"
+                    ? "More guides like Human Bingo"
+                    : "Virtual icebreaker guides"}
             </h3>
-            <p>
-              {game.title === "Human Bingo" 
-                ? "If you enjoyed Human Bingo, explore our collection of other engaging ice breaker games perfect for social events, networking, and team building. Find more ice breaker games that create memorable experiences."
-                : "Chat Waterfall works great with other virtual ice breaker games. Try these interactive activities for your next online meeting or team event!"}
-            </p>
-            {game.title === "Human Bingo" && (
-              <div className={styles.relatedGrid}>
-                <a href="/games-like-human-bingo" className={styles.relatedLink}>
-                  <div className={styles.relatedLinkTitle}>Games like Human Bingo</div>
-                  <div className={styles.relatedLinkDesc}>12 networking alternatives with rules and comparisons</div>
-                </a>
-                <a href="/games/icebreaker-bingo" className={styles.relatedLink}>
-                  <div className={styles.relatedLinkTitle}>Icebreaker Bingo</div>
-                  <div className={styles.relatedLinkDesc}>Themed bingo cards for workshops and events</div>
-                </a>
-                <a href="/games/find-your-match" className={styles.relatedLink}>
-                  <div className={styles.relatedLinkTitle}>Find Your Match</div>
-                  <div className={styles.relatedLinkDesc}>Faster pairing mixer with famous pairs</div>
-                </a>
-                <a href="/icebreaker-games-for-teens" className={styles.relatedLink}>
-                  <div className={styles.relatedLinkTitle}>Ice breaker games for teens</div>
-                  <div className={styles.relatedLinkDesc}>Classroom and club mixers with safety notes</div>
-                </a>
-                <a href="/icebreaker-games-for-youth-group" className={styles.relatedLink}>
-                  <div className={styles.relatedLinkTitle}>Youth group icebreakers</div>
-                  <div className={styles.relatedLinkDesc}>Age-appropriate games for youth nights</div>
-                </a>
-              </div>
-            )}
-            {game.title === "Chat Waterfall" && (
-              <div className={styles.relatedGrid}>
-                <a href="/virtual-icebreaker-games" className={styles.relatedLink}>
-                  <div className={styles.relatedLinkTitle}>Virtual ice breaker games</div>
-                  <div className={styles.relatedLinkDesc}>Online hub with 14 Zoom/Teams warm-ups</div>
-                </a>
-                <a href="/short-virtual-icebreakers" className={styles.relatedLink}>
-                  <div className={styles.relatedLinkTitle}>Short virtual icebreakers</div>
-                  <div className={styles.relatedLinkDesc}>5-minute warm-ups that respect the clock</div>
-                </a>
-                <a href="/games/speed-networking" className={styles.relatedLink}>
-                  <div className={styles.relatedLinkTitle}>Speed Networking</div>
-                  <div className={styles.relatedLinkDesc}>Fast-paced networking for virtual meetings</div>
-                </a>
-                <a href="/games/virtual-background-story" className={styles.relatedLink}>
-                  <div className={styles.relatedLinkTitle}>Virtual Background Story</div>
-                  <div className={styles.relatedLinkDesc}>Creative ice breaker for video calls</div>
-                </a>
-              </div>
-            )}
-            <a 
-              href={game.title === "Human Bingo" ? "/games-like-human-bingo" : game.title === "Chat Waterfall" ? "/virtual-icebreaker-games" : "/games"} 
-              className={styles.relatedCta}
-            >
-              {game.title === "Human Bingo" ? "Browse all games like Human Bingo" : game.title === "Chat Waterfall" ? "Browse virtual ice breaker games" : "Browse All Ice Breaker Games"}
-            </a>
-          </div>
-        ) : game.title === "Two Truths and a Lie" ? (
-          <div className={styles.related}>
-            <h3>More games like Two Truths and a Lie</h3>
-            <p>
-              Looking for Two Truths alternatives or classroom-safe storytelling icebreakers?
-              Continue with these guides.
-            </p>
             <div className={styles.relatedGrid}>
-              <a href="/games-like-two-truths-and-a-lie" className={styles.relatedLink}>
-                <div className={styles.relatedLinkTitle}>Games like Two Truths and a Lie</div>
-                <div className={styles.relatedLinkDesc}>12 get-to-know substitutes with rules and variations</div>
-              </a>
-              <a href="/icebreaker-games-for-teens" className={styles.relatedLink}>
-                <div className={styles.relatedLinkTitle}>Ice breaker games for teens</div>
-                <div className={styles.relatedLinkDesc}>14 classroom and club openers with safety notes</div>
-              </a>
-              <a href="/virtual-icebreaker-games" className={styles.relatedLink}>
-                <div className={styles.relatedLinkTitle}>Virtual ice breaker games</div>
-                <div className={styles.relatedLinkDesc}>Zoom and Teams hub with chat-first warm-ups</div>
-              </a>
-              <a href="/icebreaker-games-for-small-groups" className={styles.relatedLink}>
-                <div className={styles.relatedLinkTitle}>Small group icebreakers</div>
-                <div className={styles.relatedLinkDesc}>Best formats for circles of 4–12</div>
-              </a>
+              {game.title === "Human Knot" ? (
+                <>
+                  <a href="/games-like-the-human-knot" className={styles.relatedLink}>
+                    <div className={styles.relatedLinkTitle}>Games like the Human Knot</div>
+                    <div className={styles.relatedLinkDesc}>12 team-building alternatives with rules</div>
+                  </a>
+                  <a href="/icebreaker-games-for-teens" className={styles.relatedLink}>
+                    <div className={styles.relatedLinkTitle}>Ice breaker games for teens</div>
+                    <div className={styles.relatedLinkDesc}>Classroom and club openers with safety notes</div>
+                  </a>
+                  <a href="/icebreaker-games-for-youth-group" className={styles.relatedLink}>
+                    <div className={styles.relatedLinkTitle}>Youth group icebreakers</div>
+                    <div className={styles.relatedLinkDesc}>Age-appropriate physical and social games</div>
+                  </a>
+                </>
+              ) : null}
+              {game.title === "Human Bingo" ? (
+                <>
+                  <a href="/games-like-human-bingo" className={styles.relatedLink}>
+                    <div className={styles.relatedLinkTitle}>Games like Human Bingo</div>
+                    <div className={styles.relatedLinkDesc}>12 networking alternatives with rules and comparisons</div>
+                  </a>
+                  <a href="/icebreaker-games-for-teens" className={styles.relatedLink}>
+                    <div className={styles.relatedLinkTitle}>Ice breaker games for teens</div>
+                    <div className={styles.relatedLinkDesc}>Classroom and club mixers with safety notes</div>
+                  </a>
+                  <a href="/icebreaker-games-for-youth-group" className={styles.relatedLink}>
+                    <div className={styles.relatedLinkTitle}>Youth group icebreakers</div>
+                    <div className={styles.relatedLinkDesc}>Age-appropriate games for youth nights</div>
+                  </a>
+                </>
+              ) : null}
+              {game.title === "Chat Waterfall" ? (
+                <>
+                  <a href="/virtual-icebreaker-games" className={styles.relatedLink}>
+                    <div className={styles.relatedLinkTitle}>Virtual ice breaker games</div>
+                    <div className={styles.relatedLinkDesc}>Online hub with Zoom/Teams warm-ups</div>
+                  </a>
+                  <a href="/short-virtual-icebreakers" className={styles.relatedLink}>
+                    <div className={styles.relatedLinkTitle}>Short virtual icebreakers</div>
+                    <div className={styles.relatedLinkDesc}>5-minute warm-ups that respect the clock</div>
+                  </a>
+                </>
+              ) : null}
+              {game.title === "The Name Game" ? (
+                <>
+                  <a href="/icebreaker-games-for-teens" className={styles.relatedLink}>
+                    <div className={styles.relatedLinkTitle}>Ice breaker games for teens</div>
+                    <div className={styles.relatedLinkDesc}>14 classroom and club openers with safety notes</div>
+                  </a>
+                  <a href="/blog/icebreaker-games-for-students" className={styles.relatedLink}>
+                    <div className={styles.relatedLinkTitle}>Icebreaker games for students</div>
+                    <div className={styles.relatedLinkDesc}>Teacher-focused picks by scenario</div>
+                  </a>
+                  <a href="/icebreaker-games-for-youth-group" className={styles.relatedLink}>
+                    <div className={styles.relatedLinkTitle}>Youth group icebreakers</div>
+                    <div className={styles.relatedLinkDesc}>Retreat and youth-night openers</div>
+                  </a>
+                  <a href="/icebreaker-games-for-small-groups" className={styles.relatedLink}>
+                    <div className={styles.relatedLinkTitle}>Small group icebreakers</div>
+                    <div className={styles.relatedLinkDesc}>Best formats for circles of 4–12</div>
+                  </a>
+                </>
+              ) : null}
             </div>
-            <a
-              href="/games-like-two-truths-and-a-lie"
-              className={styles.relatedCta}
-            >
-              Browse all games like Two Truths and a Lie
-            </a>
           </div>
-        ) : game.title === "The Name Game" ? (
-          <div className={styles.related}>
-            <h3>Related teen &amp; student guides</h3>
-            <p>
-              The Name Game works especially well for first-day teen classrooms and new clubs. Pair it with these age-appropriate guides.
-            </p>
-            <div className={styles.relatedGrid}>
-              <a href="/icebreaker-games-for-teens" className={styles.relatedLink}>
-                <div className={styles.relatedLinkTitle}>Ice breaker games for teens</div>
-                <div className={styles.relatedLinkDesc}>14 classroom and club openers with safety notes</div>
-              </a>
-              <a href="/blog/icebreaker-games-for-students" className={styles.relatedLink}>
-                <div className={styles.relatedLinkTitle}>Icebreaker games for students</div>
-                <div className={styles.relatedLinkDesc}>Teacher-focused picks by scenario</div>
-              </a>
-              <a href="/icebreaker-games-for-youth-group" className={styles.relatedLink}>
-                <div className={styles.relatedLinkTitle}>Youth group icebreakers</div>
-                <div className={styles.relatedLinkDesc}>Retreat and youth-night openers</div>
-              </a>
-              <a href="/icebreaker-games-for-small-groups" className={styles.relatedLink}>
-                <div className={styles.relatedLinkTitle}>Small group icebreakers</div>
-                <div className={styles.relatedLinkDesc}>Best formats for circles of 4–12</div>
-              </a>
-            </div>
-            <a
-              href="/icebreaker-games-for-teens"
-              className={styles.relatedCta}
-            >
-              Browse ice breaker games for teens
-            </a>
-          </div>
-        ) : (
-          <div className={styles.related}>
-            <h3>Related Ice Breaker Games</h3>
-            <p>
-              Looking for more activities? Explore our collection of {game.category.toLowerCase()} ice breaker games to find the perfect fit for your next event, meeting, or gathering.
-            </p>
-            <a 
-              href="/games" 
-              className={styles.relatedCta}
-            >
-              Browse All Ice Breaker Games
-            </a>
-          </div>
-        )}
+        ) : null}
       </div>
     </div>
   );

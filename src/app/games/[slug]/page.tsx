@@ -1,4 +1,6 @@
 import { getGameBySlug, getGameById } from "@/db/queries/games";
+import { getRelatedGames } from "@/lib/games/related";
+import { getGamePageFaqs } from "@/data/game-page-extras";
 import { GameDetail } from "@/components/games/GameDetail";
 import { TwoTruthsAndALieDetail } from "@/components/games/TwoTruthsAndALieDetail";
 import {
@@ -360,7 +362,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     game.title === "Portrait Gallery"
       ? "Portrait Gallery Icebreaker Game | How to Play (Step-by-Step)"
       : game.title === "Emoji Introduction"
-      ? "Emoji Introduction Activity | Emoji Icebreaker for Meetings"
+      ? "Emoji Introduction Icebreaker Game | Virtual & In-Person How to Play"
       : game.title === "Emoji Check-In"
         ? "Emoji Check-In Icebreaker | Quick Mood Activity for Teams"
         : game.title === "Alliterative Name Game"
@@ -955,6 +957,22 @@ export default async function GameDetailPage({ params }: Props) {
           }
         ]
       }] : []),
+      ...(game.slug === "name-that-movie-quote" && getGamePageFaqs(game.slug).length
+        ? [
+            {
+              "@type": "FAQPage",
+              "@id": `https://www.icebreakergames.site/games/${game.slug}#faq`,
+              mainEntity: getGamePageFaqs(game.slug).map((item) => ({
+                "@type": "Question",
+                name: item.q,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: item.a,
+                },
+              })),
+            },
+          ]
+        : []),
       ...(game.title === "Portrait Gallery"
         ? [
             {
@@ -4234,6 +4252,8 @@ export default async function GameDetailPage({ params }: Props) {
   const useEditorialDetail =
     game.slug === "two-truths-and-a-lie" || game.slug === "portrait-gallery";
 
+  const relatedGames = await getRelatedGames(game);
+
   return (
     <>
       <script
@@ -4242,9 +4262,9 @@ export default async function GameDetailPage({ params }: Props) {
       />
       {useEditorialDetail ? (
         game.slug === "portrait-gallery" ? (
-          <PortraitGalleryDetail game={game} />
+          <PortraitGalleryDetail game={game} relatedGames={relatedGames} />
         ) : (
-          <TwoTruthsAndALieDetail game={game} />
+          <TwoTruthsAndALieDetail game={game} relatedGames={relatedGames} />
         )
       ) : (
         <>
@@ -4269,7 +4289,7 @@ export default async function GameDetailPage({ params }: Props) {
               Back to all games
             </Link>
           </div>
-          <GameDetail game={game} />
+          <GameDetail game={game} relatedGames={relatedGames} />
         </>
       )}
     </>

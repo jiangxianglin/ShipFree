@@ -656,6 +656,13 @@ export default function StudentsIcebreakersPage() {
             If you want ready-to-print versions instead of building your own, use our{" "}
             <Link href="/blog/human-bingo-for-students-printable" className="underline font-medium">
               Human Bingo for Students printable page
+            </Link>{" "}
+            or the{" "}
+            <Link
+              href="/blog/two-truths-and-a-lie-for-students-printable"
+              className="underline font-medium"
+            >
+              Two Truths and a Lie for students printable worksheets
             </Link>
             .
           </p>

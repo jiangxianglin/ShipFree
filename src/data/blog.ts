@@ -11,6 +11,23 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "two-truths-and-a-lie-for-students-printable",
+    title: "Two Truths and a Lie for Students Printable: Classroom Worksheets",
+    excerpt:
+      "Print student-safe Two Truths and a Lie worksheets for class, advisory, and orientation—with example statements and teacher tips.",
+    date: "2026-08-29",
+    author: "IceBreaker Editorial Team",
+    image: "/small-group-icebreaker-activity.jpg",
+    tags: [
+      "Two Truths and a Lie",
+      "Printable",
+      "Student Icebreakers",
+      "Classroom Games",
+      "First Day of School",
+    ],
+    content: `Printable Two Truths and a Lie worksheets for students with classroom-safe prompt banks and teacher facilitation tips.`,
+  },
+  {
     slug: "human-bingo-for-students-printable",
     title: "Human Bingo for Students Printable: 3 Ready-to-Print Cards",
     excerpt: "Download and print student-friendly Human Bingo cards for class, orientation, and first day of school activities, with prompts that work for high school, college, and mixed groups.",

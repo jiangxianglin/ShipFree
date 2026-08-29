@@ -557,6 +557,116 @@
   color: var(--hk-accent-hover);
 }
 
+.guide p + p {
+  margin-top: 0.85rem;
+}
+
+.scenarioGrid {
+  display: grid;
+  gap: 1rem;
+  margin: 0 0 3rem;
+}
+
+@media (min-width: 720px) {
+  .scenarioGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.scenarioCard {
+  padding: 1.25rem 1.2rem 1.35rem;
+  background: #fff;
+  border: 1px solid var(--hk-line);
+}
+
+.scenarioCard h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--hk-pine);
+}
+
+.scenarioCard p {
+  margin: 0 0 0.85rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--hk-muted);
+}
+
+.scenarioCard a {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--hk-accent);
+  text-decoration: none;
+}
+
+.scenarioCard a:hover {
+  color: var(--hk-accent-hover);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.tableWrap {
+  margin-top: 1rem;
+  overflow-x: auto;
+  border: 1px solid var(--hk-line);
+  background: #fff;
+}
+
+.compareTable {
+  width: 100%;
+  min-width: 36rem;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.compareTable th,
+.compareTable td {
+  padding: 0.7rem 0.85rem;
+  text-align: left;
+  border-bottom: 1px solid var(--hk-line);
+  vertical-align: top;
+}
+
+.compareTable th {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--hk-pine);
+  background: var(--hk-lichen);
+}
+
+.compareTable td {
+  color: var(--hk-muted);
+}
+
+.compareTable tr:last-child td {
+  border-bottom: none;
+}
+
+.compareTable tbody tr:hover td {
+  background: rgba(231, 239, 233, 0.45);
+}
+
+.faqItem {
+  margin-top: 1.25rem;
+  padding-top: 1.15rem;
+  border-top: 1px solid var(--hk-line);
+}
+
+.faqItem:first-of-type {
+  margin-top: 0.75rem;
+}
+
+.faqItem h3 {
+  margin: 0 0 0.45rem;
+}
+
+.faqItem p {
+  margin: 0;
+}
+
 .related {
   padding-top: 1.75rem;
   border-top: 1px solid var(--hk-line);

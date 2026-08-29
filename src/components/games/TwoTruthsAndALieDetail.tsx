@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Game } from "@/types/game";
+import type { RelatedGameItem } from "@/lib/games/related";
 import { EditorialGameActions } from "./EditorialGameActions";
+import { RelatedGames } from "./RelatedGames";
 import styles from "./game-detail-editorial.module.css";
 
 const HERO_SRC = "/img/games-like-two-truths-and-a-lie-hero.jpg";
@@ -39,9 +41,10 @@ const faqs = [
 
 type Props = {
   game: Game;
+  relatedGames?: RelatedGameItem[];
 };
 
-export function TwoTruthsAndALieDetail({ game }: Props) {
+export function TwoTruthsAndALieDetail({ game, relatedGames = [] }: Props) {
   const stepsList = game.steps ? game.steps.split("\n").filter(Boolean) : [];
   const materialsList = game.materials
     ? game.materials.split("\n").filter(Boolean)
@@ -255,39 +258,49 @@ export function TwoTruthsAndALieDetail({ game }: Props) {
           ))}
         </section>
 
-        <section className={styles.related}>
-          <h2>More games like Two Truths and a Lie</h2>
-          <p>
-            Looking for alternatives or classroom-safe storytelling icebreakers? Continue with these
-            guides.
-          </p>
-          <ul className={styles.relatedList}>
-            <li>
-              <Link href="/games-like-two-truths-and-a-lie">
-                Games like Two Truths and a Lie
-                <span>12 get-to-know substitutes with rules and variations</span>
-              </Link>
-            </li>
-            <li>
-              <Link href="/icebreaker-games-for-high-school-students">
-                Ice breaker games for high school students
-                <span>14 classroom-safe openers with safety notes</span>
-              </Link>
-            </li>
-            <li>
-              <Link href="/icebreaker-games-for-teens">
-                Ice breaker games for teens
-                <span>Club and classroom openers for teen groups</span>
-              </Link>
-            </li>
-            <li>
-              <Link href="/virtual-icebreaker-games">
-                Virtual ice breaker games
-                <span>Zoom and Teams hub with chat-first warm-ups</span>
-              </Link>
-            </li>
-          </ul>
-        </section>
+        <>
+          <RelatedGames
+            items={relatedGames}
+            heading="More games like Two Truths and a Lie"
+            intro="Looking for alternatives or classroom-safe storytelling icebreakers? Continue with these games and guides."
+            browseHref="/games-like-two-truths-and-a-lie"
+            browseLabel="Browse all games like Two Truths and a Lie"
+          />
+          <section className={styles.related} aria-label="Related guides">
+            <ul className={styles.relatedList}>
+              <li>
+                <Link href="/games-like-two-truths-and-a-lie">
+                  Games like Two Truths and a Lie
+                  <span>12 get-to-know substitutes with rules and variations</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog/two-truths-and-a-lie-for-students-printable">
+                  Two Truths printable for students
+                  <span>Classroom worksheets + school-safe prompt banks</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/icebreaker-games-for-high-school-students">
+                  Ice breaker games for high school students
+                  <span>14 classroom-safe openers with safety notes</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/icebreaker-games-for-teens">
+                  Ice breaker games for teens
+                  <span>Club and classroom openers for teen groups</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/virtual-icebreaker-games">
+                  Virtual ice breaker games
+                  <span>Zoom and Teams hub with chat-first warm-ups</span>
+                </Link>
+              </li>
+            </ul>
+          </section>
+        </>
       </div>
     </div>
   );

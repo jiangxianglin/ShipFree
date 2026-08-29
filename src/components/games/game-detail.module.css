@@ -167,6 +167,23 @@
   transform: translateY(-1px);
 }
 
+.heroPlayCue {
+  margin: 0.85rem 0 0;
+  animation: gd-rise 0.8s ease-out 0.3s both;
+}
+
+.heroPlayCue a {
+  color: rgba(231, 239, 233, 0.95) !important;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.heroPlayCue a:hover {
+  color: #fff !important;
+}
+
 .ctaGhost {
   display: inline-flex;
   align-items: center;
